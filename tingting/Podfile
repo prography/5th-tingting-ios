@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'tingting' do 
+  use_frameworks!
+   
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod 'RxDataSources', '~> 4.0'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'Hero', '~> 1.4.0'
+  pod 'BonMot', '~> 5.4'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'lottie-ios', '~> 3.1.0'
+  pod 'SwiftyBeaver', '~> 1.7.0'
+  pod 'Kingfisher', '~> 5.0'
+  
+  target 'tingtingTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'tingtingUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53D53547237306EC00FEB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53546237306EC00FEB3E9 /* AppDelegate.swift */; };
+		53D53549237306EC00FEB3E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53548237306EC00FEB3E9 /* SceneDelegate.swift */; };
+		53D5354B237306EC00FEB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5354A237306EC00FEB3E9 /* ViewController.swift */; };
+		53D5354E237306EC00FEB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D5354C237306EC00FEB3E9 /* Main.storyboard */; };
+		53D53551237306EC00FEB3E9 /* tingting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */; };
+		53D53553237306EE00FEB3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D53552237306EE00FEB3E9 /* Assets.xcassets */; };
+		53D53556237306EE00FEB3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */; };
+		53D53561237306EE00FEB3E9 /* tingtingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53560237306EE00FEB3E9 /* tingtingTests.swift */; };
+		53D5356C237306EE00FEB3E9 /* tingtingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */; };
+		7192F3B49D93DAF9DE13BCB5 /* Pods_tingtingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB57C9CAA4ED4A2C52ECD21D /* Pods_tingtingTests.framework */; };
+		CB4D071867FA8A419CAD81CD /* Pods_tingting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6984D0F0BAA5FB1AB92D295 /* Pods_tingting.framework */; };
+		ECAB6C06AC15356F946E6215 /* Pods_tingtingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A7385FB0FA9F6C40FC7A33 /* Pods_tingtingUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53D5355D237306EE00FEB3E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53D5353B237306EC00FEB3E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53D53542237306EC00FEB3E9;
+			remoteInfo = tingting;
+		};
+		53D53568237306EE00FEB3E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53D5353B237306EC00FEB3E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53D53542237306EC00FEB3E9;
+			remoteInfo = tingting;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3FFE2A945E9BC9613A393A25 /* Pods-tingting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingting.debug.xcconfig"; path = "Target Support Files/Pods-tingting/Pods-tingting.debug.xcconfig"; sourceTree = "<group>"; };
+		42325527C2EA8B032BC6CB29 /* Pods-tingtingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingTests.debug.xcconfig"; path = "Target Support Files/Pods-tingtingTests/Pods-tingtingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		44A7385FB0FA9F6C40FC7A33 /* Pods_tingtingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tingtingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D53543237306EC00FEB3E9 /* tingting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tingting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D53546237306EC00FEB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53D53548237306EC00FEB3E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		53D5354A237306EC00FEB3E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53D5354D237306EC00FEB3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53D53550237306EC00FEB3E9 /* tingting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tingting.xcdatamodel; sourceTree = "<group>"; };
+		53D53552237306EE00FEB3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53D53555237306EE00FEB3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53D53557237306EE00FEB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D5355C237306EE00FEB3E9 /* tingtingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tingtingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D53560237306EE00FEB3E9 /* tingtingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tingtingTests.swift; sourceTree = "<group>"; };
+		53D53562237306EE00FEB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tingtingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tingtingUITests.swift; sourceTree = "<group>"; };
+		53D5356D237306EE00FEB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D17A65F78A79C85A2C39D6C /* Pods-tingtingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingUITests.release.xcconfig"; path = "Target Support Files/Pods-tingtingUITests/Pods-tingtingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		92A8166867A8DC7052B28948 /* Pods-tingtingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingTests.release.xcconfig"; path = "Target Support Files/Pods-tingtingTests/Pods-tingtingTests.release.xcconfig"; sourceTree = "<group>"; };
+		A420245776FEB79904333E44 /* Pods-tingting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingting.release.xcconfig"; path = "Target Support Files/Pods-tingting/Pods-tingting.release.xcconfig"; sourceTree = "<group>"; };
+		AB57C9CAA4ED4A2C52ECD21D /* Pods_tingtingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tingtingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C079716240AF45C4A01425 /* Pods-tingtingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingUITests.debug.xcconfig"; path = "Target Support Files/Pods-tingtingUITests/Pods-tingtingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F6984D0F0BAA5FB1AB92D295 /* Pods_tingting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tingting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53D53540237306EC00FEB3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4D071867FA8A419CAD81CD /* Pods_tingting.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D53559237306EE00FEB3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7192F3B49D93DAF9DE13BCB5 /* Pods_tingtingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D53564237306EE00FEB3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECAB6C06AC15356F946E6215 /* Pods_tingtingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53D5353A237306EC00FEB3E9 = {
+			isa = PBXGroup;
+			children = (
+				53D53545237306EC00FEB3E9 /* tingting */,
+				53D5355F237306EE00FEB3E9 /* tingtingTests */,
+				53D5356A237306EE00FEB3E9 /* tingtingUITests */,
+				53D53544237306EC00FEB3E9 /* Products */,
+				68A224327ADD6FAE6008F4F7 /* Pods */,
+				CEA58F8D586D56828A0CB1A3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		53D53544237306EC00FEB3E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53D53543237306EC00FEB3E9 /* tingting.app */,
+				53D5355C237306EE00FEB3E9 /* tingtingTests.xctest */,
+				53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53D53545237306EC00FEB3E9 /* tingting */ = {
+			isa = PBXGroup;
+			children = (
+				53D53546237306EC00FEB3E9 /* AppDelegate.swift */,
+				53D53548237306EC00FEB3E9 /* SceneDelegate.swift */,
+				53D5354A237306EC00FEB3E9 /* ViewController.swift */,
+				53D5354C237306EC00FEB3E9 /* Main.storyboard */,
+				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
+				53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */,
+				53D53557237306EE00FEB3E9 /* Info.plist */,
+				53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */,
+			);
+			path = tingting;
+			sourceTree = "<group>";
+		};
+		53D5355F237306EE00FEB3E9 /* tingtingTests */ = {
+			isa = PBXGroup;
+			children = (
+				53D53560237306EE00FEB3E9 /* tingtingTests.swift */,
+				53D53562237306EE00FEB3E9 /* Info.plist */,
+			);
+			path = tingtingTests;
+			sourceTree = "<group>";
+		};
+		53D5356A237306EE00FEB3E9 /* tingtingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */,
+				53D5356D237306EE00FEB3E9 /* Info.plist */,
+			);
+			path = tingtingUITests;
+			sourceTree = "<group>";
+		};
+		68A224327ADD6FAE6008F4F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE2A945E9BC9613A393A25 /* Pods-tingting.debug.xcconfig */,
+				A420245776FEB79904333E44 /* Pods-tingting.release.xcconfig */,
+				42325527C2EA8B032BC6CB29 /* Pods-tingtingTests.debug.xcconfig */,
+				92A8166867A8DC7052B28948 /* Pods-tingtingTests.release.xcconfig */,
+				B9C079716240AF45C4A01425 /* Pods-tingtingUITests.debug.xcconfig */,
+				5D17A65F78A79C85A2C39D6C /* Pods-tingtingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CEA58F8D586D56828A0CB1A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6984D0F0BAA5FB1AB92D295 /* Pods_tingting.framework */,
+				AB57C9CAA4ED4A2C52ECD21D /* Pods_tingtingTests.framework */,
+				44A7385FB0FA9F6C40FC7A33 /* Pods_tingtingUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53D53542237306EC00FEB3E9 /* tingting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D53570237306EE00FEB3E9 /* Build configuration list for PBXNativeTarget "tingting" */;
+			buildPhases = (
+				2D00596F91A7A94B48E2598D /* [CP] Check Pods Manifest.lock */,
+				53D5353F237306EC00FEB3E9 /* Sources */,
+				53D53540237306EC00FEB3E9 /* Frameworks */,
+				53D53541237306EC00FEB3E9 /* Resources */,
+				34561F3D77D1B583C7F9F918 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tingting;
+			productName = tingting;
+			productReference = 53D53543237306EC00FEB3E9 /* tingting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53D5355B237306EE00FEB3E9 /* tingtingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D53573237306EE00FEB3E9 /* Build configuration list for PBXNativeTarget "tingtingTests" */;
+			buildPhases = (
+				CBC217EABEF5FD560F4EA54F /* [CP] Check Pods Manifest.lock */,
+				53D53558237306EE00FEB3E9 /* Sources */,
+				53D53559237306EE00FEB3E9 /* Frameworks */,
+				53D5355A237306EE00FEB3E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53D5355E237306EE00FEB3E9 /* PBXTargetDependency */,
+			);
+			name = tingtingTests;
+			productName = tingtingTests;
+			productReference = 53D5355C237306EE00FEB3E9 /* tingtingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53D53566237306EE00FEB3E9 /* tingtingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D53576237306EE00FEB3E9 /* Build configuration list for PBXNativeTarget "tingtingUITests" */;
+			buildPhases = (
+				A8261A8E583A56F15ADFC9F0 /* [CP] Check Pods Manifest.lock */,
+				53D53563237306EE00FEB3E9 /* Sources */,
+				53D53564237306EE00FEB3E9 /* Frameworks */,
+				53D53565237306EE00FEB3E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53D53569237306EE00FEB3E9 /* PBXTargetDependency */,
+			);
+			name = tingtingUITests;
+			productName = tingtingUITests;
+			productReference = 53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53D5353B237306EC00FEB3E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Harry Kim";
+				TargetAttributes = {
+					53D53542237306EC00FEB3E9 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					53D5355B237306EE00FEB3E9 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 53D53542237306EC00FEB3E9;
+					};
+					53D53566237306EE00FEB3E9 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 53D53542237306EC00FEB3E9;
+					};
+				};
+			};
+			buildConfigurationList = 53D5353E237306EC00FEB3E9 /* Build configuration list for PBXProject "tingting" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53D5353A237306EC00FEB3E9;
+			productRefGroup = 53D53544237306EC00FEB3E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53D53542237306EC00FEB3E9 /* tingting */,
+				53D5355B237306EE00FEB3E9 /* tingtingTests */,
+				53D53566237306EE00FEB3E9 /* tingtingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53D53541237306EC00FEB3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D53556237306EE00FEB3E9 /* LaunchScreen.storyboard in Resources */,
+				53D53553237306EE00FEB3E9 /* Assets.xcassets in Resources */,
+				53D5354E237306EC00FEB3E9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D5355A237306EE00FEB3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D53565237306EE00FEB3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D00596F91A7A94B48E2598D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tingting-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34561F3D77D1B583C7F9F918 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8261A8E583A56F15ADFC9F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tingtingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBC217EABEF5FD560F4EA54F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tingtingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53D5353F237306EC00FEB3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D5354B237306EC00FEB3E9 /* ViewController.swift in Sources */,
+				53D53551237306EC00FEB3E9 /* tingting.xcdatamodeld in Sources */,
+				53D53547237306EC00FEB3E9 /* AppDelegate.swift in Sources */,
+				53D53549237306EC00FEB3E9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D53558237306EE00FEB3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D53561237306EE00FEB3E9 /* tingtingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D53563237306EE00FEB3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D5356C237306EE00FEB3E9 /* tingtingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53D5355E237306EE00FEB3E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53D53542237306EC00FEB3E9 /* tingting */;
+			targetProxy = 53D5355D237306EE00FEB3E9 /* PBXContainerItemProxy */;
+		};
+		53D53569237306EE00FEB3E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53D53542237306EC00FEB3E9 /* tingting */;
+			targetProxy = 53D53568237306EE00FEB3E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53D5354C237306EC00FEB3E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53D5354D237306EC00FEB3E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53D53555237306EE00FEB3E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53D5356E237306EE00FEB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53D5356F237306EE00FEB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53D53571237306EE00FEB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FFE2A945E9BC9613A393A25 /* Pods-tingting.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KL368DK64;
+				INFOPLIST_FILE = tingting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53D53572237306EE00FEB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A420245776FEB79904333E44 /* Pods-tingting.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KL368DK64;
+				INFOPLIST_FILE = tingting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53D53574237306EE00FEB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42325527C2EA8B032BC6CB29 /* Pods-tingtingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KL368DK64;
+				INFOPLIST_FILE = tingtingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingtingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tingting.app/tingting";
+			};
+			name = Debug;
+		};
+		53D53575237306EE00FEB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92A8166867A8DC7052B28948 /* Pods-tingtingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KL368DK64;
+				INFOPLIST_FILE = tingtingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingtingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tingting.app/tingting";
+			};
+			name = Release;
+		};
+		53D53577237306EE00FEB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C079716240AF45C4A01425 /* Pods-tingtingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KL368DK64;
+				INFOPLIST_FILE = tingtingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingtingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tingting;
+			};
+			name = Debug;
+		};
+		53D53578237306EE00FEB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D17A65F78A79C85A2C39D6C /* Pods-tingtingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5KL368DK64;
+				INFOPLIST_FILE = tingtingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingtingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tingting;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53D5353E237306EC00FEB3E9 /* Build configuration list for PBXProject "tingting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D5356E237306EE00FEB3E9 /* Debug */,
+				53D5356F237306EE00FEB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D53570237306EE00FEB3E9 /* Build configuration list for PBXNativeTarget "tingting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D53571237306EE00FEB3E9 /* Debug */,
+				53D53572237306EE00FEB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D53573237306EE00FEB3E9 /* Build configuration list for PBXNativeTarget "tingtingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D53574237306EE00FEB3E9 /* Debug */,
+				53D53575237306EE00FEB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D53576237306EE00FEB3E9 /* Build configuration list for PBXNativeTarget "tingtingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D53577237306EE00FEB3E9 /* Debug */,
+				53D53578237306EE00FEB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				53D53550237306EC00FEB3E9 /* tingting.xcdatamodel */,
+			);
+			currentVersion = 53D53550237306EC00FEB3E9 /* tingting.xcdatamodel */;
+			path = tingting.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 53D5353B237306EC00FEB3E9 /* Project object */;
+}
