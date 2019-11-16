@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="KGk-i7-Jjw" customClass="TeamInfoCell" customModule="tingting" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="103"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="458" height="103"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAV-mT-uX2">
+                        <rect key="frame" x="15" y="5" width="428" height="93"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oal-aN-Y9p">
+                                <rect key="frame" x="5" y="5" width="403" height="83"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHv-6n-BwD">
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="83"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B8W-sX-WAd">
+                                                <rect key="frame" x="12" y="16.5" width="215" height="50"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-PK-lRb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ACa-PK-lRb" secondAttribute="height" multiplier="1:1" id="jYJ-zS-g8e"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eim-VF-90X">
+                                                        <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g3T-Lr-1HF">
+                                                        <rect key="frame" x="110" y="0.0" width="50" height="50"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rh3-jT-U8f">
+                                                        <rect key="frame" x="165" y="0.0" width="50" height="50"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Ek7-M3-Chd"/>
+                                                    <constraint firstItem="ACa-PK-lRb" firstAttribute="height" secondItem="B8W-sX-WAd" secondAttribute="height" id="Oip-62-U6u"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="B8W-sX-WAd" firstAttribute="leading" secondItem="DHv-6n-BwD" secondAttribute="leading" constant="12" id="eYE-vB-ufP"/>
+                                            <constraint firstItem="B8W-sX-WAd" firstAttribute="centerY" secondItem="DHv-6n-BwD" secondAttribute="centerY" id="n8D-Wc-RVd"/>
+                                            <constraint firstItem="B8W-sX-WAd" firstAttribute="centerX" secondItem="DHv-6n-BwD" secondAttribute="centerX" id="pJ3-1f-5Gp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGh-Du-Odh">
+                                        <rect key="frame" x="239" y="0.0" width="164" height="83"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:3 / 서울 / 최고최고팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWB-Hw-4dx">
+                                                <rect key="frame" x="0.0" y="31.5" width="164" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kWB-Hw-4dx" secondAttribute="trailing" id="6M5-ro-j6h"/>
+                                            <constraint firstItem="kWB-Hw-4dx" firstAttribute="centerY" secondItem="vGh-Du-Odh" secondAttribute="centerY" id="MeN-Li-bEe"/>
+                                            <constraint firstItem="kWB-Hw-4dx" firstAttribute="centerX" secondItem="vGh-Du-Odh" secondAttribute="centerX" id="VOu-Z6-Sp0"/>
+                                            <constraint firstItem="kWB-Hw-4dx" firstAttribute="leading" secondItem="vGh-Du-Odh" secondAttribute="leading" id="iUD-Jk-r4k"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Oal-aN-Y9p" firstAttribute="leading" secondItem="SAV-mT-uX2" secondAttribute="leading" constant="5" id="MKO-W1-j5a"/>
+                            <constraint firstAttribute="trailing" secondItem="Oal-aN-Y9p" secondAttribute="trailing" constant="20" id="VnH-HI-lfr"/>
+                            <constraint firstItem="Oal-aN-Y9p" firstAttribute="top" secondItem="SAV-mT-uX2" secondAttribute="top" constant="5" id="YwY-Gw-MQa"/>
+                            <constraint firstAttribute="bottom" secondItem="Oal-aN-Y9p" secondAttribute="bottom" constant="5" id="zZD-jF-JaZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SAV-mT-uX2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="9mY-S6-eC4"/>
+                    <constraint firstAttribute="bottom" secondItem="SAV-mT-uX2" secondAttribute="bottom" constant="5" id="Qh7-wl-IhX"/>
+                    <constraint firstAttribute="trailing" secondItem="SAV-mT-uX2" secondAttribute="trailing" constant="15" id="r7v-Vc-J88"/>
+                    <constraint firstItem="SAV-mT-uX2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xgM-iL-trQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="-155.07246376811597" y="59.263392857142854"/>
+        </tableViewCell>
+    </objects>
+</document>

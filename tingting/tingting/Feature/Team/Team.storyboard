@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Team List View Controller-->
+        <scene sceneID="j8O-9u-aYU">
+            <objects>
+                <viewController storyboardIdentifier="TeamListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ukz-9v-Rp7" customClass="TeamListViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WwA-8x-db8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dnZ-oO-BZ0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iu4-IU-eNV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-x1-WLQ">
+                                                <rect key="frame" x="28" y="28" width="358" height="114"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-Zq-FiI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="43"/>
+                                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="43" id="MxW-Vx-dCg"/>
+                                                        </constraints>
+                                                        <state key="normal" title="팀만들기">
+                                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-GQ-dql">
+                                                        <rect key="frame" x="0.0" y="71" width="358" height="44"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="43" id="9IL-PB-HNj"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="All"/>
+                                                            <segment title="2명"/>
+                                                            <segment title="3명"/>
+                                                            <segment title="4명"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="selectedSegmentTintColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="mhd-x1-WLQ" firstAttribute="centerX" secondItem="Iu4-IU-eNV" secondAttribute="centerX" id="ZCZ-ez-vaO"/>
+                                            <constraint firstItem="mhd-x1-WLQ" firstAttribute="top" secondItem="Iu4-IU-eNV" secondAttribute="top" constant="28" id="vH1-rm-BuA"/>
+                                            <constraint firstItem="mhd-x1-WLQ" firstAttribute="leading" secondItem="Iu4-IU-eNV" secondAttribute="leading" constant="28" id="vY1-w8-BsS"/>
+                                            <constraint firstAttribute="bottom" secondItem="mhd-x1-WLQ" secondAttribute="bottom" constant="28" id="w2I-Tg-EnO"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeG-hJ-8xS">
+                                        <rect key="frame" x="0.0" y="170" width="414" height="648"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dnZ-oO-BZ0" firstAttribute="top" secondItem="jCl-cZ-UJ1" secondAttribute="top" id="LHN-Kb-HSA"/>
+                            <constraint firstItem="dnZ-oO-BZ0" firstAttribute="leading" secondItem="jCl-cZ-UJ1" secondAttribute="leading" id="YdC-25-CA5"/>
+                            <constraint firstItem="jCl-cZ-UJ1" firstAttribute="bottom" secondItem="dnZ-oO-BZ0" secondAttribute="bottom" id="eAh-9d-trb"/>
+                            <constraint firstItem="jCl-cZ-UJ1" firstAttribute="trailing" secondItem="dnZ-oO-BZ0" secondAttribute="trailing" id="pei-zf-OY4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jCl-cZ-UJ1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugo-Rw-gJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+</document>

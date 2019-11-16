@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="uFV-AC-Q0e">
             <objects>
-                <viewController id="eBH-jc-Weh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eBH-jc-Weh" customClass="SignInViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Ow-r0-bt0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,6 +107,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="40k-5O-DbV"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="zAa-Kx-4r4" id="eLS-NI-GQr"/>
+                        <outlet property="passwordTextField" destination="JNx-ju-uVt" id="0gY-IE-aoo"/>
+                        <outlet property="signInButton" destination="4kZ-pO-2Mx" id="Vhv-lL-7wG"/>
+                        <outlet property="signUpButton" destination="TT4-RZ-SRw" id="F2L-UP-XVy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e60-J9-ABW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +121,7 @@
         <!--학교 인증-->
         <scene sceneID="yWZ-al-QgM">
             <objects>
-                <viewController title="학교 인증" id="RRH-DB-E4D" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailAuthenticationViewController" title="학교 인증" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RRH-DB-E4D" customClass="EmailAuthenticationViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zio-jw-dds">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,6 +194,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CDa-jV-2xm"/>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="BRD-DH-0zt" id="FPS-ky-BIP"/>
+                        <outlet property="confirmButton" destination="J2N-2w-bd7" id="YeV-fc-1Cy"/>
+                        <outlet property="emailTextField" destination="bds-fw-Nwj" id="S67-5v-bko"/>
+                        <outlet property="nextButton" destination="VHB-FU-ow1" id="erd-NL-FMX"/>
+                        <outlet property="sendButton" destination="VG9-Im-k4U" id="oal-Uz-HKk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4t4-S5-Uy2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +209,7 @@
         <!--프로필 입력-->
         <scene sceneID="b1W-sO-6LN">
             <objects>
-                <viewController title="프로필 입력" id="eQu-sG-AEM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputProfileViewController" title="프로필 입력" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eQu-sG-AEM" customClass="InputProfileViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLq-Ct-3bX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,6 +356,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QzB-9n-EKm"/>
                     </view>
+                    <connections>
+                        <outlet property="birthTextField" destination="DIt-9q-ir6" id="tch-2n-osQ"/>
+                        <outlet property="genderSegmentedControl" destination="FOf-5D-ARH" id="Lp4-ys-fth"/>
+                        <outlet property="heightTextField" destination="zWa-a0-BeU" id="qGI-lA-VAV"/>
+                        <outlet property="nextButton" destination="a3S-bP-bk0" id="0ri-de-rQX"/>
+                        <outlet property="nicknameTextField" destination="a6Q-uj-AtJ" id="4yj-ZC-p2w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-9F-Mru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,7 +371,7 @@
         <!--사진 등록-->
         <scene sceneID="x07-U0-O8j">
             <objects>
-                <viewController title="사진 등록" id="PBL-eR-QZj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputPhotoViewController" title="사진 등록" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBL-eR-QZj" customClass="InputPhotoViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mty-am-MeR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,6 +436,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fh3-SE-kfs"/>
                     </view>
+                    <connections>
+                        <outlet property="inputButton" destination="o4v-BS-y1s" id="vx3-5w-sYd"/>
+                        <outlet property="nextButton" destination="hYn-2f-zGN" id="Zew-nr-fhn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Whp-DC-Ldn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
