@@ -18,7 +18,8 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        print("viewDidLoad")
+        Logger.info("viewDidLoad")
     }
  
 }

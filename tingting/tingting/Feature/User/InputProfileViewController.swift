@@ -20,6 +20,7 @@ class InputProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
  
     }
  

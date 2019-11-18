@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    class func fromStoryboard<T>(storyboard: String, className: String, as type: T.Type) -> T {
+    private class func fromStoryboard<T>(storyboard: String, className: String, as type: T.Type) -> T {
         let storyboard = UIStoryboard(name: storyboard, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: className)
         
@@ -21,9 +21,9 @@ extension UIViewController {
         return rusult
     }
     
-    class func withStoryboard(storyboard: String) -> Self {
+    class func withStoryboard(storyboard: StoryboardType) -> Self {
         
-        return fromStoryboard(storyboard: storyboard, className: className, as: self)
+        return fromStoryboard(storyboard: storyboard.fileName, className: className, as: self)
     }
     
 }

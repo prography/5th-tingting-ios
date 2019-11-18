@@ -34,9 +34,10 @@
 		532078DE237409EF00E3F94E /* HasLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078CD237409EF00E3F94E /* HasLet.swift */; };
 		532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078CF237409EF00E3F94E /* BaseViewController.swift */; };
 		532078E0237409EF00E3F94E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078D0237409EF00E3F94E /* BaseCell.swift */; };
+		53AEE018238136120045706C /* StoryboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AEE017238136120045706C /* StoryboardType.swift */; };
 		53D53547237306EC00FEB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53546237306EC00FEB3E9 /* AppDelegate.swift */; };
 		53D53549237306EC00FEB3E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53548237306EC00FEB3E9 /* SceneDelegate.swift */; };
-		53D5354B237306EC00FEB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5354A237306EC00FEB3E9 /* ViewController.swift */; };
+		53D5354B237306EC00FEB3E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5354A237306EC00FEB3E9 /* MainViewController.swift */; };
 		53D5354E237306EC00FEB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D5354C237306EC00FEB3E9 /* Main.storyboard */; };
 		53D53551237306EC00FEB3E9 /* tingting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */; };
 		53D53553237306EE00FEB3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D53552237306EE00FEB3E9 /* Assets.xcassets */; };
@@ -96,10 +97,11 @@
 		532078CD237409EF00E3F94E /* HasLet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasLet.swift; sourceTree = "<group>"; };
 		532078CF237409EF00E3F94E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		532078D0237409EF00E3F94E /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		53AEE017238136120045706C /* StoryboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardType.swift; sourceTree = "<group>"; };
 		53D53543237306EC00FEB3E9 /* tingting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tingting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D53546237306EC00FEB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D53548237306EC00FEB3E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		53D5354A237306EC00FEB3E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53D5354A237306EC00FEB3E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		53D5354D237306EC00FEB3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53D53550237306EC00FEB3E9 /* tingting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tingting.xcdatamodel; sourceTree = "<group>"; };
 		53D53552237306EE00FEB3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				532078B82374093500E3F94E /* User.storyboard */,
-				531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */,
 				531A500D237D5E08008E65A4 /* InputProfileViewController.swift */,
+				531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */,
 				531A500F237D5E1E008E65A4 /* SignInViewController.swift */,
 				531A5011237D5E3D008E65A4 /* InputPhotoViewController.swift */,
 			);
@@ -215,6 +217,7 @@
 		532078BA237409EF00E3F94E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				53AEE016238135E50045706C /* Type */,
 				532078BB237409EF00E3F94E /* Extension */,
 				532078C5237409EF00E3F94E /* Logger */,
 				532078C7237409EF00E3F94E /* Indicator */,
@@ -282,6 +285,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		53AEE016238135E50045706C /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				53AEE017238136120045706C /* StoryboardType.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
 		53D5353A237306EC00FEB3E9 = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +324,7 @@
 				532078B2237408CA00E3F94E /* Model */,
 				53D53546237306EC00FEB3E9 /* AppDelegate.swift */,
 				53D53548237306EC00FEB3E9 /* SceneDelegate.swift */,
-				53D5354A237306EC00FEB3E9 /* ViewController.swift */,
+				53D5354A237306EC00FEB3E9 /* MainViewController.swift */,
 				53D5354C237306EC00FEB3E9 /* Main.storyboard */,
 				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
 				53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */,
@@ -592,13 +603,14 @@
 				531A5010237D5E1E008E65A4 /* SignInViewController.swift in Sources */,
 				532078D5237409EF00E3F94E /* UIViewController+Extension.swift in Sources */,
 				532078D1237409EF00E3F94E /* Int+Extension.swift in Sources */,
-				53D5354B237306EC00FEB3E9 /* ViewController.swift in Sources */,
+				53D5354B237306EC00FEB3E9 /* MainViewController.swift in Sources */,
 				531A501B237D7010008E65A4 /* TeamInfoCell.swift in Sources */,
 				532078D3237409EF00E3F94E /* Double+Extension.swift in Sources */,
 				532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */,
 				532078DC237409EF00E3F94E /* NetworkManager.swift in Sources */,
 				532078DB237409EF00E3F94E /* IndicatorView.swift in Sources */,
 				53D53551237306EC00FEB3E9 /* tingting.xcdatamodeld in Sources */,
+				53AEE018238136120045706C /* StoryboardType.swift in Sources */,
 				531A501F237D72E2008E65A4 /* MemberCell.swift in Sources */,
 				531A5018237D5F10008E65A4 /* CreateTeamViewController.swift in Sources */,
 				532078E0237409EF00E3F94E /* BaseCell.swift in Sources */,
@@ -796,7 +808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingting;
+				PRODUCT_BUNDLE_IDENTIFIER = "-sd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -815,7 +827,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tingting.tingting;
+				PRODUCT_BUNDLE_IDENTIFIER = "-sd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
