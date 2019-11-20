@@ -76,6 +76,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jCl-cZ-UJ1"/>
                     </view>
+                    <connections>
+                        <outlet property="creatTeamButton" destination="zoX-Zq-FiI" id="Vbg-l3-L9n"/>
+                        <outlet property="peopleSegmentedControl" destination="3ea-GQ-dql" id="MFP-AI-7ho"/>
+                        <outlet property="tableView" destination="AeG-hJ-8xS" id="Exc-mI-cN4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugo-Rw-gJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
