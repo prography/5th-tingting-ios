@@ -23,7 +23,7 @@ extension UIViewController {
     
     class func withStoryboard(storyboard: StoryboardType) -> Self {
         
-        return fromStoryboard(storyboard: storyboard.fileName, className: className, as: self)
+        fromStoryboard(storyboard: storyboard.fileName, className: className, as: self)
     }
     
 }

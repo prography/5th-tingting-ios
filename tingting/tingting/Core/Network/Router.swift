@@ -26,7 +26,7 @@ struct Router<T: Codable> {
     private let version: ServerVersion = .v2
     
     private var baseURL: String {
-        return server.rawValue + version.rawValue
+        server.rawValue + version.rawValue
     }
     
     private let url: String
@@ -56,7 +56,7 @@ struct Router<T: Codable> {
 
 extension Router {
     func asObservable() -> Observable<T> {
-        return Observable<T>.create{ observer in
+         Observable<T>.create{ observer in
             
             let session = self.dataRequest.responseData { response in
                 
@@ -85,6 +85,6 @@ extension Router {
             
             return Disposables.create { session.cancel() }
         }
-
+        
     }
 }

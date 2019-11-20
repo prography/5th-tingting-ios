@@ -23,40 +23,8 @@ class InputPhotoViewController: BaseViewController {
         super.viewDidLoad()
         
         photoImageView.isHidden = false
-        
-//        inputButton.rx.tap.flatMapLatest { [weak self] in  UIImagePickerController.rx.createWithParent(self) { picker in
-//            picker.sourceType = UIImagePickerController.SourceType.camera
-//            picker.allowsEditing = false
-//            }
-//        .observeOn(MainScheduler.instance)
-//            .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-//            .take(1)
-//        }
-//        .observeOn(MainScheduler.asyncInstance)
-//        .map { $0[.originalImage] as? UIImage }
-//        .bind(onNext: setImage)
-//        .disposed(by: disposeBag)
-        //
-        
+
         picker.delegate = self
-          
-//        inputButton.rx.tap
-//            .flatMapLatest { [weak self] _ in
-//
-//                 UIImagePickerController.rx.createWithParent(self) { picker in
-//                    picker.delegate = self
-//                    picker.sourceType = .camera
-//                    picker.allowsEditing = false
-//                }
-//                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-//                .take(1)
-//            }
-//            .map { info in
-//                return info[.originalImage] as? UIImage
-//            }
-//            .bind(to: photoImageView.rx.image)
-//            .disposed(by: disposeBag)
-        
         
         inputButton.rx.tap.bind {
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

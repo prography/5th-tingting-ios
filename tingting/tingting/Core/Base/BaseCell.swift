@@ -9,9 +9,8 @@
 import UIKit
 
 class BaseCell: UITableViewCell {
-    static var identifier: String {
-        return className
-    }
+    
+    static var identifier: String { className }
     
     func configure(with cellModel: BaseCellModelType) {
         
