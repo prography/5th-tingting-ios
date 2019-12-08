@@ -17,3 +17,12 @@ class CreateTeamViewController: BaseViewController {
  
 
 }
+
+extension CreateTeamViewController {
+    static func initiate() -> CreateTeamViewController {
+        
+        let vc = CreateTeamViewController.withStoryboard(storyboard: .team)
+        
+        return vc
+    }
+}

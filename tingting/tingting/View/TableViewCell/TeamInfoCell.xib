@@ -20,13 +20,13 @@
                         <rect key="frame" x="0.0" y="5" width="369" height="93"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oal-aN-Y9p">
-                                <rect key="frame" x="5" y="5" width="354" height="83"/>
+                                <rect key="frame" x="5" y="5" width="359" height="83"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHv-6n-BwD">
-                                        <rect key="frame" x="0.0" y="0.0" width="194" height="83"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="83"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="B8W-sX-WAd">
-                                                <rect key="frame" x="12" y="16.5" width="170" height="50"/>
+                                                <rect key="frame" x="0.0" y="16.5" width="170" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-PK-lRb">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -56,16 +56,16 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="B8W-sX-WAd" firstAttribute="leading" secondItem="DHv-6n-BwD" secondAttribute="leading" constant="12" id="eYE-vB-ufP"/>
+                                            <constraint firstItem="B8W-sX-WAd" firstAttribute="leading" secondItem="DHv-6n-BwD" secondAttribute="leading" id="eYE-vB-ufP"/>
                                             <constraint firstItem="B8W-sX-WAd" firstAttribute="centerY" secondItem="DHv-6n-BwD" secondAttribute="centerY" id="n8D-Wc-RVd"/>
                                             <constraint firstItem="B8W-sX-WAd" firstAttribute="centerX" secondItem="DHv-6n-BwD" secondAttribute="centerX" id="pJ3-1f-5Gp"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGh-Du-Odh">
-                                        <rect key="frame" x="194" y="0.0" width="160" height="83"/>
+                                        <rect key="frame" x="170" y="0.0" width="189" height="83"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:3 / 서울 / 최고최고팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWB-Hw-4dx">
-                                                <rect key="frame" x="0.0" y="31.5" width="160" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="189" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Oal-aN-Y9p" firstAttribute="leading" secondItem="SAV-mT-uX2" secondAttribute="leading" constant="5" id="MKO-W1-j5a"/>
-                            <constraint firstAttribute="trailing" secondItem="Oal-aN-Y9p" secondAttribute="trailing" constant="10" id="VnH-HI-lfr"/>
+                            <constraint firstAttribute="trailing" secondItem="Oal-aN-Y9p" secondAttribute="trailing" constant="5" id="VnH-HI-lfr"/>
                             <constraint firstItem="Oal-aN-Y9p" firstAttribute="top" secondItem="SAV-mT-uX2" secondAttribute="top" constant="5" id="YwY-Gw-MQa"/>
                             <constraint firstAttribute="height" constant="93" id="nlN-L2-Rqr"/>
                             <constraint firstAttribute="bottom" secondItem="Oal-aN-Y9p" secondAttribute="bottom" constant="5" id="zZD-jF-JaZ"/>

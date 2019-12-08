@@ -77,3 +77,12 @@ extension InputPhotoViewController: UIImagePickerControllerDelegate, UINavigatio
         picker.dismiss(animated: true) // 그리고 picker를 닫아준다.
     }
 }
+
+extension InputPhotoViewController {
+    static func initiate() -> InputPhotoViewController {
+        
+        let vc = InputPhotoViewController.withStoryboard(storyboard: .user)
+        
+        return vc
+    }
+}

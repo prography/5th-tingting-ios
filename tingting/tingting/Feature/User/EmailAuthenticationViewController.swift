@@ -24,3 +24,12 @@ class EmailAuthenticationViewController: BaseViewController {
     }
   
 }
+
+extension EmailAuthenticationViewController {
+    static func initiate() -> EmailAuthenticationViewController {
+        
+        let vc = EmailAuthenticationViewController.withStoryboard(storyboard: .user)
+        
+        return vc
+    }
+}

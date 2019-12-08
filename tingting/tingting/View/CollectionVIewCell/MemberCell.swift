@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemberCell: UICollectionViewCell {
+class MemberCell: BaseCollectionCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

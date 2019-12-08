@@ -18,7 +18,10 @@ extension NSObject {
     }
     
     var className: String {
-        guard let className = String(describing: self).components(separatedBy: ".").last else {
+        guard let className = String(describing: self)
+            .components(separatedBy: ".").last?
+            .components(separatedBy: ":").first else {
+                
             print(String(describing: self))
             fatalError("Class name couldn't find.")
         }

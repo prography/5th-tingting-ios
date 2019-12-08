@@ -16,13 +16,10 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // let vc = SignInViewController.withStoryboard(storyboard: .user)
-        
-        let vc = TeamListViewController.withStoryboard(storyboard: .team)
+//         let vc = SignInViewController.initiate()
+        let vc = TeamListViewController.initiate()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }
-
-
 }
 

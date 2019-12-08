@@ -23,3 +23,12 @@ class SignInViewController: BaseViewController {
     }
  
 }
+
+extension SignInViewController {
+    static func initiate() -> SignInViewController {
+        
+        let vc = SignInViewController.withStoryboard(storyboard: .user)
+        
+        return vc
+    }
+}
