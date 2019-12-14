@@ -1,8 +1,8 @@
 //
-//  BaseView.swift
+//  BaseButton.swift
 //  tingting
 //
-//  Created by 김선우 on 12/8/19.
+//  Created by 김선우 on 12/14/19.
 //  Copyright © 2019 Harry Kim. All rights reserved.
 //
 
@@ -10,9 +10,7 @@ import UIKit
 import RxSwift
 
 @IBDesignable
-class BaseView: UIView {
-    let disposeBag = DisposeBag()
-    
+class BaseButton: UIButton {
     @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -32,32 +30,11 @@ class BaseView: UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-     
+    
     @IBInspectable var roundedCornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = roundedCornerRadius
         }
     }
-     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-        
-    }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
-    }
-    
-    func commonInit() {
-        let view = Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! UIView
-        view.frame = self.bounds
-        self.addSubview(view)
-        bindStyle()
-    }
-    
-    func bindStyle() {
-        
-    }
 }

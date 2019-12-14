@@ -28,7 +28,7 @@ class TeamListViewController: BaseViewController {
         super.viewDidLoad()
  
 //        let teamInfoView = TeamInfoSwiftUIView()
-////        view.addSubview(teamInfoView)
+///        view.addSubview(teamInfoView)
 //        let vc = UIHostingController(rootView: teamInfoView)
 //        present(vc, animated: true)
         Observable.just((0...10)).bind(to: tableView.rx.items) { tableView, item, index in

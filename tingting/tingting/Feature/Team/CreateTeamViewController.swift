@@ -12,15 +12,11 @@ class CreateTeamViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
     }
- 
-
 }
 
 extension CreateTeamViewController {
     static func initiate() -> CreateTeamViewController {
-        
         let vc = CreateTeamViewController.withStoryboard(storyboard: .team)
         
         return vc

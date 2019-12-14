@@ -39,16 +39,16 @@ struct Router<T: Codable> {
         self.method = method
         self.parameters = parameters?.dictionary
         self.header = HTTPHeaders()
-        header?.add(name: "Authorization", value: "KakaoAK 915ece0fc273daa10c6d6103303d10e0")
+//        header?.add(name: "Authorization", value: "KakaoAK 915ece0fc273daa10c6d6103303d10e0")
     }
     
     var dataRequest: DataRequest {
         let encoding: URLEncoding
         switch method {
         case .get:
-            encoding = URLEncoding.default
+            encoding = .default
         default:
-            encoding = URLEncoding.httpBody
+            encoding = .httpBody
         }
         return AF.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: header)
     }

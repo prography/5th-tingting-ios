@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,6 +100,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outletCollection property="imageViews" destination="ACa-PK-lRb" collectionClass="NSMutableArray" id="3so-Lt-N7v"/>
+                <outletCollection property="imageViews" destination="Eim-VF-90X" collectionClass="NSMutableArray" id="YcM-dN-3Ko"/>
+                <outletCollection property="imageViews" destination="g3T-Lr-1HF" collectionClass="NSMutableArray" id="pHg-NV-IZC"/>
+                <outletCollection property="imageViews" destination="Rh3-jT-U8f" collectionClass="NSMutableArray" id="Tc0-mH-VTN"/>
+            </connections>
             <point key="canvasLocation" x="-202.17391304347828" y="58.59375"/>
         </tableViewCell>
     </objects>

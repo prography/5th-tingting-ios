@@ -10,15 +10,22 @@ import UIKit
 
 class TeamInfoCell: BaseCell {
 
+    
+    @IBOutlet var imageViews: [UIImageView]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+    }
+    
+    override func setStyle() {
+        imageViews.forEach { image in
+            image.layer.cornerRadius = image.frame.height / 2
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

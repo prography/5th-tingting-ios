@@ -19,7 +19,12 @@ class TeamIntroView: BaseView {
         titleLabel.text = title
         descriptionLabel.text = description
         tagLabels.enumerated().forEach { index, label in
-            guard index < tags.count else { label.isHidden = true; return }
+            
+            guard index < tags.count else {
+                label.isHidden = true
+                return
+            }
+            
             label.isHidden = false
             label.text = tags[index]
             label.layer.cornerRadius = 5

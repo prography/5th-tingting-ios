@@ -12,7 +12,16 @@ class BaseCell: UITableViewCell {
     
     static var identifier: String { className }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setStyle()
+    }
+    
     func configure(with cellModel: BaseCellModelType) {
+        setStyle()
+    }
+    
+    func setStyle() {
         
     }
 }
