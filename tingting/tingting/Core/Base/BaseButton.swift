@@ -11,23 +11,15 @@ import RxSwift
 
 @IBDesignable
 class BaseButton: UIButton {
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        
-        set {
-            layer.borderWidth = newValue
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        
-        set {
-            layer.borderColor = newValue?.cgColor
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -35,6 +27,14 @@ class BaseButton: UIButton {
         didSet {
             layer.cornerRadius = roundedCornerRadius
         }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
 }

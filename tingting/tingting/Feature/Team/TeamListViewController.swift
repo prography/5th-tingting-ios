@@ -39,10 +39,8 @@ class TeamListViewController: BaseViewController {
         }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected.bind { _ in
-
-//            let teamInfoView = TeamInfoSwiftUIView()
-//            let vc = UIHostingController(rootView: teamInfoView)
-            let vc = JoinTeamViewController.initiate()
+ 
+            let vc = OtherTeamViewController.initiate()
             self.present(vc, animated: true)
         }.disposed(by: disposeBag)
     }
@@ -55,7 +53,6 @@ class TeamListViewController: BaseViewController {
 
 extension TeamListViewController {
     static func initiate() -> TeamListViewController {
-        
         let vc = TeamListViewController.withStoryboard(storyboard: .team)
         
         return vc

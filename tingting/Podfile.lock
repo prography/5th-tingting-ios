@@ -1,22 +1,22 @@
 PODS:
-  - Alamofire (5.0.0-rc.2)
+  - Alamofire (5.0.0-rc.3)
   - BonMot (5.4.1)
   - Differentiator (4.0.1)
   - Hero (1.4.0)
-  - Kingfisher (5.8.3):
-    - Kingfisher/Core (= 5.8.3)
-  - Kingfisher/Core (5.8.3)
-  - lottie-ios (3.1.3)
-  - RxCocoa (5.0.0):
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
+  - lottie-ios (3.1.5)
+  - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxDataSources (4.0.1):
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
-  - RxRelay (5.0.0):
+  - RxRelay (5.0.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
+  - RxSwift (5.0.1)
   - SnapKit (5.0.1)
   - SwiftyBeaver (1.7.1)
 
@@ -48,19 +48,19 @@ SPEC REPOS:
     - SwiftyBeaver
 
 SPEC CHECKSUMS:
-  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   BonMot: aa82119ff2ffa184223d8a31c72aed84fbb009e0
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
-  Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
-  lottie-ios: 496ac5cea1bbf1a7bd1f1f472f3232eb1b8d744b
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyBeaver: da5e573ad583586c18236324c36900990afe1733
 
-PODFILE CHECKSUM: 081438693a66707941718f1dcedd2f922e935440
+PODFILE CHECKSUM: 49d4c2060b0507b6328640de0e05e6bd39f3f73d
 
 COCOAPODS: 1.7.2

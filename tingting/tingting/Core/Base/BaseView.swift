@@ -40,9 +40,7 @@ class BaseView: UIView {
     }
      
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-        
+        super.init(frame: frame)  
     }
     
     required init?(coder: NSCoder) {
@@ -51,6 +49,7 @@ class BaseView: UIView {
     }
     
     func commonInit() {
+        let className = self.className
         let view = Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
