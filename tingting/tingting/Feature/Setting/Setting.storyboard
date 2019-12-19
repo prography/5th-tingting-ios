@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="1Ti-bW-Fmw">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0bg-C1-MpS" customClass="EditProfileViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mLn-6r-tGE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="P5Q-wU-x1e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEz-lt-3Zz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="123"/>
+        </scene>
+        <!--My Profile View Controller-->
+        <scene sceneID="vqY-hN-Vbi">
+            <objects>
+                <viewController storyboardIdentifier="MyProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vLC-do-1gx" customClass="MyProfileViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYD-DX-iU7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mdT-F4-Aof">
+                                <rect key="frame" x="28" y="44" width="358" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-IJ-koW">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="T6J-bU-fO9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DA-Xr-jbo">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-6r-ZWs">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="100"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suji.png" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="G2M-v5-Jfp" secondAttribute="height" multiplier="1:1" constant="1" id="duu-I2-Ifq"/>
+                                                            <constraint firstAttribute="height" constant="100" id="pSa-5x-mNX"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                                <real key="value" value="50"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSd-sc-emJ">
+                                                        <rect key="frame" x="101" y="0.0" width="257" height="100"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mPF-GJ-1sT">
+                                                                <rect key="frame" x="30" y="20" width="197" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="룰루랄라 님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="19"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WlY-nC-bSs">
+                                                                        <rect key="frame" x="0.0" y="24" width="197" height="1"/>
+                                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="Lsy-10-4E2"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exD-XL-JPc">
+                                                                        <rect key="frame" x="0.0" y="30" width="197" height="30"/>
+                                                                        <state key="normal" title="프로필 수정">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                        </state>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="centerY" secondItem="oSd-sc-emJ" secondAttribute="centerY" id="OE0-gN-go5"/>
+                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="centerX" secondItem="oSd-sc-emJ" secondAttribute="centerX" id="YL1-Z5-GhK"/>
+                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="leading" secondItem="oSd-sc-emJ" secondAttribute="leading" constant="30" id="mPi-OH-CJf"/>
+                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="top" secondItem="oSd-sc-emJ" secondAttribute="top" constant="20" id="vAr-hN-Fhp"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Di6-6r-ZWs" firstAttribute="leading" secondItem="8DA-Xr-jbo" secondAttribute="leading" id="E6W-gt-YCK"/>
+                                            <constraint firstAttribute="trailing" secondItem="Di6-6r-ZWs" secondAttribute="trailing" id="Gdj-7P-hxl"/>
+                                            <constraint firstItem="Di6-6r-ZWs" firstAttribute="top" secondItem="8DA-Xr-jbo" secondAttribute="top" id="Rm2-3K-Bah"/>
+                                            <constraint firstAttribute="bottom" secondItem="Di6-6r-ZWs" secondAttribute="bottom" id="iIk-Hd-4ZP"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="룰루랄라님의 팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-65-o8N">
+                                        <rect key="frame" x="0.0" y="180" width="358" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oo3-J8-KvL" customClass="TeamListView" customModule="tingting" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="237.5" width="358" height="580.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mdT-F4-Aof" firstAttribute="leading" secondItem="eWt-mD-tsK" secondAttribute="leading" constant="28" id="365-2j-Duz"/>
+                            <constraint firstItem="mdT-F4-Aof" firstAttribute="centerX" secondItem="eWt-mD-tsK" secondAttribute="centerX" id="Qls-Jk-LeX"/>
+                            <constraint firstItem="eWt-mD-tsK" firstAttribute="bottom" secondItem="mdT-F4-Aof" secondAttribute="bottom" id="qsB-dF-pSv"/>
+                            <constraint firstItem="mdT-F4-Aof" firstAttribute="top" secondItem="eWt-mD-tsK" secondAttribute="top" id="zXm-oL-GvM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eWt-mD-tsK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGn-BY-SuT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779.71014492753625" y="121.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="suji.png" width="491" height="494"/>
+    </resources>
+</document>

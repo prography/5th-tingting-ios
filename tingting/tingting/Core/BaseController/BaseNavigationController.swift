@@ -1,14 +1,14 @@
 //
-//  TeamInfoViewController.swift
+//  BaseNavigationController.swift
 //  tingting
 //
-//  Created by 김선우 on 11/23/19.
+//  Created by 김선우 on 12/19/19.
 //  Copyright © 2019 Harry Kim. All rights reserved.
 //
 
 import UIKit
 
-class TeamInfoViewController: BaseViewController {
+class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,4 @@ class TeamInfoViewController: BaseViewController {
     }
     */
 
-}
-
-extension TeamInfoViewController {
-    static func initiate() -> TeamInfoViewController {
-        let vc = TeamInfoViewController.withStoryboard(storyboard: .team)
-        return vc
-    }
 }

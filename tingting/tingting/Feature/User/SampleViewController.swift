@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SampleViewController: UIViewController {
+class SampleViewController: BaseViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var sampleButton: UIButton!

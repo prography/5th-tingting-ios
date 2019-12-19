@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class TeamIntroView: BaseView {
 
     @IBOutlet weak var titleLabel: UILabel!
