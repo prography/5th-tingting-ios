@@ -53,7 +53,12 @@ class BaseView: UIView {
         let view = Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
+        bind()
         bindStyle()
+    }
+    
+    func bind() {
+        
     }
     
     func bindStyle() {

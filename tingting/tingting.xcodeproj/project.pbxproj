@@ -36,7 +36,7 @@
 		532078DE237409EF00E3F94E /* HasLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078CD237409EF00E3F94E /* HasLet.swift */; };
 		532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078CF237409EF00E3F94E /* BaseViewController.swift */; };
 		532078E0237409EF00E3F94E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078D0237409EF00E3F94E /* BaseCell.swift */; };
-		5326D8A223A4CA7700632CC0 /* OtherTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* OtherTeamViewController.swift */; };
+		5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */; };
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
 		536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536567AD239D383A0063CAD9 /* TeamListView.swift */; };
 		536567B0239D38450063CAD9 /* TeamListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536567AF239D38450063CAD9 /* TeamListView.xib */; };
@@ -46,7 +46,10 @@
 		5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99B23AF5DFA002EFE9B /* Team.swift */; };
 		5385F99E23AF5E08002EFE9B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99D23AF5E08002EFE9B /* Member.swift */; };
 		5385F9A023AF622F002EFE9B /* RxCocoa+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99F23AF622F002EFE9B /* RxCocoa+Extension.swift */; };
-		5388BE46239CBF3500FBFFD5 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388BE45239CBF3500FBFFD5 /* JoinTeamViewController.swift */; };
+		5385F9A223AF6956002EFE9B /* Matching.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5385F9A123AF6956002EFE9B /* Matching.storyboard */; };
+		5385F9A523AF6F67002EFE9B /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5385F9A423AF6F67002EFE9B /* Member.storyboard */; };
+		5385F9A723AF6FA2002EFE9B /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F9A623AF6FA2002EFE9B /* MemberViewController.swift */; };
+		5388BE46239CBF3500FBFFD5 /* MatchingTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388BE45239CBF3500FBFFD5 /* MatchingTeamListViewController.swift */; };
 		5388BE48239CD92200FBFFD5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388BE47239CD92200FBFFD5 /* BaseView.swift */; };
 		5388BE4B239CE81500FBFFD5 /* MemberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388BE4A239CE81500FBFFD5 /* MemberListView.swift */; };
 		5388BE4D239CE82600FBFFD5 /* MemberListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5388BE4C239CE82600FBFFD5 /* MemberListView.xib */; };
@@ -126,7 +129,7 @@
 		532078CD237409EF00E3F94E /* HasLet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasLet.swift; sourceTree = "<group>"; };
 		532078CF237409EF00E3F94E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		532078D0237409EF00E3F94E /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
-		5326D8A123A4CA7700632CC0 /* OtherTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTeamViewController.swift; sourceTree = "<group>"; };
+		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		536567AD239D383A0063CAD9 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		536567AF239D38450063CAD9 /* TeamListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListView.xib; sourceTree = "<group>"; };
@@ -136,7 +139,10 @@
 		5385F99B23AF5DFA002EFE9B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		5385F99D23AF5E08002EFE9B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		5385F99F23AF622F002EFE9B /* RxCocoa+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Extension.swift"; sourceTree = "<group>"; };
-		5388BE45239CBF3500FBFFD5 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
+		5385F9A123AF6956002EFE9B /* Matching.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Matching.storyboard; sourceTree = "<group>"; };
+		5385F9A423AF6F67002EFE9B /* Member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
+		5385F9A623AF6FA2002EFE9B /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		5388BE45239CBF3500FBFFD5 /* MatchingTeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamListViewController.swift; sourceTree = "<group>"; };
 		5388BE47239CD92200FBFFD5 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		5388BE4A239CE81500FBFFD5 /* MemberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListView.swift; sourceTree = "<group>"; };
 		5388BE4C239CE82600FBFFD5 /* MemberListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberListView.xib; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 		532078B3237408EB00E3F94E /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				5385F9A323AF6F56002EFE9B /* Member */,
 				532078B72374091F00E3F94E /* Setting */,
 				532078B62374090B00E3F94E /* Matching */,
 				532078B52374090400E3F94E /* Team */,
@@ -257,8 +264,6 @@
 				531A5013237D5ECB008E65A4 /* Team.storyboard */,
 				531A5015237D5EE5008E65A4 /* TeamListViewController.swift */,
 				531A5017237D5F10008E65A4 /* CreateTeamViewController.swift */,
-				5388BE45239CBF3500FBFFD5 /* JoinTeamViewController.swift */,
-				5326D8A123A4CA7700632CC0 /* OtherTeamViewController.swift */,
 				5385F99923AF5AD6002EFE9B /* TeamUserInfoViewController.swift */,
 			);
 			path = Team;
@@ -267,6 +272,9 @@
 		532078B62374090B00E3F94E /* Matching */ = {
 			isa = PBXGroup;
 			children = (
+				5385F9A123AF6956002EFE9B /* Matching.storyboard */,
+				5388BE45239CBF3500FBFFD5 /* MatchingTeamListViewController.swift */,
+				5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */,
 			);
 			path = Matching;
 			sourceTree = "<group>";
@@ -358,6 +366,15 @@
 				5313482323AA54AF00532589 /* BaseImageView.swift */,
 			);
 			path = BaseView;
+			sourceTree = "<group>";
+		};
+		5385F9A323AF6F56002EFE9B /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				5385F9A423AF6F67002EFE9B /* Member.storyboard */,
+				5385F9A623AF6FA2002EFE9B /* MemberViewController.swift */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		5388BE49239CDAC200FBFFD5 /* TableViewCell */ = {
@@ -605,10 +622,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				536567B0239D38450063CAD9 /* TeamListView.xib in Resources */,
+				5385F9A223AF6956002EFE9B /* Matching.storyboard in Resources */,
 				53D53556237306EE00FEB3E9 /* LaunchScreen.storyboard in Resources */,
 				532078B92374093500E3F94E /* User.storyboard in Resources */,
 				531A501C237D7010008E65A4 /* TeamInfoCell.xib in Resources */,
 				53D53553237306EE00FEB3E9 /* Assets.xcassets in Resources */,
+				5385F9A523AF6F67002EFE9B /* Member.storyboard in Resources */,
 				53D5354E237306EC00FEB3E9 /* Main.storyboard in Resources */,
 				53E8ED4E239CB4C30027AC46 /* TeamIntroView.xib in Resources */,
 				531A5014237D5ECB008E65A4 /* Team.storyboard in Resources */,
@@ -754,7 +773,7 @@
 				531A5018237D5F10008E65A4 /* CreateTeamViewController.swift in Sources */,
 				532078E0237409EF00E3F94E /* BaseCell.swift in Sources */,
 				532078D8237409EF00E3F94E /* Data+Extension.swift in Sources */,
-				5388BE46239CBF3500FBFFD5 /* JoinTeamViewController.swift in Sources */,
+				5388BE46239CBF3500FBFFD5 /* MatchingTeamListViewController.swift in Sources */,
 				53D53547237306EC00FEB3E9 /* AppDelegate.swift in Sources */,
 				532078DD237409EF00E3F94E /* Router.swift in Sources */,
 				5382B6B82389145500F0114D /* TeamInfoSwiftUIView.swift in Sources */,
@@ -764,10 +783,11 @@
 				532078D6237409EF00E3F94E /* String+Extension.swift in Sources */,
 				531A5016237D5EE5008E65A4 /* TeamListViewController.swift in Sources */,
 				532078DA237409EF00E3F94E /* Logger.swift in Sources */,
-				5326D8A223A4CA7700632CC0 /* OtherTeamViewController.swift in Sources */,
+				5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */,
 				531A500C237D5DD6008E65A4 /* EmailAuthenticationViewController.swift in Sources */,
 				531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */,
 				532078D7237409EF00E3F94E /* Codable+Extension.swift in Sources */,
+				5385F9A723AF6FA2002EFE9B /* MemberViewController.swift in Sources */,
 				5385F99E23AF5E08002EFE9B /* Member.swift in Sources */,
 				53BF9C5223AB9B140013451C /* BaseTabBarController.swift in Sources */,
 				53BF9C4F23AB93A10013451C /* ConnectionManager.swift in Sources */,

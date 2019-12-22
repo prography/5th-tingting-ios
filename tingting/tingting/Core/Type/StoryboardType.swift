@@ -14,6 +14,7 @@ enum StoryboardType {
     case team
     case matching
     case setting
+    case member
     
     var fileName: String {
         switch self {
@@ -28,6 +29,9 @@ enum StoryboardType {
             
         case .setting:
             return "Setting"
+            
+        case .member:
+            return "Member"
             
         }
     }

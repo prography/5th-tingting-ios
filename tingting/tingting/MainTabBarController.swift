@@ -16,14 +16,21 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
 
         let firstVC  = SignInViewController.initiate()
         let secondVC = TeamListViewController.initiate()
-        let thirdVC  = MyProfileViewController.initiate()
+        let thirdVC = MatchingTeamListViewController.initiate()
+        let fourthVC = MyProfileViewController.initiate()
 
         firstVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
-        thirdVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .more, tag: 2)
-
-        let tabBarList = [firstVC, secondVC, thirdVC]
-        viewControllers = tabBarList.map { BaseNavigationController(rootViewController: $0) }
+        thirdVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
+        fourthVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
+        
+        let tabBarList = [firstVC, secondVC, thirdVC, fourthVC]
+        viewControllers = tabBarList
+            .map {
+                let naviVC = BaseNavigationController(rootViewController: $0)
+                naviVC.navigationBar.isHidden = true
+                return naviVC
+        }
         
         
     }

@@ -22,20 +22,19 @@ class TeamListView: BaseView {
             
         }
     }
- 
-    func initiate() {
+    
+    override func bind() {
         
         let teamList = [0, 1, 2, 3].map { _ in Team() }
         
         Observable.just(teamList)
             .bind(to: tableView.rx.items) { tableView, index, element in
-            let cell = tableView.dequeueReusableBaseCell(type: TeamInfoCell.self)
-            return cell
+                let cell = tableView.dequeueReusableBaseCell(type: TeamInfoCell.self)
+                return cell
         }.disposed(by: disposeBag)
     }
     
     override func commonInit() {
         super.commonInit()
-        initiate()
     }
 }

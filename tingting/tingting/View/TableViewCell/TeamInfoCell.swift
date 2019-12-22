@@ -19,8 +19,14 @@ class TeamInfoCell: BaseCell {
     }
     
     override func setStyle() {
-        imageViews.forEach { image in
-            image.layer.cornerRadius = image.frame.height / 2
+        let images = (1...4)
+            .map { "sampleImage" + String($0) }
+            .map { UIImage(named: $0) }
+            .sorted { _, _ in Bool.random() }
+            .sorted { _, _ in Bool.random() }
+        
+        imageViews.enumerated().forEach {
+            $0.element.image = images[$0.offset]
         }
     }
 

@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 class TeamListViewController: BaseViewController {
-
+    
     @IBOutlet weak var creatTeamButton: UIButton!
     @IBOutlet weak var peopleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView! {
@@ -26,11 +26,14 @@ class TeamListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-//        let teamInfoView = TeamInfoSwiftUIView()
-///        view.addSubview(teamInfoView)
-//        let vc = UIHostingController(rootView: teamInfoView)
-//        present(vc, animated: true)
+    }
+    
+    override func bind() {
+        creatTeamButton.rx.tap.bind {
+            let createTeamVC = CreateTeamViewController.initiate()
+            self.present(createTeamVC, animated: true)
+        }.disposed(by: disposeBag)
+        
         Observable.just((0...10)).bind(to: tableView.rx.items) { tableView, item, index in
             
             let cell = tableView.dequeueReusableBaseCell(type: TeamInfoCell.self)
@@ -39,12 +42,12 @@ class TeamListViewController: BaseViewController {
         }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected.bind { _ in
- 
-            let vc = OtherTeamViewController.initiate()
+            
+            let vc = MatchingTeamViewController.initiate()
             self.present(vc, animated: true)
         }.disposed(by: disposeBag)
     }
- 
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

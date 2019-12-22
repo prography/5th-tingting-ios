@@ -1,5 +1,5 @@
 //
-//  JoinTeamViewController.swift
+//  MatchingTeamListViewController.swift
 //  tingting
 //
 //  Created by 김선우 on 12/8/19.
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa 
 import RxDataSources
 
-class JoinTeamViewController: BaseViewController {
+class MatchingTeamListViewController: BaseViewController {
 
     @IBOutlet private weak var introView: TeamIntroView!
     @IBOutlet private weak var memberListView: MemberListView!
@@ -23,16 +23,18 @@ class JoinTeamViewController: BaseViewController {
     }
     
     override func bind() {
-        memberListView.memberDriver
-            .driveNext { member in
-            Logger.info(member)
+        teamListView.teamDriver
+            .driveNext { team in
+                Logger.info(team)
+                let matchingTeamVC = MatchingTeamViewController.initiate()
+                self.present(matchingTeamVC, animated: true)
         }.disposed(by: disposeBag)
     }
 }
 
-extension JoinTeamViewController {
-    static func initiate() -> JoinTeamViewController {
-        let vc = JoinTeamViewController.withStoryboard(storyboard: .team)
+extension MatchingTeamListViewController {
+    static func initiate() -> MatchingTeamListViewController {
+        let vc = MatchingTeamListViewController.withStoryboard(storyboard: .matching)
         return vc
     }
 }

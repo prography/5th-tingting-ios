@@ -12,6 +12,8 @@ import RxCocoa
 
 class MemberListView: BaseView {
 
+    var showMemberAuto = true
+    
     var memberDriver: Driver<Member> {
         return collectionView.rx.modelSelected(Member.self).asDriver()
     }
@@ -31,7 +33,7 @@ class MemberListView: BaseView {
         }
     }
     
-    func initiate() {
+    override func bind() {
         
         let members = [0, 1, 2, 3].map { _ in Member() }
         
@@ -44,14 +46,18 @@ class MemberListView: BaseView {
             return cell
         }.disposed(by: disposeBag)
         
-       
-        
-
+        collectionView.rx.modelSelected(Member.self)
+            .filter { _ in self.showMemberAuto }
+            .observeOn(MainScheduler.asyncInstance)
+            .bind { member in
+                let viewController = UIApplication.shared.windows.last?.rootViewController
+                let memberVC = MemberViewController.initiate()
+                viewController?.present(memberVC, animated: true)
+        }.disposed(by: disposeBag)
     }
     
     override func commonInit() {
         super.commonInit()
-        initiate()
     }
 
 }
