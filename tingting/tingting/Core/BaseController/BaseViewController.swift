@@ -19,10 +19,15 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Logger.debug(className)
+        bind()
     }
     
     deinit {
         Logger.debug(className)
+    }
+    
+    func bind() {
+        
     }
  
     func close() {

@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa 
 
 class MemberListView: BaseView {
+
+    var memberDriver: Driver<Member> {
+        return collectionView.rx.modelSelected(Member.self).asDriver()
+    }
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -28,14 +32,20 @@ class MemberListView: BaseView {
     }
     
     func initiate() {
-          
+        
+        let members = [0, 1, 2, 3].map { _ in Member() }
+        
         collectionView.delegate = self
-        Observable.from(optional: [0, 1, 2, 3])
+        
+        Observable.just(members)
             .bind(to: collectionView.rx.items) { collectionView, index, element in
             let cell = collectionView.dequeueReusableBaseCell(type: MemberCell.self, for: .init(item: index, section: 0))
                 
             return cell
         }.disposed(by: disposeBag)
+        
+       
+        
 
     }
     

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa 
+import RxDataSources
 
 class JoinTeamViewController: BaseViewController {
 
@@ -17,6 +20,13 @@ class JoinTeamViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func bind() {
+        memberListView.memberDriver
+            .driveNext { member in
+            Logger.info(member)
+        }.disposed(by: disposeBag)
     }
 }
 

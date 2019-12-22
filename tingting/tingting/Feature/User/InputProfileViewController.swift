@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class InputProfileViewController: BaseViewController {
 
@@ -21,8 +23,13 @@ class InputProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
- 
-
+    
+    override func bind() {
+        nextButton.rx.tap.bind {
+            let photoVC = InputPhotoViewController.initiate()
+            self.navigationController?.pushViewController(photoVC, animated: true)
+        }.disposed(by: disposeBag)
+    }
 }
 
 extension InputProfileViewController {

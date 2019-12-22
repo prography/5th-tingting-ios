@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class EmailAuthenticationViewController: BaseViewController {
 
@@ -21,6 +23,12 @@ class EmailAuthenticationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
+    }
+    override func bind() {
+        nextButton.rx.tap.bind {
+            let profileVC = InputProfileViewController.initiate()
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }.disposed(by: disposeBag)
     }
   
 }

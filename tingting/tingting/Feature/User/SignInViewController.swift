@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SignInViewController: BaseViewController {
 
@@ -22,6 +24,15 @@ class SignInViewController: BaseViewController {
         Logger.info("viewDidLoad")
     }
  
+    override func bind() {
+        
+        signUpButton.rx.tap
+            .bind {
+                let emailVC = EmailAuthenticationViewController.initiate()
+                let naviVC = BaseNavigationController(rootViewController: emailVC)
+                self.present(naviVC, animated: true)
+        }.disposed(by: disposeBag)
+    }
 }
 
 extension SignInViewController {

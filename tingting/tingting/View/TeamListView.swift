@@ -12,6 +12,10 @@ import RxCocoa
 
 class TeamListView: BaseView {
 
+    var teamDriver: Driver<Team> {
+        return tableView.rx.modelSelected(Team.self).asDriver()
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(TeamInfoCell.self)
@@ -21,7 +25,9 @@ class TeamListView: BaseView {
  
     func initiate() {
         
-        Observable.from(optional: [0, 1, 2, 3])
+        let teamList = [0, 1, 2, 3].map { _ in Team() }
+        
+        Observable.just(teamList)
             .bind(to: tableView.rx.items) { tableView, index, element in
             let cell = tableView.dequeueReusableBaseCell(type: TeamInfoCell.self)
             return cell

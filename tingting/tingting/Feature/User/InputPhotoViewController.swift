@@ -26,6 +26,11 @@ class InputPhotoViewController: BaseViewController {
 
         picker.delegate = self
         
+
+        
+    }
+    
+    override func bind() {
         inputButton.rx.tap.bind {
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
@@ -46,6 +51,10 @@ class InputPhotoViewController: BaseViewController {
             
         }.disposed(by: disposeBag)
         
+        nextButton.rx.tap.bind { _ in
+            // TODO: - Add Logic & API
+            self.close()
+        }.disposed(by: disposeBag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
