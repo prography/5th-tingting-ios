@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class BaseCell: UITableViewCell {
+      
+    let disposeBag = DisposeBag()
     
     static var identifier: String { className }
     

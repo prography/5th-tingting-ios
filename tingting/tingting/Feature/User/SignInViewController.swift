@@ -32,6 +32,16 @@ class SignInViewController: BaseViewController {
                 let naviVC = BaseNavigationController(rootViewController: emailVC)
                 self.present(naviVC, animated: true)
         }.disposed(by: disposeBag)
+        
+        signInButton.rx.tap.bind {
+            self.signIn()
+        }.disposed(by: disposeBag)
+    }
+}
+
+extension SignInViewController {
+    func signIn() {
+        close()
     }
 }
 

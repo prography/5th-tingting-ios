@@ -14,22 +14,26 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         delegate = self
 
-        let firstVC  = SignInViewController.initiate()
-        let secondVC = TeamListViewController.initiate()
-        let thirdVC = MatchingTeamListViewController.initiate()
-        let fourthVC = MyProfileViewController.initiate()
-
-        firstVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
-        thirdVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
-        fourthVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
+        let firstVC = TeamListViewController.initiate()
+        let secondVC = MatchingTeamListViewController.initiate()
+        let thirdVC = MyProfileViewController.initiate()
+ 
+        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        secondVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
         
-        let tabBarList = [firstVC, secondVC, thirdVC, fourthVC]
+        let tabBarList = [firstVC, secondVC, thirdVC]
         viewControllers = tabBarList
             .map {
                 let naviVC = BaseNavigationController(rootViewController: $0)
                 naviVC.navigationBar.isHidden = true
                 return naviVC
+        }
+        
+        DispatchQueue.main.async {
+            let signInVC  = SignInViewController.initiate()
+            signInVC.modalPresentationStyle = .fullScreen
+            self.present(signInVC, animated: false)
         }
         
         
