@@ -21,7 +21,6 @@ class MemberViewController: BaseViewController {
 extension MemberViewController {
     static func initiate() -> MemberViewController {
         let vc = MemberViewController.withStoryboard(storyboard: .member)
-        
         return vc
     }
 }

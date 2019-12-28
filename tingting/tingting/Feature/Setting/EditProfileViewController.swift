@@ -21,7 +21,6 @@ class EditProfileViewController: BaseViewController {
 extension EditProfileViewController {
     static func initiate() -> EditProfileViewController {
         let vc = EditProfileViewController.withStoryboard(storyboard: .setting)
-        
         return vc
     }
 }

@@ -12,7 +12,6 @@ class MatchingTeamViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
     }
     
  
@@ -21,7 +20,7 @@ class MatchingTeamViewController: BaseViewController {
 extension MatchingTeamViewController {
     static func initiate() -> MatchingTeamViewController {
         let vc = MatchingTeamViewController.withStoryboard(storyboard: .matching)
-        
+
         return vc
     }
 }

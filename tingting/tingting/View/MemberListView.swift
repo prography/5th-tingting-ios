@@ -43,6 +43,10 @@ class MemberListView: BaseView {
             .bind(to: collectionView.rx.items) { collectionView, index, element in
             let cell = collectionView.dequeueReusableBaseCell(type: MemberCell.self, for: .init(item: index, section: 0))
                 
+                cell.layer.cornerRadius = 10
+                cell.layer.borderColor = .primary
+                cell.layer.borderWidth = 2
+                
             return cell
         }.disposed(by: disposeBag)
         

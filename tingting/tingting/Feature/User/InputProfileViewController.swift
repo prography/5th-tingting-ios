@@ -34,9 +34,7 @@ class InputProfileViewController: BaseViewController {
 
 extension InputProfileViewController {
     static func initiate() -> InputProfileViewController {
-        
         let vc = InputProfileViewController.withStoryboard(storyboard: .user)
-        
         return vc
     }
 }

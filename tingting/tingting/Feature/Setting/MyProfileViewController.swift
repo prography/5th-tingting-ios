@@ -18,7 +18,6 @@ class MyProfileViewController: BaseViewController {
 extension MyProfileViewController {
     static func initiate() -> MyProfileViewController {
         let vc = MyProfileViewController.withStoryboard(storyboard: .setting)
-        
         return vc
     }
 }

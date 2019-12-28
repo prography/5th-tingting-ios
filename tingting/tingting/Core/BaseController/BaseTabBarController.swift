@@ -12,10 +12,7 @@ class BaseTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Logger.debug(className)
-    }
-    
-    deinit {
-        Logger.debug(className)
+        overrideUserInterfaceStyle = .default
+        
     }
 }

@@ -18,6 +18,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .default
         Logger.debug(className)
         bind()
     }
