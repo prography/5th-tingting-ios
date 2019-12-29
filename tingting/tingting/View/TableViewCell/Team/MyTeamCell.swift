@@ -9,7 +9,7 @@
 import UIKit
 
 class MyTeamCell: BaseCell {
-
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

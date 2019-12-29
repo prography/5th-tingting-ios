@@ -9,8 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
-class BaseCell: UITableViewCell {
+ 
+class BaseCell: UITableViewCell, BaseCellProtocol {
       
     let disposeBag = DisposeBag()
     

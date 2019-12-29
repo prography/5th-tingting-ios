@@ -24,7 +24,6 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_man1" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-hb-zBM" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FNS-hb-zBM" secondAttribute="height" multiplier="1:1" id="Wdx-Io-g6F"/>
                                             <constraint firstAttribute="height" constant="57" id="thD-NG-xEz"/>
@@ -35,21 +34,18 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_man2" translatesAutoresizingMaskIntoConstraints="NO" id="ojV-i5-YdV" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
                                         <rect key="frame" x="47" y="0.0" width="57" height="57"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_man3" translatesAutoresizingMaskIntoConstraints="NO" id="oo7-y4-RFd" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
                                         <rect key="frame" x="94" y="0.0" width="57" height="57"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_man1" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-MS-0F5" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
                                         <rect key="frame" x="141" y="0.0" width="57" height="57"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                         </userDefinedRuntimeAttributes>

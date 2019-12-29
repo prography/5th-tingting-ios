@@ -13,45 +13,90 @@ import RxSwift
 class BaseView: UIView {
     let disposeBag = DisposeBag()
     
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        
-        set {
-            layer.borderWidth = newValue
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        
-        set {
-            layer.borderColor = newValue?.cgColor
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            layer.borderColor = borderColor.cgColor
         }
     }
-     
+    
     @IBInspectable var roundedCornerRadius: CGFloat = 0 {
         didSet {
-            layer.cornerRadius = roundedCornerRadius
+            clipsToBounds = true
+            if makeCircle {
+                layer.cornerRadius = frame.height / 2
+            } else {
+                layer.cornerRadius = roundedCornerRadius
+            }
         }
     }
-     
+    
+    @IBInspectable var makeCircle: Bool = false {
+        didSet {
+            clipsToBounds = true
+            if makeCircle {
+                layer.cornerRadius = frame.height / 2
+                DispatchQueue.main.async {
+                    self.layer.cornerRadius = self.frame.height / 2
+                }
+            }
+        }
+    }
+
+    private var shadowLayer: CAShapeLayer!
+    private var cornerRadius: CGFloat = 25.0
+    private var fillColor: UIColor = .blue
+    
+    @IBInspectable var makeShadow: Bool = false {
+        didSet {
+            if makeShadow {
+                if shadowLayer == nil {
+                    shadowLayer = CAShapeLayer()
+                    
+                    shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+                    shadowLayer.fillColor = self.backgroundColor?.cgColor
+                    
+                    shadowLayer.borderColor = .primary
+                    shadowLayer.borderWidth = 1
+                    shadowLayer.shadowColor = UIColor.black.cgColor
+                    shadowLayer.shadowPath = shadowLayer.path
+                    shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+                    shadowLayer.shadowOpacity = 0.2
+                    shadowLayer.shadowRadius = 3
+                    
+                    layer.insertSublayer(shadowLayer, at: 0)
+                    
+                    let borderLayer = CAShapeLayer()
+                    
+                    borderLayer.borderColor = .primary
+                    borderLayer.borderWidth = 1
+                    layer.insertSublayer(borderLayer, at: 1)
+
+                }
+            }
+        }
+    }
+      
     override init(frame: CGRect) {
         super.init(frame: frame)  
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+        DispatchQueue.main.async {
+            self.commonInit()
+        }
+        
     }
     
     func commonInit() {
         let className = self.className
-        
-        if let view = Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as? UIView {
+        if className != "BaseView", let view = Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
             self.addSubview(view)
         }

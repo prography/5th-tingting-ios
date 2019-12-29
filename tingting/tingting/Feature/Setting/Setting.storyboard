@@ -30,103 +30,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mdT-F4-Aof">
-                                <rect key="frame" x="28" y="44" width="358" height="818"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-IJ-koW">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="T6J-bU-fO9"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DA-Xr-jbo">
-                                        <rect key="frame" x="0.0" y="50" width="358" height="100"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-6r-ZWs">
-                                                <rect key="frame" x="0.0" y="0.0" width="358" height="100"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suji.png" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="G2M-v5-Jfp" secondAttribute="height" multiplier="1:1" constant="1" id="duu-I2-Ifq"/>
-                                                            <constraint firstAttribute="height" constant="100" id="pSa-5x-mNX"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                                <real key="value" value="50"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSd-sc-emJ">
-                                                        <rect key="frame" x="101" y="0.0" width="257" height="100"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mPF-GJ-1sT">
-                                                                <rect key="frame" x="30" y="20" width="197" height="60"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="룰루랄라 님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WlY-nC-bSs">
-                                                                        <rect key="frame" x="0.0" y="25.5" width="197" height="1"/>
-                                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="Lsy-10-4E2"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exD-XL-JPc">
-                                                                        <rect key="frame" x="0.0" y="31.5" width="197" height="28.5"/>
-                                                                        <state key="normal" title="프로필 수정">
-                                                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                                        </state>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="centerY" secondItem="oSd-sc-emJ" secondAttribute="centerY" id="OE0-gN-go5"/>
-                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="centerX" secondItem="oSd-sc-emJ" secondAttribute="centerX" id="YL1-Z5-GhK"/>
-                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="leading" secondItem="oSd-sc-emJ" secondAttribute="leading" constant="30" id="mPi-OH-CJf"/>
-                                                            <constraint firstItem="mPF-GJ-1sT" firstAttribute="top" secondItem="oSd-sc-emJ" secondAttribute="top" constant="20" id="vAr-hN-Fhp"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstItem="Di6-6r-ZWs" firstAttribute="leading" secondItem="8DA-Xr-jbo" secondAttribute="leading" id="E6W-gt-YCK"/>
-                                            <constraint firstAttribute="trailing" secondItem="Di6-6r-ZWs" secondAttribute="trailing" id="Gdj-7P-hxl"/>
-                                            <constraint firstItem="Di6-6r-ZWs" firstAttribute="top" secondItem="8DA-Xr-jbo" secondAttribute="top" id="Rm2-3K-Bah"/>
-                                            <constraint firstAttribute="bottom" secondItem="Di6-6r-ZWs" secondAttribute="bottom" id="iIk-Hd-4ZP"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="룰루랄라님의 팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-65-o8N">
-                                        <rect key="frame" x="0.0" y="180" width="358" height="27.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oo3-J8-KvL" customClass="TeamListView" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="237.5" width="358" height="580.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBw-1r-EiU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="8DA-Xr-jbo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-6r-ZWs">
+                                            <rect key="frame" x="37" y="0.0" width="337" height="158"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suji.png" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="29" width="101" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="G2M-v5-Jfp" secondAttribute="height" multiplier="1:1" constant="1" id="duu-I2-Ifq"/>
+                                                        <constraint firstAttribute="height" constant="100" id="pSa-5x-mNX"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSd-sc-emJ">
+                                                    <rect key="frame" x="101" y="23.5" width="236" height="111"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mPF-GJ-1sT">
+                                                            <rect key="frame" x="30" y="20" width="176" height="71"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="룰루랄라 님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="hth-BE-QgP"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlY-nC-bSs">
+                                                                    <rect key="frame" x="0.0" y="35" width="176" height="1"/>
+                                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="1" id="Lsy-10-4E2"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exD-XL-JPc">
+                                                                    <rect key="frame" x="0.0" y="41" width="176" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="Eha-1J-etI"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="프로필 수정">
+                                                                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="mPF-GJ-1sT" firstAttribute="centerY" secondItem="oSd-sc-emJ" secondAttribute="centerY" id="OE0-gN-go5"/>
+                                                        <constraint firstItem="mPF-GJ-1sT" firstAttribute="centerX" secondItem="oSd-sc-emJ" secondAttribute="centerX" id="YL1-Z5-GhK"/>
+                                                        <constraint firstItem="mPF-GJ-1sT" firstAttribute="leading" secondItem="oSd-sc-emJ" secondAttribute="leading" constant="30" id="mPi-OH-CJf"/>
+                                                        <constraint firstItem="mPF-GJ-1sT" firstAttribute="top" secondItem="oSd-sc-emJ" secondAttribute="top" constant="20" id="vAr-hN-Fhp"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Di6-6r-ZWs" firstAttribute="leading" secondItem="8DA-Xr-jbo" secondAttribute="leading" constant="37" id="E6W-gt-YCK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Di6-6r-ZWs" secondAttribute="trailing" constant="40" id="Gdj-7P-hxl"/>
+                                        <constraint firstItem="Di6-6r-ZWs" firstAttribute="top" secondItem="8DA-Xr-jbo" secondAttribute="top" id="Rm2-3K-Bah"/>
+                                        <constraint firstAttribute="bottom" secondItem="Di6-6r-ZWs" secondAttribute="bottom" id="iIk-Hd-4ZP"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fXu-PQ-3gk">
+                                        <rect key="frame" x="0.0" y="186" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fXu-PQ-3gk" id="0Y2-7V-vE1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mdT-F4-Aof" firstAttribute="leading" secondItem="eWt-mD-tsK" secondAttribute="leading" constant="28" id="365-2j-Duz"/>
-                            <constraint firstItem="mdT-F4-Aof" firstAttribute="centerX" secondItem="eWt-mD-tsK" secondAttribute="centerX" id="Qls-Jk-LeX"/>
-                            <constraint firstItem="eWt-mD-tsK" firstAttribute="bottom" secondItem="mdT-F4-Aof" secondAttribute="bottom" id="qsB-dF-pSv"/>
-                            <constraint firstItem="mdT-F4-Aof" firstAttribute="top" secondItem="eWt-mD-tsK" secondAttribute="top" id="zXm-oL-GvM"/>
+                            <constraint firstItem="TBw-1r-EiU" firstAttribute="top" secondItem="eWt-mD-tsK" secondAttribute="top" id="54s-BA-4AU"/>
+                            <constraint firstItem="eWt-mD-tsK" firstAttribute="bottom" secondItem="TBw-1r-EiU" secondAttribute="bottom" id="ElP-ZL-KnF"/>
+                            <constraint firstItem="eWt-mD-tsK" firstAttribute="trailing" secondItem="TBw-1r-EiU" secondAttribute="trailing" id="Ytu-gE-rA8"/>
+                            <constraint firstItem="TBw-1r-EiU" firstAttribute="leading" secondItem="eWt-mD-tsK" secondAttribute="leading" id="yjM-Rc-V1L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eWt-mD-tsK"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="TBw-1r-EiU" id="OcA-1d-DLF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGn-BY-SuT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

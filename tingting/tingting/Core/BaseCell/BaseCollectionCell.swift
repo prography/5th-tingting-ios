@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCollectionCell: UICollectionViewCell {
+class BaseCollectionCell: UICollectionViewCell, BaseCellProtocol {
     
     static var identifier: String { className }
     

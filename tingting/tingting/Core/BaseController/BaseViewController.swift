@@ -20,7 +20,9 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .default
         Logger.debug(className)
-        bind()
+        DispatchQueue.main.async {
+            self.bind()
+        }
     }
     
     deinit {

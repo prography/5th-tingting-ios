@@ -15,15 +15,48 @@ extension UITableView {
         register(nib, forCellReuseIdentifier: className)
     }
     
-    func dequeueReusableBaseCell<T: BaseCell>(type: T.Type) -> T {
+    func dequeueReusableBaseCell<T: BaseCellProtocol>(type: T.Type) -> BaseCell {
         guard let cell = dequeueReusableCell(withIdentifier: type.identifier) as? BaseCell
             else {
                 fatalError("BaseCell must exist.")
         }
         
-        guard let typeCell = cell as? T else {
-            fatalError("BaseCell must exist.")
+        return cell
+    }
+    
+    func dequeueReusableBaseCell(with identifier: String) -> BaseCell {
+        guard let cell = dequeueReusableCell(withIdentifier: identifier) as? BaseCell
+            else {
+                fatalError("BaseCell must exist.")
         }
-        return typeCell
+        return cell
+    }
+    
+    func dequeueReusableBaseCell(by configurator: CellConfigurator) -> BaseCell {
+        let identifier = configurator.cellType.identifier
+        let cell = dequeueReusableBaseCell(with: identifier)
+        return cell
+    }
+    
+    func configuredBaseCell(with configurator: CellConfigurator) -> BaseCell {
+        let identifier = configurator.cellType.identifier
+        let cell = dequeueReusableBaseCell(with: identifier)
+        
+        configurator.configure(cell)
+        return cell
+    }
+}
+
+extension UITableView {
+    func didSetDefault() {
+        
+        self.register(MatchingTeamStateCell.self)
+        self.register(MyMatchingTeamCell.self)
+        self.register(MyTeamCell.self)
+        self.register(TeamInfoCell.self)
+        self.register(LabelCell.self)
+        
+        self.separatorStyle = .none
+        self.rowHeight = UITableView.automaticDimension
     }
 }

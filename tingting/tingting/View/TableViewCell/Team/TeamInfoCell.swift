@@ -9,8 +9,6 @@
 import UIKit
 
 class TeamInfoCell: BaseCell {
-
-    
     @IBOutlet var imageViews: [UIImageView]!
     
     override func awakeFromNib() {

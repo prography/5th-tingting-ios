@@ -24,10 +24,10 @@ class BaseImageView: UIImageView {
     
     @IBInspectable var roundedCornerRadius: CGFloat = 0 {
         didSet {
+            clipsToBounds = true
             if makeCircle {
                 layer.cornerRadius = frame.height / 2
             } else {
-                
                 layer.cornerRadius = roundedCornerRadius
             }
         }
@@ -35,14 +35,13 @@ class BaseImageView: UIImageView {
     
     @IBInspectable var makeCircle: Bool = false {
         didSet {
+            clipsToBounds = true
             if makeCircle {
                 layer.cornerRadius = frame.height / 2
                 DispatchQueue.main.async {
                     self.layer.cornerRadius = self.frame.height / 2
                 }
-            }
-            
-            
+            } 
         }
     }
     
