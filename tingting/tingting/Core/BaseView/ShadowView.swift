@@ -13,15 +13,15 @@ class ShadowView: UIView {
     
     @IBInspectable var makeShadow: Bool = false {
         didSet {
-            if makeShadow {
-                backgroundColor = .clear
-                layer.masksToBounds = false
-                layer.shadowColor = UIColor.black.cgColor
-                layer.shadowOffset = CGSize(width: 0, height: 1.0)
-                layer.shadowOpacity = 0.2
-                layer.shadowRadius = 4.0
-            }
+            guard makeShadow else { return }
+            backgroundColor = .clear
+            layer.masksToBounds = false
+            layer.shadowColor = UIColor.black.cgColor
+            layer.shadowOffset = CGSize(width: 0, height: 1.0)
+            layer.shadowOpacity = 0.2
+            layer.shadowRadius = 4.0
         }
     }
+    
 
 }

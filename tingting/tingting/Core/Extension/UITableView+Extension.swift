@@ -17,18 +17,13 @@ extension UITableView {
     
     func dequeueReusableBaseCell<T: BaseCellProtocol>(type: T.Type) -> BaseCell {
         guard let cell = dequeueReusableCell(withIdentifier: type.identifier) as? BaseCell
-            else {
-                fatalError("BaseCell must exist.")
-        }
-        
+            else { fatalError("BaseCell must exist.") }
         return cell
     }
     
     func dequeueReusableBaseCell(with identifier: String) -> BaseCell {
         guard let cell = dequeueReusableCell(withIdentifier: identifier) as? BaseCell
-            else {
-                fatalError("BaseCell must exist.")
-        }
+            else { fatalError("BaseCell must exist.") }
         return cell
     }
     
@@ -41,7 +36,6 @@ extension UITableView {
     func configuredBaseCell(with configurator: CellConfigurator) -> BaseCell {
         let identifier = configurator.cellType.identifier
         let cell = dequeueReusableBaseCell(with: identifier)
-        
         configurator.configure(cell)
         return cell
     }
@@ -55,6 +49,8 @@ extension UITableView {
         self.register(MyTeamCell.self)
         self.register(TeamInfoCell.self)
         self.register(LabelCell.self)
+        self.register(JoinTeamCell.self)
+        
         
         self.separatorStyle = .none
         self.rowHeight = UITableView.automaticDimension

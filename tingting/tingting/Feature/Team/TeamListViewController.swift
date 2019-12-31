@@ -16,16 +16,16 @@ class TeamListViewController: BaseViewController {
     @IBOutlet weak var peopleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            
-            tableView.rowHeight = UITableView.automaticDimension
-            tableView.estimatedRowHeight = UITableView.automaticDimension
-            
-            tableView.register(TeamInfoCell.self)
+            tableView.didSetDefault()
         }
     }
     
+    var items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let configurators = (0...20).map { _ in JoinTeamCellConfigurator() }
+        items.accept(configurators)
     }
     
     override func bind() {
@@ -34,16 +34,15 @@ class TeamListViewController: BaseViewController {
             self.present(createTeamVC, animated: true)
         }.disposed(by: disposeBag)
         
-        Observable.just((0...10)).bind(to: tableView.rx.items) { tableView, item, index in
-            
-            let cell = tableView.dequeueReusableBaseCell(type: TeamInfoCell.self)
+        items.bind(to: tableView.rx.items) { tableView, index, configurator in
+            let cell = tableView.configuredBaseCell(with: configurator)
+            cell.selectionStyle = .none
             return cell
             
         }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected.bind { _ in
-            
-            let vc = MatchingTeamViewController.initiate()
+            let vc = JoinTeamViewController.initiate()
             self.present(vc, animated: true)
         }.disposed(by: disposeBag)
     }

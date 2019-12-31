@@ -42,10 +42,11 @@ class MemberListView: BaseView {
         Observable.just(members)
             .bind(to: collectionView.rx.items) { collectionView, index, element in
             let cell = collectionView.dequeueReusableBaseCell(type: MemberCell.self, for: .init(item: index, section: 0))
-                
+                let borderColor = UIColor.gray
+
                 cell.layer.cornerRadius = 10
-                cell.layer.borderColor = .primary
-                cell.layer.borderWidth = 2
+                cell.layer.borderColor = .init(srgbRed: 189.0 / 255.0, green:  189.0 / 255.0, blue:  189.0 / 255.0, alpha: 1)
+                cell.layer.borderWidth = 1
                 
             return cell
         }.disposed(by: disposeBag)
@@ -74,7 +75,7 @@ class MemberListView: BaseView {
     
     // MARK: Cell Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 65, height: 100)
+        return CGSize(width: 85, height: 128)
     }
  }
  

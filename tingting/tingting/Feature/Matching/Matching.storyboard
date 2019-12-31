@@ -16,11 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wLb-nf-em9">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <rect key="frame" x="14" y="61" width="386" height="791"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-1W-0bI" customClass="TeamIntroView" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="407"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-1W-0bI" customClass="TeamIntroView" customModule="tingting" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="386" height="157"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="157" id="lwa-6Y-D2r"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="2"/>
@@ -34,20 +37,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgf-7y-vQT" customClass="MemberListView" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="417" width="394" height="210"/>
+                                        <rect key="frame" x="0.0" y="167" width="386" height="439.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="06q-Tu-fD2">
-                                        <rect key="frame" x="0.0" y="637" width="394" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="616.5" width="386" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메시지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acA-PR-OA2">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="386" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요. 우리는 불금불금 팀이에요. 같이 불금을 즐기러 가실 분들을 빠르게 모십니다. 고고!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-fl-g8x">
-                                                <rect key="frame" x="0.0" y="20.5" width="394" height="41"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="386" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -55,17 +58,17 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9H8-oV-vzQ">
-                                        <rect key="frame" x="0.0" y="708.5" width="394" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="688" width="386" height="43"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJd-rr-JHG">
-                                        <rect key="frame" x="0.0" y="748" width="394" height="50"/>
+                                        <rect key="frame" x="0.0" y="741" width="386" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rzh-iz-O5l">
-                                                <rect key="frame" x="10" y="-3" width="374" height="56"/>
+                                                <rect key="frame" x="10" y="-3" width="366" height="56"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-bm-NYo" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="56"/>
                                                         <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="신청하기">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,9 +105,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vBw-oY-omu" firstAttribute="bottom" secondItem="wLb-nf-em9" secondAttribute="bottom" constant="10" id="8eA-Y3-Hjd"/>
-                            <constraint firstItem="wLb-nf-em9" firstAttribute="top" secondItem="vBw-oY-omu" secondAttribute="top" constant="10" id="CkG-6S-y13"/>
-                            <constraint firstItem="wLb-nf-em9" firstAttribute="leading" secondItem="vBw-oY-omu" secondAttribute="leading" constant="10" id="IS1-mV-yT4"/>
-                            <constraint firstItem="vBw-oY-omu" firstAttribute="trailing" secondItem="wLb-nf-em9" secondAttribute="trailing" constant="10" id="dkh-oV-cC1"/>
+                            <constraint firstItem="wLb-nf-em9" firstAttribute="top" secondItem="vBw-oY-omu" secondAttribute="top" constant="17" id="CkG-6S-y13"/>
+                            <constraint firstItem="wLb-nf-em9" firstAttribute="leading" secondItem="vBw-oY-omu" secondAttribute="leading" constant="14" id="IS1-mV-yT4"/>
+                            <constraint firstItem="vBw-oY-omu" firstAttribute="trailing" secondItem="wLb-nf-em9" secondAttribute="trailing" constant="14" id="dkh-oV-cC1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vBw-oY-omu"/>
                     </view>
