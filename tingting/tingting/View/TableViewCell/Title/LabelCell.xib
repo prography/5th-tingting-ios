@@ -39,6 +39,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHO-ko-4jE">

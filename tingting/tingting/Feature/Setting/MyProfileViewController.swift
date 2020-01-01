@@ -25,11 +25,11 @@ class MyProfileViewController: BaseViewController {
         super.viewDidLoad()
    
         items = [
-            LabelCellConfigurator(),
+            LabelCellConfigurator(title: "룰루랄라님의 팀", isNew: false, subtitle: nil, hasAddButton: true),
             MyTeamCellConfigurator(),
             MyTeamCellConfigurator(),
-
-            LabelCellConfigurator(),
+            
+            LabelCellConfigurator(title: "응답 요청", isNew: false, subtitle: nil, hasAddButton: false),
             MatchingTeamStateCellConfigurator(),
             MatchingTeamStateCellConfigurator()
         ]
