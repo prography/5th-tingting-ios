@@ -14,20 +14,34 @@ import RxDataSources
 class MatchingTeamListViewController: BaseViewController {
 
     @IBOutlet private weak var introView: TeamIntroView!
-    @IBOutlet private weak var memberListView: MemberListView!
-    @IBOutlet private weak var teamListView: TeamListView!
+ 
+    @IBOutlet weak var tableView: UITableView! {
+           didSet {
+               tableView.didSetDefault()
+           }
+       }
     
+    var items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let configurators = (0...20).map { _ in JoinTeamCellConfigurator() }
+        items.accept(configurators)
     }
     
     override func bind() {
-        teamListView.teamDriver
-            .driveNext { team in
-                Logger.info(team)
-                let matchingTeamVC = MatchingTeamViewController.initiate()
-                self.present(matchingTeamVC, animated: true)
+        
+        items.bind(to: tableView.rx.items) { tableView, index, configurator in
+            let cell = tableView.configuredBaseCell(with: configurator)
+            cell.selectionStyle = .none
+            return cell
+            
+        }.disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected.bind { _ in
+            let vc = MatchingTeamViewController.initiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag)
     }
 }

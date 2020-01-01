@@ -43,7 +43,7 @@ class TeamListViewController: BaseViewController {
         
         tableView.rx.itemSelected.bind { _ in
             let vc = JoinTeamViewController.initiate()
-            self.present(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag)
     }
     
