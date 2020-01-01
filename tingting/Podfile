@@ -15,6 +15,7 @@ target 'tingting' do
   pod 'lottie-ios', '~> 3.1.0'
   pod 'SwiftyBeaver', '~> 1.7.0'
   pod 'Kingfisher', '~> 5.0'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
   
   target 'tingtingTests' do
     inherit! :search_paths

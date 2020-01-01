@@ -36,6 +36,12 @@ class SignInViewController: BaseViewController {
         signInButton.rx.tap.bind {
             self.signIn()
         }.disposed(by: disposeBag)
+        
+ 
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 }
 

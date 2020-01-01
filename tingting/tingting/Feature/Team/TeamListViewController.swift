@@ -8,7 +8,7 @@
 
 import UIKit
 import RxCocoa
-import RxSwift
+import RxSwift 
 
 class TeamListViewController: BaseViewController {
     
@@ -29,6 +29,7 @@ class TeamListViewController: BaseViewController {
     }
     
     override func bind() {
+        
         creatTeamButton.rx.tap.bind {
             let createTeamVC = CreateTeamViewController.initiate()
             self.present(createTeamVC, animated: true)

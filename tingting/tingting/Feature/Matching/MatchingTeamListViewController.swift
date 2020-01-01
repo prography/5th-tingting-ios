@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa 
-import RxDataSources
+import NotificationBannerSwift
 
 class MatchingTeamListViewController: BaseViewController {
 
@@ -43,6 +43,33 @@ class MatchingTeamListViewController: BaseViewController {
             let vc = MatchingTeamViewController.initiate()
             self.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let banners = ["체고체고", "훈남", "불금불금"]
+            .map { "\($0) 팀에서 좋아요를 보냈습니다." }
+            .map {
+                FloatingNotificationBanner(
+                    title: $0,
+                    titleFont: .systemFont(ofSize: 13),
+                    titleColor: .white,
+                    titleTextAlign: .left,
+                    style: .info,
+                    colors: CustomBannerColors() ) }
+        
+        banners.forEach {
+            $0.show(queuePosition: .front,
+                    bannerPosition: .top,
+                    queue: .default,
+                    cornerRadius: 8,
+                    shadowBlurRadius: 0,
+                    shadowEdgeInsets: UIEdgeInsets(top: 2, left: 2, bottom: 0, right: 8)
+            )
+            
+        }
+        
     }
 }
 

@@ -75,6 +75,7 @@
 		53D098DD23BB642100854712 /* JoinTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53D098DB23BB642100854712 /* JoinTeamCell.xib */; };
 		53D098DF23BB644D00854712 /* JoinTeamCell+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D098DE23BB644D00854712 /* JoinTeamCell+Configurator.swift */; };
 		53D098E123BB77E300854712 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D098E023BB77E300854712 /* JoinTeamViewController.swift */; };
+		53D098E323BC792900854712 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D098E223BC792900854712 /* AlertManager.swift */; };
 		53D53547237306EC00FEB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53546237306EC00FEB3E9 /* AppDelegate.swift */; };
 		53D53549237306EC00FEB3E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53548237306EC00FEB3E9 /* SceneDelegate.swift */; };
 		53D5354B237306EC00FEB3E9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */; };
@@ -191,6 +192,7 @@
 		53D098DB23BB642100854712 /* JoinTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinTeamCell.xib; sourceTree = "<group>"; };
 		53D098DE23BB644D00854712 /* JoinTeamCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinTeamCell+Configurator.swift"; sourceTree = "<group>"; };
 		53D098E023BB77E300854712 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
+		53D098E223BC792900854712 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		53D53543237306EC00FEB3E9 /* tingting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tingting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D53546237306EC00FEB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D53548237306EC00FEB3E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,10 @@
 		532078B2237408CA00E3F94E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53D098E423BC8B8500854712 /* Auth */,
+				53D098E523BC8B8C00854712 /* Profile */,
+				53D098E623BC8B9300854712 /* Team */,
+				53D098E723BC8BA200854712 /* Matching */,
 				5385F99B23AF5DFA002EFE9B /* Team.swift */,
 				5385F99D23AF5E08002EFE9B /* Member.swift */,
 			);
@@ -351,6 +357,7 @@
 				53BF9C5B23AB9E960013451C /* BaseController */,
 				53BF9C4E23AB93A10013451C /* ConnectionManager.swift */,
 				53AAD8AB23B743DF00B405CE /* Constants.swift */,
+				53D098E223BC792900854712 /* AlertManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -464,6 +471,34 @@
 				5388BE50239CEAE100FBFFD5 /* BaseCollectionCell.swift */,
 			);
 			path = BaseCell;
+			sourceTree = "<group>";
+		};
+		53D098E423BC8B8500854712 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		53D098E523BC8B8C00854712 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		53D098E623BC8B9300854712 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		53D098E723BC8BA200854712 /* Matching */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Matching;
 			sourceTree = "<group>";
 		};
 		53D5353A237306EC00FEB3E9 = {
@@ -863,6 +898,7 @@
 				53AAD8AC23B743DF00B405CE /* Constants.swift in Sources */,
 				531A501B237D7010008E65A4 /* TeamInfoCell.swift in Sources */,
 				53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */,
+				53D098E323BC792900854712 /* AlertManager.swift in Sources */,
 				53D9A44423B894270021A435 /* MatchingTeamStateCell+Configurator.swift in Sources */,
 				53AAD8B723B7A4ED00B405CE /* MyMatchingTeamCell.swift in Sources */,
 				532078D3237409EF00E3F94E /* Double+Extension.swift in Sources */,

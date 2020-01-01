@@ -6,7 +6,7 @@
 //  Copyright © 2019 Harry Kim. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
 
@@ -40,6 +40,7 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
