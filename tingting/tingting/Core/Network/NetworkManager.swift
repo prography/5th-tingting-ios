@@ -10,8 +10,9 @@ import Foundation
 
 class NetworkManager {
 
-    static func authenticateSchool(request: AddressAPIModel.RequestModel) -> Router<AddressAPIModel.ResponseModel> {
-        return Router(url: "/local/search/address.json", method: .get, parameters: request)
+    /// 학교인증 API (1)
+    static func authenticateSchool(request: APIModel.School.Request) -> Router<CommonReponse> {
+        return Router(url: "/api/v1/auth/school", method: .post, parameters: request)
     }
 //
 //

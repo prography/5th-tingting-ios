@@ -14,7 +14,8 @@ import Alamofire
 struct Router<T: Codable> {
     
     enum ServerType: String {
-        case debug = "https://dapi.kakao.com"
+        case debug = "http://13.125.28.123/api"
+        case live = "http://tingting.kr/api"
     }
     
     enum ServerVersion: String {
@@ -23,7 +24,7 @@ struct Router<T: Codable> {
     }
     
     private let server: ServerType = .debug
-    private let version: ServerVersion = .v2
+    private let version: ServerVersion = .v1
     
     private var baseURL: String {
         server.rawValue + version.rawValue
@@ -58,25 +59,38 @@ extension Router {
     func asObservable() -> Observable<T> {
          Observable<T>.create{ observer in
             
-            let session = self.dataRequest.responseData { response in
+            let session = self.dataRequest.responseData { result in
                 
-                if let error = response.error {
+                if let error = result.error {
                     Logger.error(error)
                     observer.onError(error)
                     return
                 }
                 
+                guard
+                    let data = result.data,
+                    let prettyString = data.prettyPrintedJSONString else
+                {
+                    Logger.error(RxError.noElements)
+                    observer.onError(RxError.noElements)
+                    return
+                }
+                
+                Logger.info(prettyString)
+                
                 do {
+                    let responseModel = try JSONDecoder().decode(ResponseModel<T>.self, from: data)
                     
-                    if let data = response.data, let prettyString = data.prettyPrintedJSONString {
-                        Logger.info(prettyString)
-                        let value = try JSONDecoder().decode(T.self, from: data)
-                        observer.onNext(value)
-                        observer.onCompleted()
-                    } else {
-                        Logger.error(RxError.noElements)
-                        observer.onError(RxError.noElements)
+                    guard let response = responseModel.data else {
+                        let error = StringError(message: responseModel.errorMessage ?? "Undefine error")
+                        observer.onError(error)
+                        return
                     }
+                    
+                    observer.onNext(response)
+                    observer.onCompleted()
+                    
+                    
                 } catch {
                     Logger.error(error)
                     observer.onError(error)
@@ -87,4 +101,14 @@ extension Router {
         }
         
     }
+}
+
+
+fileprivate struct ResponseModel<T: Codable>: Codable {
+    let data: T?
+    let errorMessage: String?
+}
+
+fileprivate struct StringError : LocalizedError {
+    let message : String
 }

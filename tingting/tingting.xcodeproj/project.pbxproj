@@ -96,6 +96,10 @@
 		53D9A44423B894270021A435 /* MatchingTeamStateCell+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A44323B894270021A435 /* MatchingTeamStateCell+Configurator.swift */; };
 		53D9A44623B898E30021A435 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A44523B898E30021A435 /* ShadowView.swift */; };
 		53D9A44923B8B6400021A435 /* BaseTableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A44823B8B6400021A435 /* BaseTableCellConfigurator.swift */; };
+		53DD4A2023BE4C5500938405 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A1F23BE4C5500938405 /* APIModel.swift */; };
+		53DD4A2223BE4CC100938405 /* APIModel+School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2123BE4CC100938405 /* APIModel+School.swift */; };
+		53DD4A2423BE4EBE00938405 /* APIModel+SchoolConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2323BE4EBE00938405 /* APIModel+SchoolConfirm.swift */; };
+		53DD4A2623BE4F1500938405 /* APIModel+CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */; };
 		53E8ED4A239CB4600027AC46 /* TeamIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8ED49239CB4600027AC46 /* TeamIntroView.swift */; };
 		53E8ED4E239CB4C30027AC46 /* TeamIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E8ED4D239CB4C30027AC46 /* TeamIntroView.xib */; };
 		7192F3B49D93DAF9DE13BCB5 /* Pods_tingtingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB57C9CAA4ED4A2C52ECD21D /* Pods_tingtingTests.framework */; };
@@ -219,6 +223,10 @@
 		53D9A44323B894270021A435 /* MatchingTeamStateCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchingTeamStateCell+Configurator.swift"; sourceTree = "<group>"; };
 		53D9A44523B898E30021A435 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		53D9A44823B8B6400021A435 /* BaseTableCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCellConfigurator.swift; sourceTree = "<group>"; };
+		53DD4A1F23BE4C5500938405 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		53DD4A2123BE4CC100938405 /* APIModel+School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+School.swift"; sourceTree = "<group>"; };
+		53DD4A2323BE4EBE00938405 /* APIModel+SchoolConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+SchoolConfirm.swift"; sourceTree = "<group>"; };
+		53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+CommonResponse.swift"; sourceTree = "<group>"; };
 		53E8ED49239CB4600027AC46 /* TeamIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamIntroView.swift; sourceTree = "<group>"; };
 		53E8ED4D239CB4C30027AC46 /* TeamIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamIntroView.xib; sourceTree = "<group>"; };
 		5D17A65F78A79C85A2C39D6C /* Pods-tingtingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingUITests.release.xcconfig"; path = "Target Support Files/Pods-tingtingUITests/Pods-tingtingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +283,8 @@
 		532078B2237408CA00E3F94E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53DD4A1F23BE4C5500938405 /* APIModel.swift */,
+				53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */,
 				53D098E423BC8B8500854712 /* Auth */,
 				53D098E523BC8B8C00854712 /* Profile */,
 				53D098E623BC8B9300854712 /* Team */,
@@ -476,6 +486,8 @@
 		53D098E423BC8B8500854712 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				53DD4A2123BE4CC100938405 /* APIModel+School.swift */,
+				53DD4A2323BE4EBE00938405 /* APIModel+SchoolConfirm.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -890,6 +902,8 @@
 				536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */,
 				53E8ED4A239CB4600027AC46 /* TeamIntroView.swift in Sources */,
 				532078D5237409EF00E3F94E /* UIViewController+Extension.swift in Sources */,
+				53DD4A2423BE4EBE00938405 /* APIModel+SchoolConfirm.swift in Sources */,
+				53DD4A2223BE4CC100938405 /* APIModel+School.swift in Sources */,
 				53D098D723B8C75C00854712 /* BaseCellProtocol.swift in Sources */,
 				532078D1237409EF00E3F94E /* Int+Extension.swift in Sources */,
 				53D5354B237306EC00FEB3E9 /* MainTabBarController.swift in Sources */,
@@ -907,6 +921,7 @@
 				5388BE51239CEAE100FBFFD5 /* BaseCollectionCell.swift in Sources */,
 				532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */,
 				5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */,
+				53DD4A2023BE4C5500938405 /* APIModel.swift in Sources */,
 				5388BE4B239CE81500FBFFD5 /* MemberListView.swift in Sources */,
 				53AAD8BB23B7A86600B405CE /* MyTeamCell.swift in Sources */,
 				532078DC237409EF00E3F94E /* NetworkManager.swift in Sources */,
@@ -931,6 +946,7 @@
 				532078DD237409EF00E3F94E /* Router.swift in Sources */,
 				5382B6B82389145500F0114D /* TeamInfoSwiftUIView.swift in Sources */,
 				53D53549237306EC00FEB3E9 /* SceneDelegate.swift in Sources */,
+				53DD4A2623BE4F1500938405 /* APIModel+CommonResponse.swift in Sources */,
 				53AAD8B323B79A7C00B405CE /* LabelCell.swift in Sources */,
 				532078DE237409EF00E3F94E /* HasLet.swift in Sources */,
 				53D9A44623B898E30021A435 /* ShadowView.swift in Sources */,
