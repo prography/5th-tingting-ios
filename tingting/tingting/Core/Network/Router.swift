@@ -40,7 +40,7 @@ struct Router<T: Codable> {
         self.method = method
         self.parameters = parameters?.dictionary
         self.header = HTTPHeaders()
-//        header?.add(name: "Authorization", value: "KakaoAK 915ece0fc273daa10c6d6103303d10e0")
+        header?.add(name: "Authorization", value: "InsertAuthKey")
     }
     
     var dataRequest: DataRequest {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5313482223AA53AC00532589 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5313482123AA53AC00532589 /* BaseLabel.swift */; };
 		5313482423AA54AF00532589 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5313482323AA54AF00532589 /* BaseImageView.swift */; };
+		5317C74623BF8F6700D2FD10 /* APIModel+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317C74523BF8F6700D2FD10 /* APIModel+Login.swift */; };
+		5317C74823BF915A00D2FD10 /* APIModel+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317C74723BF915A00D2FD10 /* APIModel+SignUp.swift */; };
 		531A500C237D5DD6008E65A4 /* EmailAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */; };
 		531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A500D237D5E08008E65A4 /* InputProfileViewController.swift */; };
 		531A5010237D5E1E008E65A4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A500F237D5E1E008E65A4 /* SignInViewController.swift */; };
@@ -98,7 +100,6 @@
 		53D9A44923B8B6400021A435 /* BaseTableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A44823B8B6400021A435 /* BaseTableCellConfigurator.swift */; };
 		53DD4A2023BE4C5500938405 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A1F23BE4C5500938405 /* APIModel.swift */; };
 		53DD4A2223BE4CC100938405 /* APIModel+School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2123BE4CC100938405 /* APIModel+School.swift */; };
-		53DD4A2423BE4EBE00938405 /* APIModel+SchoolConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2323BE4EBE00938405 /* APIModel+SchoolConfirm.swift */; };
 		53DD4A2623BE4F1500938405 /* APIModel+CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */; };
 		53E8ED4A239CB4600027AC46 /* TeamIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8ED49239CB4600027AC46 /* TeamIntroView.swift */; };
 		53E8ED4E239CB4C30027AC46 /* TeamIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E8ED4D239CB4C30027AC46 /* TeamIntroView.xib */; };
@@ -130,6 +131,8 @@
 		44A7385FB0FA9F6C40FC7A33 /* Pods_tingtingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tingtingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5313482123AA53AC00532589 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		5313482323AA54AF00532589 /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
+		5317C74523BF8F6700D2FD10 /* APIModel+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+Login.swift"; sourceTree = "<group>"; };
+		5317C74723BF915A00D2FD10 /* APIModel+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+SignUp.swift"; sourceTree = "<group>"; };
 		531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewController.swift; sourceTree = "<group>"; };
 		531A500D237D5E08008E65A4 /* InputProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProfileViewController.swift; sourceTree = "<group>"; };
 		531A500F237D5E1E008E65A4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +228,6 @@
 		53D9A44823B8B6400021A435 /* BaseTableCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCellConfigurator.swift; sourceTree = "<group>"; };
 		53DD4A1F23BE4C5500938405 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		53DD4A2123BE4CC100938405 /* APIModel+School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+School.swift"; sourceTree = "<group>"; };
-		53DD4A2323BE4EBE00938405 /* APIModel+SchoolConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+SchoolConfirm.swift"; sourceTree = "<group>"; };
 		53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+CommonResponse.swift"; sourceTree = "<group>"; };
 		53E8ED49239CB4600027AC46 /* TeamIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamIntroView.swift; sourceTree = "<group>"; };
 		53E8ED4D239CB4C30027AC46 /* TeamIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamIntroView.xib; sourceTree = "<group>"; };
@@ -487,7 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				53DD4A2123BE4CC100938405 /* APIModel+School.swift */,
-				53DD4A2323BE4EBE00938405 /* APIModel+SchoolConfirm.swift */,
+				5317C74523BF8F6700D2FD10 /* APIModel+Login.swift */,
+				5317C74723BF915A00D2FD10 /* APIModel+SignUp.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -902,7 +905,6 @@
 				536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */,
 				53E8ED4A239CB4600027AC46 /* TeamIntroView.swift in Sources */,
 				532078D5237409EF00E3F94E /* UIViewController+Extension.swift in Sources */,
-				53DD4A2423BE4EBE00938405 /* APIModel+SchoolConfirm.swift in Sources */,
 				53DD4A2223BE4CC100938405 /* APIModel+School.swift in Sources */,
 				53D098D723B8C75C00854712 /* BaseCellProtocol.swift in Sources */,
 				532078D1237409EF00E3F94E /* Int+Extension.swift in Sources */,
@@ -951,6 +953,7 @@
 				532078DE237409EF00E3F94E /* HasLet.swift in Sources */,
 				53D9A44623B898E30021A435 /* ShadowView.swift in Sources */,
 				532078D2237409EF00E3F94E /* NSObject+Extension.swift in Sources */,
+				5317C74623BF8F6700D2FD10 /* APIModel+Login.swift in Sources */,
 				532078D6237409EF00E3F94E /* String+Extension.swift in Sources */,
 				53D9A43C23B890EE0021A435 /* MyTeamCell+Configurator.swift in Sources */,
 				531A5016237D5EE5008E65A4 /* TeamListViewController.swift in Sources */,
@@ -958,6 +961,7 @@
 				532078DA237409EF00E3F94E /* Logger.swift in Sources */,
 				5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */,
 				531A500C237D5DD6008E65A4 /* EmailAuthenticationViewController.swift in Sources */,
+				5317C74823BF915A00D2FD10 /* APIModel+SignUp.swift in Sources */,
 				531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */,
 				532078D7237409EF00E3F94E /* Codable+Extension.swift in Sources */,
 				5385F9A723AF6FA2002EFE9B /* MemberViewController.swift in Sources */,
