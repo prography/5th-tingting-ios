@@ -11,6 +11,8 @@
 		5313482423AA54AF00532589 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5313482323AA54AF00532589 /* BaseImageView.swift */; };
 		5317C74623BF8F6700D2FD10 /* APIModel+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317C74523BF8F6700D2FD10 /* APIModel+Login.swift */; };
 		5317C74823BF915A00D2FD10 /* APIModel+SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317C74723BF915A00D2FD10 /* APIModel+SignUp.swift */; };
+		5317C74A23C06C7500D2FD10 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317C74923C06C7500D2FD10 /* User.swift */; };
+		5317C74C23C06DC000D2FD10 /* APIModel+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317C74B23C06DC000D2FD10 /* APIModel+Profile.swift */; };
 		531A500C237D5DD6008E65A4 /* EmailAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */; };
 		531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A500D237D5E08008E65A4 /* InputProfileViewController.swift */; };
 		531A5010237D5E1E008E65A4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A500F237D5E1E008E65A4 /* SignInViewController.swift */; };
@@ -133,6 +135,8 @@
 		5313482323AA54AF00532589 /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
 		5317C74523BF8F6700D2FD10 /* APIModel+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+Login.swift"; sourceTree = "<group>"; };
 		5317C74723BF915A00D2FD10 /* APIModel+SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+SignUp.swift"; sourceTree = "<group>"; };
+		5317C74923C06C7500D2FD10 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5317C74B23C06DC000D2FD10 /* APIModel+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+Profile.swift"; sourceTree = "<group>"; };
 		531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewController.swift; sourceTree = "<group>"; };
 		531A500D237D5E08008E65A4 /* InputProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProfileViewController.swift; sourceTree = "<group>"; };
 		531A500F237D5E1E008E65A4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 				53D098E723BC8BA200854712 /* Matching */,
 				5385F99B23AF5DFA002EFE9B /* Team.swift */,
 				5385F99D23AF5E08002EFE9B /* Member.swift */,
+				5317C74923C06C7500D2FD10 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 		53D098E523BC8B8C00854712 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5317C74B23C06DC000D2FD10 /* APIModel+Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -921,6 +927,7 @@
 				5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */,
 				53D9A44923B8B6400021A435 /* BaseTableCellConfigurator.swift in Sources */,
 				5388BE51239CEAE100FBFFD5 /* BaseCollectionCell.swift in Sources */,
+				5317C74C23C06DC000D2FD10 /* APIModel+Profile.swift in Sources */,
 				532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */,
 				5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */,
 				53DD4A2023BE4C5500938405 /* APIModel.swift in Sources */,
@@ -957,6 +964,7 @@
 				532078D6237409EF00E3F94E /* String+Extension.swift in Sources */,
 				53D9A43C23B890EE0021A435 /* MyTeamCell+Configurator.swift in Sources */,
 				531A5016237D5EE5008E65A4 /* TeamListViewController.swift in Sources */,
+				5317C74A23C06C7500D2FD10 /* User.swift in Sources */,
 				53D098DF23BB644D00854712 /* JoinTeamCell+Configurator.swift in Sources */,
 				532078DA237409EF00E3F94E /* Logger.swift in Sources */,
 				5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */,

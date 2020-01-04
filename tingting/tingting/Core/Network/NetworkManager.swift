@@ -66,11 +66,65 @@ extension NetworkManager {
 // Profile
 extension NetworkManager {
     
+    /// 내 프로필 보기
+    static func getMyProfile() -> Router<APIModel.Profile> {
+        return Router(url: "/me/profile", method: .get)
+    }
+    
+    /// 내 프로필 수정하기
+    static func editMyProfile(to user: User) -> Router<APIModel.Profile> {
+        return Router(url: "/me/profile", method: .put, parameters: user)
+    }
+    
+    /// 다른 사용자 프로필 보기
+    static func getProfile(id: String) -> Router<APIModel.Profile> {
+        return Router(url: "/user/\(id)/profile", method: .get)
+    }
 }
 
 // Team
 extension NetworkManager {
     
+    /// 전체 팀 리스트 보기
+    static func getAllTeams() -> Router<[Team]> {
+        return Router(url: "/teams", method: .get)
+    }
+    
+    /// 팀 생성하기
+    static func createTeam(_ teamInfo: TeamInfo) -> Router<Team> {
+        return Router(url: "/teams", method: .post)
+    }
+    
+    /// 팀명 중복 확인
+    static func checkDuplicate(teamName: String) -> Router<CommonReponse> {
+        return Router(url: "/teams/duplicate-name",
+                      method: .get)
+    }
+    
+    /// 개별 팀 정보 보기
+    static func getTeamInfo(id: String) -> Router<Team> {
+        return Router(url: "/teams/\(id)", method: .get)
+    }
+    
+    /// 개별 팀 정보 보기
+    static func getMyTeamInfo(id: String) -> Router<Team> {
+        return Router(url: "/me/teams/\(id)", method: .get)
+    }
+    
+    /// 나의 팀 정보 수정하기
+    static func editTeamInfo(id: String, teamInfo: TeamInfo) -> Router<Team> {
+        return Router(url: "/me/teams/\(id)", method: .get)
+    }
+    
+    /// 팀 떠나기
+    static func leaveTeam(id: String) -> Router<CommonReponse> {
+        return Router(url: "/me/teams/\(id)/leave", method: .post)
+    }
+    
+    /// 팀 합류하기
+    static func joinTeam(id: String) -> Router<CommonReponse> {
+        return Router(url: "/teams/\(id)/join", method: .post)
+    }
 }
 
 // Matching

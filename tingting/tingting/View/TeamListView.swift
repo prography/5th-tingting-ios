@@ -25,7 +25,7 @@ class TeamListView: BaseView {
     
     override func bind() {
         
-        let teamList = [0, 1, 2, 3].map { _ in Team() }
+        let teamList = [0, 1, 2, 3].map { _ in TeamInfo() }
         
         Observable.just(teamList)
             .bind(to: tableView.rx.items) { tableView, index, element in

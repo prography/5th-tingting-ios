@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Member {
+struct Member: Codable {
     
 }
