@@ -29,7 +29,9 @@ class MyProfileViewController: BaseViewController {
             MyTeamCellConfigurator(),
             MyTeamCellConfigurator(),
             
+            
             LabelCellConfigurator(title: "응답 요청", isNew: false, subtitle: nil, hasAddButton: false),
+            SpaceCellConfigurator(5),
             MatchingTeamStateCellConfigurator(),
             MatchingTeamStateCellConfigurator()
         ]

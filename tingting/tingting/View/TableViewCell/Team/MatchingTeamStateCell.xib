@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DME-Bk-h7K" customClass="ShadowView" customModule="tingting" customModuleProvider="target">
-                        <rect key="frame" x="18" y="0.0" width="435" height="39"/>
+                        <rect key="frame" x="28" y="0.0" width="425" height="39"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiH-5e-Fxf" customClass="BaseView" customModule="tingting" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="435" height="39"/>
+                                <rect key="frame" x="0.0" y="0.0" width="425" height="39"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WQQ-C5-Dhk">
-                                        <rect key="frame" x="16" y="0.0" width="419" height="39"/>
+                                        <rect key="frame" x="16" y="0.0" width="409" height="39"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리진심존잘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysj-cY-Vcq">
                                                 <rect key="frame" x="0.0" y="0.0" width="67.5" height="39"/>
@@ -41,25 +41,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-3h-O1f">
-                                                <rect key="frame" x="148.5" y="0.0" width="171.5" height="39"/>
+                                                <rect key="frame" x="148.5" y="0.0" width="161.5" height="39"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idq-y8-teQ">
-                                                <rect key="frame" x="323" y="0.0" width="40" height="39"/>
+                                                <rect key="frame" x="313" y="0.0" width="40" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="L6y-Ep-adn"/>
                                                 </constraints>
                                                 <state key="normal" image="minus"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caj-5Z-6iV">
-                                                <rect key="frame" x="366" y="0.0" width="40" height="39"/>
+                                                <rect key="frame" x="356" y="0.0" width="40" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="ERN-Yj-wOd"/>
                                                 </constraints>
                                                 <state key="normal" image="like"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKT-fY-hMw">
-                                                <rect key="frame" x="409" y="0.0" width="10" height="39"/>
+                                                <rect key="frame" x="399" y="0.0" width="10" height="39"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="pld-Qe-O2X"/>
@@ -97,7 +97,7 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="DME-Bk-h7K" secondAttribute="bottom" constant="5" id="0IO-9G-dma"/>
                     <constraint firstAttribute="trailing" secondItem="DME-Bk-h7K" secondAttribute="trailing" constant="23" id="BdS-Gn-66J"/>
-                    <constraint firstItem="DME-Bk-h7K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="Mlo-7A-TgH"/>
+                    <constraint firstItem="DME-Bk-h7K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="Mlo-7A-TgH"/>
                     <constraint firstItem="DME-Bk-h7K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="c4B-Bo-QgB"/>
                 </constraints>
             </tableViewCellContentView>

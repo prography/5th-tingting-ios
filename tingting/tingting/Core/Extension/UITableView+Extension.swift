@@ -50,6 +50,7 @@ extension UITableView {
         self.register(TeamInfoCell.self)
         self.register(LabelCell.self)
         self.register(JoinTeamCell.self)
+        self.register(SpaceCell.self)
         
         
         self.separatorStyle = .none
