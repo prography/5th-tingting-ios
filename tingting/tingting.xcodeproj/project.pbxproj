@@ -43,6 +43,7 @@
 		5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */; };
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
 		534B5FB923C0C0DB007397B3 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */; };
+		534B5FBB23C0D413007397B3 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FBA23C0D413007397B3 /* BaseTextView.swift */; };
 		536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536567AD239D383A0063CAD9 /* TeamListView.swift */; };
 		536567B0239D38450063CAD9 /* TeamListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536567AF239D38450063CAD9 /* TeamListView.xib */; };
 		53785F1C23C0AC9D00645B7E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */; };
@@ -170,6 +171,7 @@
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
+		534B5FBA23C0D413007397B3 /* BaseTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		536567AD239D383A0063CAD9 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		536567AF239D38450063CAD9 /* TeamListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListView.xib; sourceTree = "<group>"; };
 		53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				53D9A44523B898E30021A435 /* ShadowView.swift */,
 				53785F1D23C0AECC00645B7E /* BaseTextField.swift */,
 				534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */,
+				534B5FBA23C0D413007397B3 /* BaseTextView.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				53BF9C5A23AB9E530013451C /* BaseNavigationController.swift in Sources */,
 				534B5FB923C0C0DB007397B3 /* AnimatedTextField.swift in Sources */,
 				53D098E123BB77E300854712 /* JoinTeamViewController.swift in Sources */,
+				534B5FBB23C0D413007397B3 /* BaseTextView.swift in Sources */,
 				53AAD8B023B7886300B405CE /* UIUserInterfaceStyle+Extension.swift in Sources */,
 				53785F1E23C0AECC00645B7E /* BaseTextField.swift in Sources */,
 				532078D4237409EF00E3F94E /* UITableView+Extension.swift in Sources */,
