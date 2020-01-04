@@ -15,6 +15,9 @@ extension UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: className)
         
         guard let rusult = viewController as? T else {
+            // View Controller Couldn't find. Please Check.
+            // 1. Add identifier in Storyboard
+            // 2. Check on 'Use Storyboard ID'
             fatalError("View Controller Couldn't find.")
         }
         

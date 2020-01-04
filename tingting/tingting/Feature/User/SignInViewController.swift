@@ -28,7 +28,7 @@ class SignInViewController: BaseViewController {
         
         signUpButton.rx.tap
             .bind {
-                let emailVC = EmailAuthenticationViewController.initiate()
+                let emailVC = SignUpViewController.initiate()
                 let naviVC = BaseNavigationController(rootViewController: emailVC)
                 self.present(naviVC, animated: true)
         }.disposed(by: disposeBag)
