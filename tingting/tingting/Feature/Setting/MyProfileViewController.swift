@@ -58,6 +58,12 @@ class MyProfileViewController: BaseViewController {
                 }.disposed(by: myTeamCell.disposeBag)
             }
             
+            if let labelCell = cell as? LabelCell {
+                labelCell.addButton.rx.tap.bind {
+                    let createTeamVC = CreateTeamViewController.initiate()
+                    self.present(createTeamVC, animated: true)
+                }.disposed(by: labelCell.disposeBag)
+            }
             
             return cell
         }.disposed(by: disposeBag)

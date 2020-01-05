@@ -78,6 +78,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="144" height="197"/>
+            <connections>
+                <outlet property="imageView" destination="BR4-t6-MJR" id="N6h-34-2Ki"/>
+                <outlet property="nicknameLabel" destination="gqc-CN-vMh" id="F7e-HZ-yCS"/>
+                <outlet property="teamButton" destination="rhC-US-fsI" id="u2H-Ha-tqc"/>
+            </connections>
             <point key="canvasLocation" x="197.10144927536234" y="178.45982142857142"/>
         </collectionViewCell>
     </objects>

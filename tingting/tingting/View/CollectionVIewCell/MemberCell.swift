@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemberCell: BaseCollectionCell {
-
+    
+    @IBOutlet weak var imageView: BaseImageView!
+    @IBOutlet weak var teamButton: BaseButton!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(with user: User, isMaster: Bool = false) {
         
+        layer.cornerRadius = 10
+        layer.borderColor = .init(srgbRed: 189.0 / 255.0, green:  189.0 / 255.0, blue:  189.0 / 255.0, alpha: 1)
+        layer.borderWidth = 1
+        
+        // imageView.kf.setImage(with: url)
+        teamButton.setTitle( isMaster ? "팀장" : "팀원" , for: .normal)
+        teamButton.backgroundColor = UIColor.primary.withAlphaComponent(isMaster ? 1 : 0.5)
+        nicknameLabel.text = user.name
     }
 
 }

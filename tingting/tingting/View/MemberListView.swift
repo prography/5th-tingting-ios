@@ -18,6 +18,8 @@ class MemberListView: BaseView {
         return collectionView.rx.modelSelected(User.self).asDriver()
     }
     
+    var items: BehaviorRelay<[User]> = .init(value: [])
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let flowLayout = UICollectionViewFlowLayout()
@@ -37,16 +39,13 @@ class MemberListView: BaseView {
         
         let members = [0, 1, 2, 3].map { _ in User() }
         
+        items.accept(members)
+        
         collectionView.delegate = self
         
-        Observable.just(members)
-            .bind(to: collectionView.rx.items) { collectionView, index, element in
+        items.bind(to: collectionView.rx.items) { collectionView, index, user in
             let cell = collectionView.dequeueReusableBaseCell(type: MemberCell.self, for: .init(item: index, section: 0))
-                let borderColor = UIColor.gray
-
-                cell.layer.cornerRadius = 10
-                cell.layer.borderColor = .init(srgbRed: 189.0 / 255.0, green:  189.0 / 255.0, blue:  189.0 / 255.0, alpha: 1)
-                cell.layer.borderWidth = 1
+            cell.configure(with: user)
                 
             return cell
         }.disposed(by: disposeBag)
@@ -59,6 +58,10 @@ class MemberListView: BaseView {
                 let memberVC = MemberViewController.initiate()
                 viewController?.present(memberVC, animated: true)
         }.disposed(by: disposeBag)
+    }
+    
+    func configure(with users: [User]) {
+        items.accept(users)
     }
     
     override func commonInit() {
