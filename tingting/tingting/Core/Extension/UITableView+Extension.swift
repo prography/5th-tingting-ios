@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension UITableView {
     open func register<T: UITableViewCell>(_ cell: T.Type) {
@@ -18,6 +20,8 @@ extension UITableView {
     func dequeueReusableBaseCell<T: BaseCellProtocol>(type: T.Type) -> BaseCell {
         guard let cell = dequeueReusableCell(withIdentifier: type.identifier) as? BaseCell
             else { fatalError("BaseCell must exist.") }
+        cell.disposeBag = DisposeBag()
+        
         return cell
     }
     
@@ -30,12 +34,14 @@ extension UITableView {
     func dequeueReusableBaseCell(by configurator: CellConfigurator) -> BaseCell {
         let identifier = configurator.cellType.identifier
         let cell = dequeueReusableBaseCell(with: identifier)
+        cell.disposeBag = DisposeBag()
         return cell
     }
     
     func configuredBaseCell(with configurator: CellConfigurator) -> BaseCell {
         let identifier = configurator.cellType.identifier
         let cell = dequeueReusableBaseCell(with: identifier)
+        cell.disposeBag = DisposeBag()
         configurator.configure(cell)
         return cell
     }
@@ -55,5 +61,6 @@ extension UITableView {
         
         self.separatorStyle = .none
         self.rowHeight = UITableView.automaticDimension
+        self.estimatedRowHeight = UITableView.automaticDimension
     }
 }

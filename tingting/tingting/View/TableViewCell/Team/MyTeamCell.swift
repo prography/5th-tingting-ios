@@ -10,6 +10,8 @@ import UIKit
 
 class MyTeamCell: BaseCell {
  
+    @IBOutlet weak var teamInfoButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

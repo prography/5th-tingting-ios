@@ -56,15 +56,27 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mPF-GJ-1sT">
                                                             <rect key="frame" x="30" y="20" width="176" height="71"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="룰루랄라 님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjZ-GK-ons">
                                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="30"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="30" id="hth-BE-QgP"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="룰루랄라 님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="30" id="hth-BE-QgP"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-RY-4tZ">
+                                                                            <rect key="frame" x="126" y="0.0" width="50" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="50" id="ySx-o9-aAg"/>
+                                                                            </constraints>
+                                                                            <state key="normal" image="settings"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlY-nC-bSs">
                                                                     <rect key="frame" x="0.0" y="35" width="176" height="1"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,12 +84,12 @@
                                                                         <constraint firstAttribute="height" constant="1" id="Lsy-10-4E2"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exD-XL-JPc">
+                                                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exD-XL-JPc">
                                                                     <rect key="frame" x="0.0" y="41" width="176" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Eha-1J-etI"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="프로필 수정">
+                                                                    <state key="normal" title="프로필 수정  " image="edit">
                                                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                     </state>
                                                                 </button>
@@ -134,6 +146,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="edit" width="12" height="12"/>
+        <image name="settings" width="19" height="19"/>
         <image name="suji.png" width="491" height="494"/>
     </resources>
 </document>

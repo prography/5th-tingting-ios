@@ -42,6 +42,8 @@
 		532078E0237409EF00E3F94E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078D0237409EF00E3F94E /* BaseCell.swift */; };
 		5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */; };
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
+		5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */; };
+		5343F47B23C1D25F0024E630 /* MyMatchingTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */; };
 		534B5FB923C0C0DB007397B3 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */; };
 		534B5FBB23C0D413007397B3 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FBA23C0D413007397B3 /* BaseTextView.swift */; };
 		534B5FBF23C0E404007397B3 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FBE23C0E404007397B3 /* SpaceCell.swift */; };
@@ -74,7 +76,6 @@
 		53AAD8B323B79A7C00B405CE /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AAD8B123B79A7C00B405CE /* LabelCell.swift */; };
 		53AAD8B423B79A7C00B405CE /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53AAD8B223B79A7C00B405CE /* LabelCell.xib */; };
 		53AAD8B723B7A4ED00B405CE /* MyMatchingTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AAD8B523B7A4ED00B405CE /* MyMatchingTeamCell.swift */; };
-		53AAD8B823B7A4ED00B405CE /* MyMatchingTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53AAD8B623B7A4ED00B405CE /* MyMatchingTeamCell.xib */; };
 		53AAD8BB23B7A86600B405CE /* MyTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AAD8B923B7A86600B405CE /* MyTeamCell.swift */; };
 		53AAD8BC23B7A86600B405CE /* MyTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53AAD8BA23B7A86600B405CE /* MyTeamCell.xib */; };
 		53AEE018238136120045706C /* StoryboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AEE017238136120045706C /* StoryboardType.swift */; };
@@ -173,6 +174,8 @@
 		532078D0237409EF00E3F94E /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
+		5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMatchingTeamCell.xib; sourceTree = "<group>"; };
 		534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
 		534B5FBA23C0D413007397B3 /* BaseTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		534B5FBE23C0E404007397B3 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
@@ -205,7 +208,6 @@
 		53AAD8B123B79A7C00B405CE /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		53AAD8B223B79A7C00B405CE /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		53AAD8B523B7A4ED00B405CE /* MyMatchingTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMatchingTeamCell.swift; sourceTree = "<group>"; };
-		53AAD8B623B7A4ED00B405CE /* MyMatchingTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMatchingTeamCell.xib; sourceTree = "<group>"; };
 		53AAD8B923B7A86600B405CE /* MyTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamCell.swift; sourceTree = "<group>"; };
 		53AAD8BA23B7A86600B405CE /* MyTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTeamCell.xib; sourceTree = "<group>"; };
 		53AEE017238136120045706C /* StoryboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardType.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				531A5017237D5F10008E65A4 /* CreateTeamViewController.swift */,
 				5385F99923AF5AD6002EFE9B /* TeamUserInfoViewController.swift */,
 				53D098E023BB77E300854712 /* JoinTeamViewController.swift */,
+				5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -624,11 +627,14 @@
 		53D9A43823B890260021A435 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				53D098DA23BB642100854712 /* JoinTeamCell.swift */,
+				53D098DB23BB642100854712 /* JoinTeamCell.xib */,
+				53D098DE23BB644D00854712 /* JoinTeamCell+Configurator.swift */,
 				53D9A43F23B894170021A435 /* MatchingTeamStateCell.swift */,
 				53D9A44023B894170021A435 /* MatchingTeamStateCell.xib */,
 				53D9A44323B894270021A435 /* MatchingTeamStateCell+Configurator.swift */,
 				53AAD8B523B7A4ED00B405CE /* MyMatchingTeamCell.swift */,
-				53AAD8B623B7A4ED00B405CE /* MyMatchingTeamCell.xib */,
+				5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */,
 				53D9A43923B890490021A435 /* MyMatchingTeamCell+Configurator.swift */,
 				53AAD8B923B7A86600B405CE /* MyTeamCell.swift */,
 				53AAD8BA23B7A86600B405CE /* MyTeamCell.xib */,
@@ -636,9 +642,6 @@
 				531A5019237D7010008E65A4 /* TeamInfoCell.swift */,
 				531A501A237D7010008E65A4 /* TeamInfoCell.xib */,
 				53D9A43D23B891EA0021A435 /* TeamInfoCell+Configurator.swift */,
-				53D098DA23BB642100854712 /* JoinTeamCell.swift */,
-				53D098DB23BB642100854712 /* JoinTeamCell.xib */,
-				53D098DE23BB644D00854712 /* JoinTeamCell+Configurator.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				536567B0239D38450063CAD9 /* TeamListView.xib in Resources */,
 				5385F9A223AF6956002EFE9B /* Matching.storyboard in Resources */,
 				53D53556237306EE00FEB3E9 /* LaunchScreen.storyboard in Resources */,
+				5343F47B23C1D25F0024E630 /* MyMatchingTeamCell.xib in Resources */,
 				53AAD8B423B79A7C00B405CE /* LabelCell.xib in Resources */,
 				532078B92374093500E3F94E /* User.storyboard in Resources */,
 				531A501C237D7010008E65A4 /* TeamInfoCell.xib in Resources */,
@@ -818,7 +822,6 @@
 				531A5020237D72E2008E65A4 /* MemberCell.xib in Resources */,
 				5388BE4D239CE82600FBFFD5 /* MemberListView.xib in Resources */,
 				538FE52423ABA91800F2AE22 /* Setting.storyboard in Resources */,
-				53AAD8B823B7A4ED00B405CE /* MyMatchingTeamCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +953,7 @@
 				5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */,
 				53D9A44923B8B6400021A435 /* BaseTableCellConfigurator.swift in Sources */,
 				5388BE51239CEAE100FBFFD5 /* BaseCollectionCell.swift in Sources */,
+				5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */,
 				5317C74C23C06DC000D2FD10 /* APIModel+Profile.swift in Sources */,
 				532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */,
 				5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */,

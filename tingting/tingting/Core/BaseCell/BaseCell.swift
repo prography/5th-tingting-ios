@@ -12,7 +12,7 @@ import RxCocoa
  
 class BaseCell: UITableViewCell, BaseCellProtocol {
       
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     static var identifier: String { className }
     

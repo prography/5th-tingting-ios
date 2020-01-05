@@ -18,14 +18,27 @@ class MyProfileViewController: BaseViewController {
         }
     }
     
-    var items: [CellConfigurator] = []
+    var items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        items = [
+        let configurators: [CellConfigurator] = [
             LabelCellConfigurator(title: "룰루랄라님의 팀", isNew: false, subtitle: nil, hasAddButton: true),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
+            MyTeamCellConfigurator(),
             MyTeamCellConfigurator(),
             MyTeamCellConfigurator(),
             
@@ -36,12 +49,25 @@ class MyProfileViewController: BaseViewController {
             MatchingTeamStateCellConfigurator()
         ]
         
+        items.accept(configurators)
+        
     }
     
     override func bind() {
-        Observable.just(items).bind(to: tableView.rx.items) { tableView, index, configurator in
+        
+        items.bind(to: tableView.rx.items) { tableView, index, configurator in
             let cell = tableView.configuredBaseCell(with: configurator)
             cell.selectionStyle = .none
+            
+            
+            if let myTeamCell = cell as? MyTeamCell {
+                myTeamCell.teamInfoButton.rx.tap.bind {
+                    let teamVC = MyTeamViewController.initiate()
+                    self.navigationController?.pushViewController(teamVC, animated: true)
+                }.disposed(by: myTeamCell.disposeBag)
+            }
+            
+            
             return cell
         }.disposed(by: disposeBag)
     }
