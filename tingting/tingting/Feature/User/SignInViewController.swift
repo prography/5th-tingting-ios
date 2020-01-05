@@ -47,7 +47,34 @@ class SignInViewController: BaseViewController {
 
 extension SignInViewController {
     func signIn() {
-        close()
+
+        guard let request = getLoginRequest() else { return }
+        
+        NetworkManager.login(request: request)
+            .asObservable()
+            .subscribe(
+                onNext: { response in
+                    ConnectionManager().saveToken(response.token)
+            },
+                onError: { error in
+                    AlertManager.showError(error)
+            }
+        ).disposed(by: disposeBag)
+    }
+    
+    func getLoginRequest() -> APIModel.Login.Request? {
+        
+        guard let email = emailTextField.text, !email.isEmpty else {
+            AlertManager.showError("이메일을 입력해주세요.")
+            return nil
+        }
+        
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            AlertManager.showError("비밀번호를 입력해주세요")
+            return nil
+        }
+        
+        return APIModel.Login.Request(id: email, password: password)
     }
 }
 

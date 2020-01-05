@@ -48,13 +48,13 @@ extension NetworkManager {
     /// 아이디(로컬아이디) 중복확인
     static func checkDuplicate(loginID: String) -> Router<CommonReponse> {
         let params = ["local_id": loginID]
-        return Router(url: "/auth/local/duplicate-id", method: .post, parameters: params)
+        return Router(url: "/auth/local/duplicate-id", method: .get, parameters: params)
     }
     
     /// 이름(닉네임) 중복확인
     static func checkDuplicate(name: String) -> Router<CommonReponse> {
         let params = ["name": name]
-        return Router(url: "/auth/local/duplicate-name", method: .post, parameters: params)
+        return Router(url: "/auth/local/duplicate-name", method: .get, parameters: params)
     }
     
     /// 로그아웃 --- 미구현

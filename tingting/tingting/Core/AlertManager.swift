@@ -10,7 +10,7 @@ import UIKit
 import NotificationBannerSwift
 
 class AlertManager {
-    func show() {
+   static func show() {
 
         let banner = NotificationBanner(title: "title", subtitle: "subtitle", style: .success)
         banner.show()
@@ -25,8 +25,23 @@ class AlertManager {
         banner2.show()
         
 //        FloatingNotificationBanner(title: <#T##String?#>, subtitle: <#T##String?#>, titleFont: <#T##UIFont?#>, titleColor: <#T##UIColor?#>, titleTextAlign: <#T##NSTextAlignment?#>, subtitleFont: <#T##UIFont?#>, subtitleColor: <#T##UIColor?#>, subtitleTextAlign: <#T##NSTextAlignment?#>, leftView: <#T##UIView?#>, rightView: <#T##UIView?#>, style: <#T##BannerStyle#>, colors: <#T##BannerColorsProtocol?#>, iconPosition: <#T##GrowingNotificationBanner.IconPosition#>)
-        
-        
+    }
+    static func show(title: String? = nil, subtitle: String? = nil) {
+
+            let banner = NotificationBanner(title: title, subtitle: subtitle, style: .success)
+            banner.show()
+             
+ 
+        }
+    
+    static func showError(_ error: Error) {
+        let banner = NotificationBanner(title: "Error", subtitle: error.message, style: .warning)
+        banner.show(queuePosition: .front, bannerPosition: .top, queue: .default)
+    }
+    
+    static func showError(_ message: String) {
+        let banner = NotificationBanner(title: "Error", subtitle: message, style: .warning)
+        banner.show(queuePosition: .front, bannerPosition: .top, queue: .default)
     }
 }
 

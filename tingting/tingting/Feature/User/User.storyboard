@@ -41,7 +41,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
                                                 <rect key="frame" x="40" y="60" width="334" height="423.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asadf" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
                                                         <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                                         <constraints>
@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e60-J9-ABW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-488" y="88"/>
+            <point key="canvasLocation" x="-570" y="88"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="9a9-VT-T5B">
@@ -426,6 +426,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="av2-BW-a48"/>
                     </view>
+                    <connections>
+                        <outlet property="checkMarkImageView" destination="FdX-dy-7zK" id="mQC-Mr-C2u"/>
+                        <outlet property="checkPasswordTextField" destination="tfA-On-JBl" id="mcf-HK-9W8"/>
+                        <outlet property="duplicationCheckButton" destination="gCT-0r-L0f" id="CNu-PB-RwG"/>
+                        <outlet property="emailTextField" destination="uwn-3g-4Gu" id="EVj-9h-LjY"/>
+                        <outlet property="loginButton" destination="ID9-NR-LkU" id="Aw3-HW-b63"/>
+                        <outlet property="nextButton" destination="FmR-tG-es2" id="VFk-cX-pS6"/>
+                        <outlet property="passwordTextField" destination="jkf-S5-kHM" id="Ld1-Ww-ghv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co8-1z-on1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

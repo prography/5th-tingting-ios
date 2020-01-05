@@ -13,4 +13,9 @@ extension Encodable {
         guard let data = try? JSONEncoder().encode(self) else { return nil }
         return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
+    
+    var prettyString: String? {
+        guard let data = try? JSONEncoder().encode(self) else { return nil }
+        return data.prettyPrintedJSONString as String?
+    }
 }

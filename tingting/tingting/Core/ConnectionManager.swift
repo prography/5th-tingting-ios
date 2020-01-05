@@ -10,27 +10,27 @@ import Foundation
 
 class ConnectionManager {
     
+    static let shared: ConnectionManager = ConnectionManager()
+    
+    private let tokenKey = "TOKEN"
+    
+    var signUpRequest: APIModel.SignUp.Request = .init()
+    
     var isLoginViewLoaded: Bool {
         return false
     }
-    
-    func login() {
-        
+ 
+    func saveToken(_ token: String) {
+        UserDefaults().set(token, forKey: tokenKey)
     }
     
-    func authenticatePhone() {
-        
+    func loadToken() -> String? {
+        guard let token = UserDefaults().string(forKey: tokenKey) else { return nil }
+        return token
     }
     
-    func logout() {
-        
+    func removeToken() {
+        UserDefaults().set(nil, forKey: tokenKey)
     }
-    
-    func saveUserInfo() {
-        
-    }
-    
-    func loadUserInfo() {
-        
-    }
+ 
 }

@@ -44,6 +44,8 @@
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
 		5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */; };
 		5343F47B23C1D25F0024E630 /* MyMatchingTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */; };
+		5343F47D23C1FEEB0024E630 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47C23C1FEEB0024E630 /* Error+Extension.swift */; };
+		5343F47F23C1FF6E0024E630 /* StringError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47E23C1FF6E0024E630 /* StringError.swift */; };
 		534B5FB923C0C0DB007397B3 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */; };
 		534B5FBB23C0D413007397B3 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FBA23C0D413007397B3 /* BaseTextView.swift */; };
 		534B5FBF23C0E404007397B3 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B5FBE23C0E404007397B3 /* SpaceCell.swift */; };
@@ -175,6 +177,8 @@
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMatchingTeamCell.xib; sourceTree = "<group>"; };
+		5343F47C23C1FEEB0024E630 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
+		5343F47E23C1FF6E0024E630 /* StringError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringError.swift; sourceTree = "<group>"; };
 		534B5FB823C0C0DB007397B3 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
 		534B5FBA23C0D413007397B3 /* BaseTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		534B5FBE23C0E404007397B3 /* SpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 				53BF9C4E23AB93A10013451C /* ConnectionManager.swift */,
 				53AAD8AB23B743DF00B405CE /* Constants.swift */,
 				53D098E223BC792900854712 /* AlertManager.swift */,
+				5343F47E23C1FF6E0024E630 /* StringError.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -400,14 +405,15 @@
 				532078C2237409EF00E3F94E /* Codable+Extension.swift */,
 				532078C3237409EF00E3F94E /* Data+Extension.swift */,
 				532078BE237409EF00E3F94E /* Double+Extension.swift */,
+				5343F47C23C1FEEB0024E630 /* Error+Extension.swift */,
 				532078BC237409EF00E3F94E /* Int+Extension.swift */,
 				532078BD237409EF00E3F94E /* NSObject+Extension.swift */,
+				5385F99F23AF622F002EFE9B /* RxCocoa+Extension.swift */,
 				532078C1237409EF00E3F94E /* String+Extension.swift */,
 				5388BE4E239CEAA800FBFFD5 /* UICollectionView+Extension.swift */,
 				532078BF237409EF00E3F94E /* UITableView+Extension.swift */,
-				532078C0237409EF00E3F94E /* UIViewController+Extension.swift */,
-				5385F99F23AF622F002EFE9B /* RxCocoa+Extension.swift */,
 				53AAD8AF23B7886300B405CE /* UIUserInterfaceStyle+Extension.swift */,
+				532078C0237409EF00E3F94E /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -939,6 +945,7 @@
 				53D5354B237306EC00FEB3E9 /* MainTabBarController.swift in Sources */,
 				53D9A43E23B891EA0021A435 /* TeamInfoCell+Configurator.swift in Sources */,
 				5382B6BA2389225E00F0114D /* ColorType.swift in Sources */,
+				5343F47D23C1FEEB0024E630 /* Error+Extension.swift in Sources */,
 				53AAD8AC23B743DF00B405CE /* Constants.swift in Sources */,
 				531A501B237D7010008E65A4 /* TeamInfoCell.swift in Sources */,
 				53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */,
@@ -998,6 +1005,7 @@
 				5317C74823BF915A00D2FD10 /* APIModel+SignUp.swift in Sources */,
 				531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */,
 				532078D7237409EF00E3F94E /* Codable+Extension.swift in Sources */,
+				5343F47F23C1FF6E0024E630 /* StringError.swift in Sources */,
 				5385F9A723AF6FA2002EFE9B /* MemberViewController.swift in Sources */,
 				53BF9C5223AB9B140013451C /* BaseTabBarController.swift in Sources */,
 				53BF9C4F23AB93A10013451C /* ConnectionManager.swift in Sources */,
@@ -1205,13 +1213,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5KL368DK64;
+				DEVELOPMENT_TEAM = MSW35G2APL;
 				INFOPLIST_FILE = tingting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.prography.tingting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

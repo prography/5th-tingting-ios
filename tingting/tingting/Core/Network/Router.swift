@@ -40,7 +40,17 @@ struct Router<T: Codable> {
         self.method = method
         self.parameters = parameters?.dictionary
         self.header = HTTPHeaders()
-        header?.add(name: "Authorization", value: "InsertAuthKey")
+        
+        if let token = ConnectionManager().loadToken() {
+            header?.add(name: "Authorization", value: token)
+        }
+         
+        Logger.info(["", url, method.rawValue].joined(separator: "\n"))
+        if let prettyString = parameters?.prettyString {
+            Logger.info("\n\(prettyString)")
+        }
+        
+        
     }
     
     var dataRequest: DataRequest {
@@ -67,26 +77,33 @@ extension Router {
                     return
                 }
                 
-                guard
-                    let data = result.data,
-                    let prettyString = data.prettyPrintedJSONString else
-                {
-                    Logger.error(RxError.noElements)
-                    observer.onError(RxError.noElements)
+//                guard
+//                    let data = result.data,
+//                    let prettyString = data.prettyPrintedJSONString else
+//                {
+//                    Logger.error(RxError.noElements)
+//                    observer.onError(RxError.noElements)
+//                    return
+//                }
+//
+//                Logger.info("\n\(prettyString)")
+                
+                guard let data = result.data else {
+                    Logger.error(result)
                     return
                 }
-                
-                Logger.info(prettyString)
                 
                 do {
                     let responseModel = try JSONDecoder().decode(ResponseModel<T>.self, from: data)
                     
                     guard let response = responseModel.data else {
                         let error = StringError(message: responseModel.errorMessage ?? "Undefine error")
+                        Logger.error("\n\(responseModel.prettyString ?? "")")
                         observer.onError(error)
                         return
                     }
                     
+                    Logger.info("\n\(response.prettyString ?? "")")
                     observer.onNext(response)
                     observer.onCompleted()
                     
@@ -107,8 +124,4 @@ extension Router {
 fileprivate struct ResponseModel<T: Codable>: Codable {
     let data: T?
     let errorMessage: String?
-}
-
-fileprivate struct StringError : LocalizedError {
-    let message : String
 }
