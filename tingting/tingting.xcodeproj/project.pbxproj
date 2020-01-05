@@ -57,7 +57,6 @@
 		5382B6BA2389225E00F0114D /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5382B6B92389225E00F0114D /* ColorType.swift */; };
 		5385F99A23AF5AD6002EFE9B /* TeamUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99923AF5AD6002EFE9B /* TeamUserInfoViewController.swift */; };
 		5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99B23AF5DFA002EFE9B /* Team.swift */; };
-		5385F99E23AF5E08002EFE9B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99D23AF5E08002EFE9B /* Member.swift */; };
 		5385F9A023AF622F002EFE9B /* RxCocoa+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385F99F23AF622F002EFE9B /* RxCocoa+Extension.swift */; };
 		5385F9A223AF6956002EFE9B /* Matching.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5385F9A123AF6956002EFE9B /* Matching.storyboard */; };
 		5385F9A523AF6F67002EFE9B /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5385F9A423AF6F67002EFE9B /* Member.storyboard */; };
@@ -189,7 +188,6 @@
 		5382B6B92389225E00F0114D /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		5385F99923AF5AD6002EFE9B /* TeamUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUserInfoViewController.swift; sourceTree = "<group>"; };
 		5385F99B23AF5DFA002EFE9B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		5385F99D23AF5E08002EFE9B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		5385F99F23AF622F002EFE9B /* RxCocoa+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxCocoa+Extension.swift"; sourceTree = "<group>"; };
 		5385F9A123AF6956002EFE9B /* Matching.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Matching.storyboard; sourceTree = "<group>"; };
 		5385F9A423AF6F67002EFE9B /* Member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 				53D098E623BC8B9300854712 /* Team */,
 				53D098E723BC8BA200854712 /* Matching */,
 				5385F99B23AF5DFA002EFE9B /* Team.swift */,
-				5385F99D23AF5E08002EFE9B /* Member.swift */,
 				5317C74923C06C7500D2FD10 /* User.swift */,
 			);
 			path = Model;
@@ -1002,7 +999,6 @@
 				531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */,
 				532078D7237409EF00E3F94E /* Codable+Extension.swift in Sources */,
 				5385F9A723AF6FA2002EFE9B /* MemberViewController.swift in Sources */,
-				5385F99E23AF5E08002EFE9B /* Member.swift in Sources */,
 				53BF9C5223AB9B140013451C /* BaseTabBarController.swift in Sources */,
 				53BF9C4F23AB93A10013451C /* ConnectionManager.swift in Sources */,
 				53D098DC23BB642100854712 /* JoinTeamCell.swift in Sources */,

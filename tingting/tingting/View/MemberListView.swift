@@ -14,8 +14,8 @@ class MemberListView: BaseView {
 
     var showMemberAuto = true
     
-    var memberDriver: Driver<Member> {
-        return collectionView.rx.modelSelected(Member.self).asDriver()
+    var memberDriver: Driver<User> {
+        return collectionView.rx.modelSelected(User.self).asDriver()
     }
     
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -35,7 +35,7 @@ class MemberListView: BaseView {
     
     override func bind() {
         
-        let members = [0, 1, 2, 3].map { _ in Member() }
+        let members = [0, 1, 2, 3].map { _ in User() }
         
         collectionView.delegate = self
         
@@ -51,7 +51,7 @@ class MemberListView: BaseView {
             return cell
         }.disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(Member.self)
+        collectionView.rx.modelSelected(User.self)
             .filter { _ in self.showMemberAuto }
             .observeOn(MainScheduler.asyncInstance)
             .bind { member in

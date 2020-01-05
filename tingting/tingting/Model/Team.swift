@@ -12,7 +12,7 @@ struct Team: Codable {
     
     var teamInfo: TeamInfo
     
-    var members: [Member] = []
+    var members: [User] = []
     
     
 }
