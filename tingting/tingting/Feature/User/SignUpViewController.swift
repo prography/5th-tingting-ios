@@ -20,13 +20,12 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    private var isNewID: PublishRelay<Bool> = .init()
+    private var isNewID: BehaviorRelay<Bool> = .init(value: false)
+    private var isValidated: BehaviorRelay<Bool> = .init(value: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkMarkImageView.isHidden = true
-        duplicationCheckButton.isHidden = false
-        
+        emailTextField.text = ConnectionManager.shared.signUpRequest.local_id
     }
     
     override func bind() {
@@ -35,16 +34,9 @@ class SignUpViewController: BaseViewController {
         }.disposed(by: disposeBag)
         
         isNewID.bind { isNewID in
-            
-            guard let text = self.emailTextField.text, !text.isEmpty else {
-                self.checkMarkImageView.isHidden = true
-                self.duplicationCheckButton.isHidden = false
-                return
-            }
-            
+            self.checkValidation()
             self.checkMarkImageView.isHidden = !isNewID
             self.duplicationCheckButton.isHidden = isNewID
-            
         }.disposed(by: disposeBag)
         
         emailTextField.rx.controlEvent([.editingChanged])
@@ -56,6 +48,29 @@ class SignUpViewController: BaseViewController {
             .rx.tap
             .bind { self.checkDuplicate() }
             .disposed(by: disposeBag)
+         
+         passwordTextField.rx
+             .controlEvent([.editingChanged])
+            .bind { self.checkValidation() }
+            .disposed(by: disposeBag)
+        
+        checkPasswordTextField.rx
+            .controlEvent([.editingChanged])
+            .bind { self.checkValidation() }
+            .disposed(by: disposeBag)
+        
+        isValidated.bind { isValidated in
+            self.nextButton.isUserInteractionEnabled = isValidated
+            self.nextButton.setBackgroundColor(isValidated: isValidated)
+        }.disposed(by: disposeBag)
+        
+        nextButton.rx.tap.bind {
+            ConnectionManager.shared.signUpRequest.local_id = self.emailTextField.text
+            ConnectionManager.shared.signUpRequest.password = self.passwordTextField.text
+            
+            let inputVC = InputProfileViewController.initiate()
+            self.navigationController?.pushViewController(inputVC, animated: true)
+        }.disposed(by: disposeBag)
     }
     
     func checkDuplicate() {
@@ -72,16 +87,40 @@ class SignUpViewController: BaseViewController {
             .subscribe(
                 onNext: { response in
                     AlertManager.show(title: response.message)
-                    self.checkMarkImageView.isHidden = false
-                    self.duplicationCheckButton.isHidden = true
+                    self.isNewID.accept(true)
             },
                 onError: { error in
                     AlertManager.showError(error)
+                    self.isNewID.accept(false)
             },
                 onDisposed:  {
                     self.endLoading()
             }
         ).disposed(by: disposeBag)
+    }
+    
+    func checkValidation() {
+        guard let password = passwordTextField.text, password.count >= 8 else {
+            isValidated.accept(false)
+            return
+        }
+        
+        guard let checkPassword = checkPasswordTextField.text else {
+            isValidated.accept(false)
+            return
+        }
+        
+        guard checkPassword == password else {
+            isValidated.accept(false)
+            return
+        }
+        
+        guard isNewID.value else {
+            isValidated.accept(false)
+            return
+        }
+
+        isValidated.accept(true)
     }
     
 }

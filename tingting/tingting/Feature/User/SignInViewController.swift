@@ -20,7 +20,6 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         Logger.info("viewDidLoad")
     }
  
@@ -28,6 +27,8 @@ class SignInViewController: BaseViewController {
         
         signUpButton.rx.tap
             .bind {
+                ConnectionManager.shared.signUpRequest = .init()
+                ConnectionManager.shared.signUpRequest.local_id = self.emailTextField.text
                 let emailVC = SignUpViewController.initiate()
                 let naviVC = BaseNavigationController(rootViewController: emailVC)
                 self.present(naviVC, animated: true)

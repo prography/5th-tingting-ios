@@ -15,7 +15,7 @@ struct Router<T: Codable> {
     
     enum ServerType: String {
         case debug = "http://13.125.28.123/api"
-        case live = "http://tingting.kr/api"
+        case live = "https://api.tingting.kr/api"
     }
     
     enum ServerVersion: String {
@@ -23,7 +23,7 @@ struct Router<T: Codable> {
         case v2 = "/v2"
     }
     
-    private let server: ServerType = .debug
+    private let server: ServerType = .live
     private let version: ServerVersion = .v1
     
     private var baseURL: String {
@@ -45,7 +45,7 @@ struct Router<T: Codable> {
             header?.add(name: "Authorization", value: token)
         }
          
-        Logger.info(["", url, method.rawValue].joined(separator: "\n"))
+        Logger.info(["", baseURL + url, method.rawValue].joined(separator: "\n"))
         if let prettyString = parameters?.prettyString {
             Logger.info("\n\(prettyString)")
         }
@@ -68,7 +68,6 @@ struct Router<T: Codable> {
 extension Router {
     func asObservable() -> Observable<T> {
          Observable<T>.create{ observer in
-            
             let session = self.dataRequest.responseData { result in
                 
                 if let error = result.error {

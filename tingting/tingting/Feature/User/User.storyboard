@@ -49,7 +49,7 @@
                                                         </constraints>
                                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
@@ -65,7 +65,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNx-ju-uVt" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="78" width="334" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
                                                                 <real key="value" value="24"/>
@@ -216,7 +216,7 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
                                                                 <real key="value" value="15"/>
@@ -293,7 +293,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
                                                         <real key="value" value="15"/>
@@ -331,7 +331,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
                                                         <real key="value" value="15"/>
@@ -399,7 +399,7 @@
                                             <constraint firstAttribute="height" constant="120" id="YOW-b5-lPf"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmR-tG-es2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmR-tG-es2" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="725" width="350" height="50"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -409,6 +409,11 @@
                                         <state key="normal" title="다음">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -542,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4t4-S5-Uy2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="88"/>
+            <point key="canvasLocation" x="964" y="775"/>
         </scene>
         <!--프로필 입력-->
         <scene sceneID="b1W-sO-6LN">
@@ -576,14 +581,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWU-6Y-sw2">
                                         <rect key="frame" x="0.0" y="63" width="328" height="65"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-86-zEb" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-86-zEb" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="a8W-lP-bat"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="nickname"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
                                                         <real key="value" value="15"/>
@@ -736,7 +741,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="organization"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
                                                 <real key="value" value="15"/>
@@ -799,13 +804,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="1ed-Az-5Am"/>
                     <connections>
+                        <outlet property="birthTextField" destination="ABA-lb-5y5" id="jcE-T4-0CW"/>
+                        <outlet property="checkNicknameMarkImageView" destination="Yjd-ld-PLw" id="fIy-bT-kSz"/>
+                        <outlet property="duplicationCheckButton" destination="sGT-ZC-Uzd" id="UXs-Uk-gaI"/>
                         <outlet property="genderSegmentedControl" destination="FOf-5D-ARH" id="Lp4-ys-fth"/>
+                        <outlet property="heightTextField" destination="IiN-Rq-QTK" id="zj5-Fw-xJs"/>
                         <outlet property="nextButton" destination="a3S-bP-bk0" id="0ri-de-rQX"/>
+                        <outlet property="nicknameTextField" destination="Fh4-86-zEb" id="vir-Bi-5s8"/>
+                        <outlet property="schoolTextField" destination="gbp-w0-LXU" id="CIM-WZ-FRC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-9F-Mru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699" y="88"/>
+            <point key="canvasLocation" x="964" y="88"/>
         </scene>
         <!--사진 등록-->
         <scene sceneID="x07-U0-O8j">
