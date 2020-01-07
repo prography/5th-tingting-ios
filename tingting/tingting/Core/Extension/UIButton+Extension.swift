@@ -9,9 +9,14 @@
 import UIKit
 
 extension UIButton {
-    func setBackgroundColor(isValidated: Bool) {
+    private func setBackgroundColor(isValid: Bool) {
         UIView.animate(withDuration: 0.3) {
-            self.backgroundColor = isValidated ? .primary : #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1)
+            self.backgroundColor = isValid ? .primary : #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1)
         }
+    }
+    
+    func setEnable(_ isEnable: Bool) {
+        self.setBackgroundColor(isValid: isEnable)
+        self.isEnabled = isEnable
     }
 }

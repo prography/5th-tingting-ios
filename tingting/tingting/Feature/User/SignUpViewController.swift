@@ -21,7 +21,7 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     private var isNewID: BehaviorRelay<Bool> = .init(value: false)
-    private var isValidated: BehaviorRelay<Bool> = .init(value: false)
+    private var isValid: BehaviorRelay<Bool> = .init(value: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +59,9 @@ class SignUpViewController: BaseViewController {
             .bind { self.checkValidation() }
             .disposed(by: disposeBag)
         
-        isValidated.bind { isValidated in
-            self.nextButton.isUserInteractionEnabled = isValidated
-            self.nextButton.setBackgroundColor(isValidated: isValidated)
-        }.disposed(by: disposeBag)
+        isValid
+            .bind(onNext: nextButton.setEnable)
+            .disposed(by: disposeBag)
         
         nextButton.rx.tap.bind {
             ConnectionManager.shared.signUpRequest.local_id = self.emailTextField.text
@@ -101,26 +100,26 @@ class SignUpViewController: BaseViewController {
     
     func checkValidation() {
         guard let password = passwordTextField.text, password.count >= 8 else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
         
         guard let checkPassword = checkPasswordTextField.text else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
         
         guard checkPassword == password else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
         
         guard isNewID.value else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
 
-        isValidated.accept(true)
+        isValid.accept(true)
     }
     
 }

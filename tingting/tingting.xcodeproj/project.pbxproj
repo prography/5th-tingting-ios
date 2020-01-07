@@ -41,6 +41,7 @@
 		532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078CF237409EF00E3F94E /* BaseViewController.swift */; };
 		532078E0237409EF00E3F94E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078D0237409EF00E3F94E /* BaseCell.swift */; };
 		5326719123C3941800118B6B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326719023C3941800118B6B /* UIButton+Extension.swift */; };
+		5326719323C4B20F00118B6B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326719223C4B20F00118B6B /* Validator.swift */; };
 		5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */; };
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
 		5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */; };
@@ -175,6 +176,7 @@
 		532078CF237409EF00E3F94E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		532078D0237409EF00E3F94E /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		5326719023C3941800118B6B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		5326719223C4B20F00118B6B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				53AAD8AB23B743DF00B405CE /* Constants.swift */,
 				53D098E223BC792900854712 /* AlertManager.swift */,
 				5343F47E23C1FF6E0024E630 /* StringError.swift */,
+				5326719223C4B20F00118B6B /* Validator.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				5382B6BA2389225E00F0114D /* ColorType.swift in Sources */,
 				5343F47D23C1FEEB0024E630 /* Error+Extension.swift in Sources */,
 				53AAD8AC23B743DF00B405CE /* Constants.swift in Sources */,
+				5326719323C4B20F00118B6B /* Validator.swift in Sources */,
 				531A501B237D7010008E65A4 /* TeamInfoCell.swift in Sources */,
 				53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */,
 				53D098E323BC792900854712 /* AlertManager.swift in Sources */,

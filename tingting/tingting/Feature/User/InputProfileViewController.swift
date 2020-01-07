@@ -18,6 +18,8 @@ class InputProfileViewController: BaseViewController {
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var schoolTextField: UITextField!
+    @IBOutlet weak var schoolCheckImageView: UIImageView!
+    @IBOutlet weak var schoolButton: UIButton!
     
     @IBOutlet weak var checkNicknameMarkImageView: UIImageView!
     @IBOutlet weak var duplicationCheckButton: BaseButton!
@@ -26,15 +28,16 @@ class InputProfileViewController: BaseViewController {
     
     
     private var isNewNickname: BehaviorRelay<Bool> = .init(value: false)
-
-    private var isValidated: BehaviorRelay<Bool> = .init(value: false)
+    private var isSchoolValid: BehaviorRelay<Bool> = .init(value: false)
+    
+    private var isValid: BehaviorRelay<Bool> = .init(value: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDatePicker(birthTextField)
     }
     
     override func bind() {
-        
         isNewNickname.bind { isNewNickname in
             self.checkValidation()
             self.checkNicknameMarkImageView.isHidden = !isNewNickname
@@ -60,11 +63,18 @@ class InputProfileViewController: BaseViewController {
             .controlEvent([.editingChanged])
             .bind { self.checkValidation() }
             .disposed(by: disposeBag)
-
+ 
+        isValid
+            .bind(onNext: nextButton.setEnable)
+            .disposed(by: disposeBag)
         
-        isValidated.bind { isValidated in
-            self.nextButton.isUserInteractionEnabled = isValidated
-            self.nextButton.setBackgroundColor(isValidated: isValidated)
+        schoolButton.rx.tap
+            .bind(onNext: presentEmailAuthVC)
+            .disposed(by: disposeBag)
+        
+        isSchoolValid.bind { isValid in
+            self.schoolCheckImageView.isHidden = !isValid
+            self.checkValidation()
         }.disposed(by: disposeBag)
         
         nextButton.rx.tap.bind {
@@ -103,26 +113,59 @@ class InputProfileViewController: BaseViewController {
         ).disposed(by: disposeBag)
     }
     
+    func presentEmailAuthVC() {
+        
+        guard isNewNickname.value else {
+            AlertManager.showError("닉네임을 등록해주세요!")
+            return
+        }
+        
+        guard let nickname = nicknameTextField.text else {
+            assertionFailure("nickname must exist.")
+            return
+        }
+        let emailAuthVC = EmailAuthenticationViewController.initiate(nickname: nickname)
+        present(emailAuthVC, animated: true)
+        
+        emailAuthVC.emailDriver.driveNext { email in
+            self.schoolTextField.text = email ?? ""
+            self.isSchoolValid.accept(email != nil)
+        }.disposed(by: emailAuthVC.disposeBag)
+    }
+    
+    @IBAction func setDatePicker(_ sender: UITextField) {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+    }
+
+    @objc func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        birthTextField.text = dateFormatter.string(from: sender.date)
+        checkValidation()
+    }
     
     func checkValidation() {
         
         guard let birth = birthTextField.text, birth.count >= 8 else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
         
         guard let height = heightTextField.text, height.count >= 3 else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
         
         
         guard isNewNickname.value else {
-            isValidated.accept(false)
+            isValid.accept(false)
             return
         }
 
-        isValidated.accept(true)
+        isValid.accept(true)
     }
 }
 
