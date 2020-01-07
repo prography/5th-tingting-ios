@@ -20,8 +20,8 @@ extension APIModel.SignUp {
         var gender: Int?
         var name: String?
         var birth: String? // 1993-09-02
-        var thumbnail: String?
-        var authenticated_email: String?
+        var thumbnail: String? = ""
+        var authenticated_address: String?
         var height: Int?
     }
     

@@ -18,15 +18,15 @@ extension NetworkManager {
         return Router(url: "/auth/school", method: .post, parameters: request)
     }
     
-    /// 학교인증 API (2)
-    static func authenticateSchoolConfirm() -> Router<CommonReponse> {
-        return Router(url: "/auth/school/confirm", method: .post)
-    }
+    /// 학교인증 API (2): 사용하지 않음
+    //    static func authenticateSchoolConfirm() -> Router<CommonReponse> {
+    //        return Router(url: "/auth/school/confirm", method: .post)
+    //    }
     
     /// 학교인증 API (3)
     static func authenticateSchoolComplete(email: String) -> Router<CommonReponse> {
         let params = ["email": email]
-        return Router(url: "/auth/school/confirm", method: .get,parameters: params)
+        return Router(url: "/auth/school/complete", method: .get, parameters: params)
     }
     
     /// 소셜(카카오) 회원가입 --- 수정 중!
@@ -41,7 +41,7 @@ extension NetworkManager {
     }
     
     /// 로컬 회원가입
-    static func login(request: APIModel.SignUp.Request) -> Router<APIModel.SignUp.Response> {
+    static func signUp(request: APIModel.SignUp.Request) -> Router<APIModel.SignUp.Response> {
         return Router(url: "/auth/local/signup", method: .post, parameters: request)
     }
     

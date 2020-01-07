@@ -19,6 +19,8 @@ class InputPhotoViewController: BaseViewController {
     
     private let picker = UIImagePickerController()
     
+    let isValid: BehaviorRelay<Bool> = .init(value: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,10 +53,12 @@ class InputPhotoViewController: BaseViewController {
             
         }.disposed(by: disposeBag)
         
-        nextButton.rx.tap.bind { _ in
-            // TODO: - Add Logic & API
-            self.close()
-        }.disposed(by: disposeBag)
+        isValid.bind(onNext: nextButton.setEnable)
+            .disposed(by: disposeBag)
+        
+        nextButton.rx.tap
+            .bind(onNext: signUp)
+            .disposed(by: disposeBag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,6 +71,20 @@ class InputPhotoViewController: BaseViewController {
         guard let image = photo else { return }
         photoImageView.image = image
         photoImageView.isHidden = false
+    }
+    
+    func signUp() {
+        let requset = ConnectionManager.shared.signUpRequest
+        
+        NetworkManager.signUp(request: requset).asObservable().subscribe(
+            onNext: { response in
+                ConnectionManager.shared.saveToken(response.token)
+                AlertManager.show(title: response.message)
+                self.close()
+        },
+            onError: { error in
+                AlertManager.showError(error)
+            }).disposed(by: disposeBag)
     }
     
 }

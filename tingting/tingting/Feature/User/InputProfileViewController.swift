@@ -17,9 +17,6 @@ class InputProfileViewController: BaseViewController {
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
-    @IBOutlet weak var schoolTextField: UITextField!
-    @IBOutlet weak var schoolCheckImageView: UIImageView!
-    @IBOutlet weak var schoolButton: UIButton!
     
     @IBOutlet weak var checkNicknameMarkImageView: UIImageView!
     @IBOutlet weak var duplicationCheckButton: BaseButton!
@@ -67,23 +64,15 @@ class InputProfileViewController: BaseViewController {
         isValid
             .bind(onNext: nextButton.setEnable)
             .disposed(by: disposeBag)
-        
-        schoolButton.rx.tap
-            .bind(onNext: presentEmailAuthVC)
-            .disposed(by: disposeBag)
-        
-        isSchoolValid.bind { isValid in
-            self.schoolCheckImageView.isHidden = !isValid
-            self.checkValidation()
-        }.disposed(by: disposeBag)
-        
+
         nextButton.rx.tap.bind {
+            ConnectionManager.shared.signUpRequest.name = self.nicknameTextField.text
             ConnectionManager.shared.signUpRequest.birth = self.birthTextField.text
             ConnectionManager.shared.signUpRequest.gender = self.genderSegmentedControl.selectedSegmentIndex
             ConnectionManager.shared.signUpRequest.height = Int(self.heightTextField.text ?? "0")
             
-            let photoVC = InputPhotoViewController.initiate()
-            self.navigationController?.pushViewController(photoVC, animated: true)
+            let emailVC = EmailAuthenticationViewController.initiate()
+            self.navigationController?.pushViewController(emailVC, animated: true)
         }.disposed(by: disposeBag)
     }
      
@@ -111,26 +100,6 @@ class InputProfileViewController: BaseViewController {
                     self.endLoading()
             }
         ).disposed(by: disposeBag)
-    }
-    
-    func presentEmailAuthVC() {
-        
-        guard isNewNickname.value else {
-            AlertManager.showError("닉네임을 등록해주세요!")
-            return
-        }
-        
-        guard let nickname = nicknameTextField.text else {
-            assertionFailure("nickname must exist.")
-            return
-        }
-        let emailAuthVC = EmailAuthenticationViewController.initiate(nickname: nickname)
-        present(emailAuthVC, animated: true)
-        
-        emailAuthVC.emailDriver.driveNext { email in
-            self.schoolTextField.text = email ?? ""
-            self.isSchoolValid.accept(email != nil)
-        }.disposed(by: emailAuthVC.disposeBag)
     }
     
     @IBAction func setDatePicker(_ sender: UITextField) {

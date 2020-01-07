@@ -531,7 +531,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-nq-F28">
-                                <rect key="frame" x="43" y="87" width="328" height="353"/>
+                                <rect key="frame" x="43" y="87" width="328" height="278"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FOf-5D-ARH">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="44"/>
@@ -707,79 +707,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDJ-XH-8zg">
-                                        <rect key="frame" x="0.0" y="288" width="328" height="65"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="학교" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-w0-LXU" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="328" height="65"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="65" id="dbh-pG-vi0"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="organization"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
-                                                        <real key="value" value="15"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldInset">
-                                                        <real key="value" value="13"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderInset">
-                                                        <real key="value" value="13"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dlA-PB-HGy">
-                                                <rect key="frame" x="289" y="15" width="39" height="50"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="iqL-h3-D9q">
-                                                        <rect key="frame" x="0.0" y="0.0" width="39" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="39" id="0Vl-l5-ZeG"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Zgh-lw-5RJ"/>
-                                                </constraints>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM2-Lb-Isl">
-                                                <rect key="frame" x="50" y="16" width="218" height="49"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="gbp-w0-LXU" secondAttribute="trailing" id="0JN-yM-Z4m"/>
-                                            <constraint firstItem="gbp-w0-LXU" firstAttribute="top" secondItem="iDJ-XH-8zg" secondAttribute="top" id="3cg-j5-Tqi"/>
-                                            <constraint firstItem="gbp-w0-LXU" firstAttribute="leading" secondItem="iDJ-XH-8zg" secondAttribute="leading" id="Bos-NF-Hqs"/>
-                                            <constraint firstAttribute="trailing" secondItem="dlA-PB-HGy" secondAttribute="trailing" id="CNC-EJ-ntJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="KM2-Lb-Isl" secondAttribute="trailing" constant="60" id="FV1-S4-dQz"/>
-                                            <constraint firstAttribute="bottom" secondItem="KM2-Lb-Isl" secondAttribute="bottom" id="H9h-xH-BCE"/>
-                                            <constraint firstItem="KM2-Lb-Isl" firstAttribute="leading" secondItem="iDJ-XH-8zg" secondAttribute="leading" constant="50" id="mma-Ct-4Ce"/>
-                                            <constraint firstAttribute="bottom" secondItem="dlA-PB-HGy" secondAttribute="bottom" id="n4M-5T-KUS"/>
-                                            <constraint firstItem="KM2-Lb-Isl" firstAttribute="top" secondItem="iDJ-XH-8zg" secondAttribute="top" constant="16" id="wzj-39-EHW"/>
-                                            <constraint firstAttribute="bottom" secondItem="gbp-w0-LXU" secondAttribute="bottom" id="xSI-Ua-8pl"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-bP-bk0" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
@@ -819,9 +746,6 @@
                         <outlet property="heightTextField" destination="IiN-Rq-QTK" id="zj5-Fw-xJs"/>
                         <outlet property="nextButton" destination="a3S-bP-bk0" id="0ri-de-rQX"/>
                         <outlet property="nicknameTextField" destination="Fh4-86-zEb" id="vir-Bi-5s8"/>
-                        <outlet property="schoolButton" destination="KM2-Lb-Isl" id="Fdu-Op-fq4"/>
-                        <outlet property="schoolCheckImageView" destination="iqL-h3-D9q" id="Ai9-jo-0Dd"/>
-                        <outlet property="schoolTextField" destination="gbp-w0-LXU" id="CIM-WZ-FRC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-9F-Mru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

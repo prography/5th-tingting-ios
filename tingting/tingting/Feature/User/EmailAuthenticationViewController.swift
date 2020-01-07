@@ -18,15 +18,8 @@ class EmailAuthenticationViewController: BaseViewController {
 
     @IBOutlet weak var nextButton: UIButton!
     
-    private var nickname: String = ""
-    
     private let isValid: BehaviorRelay<Bool> = .init(value: false)
-    private let emailProperty: PublishRelay<String?> = .init()
-    
-    var emailDriver: Driver<String?> {
-         return emailProperty.asDriver(onErrorJustReturn: nil)
-     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -56,8 +49,13 @@ class EmailAuthenticationViewController: BaseViewController {
     }
     
     func authenticateSchool() {
-        let request = APIModel.School.Request(name: self.nickname,
-                                              email: self.emailTextField.text!)
+        guard let nickname = ConnectionManager.shared.signUpRequest.name else {
+            assertionFailure("Nickname must exist!!")
+            return }
+        
+        let request = APIModel.School.Request(
+            name: nickname,
+            email: self.emailTextField.text!)
         
         NetworkManager.authenticateSchool(request: request)
             .asObservable()
@@ -78,12 +76,15 @@ class EmailAuthenticationViewController: BaseViewController {
             assertionFailure("Email must exist.")
             return
         }
+        
         NetworkManager.authenticateSchoolComplete(email: email)
             .asObservable()
             .subscribe(
                 onNext: { response in
+                    ConnectionManager.shared.signUpRequest.authenticated_address = email
                     AlertManager.show(title: response.message)
-                    self.emailProperty.accept(email)
+                    let vc = InputPhotoViewController.initiate()
+                    self.navigationController?.pushViewController(vc, animated: true)
             },
                 onError: { error in
                     AlertManager.showError(error)
@@ -94,7 +95,7 @@ class EmailAuthenticationViewController: BaseViewController {
 }
 
 extension EmailAuthenticationViewController {
-    static func initiate(nickname: String) -> EmailAuthenticationViewController {
+    static func initiate() -> EmailAuthenticationViewController {
         
         let vc = EmailAuthenticationViewController.withStoryboard(storyboard: .user)
         
