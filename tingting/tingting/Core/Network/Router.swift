@@ -29,20 +29,21 @@ struct Router<T: Codable> {
     private var baseURL: String {
         server.rawValue + version.rawValue
     }
-    
+    private let removeTokenCodes: [Int]
     private let url: String
     private let parameters: [String : Any]?
     private let method: HTTPMethod
-    private var header: HTTPHeaders?
+    private var headers: HTTPHeaders = .init()
     
-    init(url: String, method: HTTPMethod = .get, parameters: Encodable? = nil) {
+    init(url: String, method: HTTPMethod = .get, parameters: Encodable? = nil, removeTokenCodes: [Int] = []) {
         self.url = url
         self.method = method
         self.parameters = parameters?.dictionary
-        self.header = HTTPHeaders()
+        self.removeTokenCodes = removeTokenCodes
         
-        if let token = ConnectionManager().loadToken() {
-            header?.add(name: "Authorization", value: token)
+        if let token = ConnectionManager.shared.loadToken() {
+            Logger.info(token)
+            headers.add(name: "Authorization", value: token)
         }
          
         Logger.info(["", baseURL + url, method.rawValue].joined(separator: "\n"))
@@ -52,7 +53,7 @@ struct Router<T: Codable> {
         
         
     }
-    
+  
     var dataRequest: DataRequest {
         let encoding: URLEncoding
         switch method {
@@ -61,14 +62,20 @@ struct Router<T: Codable> {
         default:
             encoding = .httpBody
         }
-        return AF.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: header)
+        return AF.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 }
 
 extension Router {
     func asObservable() -> Observable<T> {
          Observable<T>.create{ observer in
+             
             let session = self.dataRequest.responseData { result in
+                
+                if let statusCode = result.response?.statusCode,
+                    self.removeTokenCodes.firstIndex(of: statusCode) != nil {
+                    ConnectionManager.shared.removeToken()
+                }
                 
                 if let error = result.error {
                     Logger.error(error)
@@ -108,6 +115,7 @@ extension Router {
                     
                     
                 } catch {
+                    Logger.error(result.data?.prettyPrintedJSONString ?? "")
                     Logger.error(error)
                     observer.onError(error)
                 }

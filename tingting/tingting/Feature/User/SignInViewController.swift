@@ -43,6 +43,20 @@ class SignInViewController: BaseViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if ConnectionManager.shared.loadToken() != nil {
+            NetworkManager
+                .getMyProfile()
+                .asObservable()
+                .subscribe(
+                    onNext: { profile in
+                        AlertManager.show(title: profile.myInfo.name! + " 님, 오늘은 매칭이 될까요? > <")
+                        self.close()
+                },
+                    onError: { error in
+                        AlertManager.showError(error)
+                }
+            ).disposed(by: disposeBag)
+        }
     }
 }
 
@@ -55,7 +69,8 @@ extension SignInViewController {
             .asObservable()
             .subscribe(
                 onNext: { response in
-                    ConnectionManager().saveToken(response.token)
+                    ConnectionManager.shared.saveToken(response.token)
+                    self.close()
             },
                 onError: { error in
                     AlertManager.showError(error)

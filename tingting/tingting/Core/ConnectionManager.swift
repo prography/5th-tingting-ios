@@ -16,6 +16,7 @@ class ConnectionManager {
     
     var signUpRequest: APIModel.SignUp.Request = .init()
     
+    // TODO: Add Logic
     var isLoginViewLoaded: Bool {
         return false
     }

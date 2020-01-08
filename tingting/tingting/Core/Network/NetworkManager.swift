@@ -5,8 +5,8 @@
 //  Created by 김선우 on 9/3/19.
 //  Copyright © 2019 Harry Kim. All rights reserved.
 //
-
-import Foundation
+ 
+import Alamofire
 
 class NetworkManager {}
 
@@ -32,7 +32,8 @@ extension NetworkManager {
     /// 소셜(카카오) 회원가입 --- 수정 중!
     static func kakaoLogin(email: String) -> Router<CommonReponse> {
         let params = ["email": email]
-        return Router(url: "/auth/school/confirm", method: .get,parameters: params)
+        return Router(url: "/auth/school/confirm", method: .get, parameters: params, removeTokenCodes: [401])
+        
     }
     
     /// 로컬 로그인
@@ -67,18 +68,18 @@ extension NetworkManager {
 extension NetworkManager {
     
     /// 내 프로필 보기
-    static func getMyProfile() -> Router<APIModel.Profile> {
-        return Router(url: "/me/profile", method: .get)
+    static func getMyProfile() -> Router<APIModel.MyProfile> {
+        return Router(url: "/me/profile", method: .get, removeTokenCodes: [401, 403])
     }
     
     /// 내 프로필 수정하기
-    static func editMyProfile(to user: User) -> Router<APIModel.Profile> {
-        return Router(url: "/me/profile", method: .put, parameters: user)
+    static func editMyProfile(to user: User) -> Router<APIModel.MyProfile> {
+        return Router(url: "/me/profile", method: .put, parameters: user, removeTokenCodes: [401, 403])
     }
     
     /// 다른 사용자 프로필 보기
     static func getProfile(id: String) -> Router<APIModel.Profile> {
-        return Router(url: "/user/\(id)/profile", method: .get)
+        return Router(url: "/user/\(id)/profile", method: .get, removeTokenCodes: [401, 403])
     }
 }
 

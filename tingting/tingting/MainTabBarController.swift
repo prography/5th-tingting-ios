@@ -6,10 +6,14 @@
 //  Copyright © 2019 Harry Kim. All rights reserved.
 //
 
-import UIKit 
+import UIKit
+import RxSwift
+import RxCocoa
 
 class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
 
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -30,11 +34,8 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
                 return naviVC
         }
         
-        DispatchQueue.main.async {
-            let signInVC  = SignInViewController.initiate()
-            signInVC.modalPresentationStyle = .fullScreen
-            self.present(signInVC, animated: false)
-        }
+        
+        setLogin()
         
         
     }
@@ -48,5 +49,34 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
     }
     
     
+}
+extension MainTabBarController {
+    
+    func setLogin() {
+        guard ConnectionManager.shared.loadToken() != nil else {
+            presentSignInVC()
+            return
+        }
+        
+        NetworkManager.getMyProfile()
+            .asObservable()
+            .subscribe(
+                onNext: { profile in
+                    AlertManager.show(title: profile.myInfo.name! + "님 오늘 매칭이 궁금해요~ ><")
+            },
+                onError: { error in
+                    self.presentSignInVC()
+                    Logger.error(error)
+            }
+        ).disposed(by: disposeBag)
+    }
+    
+    func presentSignInVC() {
+        DispatchQueue.main.async {
+            let signInVC  = SignInViewController.initiate()
+            signInVC.modalPresentationStyle = .fullScreen
+            self.present(signInVC, animated: false)
+        }
+    }
 }
 
