@@ -9,10 +9,17 @@
 import UIKit
 
 class JoinTeamCellConfigurator<T: JoinTeamCell>: CellConfigurator {
+    
+    let team: Team
+    
     var cellType: BaseCellProtocol.Type { T.self }
     
     func configure(_ cell: BaseCellProtocol) {
         
+    }
+    
+    init(team: Team) {
+        self.team = team
     }
   
 }

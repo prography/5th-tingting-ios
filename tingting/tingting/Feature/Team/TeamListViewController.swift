@@ -24,8 +24,8 @@ class TeamListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let configurators = (0...20).map { _ in JoinTeamCellConfigurator() }
-        items.accept(configurators)
+        loadTeamList()
+         
     }
     
     override func bind() {
@@ -50,7 +50,21 @@ class TeamListViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        loadTeamList()
+    }
+    
+    func loadTeamList() {
+        NetworkManager.getAllTeams()
+            .asObservable()
+            .subscribe(
+                onNext: { teamList in
+                    let configurators = teamList.map { JoinTeamCellConfigurator(team: $0) }
+                    self.items.accept(configurators)
+            },
+                onError: { error in
+                    Logger.error(error)
+            }
+        ).disposed(by: disposeBag)
     }
 }
 

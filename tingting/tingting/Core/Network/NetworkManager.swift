@@ -7,6 +7,8 @@
 //
  
 import Alamofire
+import RxSwift
+import RxCocoa
 
 class NetworkManager {}
 
@@ -88,7 +90,8 @@ extension NetworkManager {
     
     /// 전체 팀 리스트 보기
     static func getAllTeams() -> Router<[Team]> {
-        return Router(url: "/teams", method: .get)
+        let mockData = (0...20).map { _ in MockTeam.getMockResponse() }
+        return Router(url: "/teams", method: .get, mockData: mockData)
     }
     
     /// 팀 생성하기

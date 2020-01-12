@@ -17,7 +17,21 @@ struct User: Codable {
     var gender: Int? // 0 - 남자, 1 - 여자
     var is_deleted: Int = 0
     
-    init() {
-        
+    init() { }
+    
+    init(name: String?,
+         birth: String?,
+         height: Int?,
+         thumbnail: String?,
+         gender: Int?,
+         is_deleted: Int)
+    {
+        self.name = name
+        self.birth = birth
+        self.height = height
+        self.thumbnail = thumbnail
+        self.gender = gender
+        self.is_deleted = is_deleted
     }
+    
 }

@@ -34,12 +34,18 @@ struct Router<T: Codable> {
     private let parameters: [String : Any]?
     private let method: HTTPMethod
     private var headers: HTTPHeaders = .init()
+    private let mockData: T?
     
-    init(url: String, method: HTTPMethod = .get, parameters: Encodable? = nil, removeTokenCodes: [Int] = []) {
+    init(url: String,
+         method: HTTPMethod = .get,
+         parameters: Encodable? = nil,
+         removeTokenCodes: [Int] = [],
+         mockData: T? = nil) {
         self.url = url
         self.method = method
         self.parameters = parameters?.dictionary
         self.removeTokenCodes = removeTokenCodes
+        self.mockData = mockData
         
         if let token = ConnectionManager.shared.loadToken() {
             Logger.info(token)
@@ -68,8 +74,14 @@ struct Router<T: Codable> {
 
 extension Router {
     func asObservable() -> Observable<T> {
-         Observable<T>.create{ observer in
-             
+        
+        if let mockData = mockData {
+            Logger.debug("\n🔴 Mock Data 🔴")
+            return Observable.just(mockData)
+        }
+        
+        return Observable<T>.create { observer in
+            
             let session = self.dataRequest.responseData { result in
                 
                 if let statusCode = result.response?.statusCode,
@@ -83,16 +95,16 @@ extension Router {
                     return
                 }
                 
-//                guard
-//                    let data = result.data,
-//                    let prettyString = data.prettyPrintedJSONString else
-//                {
-//                    Logger.error(RxError.noElements)
-//                    observer.onError(RxError.noElements)
-//                    return
-//                }
-//
-//                Logger.info("\n\(prettyString)")
+                //                guard
+                //                    let data = result.data,
+                //                    let prettyString = data.prettyPrintedJSONString else
+                //                {
+                //                    Logger.error(RxError.noElements)
+                //                    observer.onError(RxError.noElements)
+                //                    return
+                //                }
+                //
+                //                Logger.info("\n\(prettyString)")
                 
                 guard let data = result.data else {
                     Logger.error(result)
@@ -122,7 +134,7 @@ extension Router {
             }
             
             return Disposables.create { session.cancel() }
-        }
+        }.single()
         
     }
 }

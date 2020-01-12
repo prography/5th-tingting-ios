@@ -26,7 +26,10 @@ class MatchingTeamListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let configurators = (0...20).map { _ in JoinTeamCellConfigurator() }
+        let configurators = (0...20).map { _ -> JoinTeamCellConfigurator<JoinTeamCell> in
+            let team = Team(teamInfo: .init())
+            return JoinTeamCellConfigurator(team: team)
+        }
         items.accept(configurators)
     }
     
