@@ -10,17 +10,29 @@ import UIKit
 
 class MemberViewController: BaseViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameAgeLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    
+    @IBOutlet weak var schoolLabel: UILabel!
+    @IBOutlet weak var hobbyLabel: UILabel!
+    
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        imageView.setImage(url: user.thumbnail)
+        nameAgeLabel.text = "\(user.name ?? ""), \(user.age)"
+        
     }
     
 }
 
 extension MemberViewController {
-    static func initiate() -> MemberViewController {
+    static func initiate(user: User) -> MemberViewController {
         let vc = MemberViewController.withStoryboard(storyboard: .member)
+        vc.user = user
         return vc
     }
 }

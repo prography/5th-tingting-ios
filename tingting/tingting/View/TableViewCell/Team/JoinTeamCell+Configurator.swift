@@ -7,6 +7,7 @@
 //
  
 import UIKit
+import Kingfisher
 
 class JoinTeamCellConfigurator<T: JoinTeamCell>: CellConfigurator {
     
@@ -15,6 +16,31 @@ class JoinTeamCellConfigurator<T: JoinTeamCell>: CellConfigurator {
     var cellType: BaseCellProtocol.Type { T.self }
     
     func configure(_ cell: BaseCellProtocol) {
+        guard let cell = cell as? JoinTeamCell else { return }
+        
+        cell.teamNameLabel.text = team.teamInfo.name ?? ""
+        
+        cell.imageViews.enumerated()
+            .forEach { index, imageView in
+                guard
+                    let member = self.team.members[optional: index] else {
+                    imageView.isHidden = true
+                    return
+                }
+
+                imageView.isHidden = false
+                
+                guard let thumbnail = member.thumbnail else {
+                    imageView.image = nil
+                    imageView.backgroundColor = .gray
+                    return
+                }
+                
+                // TODO: Add Placeholder Image
+                imageView.setImage(url: thumbnail)
+                
+                
+        }
         
     }
     

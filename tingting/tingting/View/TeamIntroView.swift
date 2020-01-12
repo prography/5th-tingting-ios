@@ -16,27 +16,37 @@ class TeamIntroView: BaseView {
     
     @IBOutlet var tagLabels: [UILabel]!
     
-    func initiate(title: String, tags: [String], description: String?) {
-        titleLabel.text = title
-        descriptionLabel.text = description
-        tagLabels.enumerated().forEach { index, label in
-            
-            guard index < tags.count else {
-                label.isHidden = true
-                return
-            }
-            
-            label.isHidden = false
-            label.text = tags[index]
-            label.layer.cornerRadius = 5
-            label.clipsToBounds = true
-        }
+    var team: Team!
+    
+    func configure(with team: Team) {
+        self.team = team
+        
     }
     
     override func bindStyle() {
+        
+        // TODO: Add assertionFailure()
+        guard let team = self.team else { return }
         layer.borderWidth = 1
         layer.cornerRadius = 10
         layer.borderColor = .primary
+         
+        titleLabel.text = team.teamInfo.name ?? ""
+        descriptionLabel.text = team.teamInfo.intro
+        
+        // TODO: Add Tag
+        //        tagLabels.enumerated().forEach { index, label in
+        //
+        //            guard index < tags.count else {
+        //                label.isHidden = true
+        //                return
+        //            }
+        //
+        //            label.isHidden = false
+        //            label.text = tags[index]
+        //            label.layer.cornerRadius = 5
+        //            label.clipsToBounds = true
+        //        }
     }
     
 }

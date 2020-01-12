@@ -35,3 +35,26 @@ struct User: Codable {
     }
     
 }
+extension User {
+    var age: Int {
+        guard let birth = birth else { return -1 }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-mm-dd"
+        guard let bornDate = formatter.date(from: birth) else { return -2 }
+        
+        let bornYear = getYear(bornDate)
+        let thisYear = getYear(Date())
+        
+        return thisYear - bornYear + 1
+    }
+ 
+    private func getYear(_ date: Date) -> Int {
+        
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY"
+        let year = formatter.string(from: date)
+        return Int(year)!
+    }
+    
+}

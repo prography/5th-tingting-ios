@@ -78,7 +78,7 @@ struct MockTeam: MockProtocol {
             User(name: "랄랄라",
                  birth: "1993-09-02",
                  height: 178,
-                 thumbnail: "https://www.google.com/imgres?imgurl=http%3A%2F%2Fimage.news1.kr%2Fsystem%2Fphotos%2F2019%2F1%2F25%2F3485271%2Farticle.jpg&imgrefurl=http%3A%2F%2Fnews1.kr%2Fphotos%2Fview%2F%3F3485271&docid=u6RmwLRcDRJlKM&tbnid=zZgmwAkkzs4tsM%3A&vet=10ahUKEwjLyoGw6v3mAhUb_GEKHZU9CaMQMwiYASglMCU..i&w=560&h=776&itg=1&bih=750&biw=1344&q=%EB%9E%9C%EC%84%A0%EB%82%A8%EC%B9%9C&ved=0ahUKEwjLyoGw6v3mAhUb_GEKHZU9CaMQMwiYASglMCU&iact=mrc&uact=8",
+                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjVTjup5Hl5AtrYqSxv1JUMR7bTrOPn4cX_ZQcCgKxJh6LHee&s",
                  gender: 0,
                  is_deleted: 0),
             

@@ -53,15 +53,7 @@ class CreateTeamViewController: BaseViewController {
         textFieldEvents()
     }
 }
-
-extension CreateTeamViewController {
-    static func initiate() -> CreateTeamViewController {
-        let vc = CreateTeamViewController.withStoryboard(storyboard: .team)
-        
-        return vc
-    }
-}
-
+ 
 extension CreateTeamViewController {
 
     fileprivate func textFieldEvents() {
@@ -105,4 +97,12 @@ extension CreateTeamViewController: UITextFieldDelegate {
         return true
     }
 
+}
+
+extension CreateTeamViewController {
+    static func initiate() -> CreateTeamViewController {
+        let vc = CreateTeamViewController.withStoryboard(storyboard: .team)
+        
+        return vc
+    }
 }

@@ -10,6 +10,9 @@ import UIKit
 
 class JoinTeamCell: BaseCell {
 
+    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet var imageViews: [UIImageView]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

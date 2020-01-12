@@ -60,8 +60,8 @@
                                                                 <rect key="frame" x="0.0" y="14.5" width="173" height="50"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="0qY-98-ypO" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50.000000000000114" height="50"/>
-                                                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="0qY-98-ypO" secondAttribute="height" multiplier="1:1" id="K91-wf-Qau"/>
                                                                         </constraints>
@@ -71,21 +71,21 @@
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage2" translatesAutoresizingMaskIntoConstraints="NO" id="Tz0-xq-5Rj" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
                                                                         <rect key="frame" x="41" y="0.0" width="50" height="50"/>
-                                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage3" translatesAutoresizingMaskIntoConstraints="NO" id="hL8-eD-6QU" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
-                                                                        <rect key="frame" x="82" y="0.0" width="50.000000000000057" height="50.000000000000057"/>
-                                                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <rect key="frame" x="82" y="0.0" width="50" height="50"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage4" translatesAutoresizingMaskIntoConstraints="NO" id="VPH-AC-PJT" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
                                                                         <rect key="frame" x="123" y="0.0" width="50" height="50"/>
-                                                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
@@ -136,6 +136,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="teamNameLabel" destination="s2L-Vy-CKV" id="TTh-YJ-hQp"/>
+                <outletCollection property="imageViews" destination="0qY-98-ypO" collectionClass="NSMutableArray" id="EJI-hF-dnC"/>
+                <outletCollection property="imageViews" destination="Tz0-xq-5Rj" collectionClass="NSMutableArray" id="W1L-9L-xxm"/>
+                <outletCollection property="imageViews" destination="hL8-eD-6QU" collectionClass="NSMutableArray" id="ZkI-tA-IIl"/>
+                <outletCollection property="imageViews" destination="VPH-AC-PJT" collectionClass="NSMutableArray" id="EQC-4z-jCp"/>
+            </connections>
             <point key="canvasLocation" x="136.23188405797103" y="178.125"/>
         </tableViewCell>
     </objects>

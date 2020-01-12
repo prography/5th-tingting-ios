@@ -42,9 +42,17 @@ class TeamListViewController: BaseViewController {
             
         }.disposed(by: disposeBag)
         
-        tableView.rx.itemSelected.bind { _ in
-            let vc = JoinTeamViewController.initiate()
-            self.navigationController?.pushViewController(vc, animated: true)
+        tableView.rx
+            .modelSelected(CellConfigurator.self)
+            .bind { configurator in
+                guard let joinTeamCellConfigurator = configurator as? JoinTeamCellConfigurator else {
+                    assertionFailure()
+                    return
+                }
+                
+                let vc = JoinTeamViewController.initiate(team: joinTeamCellConfigurator.team)
+                self.navigationController?.pushViewController(vc, animated: true)
+                
         }.disposed(by: disposeBag)
     }
     

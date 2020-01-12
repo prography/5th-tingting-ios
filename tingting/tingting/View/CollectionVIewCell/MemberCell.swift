@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class MemberCell: BaseCollectionCell {
     
@@ -25,7 +24,7 @@ class MemberCell: BaseCollectionCell {
         layer.borderColor = .init(srgbRed: 189.0 / 255.0, green:  189.0 / 255.0, blue:  189.0 / 255.0, alpha: 1)
         layer.borderWidth = 1
         
-        // imageView.kf.setImage(with: url)
+        imageView.setImage(url: user.thumbnail)
         teamButton.setTitle( isMaster ? "팀장" : "팀원" , for: .normal)
         teamButton.backgroundColor = UIColor.primary.withAlphaComponent(isMaster ? 1 : 0.5)
         nicknameLabel.text = user.name

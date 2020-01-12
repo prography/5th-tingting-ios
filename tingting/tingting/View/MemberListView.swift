@@ -36,16 +36,11 @@ class MemberListView: BaseView {
     }
     
     override func bind() {
-        
-        let members = [0, 1, 2, 3].map { _ in User() }
-        
-        items.accept(members)
-        
         collectionView.delegate = self
         
         items.bind(to: collectionView.rx.items) { collectionView, index, user in
             let cell = collectionView.dequeueReusableBaseCell(type: MemberCell.self, for: .init(item: index, section: 0))
-            cell.configure(with: user)
+            cell.configure(with: user, isMaster: index == 0)
                 
             return cell
         }.disposed(by: disposeBag)
@@ -53,9 +48,9 @@ class MemberListView: BaseView {
         collectionView.rx.modelSelected(User.self)
             .filter { _ in self.showMemberAuto }
             .observeOn(MainScheduler.asyncInstance)
-            .bind { member in
+            .bind { user in
                 let viewController = UIApplication.shared.windows.last?.rootViewController
-                let memberVC = MemberViewController.initiate()
+                let memberVC = MemberViewController.initiate(user: user)
                 viewController?.present(memberVC, animated: true)
         }.disposed(by: disposeBag)
     }
