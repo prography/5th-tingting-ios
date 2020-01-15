@@ -120,6 +120,7 @@
 		53DD4A2623BE4F1500938405 /* APIModel+CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */; };
 		53E8ED4A239CB4600027AC46 /* TeamIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8ED49239CB4600027AC46 /* TeamIntroView.swift */; };
 		53E8ED4E239CB4C30027AC46 /* TeamIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E8ED4D239CB4C30027AC46 /* TeamIntroView.xib */; };
+		53FD7A8F23CF1FC7004A1D69 /* GenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD7A8E23CF1FC7004A1D69 /* GenderType.swift */; };
 		7192F3B49D93DAF9DE13BCB5 /* Pods_tingtingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB57C9CAA4ED4A2C52ECD21D /* Pods_tingtingTests.framework */; };
 		CB4D071867FA8A419CAD81CD /* Pods_tingting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6984D0F0BAA5FB1AB92D295 /* Pods_tingting.framework */; };
 		ECAB6C06AC15356F946E6215 /* Pods_tingtingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A7385FB0FA9F6C40FC7A33 /* Pods_tingtingUITests.framework */; };
@@ -265,6 +266,7 @@
 		53DD4A2523BE4F1500938405 /* APIModel+CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+CommonResponse.swift"; sourceTree = "<group>"; };
 		53E8ED49239CB4600027AC46 /* TeamIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamIntroView.swift; sourceTree = "<group>"; };
 		53E8ED4D239CB4C30027AC46 /* TeamIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamIntroView.xib; sourceTree = "<group>"; };
+		53FD7A8E23CF1FC7004A1D69 /* GenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderType.swift; sourceTree = "<group>"; };
 		5D17A65F78A79C85A2C39D6C /* Pods-tingtingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingUITests.release.xcconfig"; path = "Target Support Files/Pods-tingtingUITests/Pods-tingtingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		92A8166867A8DC7052B28948 /* Pods-tingtingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingtingTests.release.xcconfig"; path = "Target Support Files/Pods-tingtingTests/Pods-tingtingTests.release.xcconfig"; sourceTree = "<group>"; };
 		A420245776FEB79904333E44 /* Pods-tingting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tingting.release.xcconfig"; path = "Target Support Files/Pods-tingting/Pods-tingting.release.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				53D098E723BC8BA200854712 /* Matching */,
 				5385F99B23AF5DFA002EFE9B /* Team.swift */,
 				5317C74923C06C7500D2FD10 /* User.swift */,
+				53FD7A8E23CF1FC7004A1D69 /* GenderType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */,
 				5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */,
 				53DD4A2023BE4C5500938405 /* APIModel.swift in Sources */,
+				53FD7A8F23CF1FC7004A1D69 /* GenderType.swift in Sources */,
 				53785F1C23C0AC9D00645B7E /* SignUpViewController.swift in Sources */,
 				5388BE4B239CE81500FBFFD5 /* MemberListView.swift in Sources */,
 				53AAD8BB23B7A86600B405CE /* MyTeamCell.swift in Sources */,

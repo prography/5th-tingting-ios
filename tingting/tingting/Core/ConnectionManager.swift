@@ -12,6 +12,8 @@ class ConnectionManager {
     
     static let shared: ConnectionManager = ConnectionManager()
     
+    var currentUser: User?
+    
     private let tokenKey = "TOKEN"
     
     var signUpRequest: APIModel.SignUp.Request = .init()

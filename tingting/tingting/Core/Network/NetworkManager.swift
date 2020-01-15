@@ -92,27 +92,34 @@ extension NetworkManager {
     static func getAllTeams() -> Router<[Team]> {
         let mockData = (0...20).map { _ in MockTeam.getMockResponse() }
         return Router(url: "/teams", method: .get, mockData: mockData)
+        
+        //return Router(url: "/teams", method: .get)
     }
     
     /// 팀 생성하기
     static func createTeam(_ teamInfo: TeamInfo) -> Router<Team> {
-        return Router(url: "/teams", method: .post)
+        return Router(url: "/teams", method: .post, mockData: MockTeam.getMockResponse())
+        // return Router(url: "/teams", method: .post)
     }
     
     /// 팀명 중복 확인
     static func checkDuplicate(teamName: String) -> Router<CommonReponse> {
-        return Router(url: "/teams/duplicate-name",
-                      method: .get)
+        return Router(url: "/teams/duplicate-name", method: .get, mockData: MockCommonReponse.getMockResponse())
+        
+        // return Router(url: "/teams/duplicate-name", method: .get)
     }
     
     /// 개별 팀 정보 보기
     static func getTeamInfo(id: String) -> Router<Team> {
-        return Router(url: "/teams/\(id)", method: .get)
+        return Router(url: "/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
+
+        //        return Router(url: "/teams/\(id)", method: .get)
     }
     
     /// 개별 팀 정보 보기
     static func getMyTeamInfo(id: String) -> Router<Team> {
-        return Router(url: "/me/teams/\(id)", method: .get)
+        return Router(url: "/me/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
+        // return Router(url: "/me/teams/\(id)", method: .get)
     }
     
     /// 나의 팀 정보 수정하기

@@ -66,9 +66,11 @@ class InputProfileViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         nextButton.rx.tap.bind {
+            let gender: GenderType = self.genderSegmentedControl.selectedSegmentIndex == 0 ? .male : .female
+            
             ConnectionManager.shared.signUpRequest.name = self.nicknameTextField.text
             ConnectionManager.shared.signUpRequest.birth = self.birthTextField.text
-            ConnectionManager.shared.signUpRequest.gender = self.genderSegmentedControl.selectedSegmentIndex
+            ConnectionManager.shared.signUpRequest.gender = gender
             ConnectionManager.shared.signUpRequest.height = Int(self.heightTextField.text ?? "0")
             
             let emailVC = EmailAuthenticationViewController.initiate()

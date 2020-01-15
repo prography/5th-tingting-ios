@@ -17,7 +17,7 @@ extension APIModel.SignUp {
     struct Request: Codable {
         var local_id: String?
         var password: String?
-        var gender: Int?
+        var gender: GenderType?
         var name: String?
         var birth: String? // 1993-09-02
         var thumbnail: String? = ""

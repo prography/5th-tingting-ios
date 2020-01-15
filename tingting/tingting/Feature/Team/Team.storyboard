@@ -376,7 +376,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="HoV-Cy-9Wt"/>
                                                 </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -505,7 +504,12 @@
                         <viewLayoutGuide key="safeArea" id="qE6-QJ-Qrh"/>
                     </view>
                     <connections>
+                        <outlet property="createTeamButton" destination="fFk-2f-H7Z" id="h96-PZ-Wg3"/>
+                        <outlet property="introTextView" destination="mnq-Ad-EqA" id="2od-FV-i1d"/>
+                        <outlet property="memberCountSegmentedControl" destination="38W-0o-zml" id="fxw-6Q-Vzw"/>
                         <outlet property="tagsView" destination="YGK-cy-aTa" id="sSn-VV-c9t"/>
+                        <outlet property="teamNameTextField" destination="NSY-re-BLc" id="iqU-Ou-Qxn"/>
+                        <outlet property="urlTextField" destination="DgI-ck-TgM" id="cEE-Mj-UP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYb-fU-tAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

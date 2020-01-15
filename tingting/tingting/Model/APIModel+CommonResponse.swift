@@ -11,3 +11,11 @@ import Foundation
 struct CommonReponse: Codable {
     let message: String
 }
+
+struct MockCommonReponse: MockProtocol {
+    typealias ResponseType = CommonReponse
+    
+    static func getMockResponse() -> CommonReponse {
+        return .init(message: "Mock Data ~")
+    }
+}

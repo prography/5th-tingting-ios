@@ -49,6 +49,7 @@ class SignInViewController: BaseViewController {
                 .asObservable()
                 .subscribe(
                     onNext: { profile in
+                        ConnectionManager.shared.currentUser = profile.myInfo
                         AlertManager.show(title: profile.myInfo.name! + " 님, 오늘은 매칭이 될까요? > <")
                         self.close()
                 },

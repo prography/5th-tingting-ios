@@ -7,17 +7,53 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import WSTagsField
 
 class CreateTeamViewController: BaseViewController {
 
+    @IBOutlet weak var teamNameTextField: BaseTextField!
+    @IBOutlet weak var memberCountSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var introTextView: BaseTextView!
+    @IBOutlet weak var urlTextField: BaseTextField!
     @IBOutlet weak var tagsView: UIView!
+    
+    @IBOutlet weak var createTeamButton: BaseButton!
+    
+    private let isValid: BehaviorRelay<Bool> = .init(value: false)
     
     fileprivate let tagsField = WSTagsField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTagsField()
+    }
+    
+    override func bind() {
+        
+        teamNameTextField.rx
+            .controlEvent([.editingChanged])
+            .bind(onNext: checkValidation)
+            .disposed(by: disposeBag)
+        
+        introTextView.rx.text.bind { _ in
+            self.checkValidation()
+        }.disposed(by: disposeBag)
+         
+        urlTextField.rx
+            .controlEvent([.editingChanged])
+            .bind(onNext: checkValidation)
+            .disposed(by: disposeBag)
+        
+        // TODO: Add Tag logic
+        
+        isValid.bind(onNext: createTeamButton.setEnable)
+            .disposed(by: disposeBag)
+        
+        createTeamButton.rx.tap.bind {
+            self.createTeam()
+        }.disposed(by: disposeBag)
     }
     
     func setTagsField() {
@@ -55,6 +91,66 @@ class CreateTeamViewController: BaseViewController {
 }
  
 extension CreateTeamViewController {
+    
+    private func checkValidation() {
+        guard let teamName = teamNameTextField.text, (1...8).contains(teamName.count) else {
+            isValid.accept(false)
+            return
+        }
+        
+        guard let intro = introTextView.text, (1...100).contains(intro.count) else {
+            isValid.accept(false)
+            return
+        }
+        
+        guard let url = urlTextField.text, !url.isEmpty else {
+            isValid.accept(false)
+            return
+        }
+        
+        // TODO: Add tag logic
+        
+        isValid.accept(true)
+          
+    }
+    
+    private func createTeam() {
+        
+        guard
+            let currentUser = ConnectionManager.shared.currentUser,
+            let name = teamNameTextField.text,
+            let chat_address = urlTextField.text,
+            let intro = introTextView.text,
+            let gender = currentUser.gender
+            else {
+                assertionFailure()
+                return
+        }
+        
+        // TODO: Add password
+        // let password: String? = nil
+
+        let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 2
+        let team = TeamInfo(name: name,
+                            chat_address: chat_address,
+                            owner_id: nil,
+                            intro: intro,
+                            gender: gender,
+                            password: nil,
+                            max_member_number: max_member_number)
+        startLoading(backgroundColor: .clear)
+        NetworkManager.createTeam(team)
+            .asObservable()
+            .subscribe(
+            onNext: { team in
+                self.dismiss(animated: true)
+        },
+            onError: { error in
+                Logger.error(error)
+                AlertManager.showError(error)
+                self.endLoading()
+            }).disposed(by: disposeBag)
+    }
 
     fileprivate func textFieldEvents() {
         tagsField.onDidAddTag = { field, tag in

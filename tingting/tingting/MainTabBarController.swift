@@ -34,14 +34,16 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
                 return naviVC
         }
         
-        
-        setLogin()
+        // setLogin()
+        // TODO: Remove
+        ConnectionManager.shared.currentUser = MockTeam.getMockResponse().members.first
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
+        AlertManager.show(title: "목데이터에유~")
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -62,6 +64,7 @@ extension MainTabBarController {
             .asObservable()
             .subscribe(
                 onNext: { profile in
+                    ConnectionManager.shared.currentUser = profile.myInfo
                     AlertManager.show(title: profile.myInfo.name! + "님 오늘 매칭이 궁금해요~ ><")
             },
                 onError: { error in

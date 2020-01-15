@@ -23,7 +23,7 @@ struct TeamInfo: Codable {
     let chat_address: String?
     let owner_id: Int?
     let intro: String?
-    let gender: Int?
+    let gender: GenderType?
     let password: String?
     let max_member_number: Int?
     let is_verified: Int?
@@ -44,10 +44,10 @@ struct TeamInfo: Codable {
          chat_address: String?,
          owner_id: Int?,
          intro: String?,
-         gender: Int?,
+         gender: GenderType?,
          password: String?,
          max_member_number: Int?,
-         is_verified: Int?
+         is_verified: Int? = 0
     ) {
         self.name = name
         self.chat_address = chat_address
@@ -69,7 +69,7 @@ struct MockTeam: MockProtocol {
                                  chat_address: "www.kakaomockData.com",
                                  owner_id: 1,
                                  intro: "Mock 안녕하세요 반가워요",
-                                 gender: 0,
+                                 gender: .male,
                                  password: nil,
                                  max_member_number: 3,
                                  is_verified: 1 )
@@ -79,21 +79,21 @@ struct MockTeam: MockProtocol {
                  birth: "1993-09-02",
                  height: 178,
                  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjVTjup5Hl5AtrYqSxv1JUMR7bTrOPn4cX_ZQcCgKxJh6LHee&s",
-                 gender: 0,
+                 gender: .male,
                  is_deleted: 0),
             
             User(name: "안녕안녕",
                  birth: "1993-09-01",
                  height: 170,
                  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWV2hAptWGKbUKg0vxUlkQXx8sDDm_YL0yWtgwlFndX-qf1Isu&s",
-                 gender: 0,
+                 gender: .male,
                  is_deleted: 0),
             
             User(name: "랄랄라",
                  birth: "1996-11-22",
                  height: 172,
                  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT59wJf85eT6HmkyI8ODvlffumYtdVy39KdrHRRoHrYZYBoYGF2&s",
-                 gender: 0,
+                 gender: .male,
                  is_deleted: 0)
         ]
         
