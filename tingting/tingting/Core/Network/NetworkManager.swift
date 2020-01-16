@@ -133,8 +133,9 @@ extension NetworkManager {
     }
     
     /// 팀 합류하기
-    static func joinTeam(id: String) -> Router<CommonReponse> {
-        return Router(url: "/teams/\(id)/join", method: .post)
+    static func joinTeam(id: Int) -> Router<CommonReponse> {
+        return Router(url: "/teams/\(id)/join", method: .post, mockData: MockCommonReponse.getMockResponse())
+        // return Router(url: "/teams/\(id)/join", method: .post)
     }
 }
 

@@ -139,17 +139,36 @@ extension CreateTeamViewController {
                             password: nil,
                             max_member_number: max_member_number)
         startLoading(backgroundColor: .clear)
-        NetworkManager.createTeam(team)
-            .asObservable()
+        
+        NetworkManager.checkDuplicate(teamName: name).asObservable()
             .subscribe(
-            onNext: { team in
-                self.dismiss(animated: true)
-        },
-            onError: { error in
-                Logger.error(error)
-                AlertManager.showError(error)
-                self.endLoading()
-            }).disposed(by: disposeBag)
+                onNext: { [weak self] response in
+                    guard let self = self else { return }
+                    
+                    
+                    NetworkManager.createTeam(team)
+                        .asObservable()
+                        .subscribe(
+                            onNext: { team in
+                                self.dismiss(animated: true)
+                        },
+                            onError: { error in
+                                Logger.error(error)
+                                AlertManager.showError(error)
+                                self.endLoading()
+                        }
+                    ).disposed(by: self.disposeBag)
+                    
+                
+                    
+                },
+                onError: { error in
+                    Logger.error(error)
+                    AlertManager.showError(error)
+                    self.endLoading()
+            }
+        ).disposed(by: disposeBag)
+         
     }
 
     fileprivate func textFieldEvents() {

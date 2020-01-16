@@ -19,6 +19,8 @@ struct Team: Codable {
 
 struct TeamInfo: Codable {
 
+    let id: Int?
+    
     let name: String?
     let chat_address: String?
     let owner_id: Int?
@@ -29,7 +31,7 @@ struct TeamInfo: Codable {
     let is_verified: Int?
     
     init() {
-        
+        self.id = nil
         self.name = nil
         self.chat_address = nil
         self.owner_id = nil
@@ -40,7 +42,8 @@ struct TeamInfo: Codable {
         self.is_verified = nil
         
     }
-    init(name: String?,
+    init(id: Int? = nil,
+         name: String?,
          chat_address: String?,
          owner_id: Int?,
          intro: String?,
@@ -49,6 +52,7 @@ struct TeamInfo: Codable {
          max_member_number: Int?,
          is_verified: Int? = 0
     ) {
+        self.id = id
         self.name = name
         self.chat_address = chat_address
         self.owner_id = owner_id
@@ -65,7 +69,8 @@ struct MockTeam: MockProtocol {
     
     static func getMockResponse() -> Team {
         
-        let teamInfo = TeamInfo (name: "랄랄라",
+        let teamInfo = TeamInfo (id: 1,
+                                 name: "랄랄라",
                                  chat_address: "www.kakaomockData.com",
                                  owner_id: 1,
                                  intro: "Mock 안녕하세요 반가워요",
