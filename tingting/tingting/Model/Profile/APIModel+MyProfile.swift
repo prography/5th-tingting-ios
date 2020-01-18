@@ -13,7 +13,7 @@ extension APIModel {
         
         let myInfo: User
         
-        let myTeamList: [Int]?
+        let myTeamList: [TeamInfo]?
           
     }
 }

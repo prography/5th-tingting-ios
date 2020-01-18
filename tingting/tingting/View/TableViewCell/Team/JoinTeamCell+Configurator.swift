@@ -23,7 +23,7 @@ class JoinTeamCellConfigurator<T: JoinTeamCell>: CellConfigurator {
         cell.imageViews.enumerated()
             .forEach { index, imageView in
                 guard
-                    let member = self.team.members[optional: index] else {
+                    let member = self.team.teamMembers[optional: index] else {
                     imageView.isHidden = true
                     return
                 }

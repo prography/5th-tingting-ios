@@ -12,14 +12,14 @@ struct Team: Codable {
     
     var teamInfo: TeamInfo
     
-    var members: [User] = []
+    var teamMembers: [User] = []
     
     
 }
 
 struct TeamInfo: Codable {
 
-    let id: Int?
+    var id: Int?
     
     let name: String?
     let chat_address: String?
@@ -103,6 +103,6 @@ struct MockTeam: MockProtocol {
         ]
         
         
-        return Team(teamInfo: teamInfo, members: users)
+        return Team(teamInfo: teamInfo, teamMembers: users)
     }
 }

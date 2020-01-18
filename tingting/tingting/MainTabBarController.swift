@@ -34,16 +34,16 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
                 return naviVC
         }
         
-        // setLogin()
+         setLogin()
         // TODO: Remove
-        ConnectionManager.shared.currentUser = MockTeam.getMockResponse().members.first
+//        ConnectionManager.shared.currentUser = MockTeam.getMockResponse().members.first
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        AlertManager.show(title: "목데이터에유~")
+//        AlertManager.show(title: "목데이터에유~")
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

@@ -70,8 +70,21 @@ extension SignInViewController {
             .asObservable()
             .subscribe(
                 onNext: { response in
+                    
                     ConnectionManager.shared.saveToken(response.token)
-                    self.close()
+                    
+                    NetworkManager.getMyProfile()
+                        .asObservable()
+                        .subscribe(
+                            onNext: { myProfile in
+                                ConnectionManager.shared.currentUser = myProfile.myInfo
+                                self.close()
+                        },
+                            onError: { error in
+                                AlertManager.showError(error)
+                        }
+                    ).disposed(by: self.disposeBag)
+                    
             },
                 onError: { error in
                     AlertManager.showError(error)

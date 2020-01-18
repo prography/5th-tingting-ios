@@ -23,14 +23,46 @@ class JoinTeamViewController: BaseViewController {
         super.viewDidLoad()
         
         teamIntroView.configure(with: team)
-        memberListView.configure(with: team.members)
- 
+        memberListView.configure(with: team.teamMembers)
+        
     }
     override func bind() {
         joinButton.rx.tap
-            .bind(onNext: joinTeam)
-            .disposed(by: disposeBag)
+            .bind { [weak self] in
+                self?.joinTeam()
+        }.disposed(by: disposeBag)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        startLoading(backgroundColor: .clear)
+        
+        guard let teamID = team.teamInfo.id else {
+            assertionFailure()
+            return
+        }
+        NetworkManager.getTeamInfo(id: teamID)
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] team in
+                    guard let self = self else { return }
+                    
+                    self.team = team
+                    self.team.teamInfo.id = teamID
+                    self.teamIntroView.configure(with: team)
+                    self.memberListView.configure(with: team.teamMembers)
+                    self.endLoading()
+                    
+                },
+                onError: { [weak self] error in
+                    Logger.error(error)
+                    self?.endLoading()
+                }
+        ).disposed(by: disposeBag)
+        
+    }
+
 }
 
 extension JoinTeamViewController {

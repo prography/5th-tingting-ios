@@ -122,7 +122,8 @@ extension CreateTeamViewController {
             let chat_address = urlTextField.text,
             let intro = introTextView.text,
             let gender = currentUser.gender
-            else {
+            else
+        {
                 assertionFailure()
                 return
         }
