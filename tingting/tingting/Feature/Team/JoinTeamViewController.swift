@@ -84,6 +84,7 @@ extension JoinTeamViewController {
             },
                 onError: { [weak self] error in
                     Logger.error(error)
+                    AlertManager.showError(error)
                     self?.endLoading()
                 }
                 

@@ -93,7 +93,7 @@ extension NetworkManager {
 //        let mockData = (0...20).map { _ in MockTeam.getMockResponse() }
 //        return Router(url: "/teams", method: .get, mockData: mockData)
         
-        return Router<TeamList>(url: "/teams", method: .get)
+        return Router<APIModel.TeamList>(url: "/teams", method: .get)
             .asObservable()
             .map { $0.getTeamList() }
     }
@@ -143,7 +143,9 @@ extension NetworkManager {
 
 // Matching
 extension NetworkManager {
-    
+    static func getAllMatchingList() -> Router<APIModel.MatcingTeamList> {
+        return Router(url: "/matching/teams", method: .get)
+    }
 }
 
 extension NetworkManager {

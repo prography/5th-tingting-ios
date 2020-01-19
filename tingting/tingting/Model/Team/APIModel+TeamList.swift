@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct TeamList: Codable {
-    private let teamList: [TeamDetail]
-    
+extension APIModel {
+    struct TeamList: Codable {
+        private let teamList: [TeamDetail]
+        
+    }
 }
 
 
-extension TeamList {
+extension APIModel.TeamList {
     
     func getTeamList() -> [Team] {
         
@@ -22,7 +24,7 @@ extension TeamList {
     }
 }
 
-extension TeamList {
+extension APIModel.TeamList {
     
     struct TeamDetail: Codable {
         let id: Int

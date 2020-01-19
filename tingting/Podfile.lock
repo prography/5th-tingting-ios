@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.0.0-rc.3)
   - BonMot (5.4.1)
   - Differentiator (4.0.1)
+  - DropDown (2.3.13)
   - Hero (1.4.0)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
@@ -37,6 +38,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
   - BonMot (~> 5.4)
+  - DropDown
   - Hero (~> 1.4.0)
   - Kingfisher (~> 5.0)
   - lottie-ios (~> 3.1.0)
@@ -47,7 +49,7 @@ DEPENDENCIES:
   - RxSwiftExt (~> 5)
   - SnapKit (~> 5.0.0)
   - SwiftyBeaver (~> 1.7.0)
-  - TextFieldEffects
+  - TextFieldEffects (~> 1.6.0)
   - WSTagsField (~> 5.2)
 
 SPEC REPOS:
@@ -55,6 +57,7 @@ SPEC REPOS:
     - Alamofire
     - BonMot
     - Differentiator
+    - DropDown
     - Hero
     - Kingfisher
     - lottie-ios
@@ -74,6 +77,7 @@ SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   BonMot: aa82119ff2ffa184223d8a31c72aed84fbb009e0
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
@@ -89,6 +93,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   WSTagsField: d57a287fd552934db1d93a85d38abbf74b067d6a
 
-PODFILE CHECKSUM: 79957aae1cd9559590e757470523a392a9ccb2b2
+PODFILE CHECKSUM: f78dcb329219e1b5d8e64b343a3ade7d867299c9
 
 COCOAPODS: 1.7.2

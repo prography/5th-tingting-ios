@@ -10,6 +10,7 @@ target 'tingting' do
   pod 'RxDataSources', '~> 4.0'
   pod 'Alamofire', '~> 5.0.0-beta.5'
   
+  pod 'DropDown', '~>2.3.13'
   pod 'Hero', '~> 1.4.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'lottie-ios', '~> 3.1.0'
