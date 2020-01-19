@@ -29,10 +29,9 @@ class MatchingTeamListViewController: BaseViewController {
         return dropdown
     }()
     
-    let items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
-    
-    let myTeamInfos: BehaviorRelay<[TeamInfo]> = .init(value: [])
-    let matchingTeamList: BehaviorRelay<[Team]> = .init(value: [])
+    private let items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
+      
+    private let teamManager = TeamManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,24 +52,25 @@ class MatchingTeamListViewController: BaseViewController {
          
         teamButton.rx.tap
             .bind { [weak self] in
-                guard let self = self else { return }
-                self.teamDropDown.show()
-        }
-        .disposed(by: disposeBag)
-        
-        teamDropDown.selectionAction = { [weak self] (index, item) in
-            self?.teamButton.setTitle(item, for: .normal)
-        }
-        
-        
-        myTeamInfos.bind { [weak self] teamInfos in
-            self?.teamDropDown.dataSource = teamInfos.compactMap { $0.name }
-            self?.teamDropDown.reloadAllComponents()
+                self?.teamDropDown.show()
         }.disposed(by: disposeBag)
         
-        matchingTeamList.bind { [weak self] teamList in
-            let configurator = teamList.map(JoinTeamCellConfigurator.init)
-            self?.items.accept(configurator)
+        teamDropDown.selectionAction = { [weak self] index, item in
+            let teamInfos = TeamManager.shared.myTeamInfos.value
+            let teamInfo = teamInfos.first { $0.name == item }
+            self?.teamManager.selectedMyTeamInfo.accept(teamInfo)
+        }
+         
+        TeamManager.shared.myTeamInfos
+            .bind { [weak self] teamInfos in
+                self?.teamDropDown.dataSource = teamInfos.compactMap { $0.name }
+                self?.teamDropDown.reloadAllComponents()
+        }.disposed(by: disposeBag)
+        
+        TeamManager.shared.matchingTeamList
+            .bind { [weak self] teamList in
+                let configurator = teamList.map(JoinTeamCellConfigurator.init)
+                self?.items.accept(configurator)
         }.disposed(by: disposeBag)
         
         items.bind(to: tableView.rx.items) { tableView, index, configurator in
@@ -79,12 +79,15 @@ class MatchingTeamListViewController: BaseViewController {
             return cell
         }.disposed(by: disposeBag)
         
+         
         
-        
-        
-        tableView.rx.itemSelected.bind { _ in
-            let vc = MatchingTeamViewController.initiate()
+        tableView.rx.itemSelected.bind { [weak self] in
+            guard let self = self else { return }
+            let team = self.teamManager.matchingTeamList.value[$0.row]
+            let vc = MatchingTeamViewController.initiate(to: team)
+            
             self.navigationController?.pushViewController(vc, animated: true)
+            
         }.disposed(by: disposeBag)
     }
     
@@ -96,18 +99,25 @@ class MatchingTeamListViewController: BaseViewController {
 
 extension MatchingTeamListViewController {
     func getMatchingTeamList() {
+        startLoading(backgroundColor: .clear)
+        
         NetworkManager.getAllMatchingList()
             .asObservable()
             .subscribe(
                 onNext: { [weak self] response in
-                    guard let self = self else { return }
                     
-                    self.myTeamInfos.accept(response.myTeamList)
-                    self.matchingTeamList.accept(response.matchingTeamList())
+                    self?.teamManager.myTeamInfos.accept(response.myTeamList)
+                    self?.teamManager.matchingTeamList.accept(response.matchingTeamList())
+                    
+                    // TODO: Remove
+                    self?.teamManager.matchingTeamList.accept([MockTeam.getMockResponse(),
+                                                               MockTeam.getMockResponse(),])
+                    self?.endLoading()
  
                 },
-                onError: { error in
+                onError: { [weak self] error in
                     AlertManager.showError(error)
+                    self?.endLoading()
             }
         ).disposed(by: disposeBag)
     }

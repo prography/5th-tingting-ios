@@ -86,6 +86,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vBw-oY-omu"/>
                     </view>
+                    <connections>
+                        <outlet property="applyButton" destination="qz8-6H-7Pj" id="RcX-Ut-hvl"/>
+                        <outlet property="memberListView" destination="t2g-kB-66Q" id="aCN-m8-xLw"/>
+                        <outlet property="teamIntroView" destination="A3H-ZL-I6N" id="B6T-Rn-5Jp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruU-rv-Drr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

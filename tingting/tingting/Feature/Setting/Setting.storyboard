@@ -41,7 +41,7 @@
                                             <rect key="frame" x="37" y="0.0" width="337" height="158"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="29" width="101.00000000000011" height="100.00000000000011"/>
+                                                    <rect key="frame" x="0.0" y="29" width="101" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="G2M-v5-Jfp" secondAttribute="height" multiplier="1:1" constant="1" id="duu-I2-Ifq"/>
                                                         <constraint firstAttribute="height" constant="100" id="pSa-5x-mNX"/>

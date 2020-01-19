@@ -46,6 +46,7 @@
 		5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */; };
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
 		532D0E5A23D43F7C0057E189 /* APIModel+MatchingTeamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */; };
+		532D0E5C23D455B90057E189 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5B23D455B90057E189 /* TeamManager.swift */; };
 		5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */; };
 		5343F47B23C1D25F0024E630 /* MyMatchingTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */; };
 		5343F47D23C1FEEB0024E630 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47C23C1FEEB0024E630 /* Error+Extension.swift */; };
@@ -188,6 +189,7 @@
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+MatchingTeamList.swift"; sourceTree = "<group>"; };
+		532D0E5B23D455B90057E189 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMatchingTeamCell.xib; sourceTree = "<group>"; };
 		5343F47C23C1FEEB0024E630 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				53D098E223BC792900854712 /* AlertManager.swift */,
 				5343F47E23C1FF6E0024E630 /* StringError.swift */,
 				5326719223C4B20F00118B6B /* Validator.swift */,
+				532D0E5B23D455B90057E189 /* TeamManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1051,6 +1054,7 @@
 				5320998D23C617EB001873FA /* APIModel+MyProfile.swift in Sources */,
 				53BF9C5A23AB9E530013451C /* BaseNavigationController.swift in Sources */,
 				534B5FB923C0C0DB007397B3 /* AnimatedTextField.swift in Sources */,
+				532D0E5C23D455B90057E189 /* TeamManager.swift in Sources */,
 				53D098E123BB77E300854712 /* JoinTeamViewController.swift in Sources */,
 				534B5FBB23C0D413007397B3 /* BaseTextView.swift in Sources */,
 				53AAD8B023B7886300B405CE /* UIUserInterfaceStyle+Extension.swift in Sources */,
