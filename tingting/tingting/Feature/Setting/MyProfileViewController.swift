@@ -12,18 +12,26 @@ import RxCocoa
 
 class MyProfileViewController: BaseViewController {
 
+    @IBOutlet weak var settingButton: UIButton!
+    
+    @IBOutlet weak var profileImageView: BaseImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var editProfileButton: UIButton!
+    
+    
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.didSetDefault()
         }
     }
     
-    var items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
-    
-    
+    let currentUser: BehaviorRelay<User> = .init(value: ConnectionManager.shared.currentUser!)
+    let items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+         
         let configurators: [CellConfigurator] = [
             LabelCellConfigurator(title: "룰루랄라님의 팀", isNew: false, subtitle: nil, hasAddButton: true),
             MyTeamCellConfigurator(),
@@ -46,6 +54,12 @@ class MyProfileViewController: BaseViewController {
     
     override func bind() {
         
+        currentUser.bind { [weak self] user in
+            ConnectionManager.shared.currentUser = user
+            self?.profileImageView.setImage(url: user.thumbnail)
+            self?.nicknameLabel.text = "\(user.name ?? "") 님"
+        }.disposed(by: disposeBag)
+        
         items.bind(to: tableView.rx.items) { tableView, index, configurator in
             let cell = tableView.configuredBaseCell(with: configurator)
             cell.selectionStyle = .none
@@ -67,6 +81,28 @@ class MyProfileViewController: BaseViewController {
             
             return cell
         }.disposed(by: disposeBag)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.getMyProfile()
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] myProfile in
+                    self?.currentUser.accept(myProfile.myInfo)
+                },
+                
+                onError: { error in
+                    AlertManager.showError(error)
+            }
+        ).disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
 }
