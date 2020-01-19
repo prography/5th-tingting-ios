@@ -22,7 +22,7 @@ extension UIImageView {
     private func setImage(_ url: URL?) {
         self.contentMode = .scaleAspectFill
         
-        self.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { result in
+        self.kf.setImage(with: url, placeholder: UIImage(named: "user_placeholder"), options: [.transition(.fade(1))], progressBlock: nil) { result in
             
             switch result {
             case .success:

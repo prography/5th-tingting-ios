@@ -40,8 +40,8 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-6r-ZWs">
                                             <rect key="frame" x="37" y="0.0" width="337" height="158"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suji.png" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="29" width="101" height="100"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="29" width="101.00000000000011" height="100.00000000000011"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="G2M-v5-Jfp" secondAttribute="height" multiplier="1:1" constant="1" id="duu-I2-Ifq"/>
                                                         <constraint firstAttribute="height" constant="100" id="pSa-5x-mNX"/>
@@ -59,7 +59,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjZ-GK-ons">
                                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="30"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="룰루랄라 님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-Uy-hli">
                                                                             <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="30" id="hth-BE-QgP"/>
@@ -152,6 +152,6 @@
     <resources>
         <image name="edit" width="12" height="12"/>
         <image name="settings" width="19" height="19"/>
-        <image name="suji.png" width="491" height="494"/>
+        <image name="user_placeholder" width="412" height="412"/>
     </resources>
 </document>

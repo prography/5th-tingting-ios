@@ -26,12 +26,16 @@ class MyProfileViewController: BaseViewController {
         }
     }
     
-    let currentUser: BehaviorRelay<User> = .init(value: ConnectionManager.shared.currentUser!)
+    let currentUser: PublishRelay<User> = .init()
     let items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
      
     override func viewDidLoad() {
         super.viewDidLoad()
          
+        if let user = ConnectionManager.shared.currentUser {
+            currentUser.accept(user)
+        }
+        
         let configurators: [CellConfigurator] = [
             LabelCellConfigurator(title: "룰루랄라님의 팀", isNew: false, subtitle: nil, hasAddButton: true),
             MyTeamCellConfigurator(),
