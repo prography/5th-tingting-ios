@@ -36,28 +36,11 @@ class MyProfileViewController: BaseViewController {
             currentUser.accept(user)
         }
         
-        let configurators: [CellConfigurator] = [
-            LabelCellConfigurator(title: "룰루랄라님의 팀", isNew: false, subtitle: nil, hasAddButton: true),
-            MyTeamCellConfigurator(),
-            MyTeamCellConfigurator(),
-            MyTeamCellConfigurator(),
-            MyTeamCellConfigurator(),
-            MyTeamCellConfigurator(),
-            MyTeamCellConfigurator(), 
-            
-            
-            LabelCellConfigurator(title: "응답 요청", isNew: false, subtitle: nil, hasAddButton: false),
-            SpaceCellConfigurator(5),
-            MatchingTeamStateCellConfigurator(),
-            MatchingTeamStateCellConfigurator()
-        ]
-        
-        items.accept(configurators)
-        
+        makeConfigurator()
     }
     
     override func bind() {
-        
+         
         currentUser.bind { [weak self] user in
             ConnectionManager.shared.currentUser = user
             self?.profileImageView.setImage(url: user.thumbnail)
@@ -71,8 +54,15 @@ class MyProfileViewController: BaseViewController {
             
             if let myTeamCell = cell as? MyTeamCell {
                 myTeamCell.teamInfoButton.rx.tap.bind {
-                    let teamVC = MyTeamViewController.initiate()
+                    
+                    guard let teamID = myTeamCell.teamInfo.id else {
+                        assertionFailure()
+                        return
+                    }
+                    
+                    let teamVC = MyTeamViewController.initiate(teamID: teamID)
                     self.navigationController?.pushViewController(teamVC, animated: true)
+                    
                 }.disposed(by: myTeamCell.disposeBag)
             }
             
@@ -109,6 +99,44 @@ class MyProfileViewController: BaseViewController {
         
     }
     
+}
+
+
+extension MyProfileViewController {
+    func makeConfigurator() {
+        
+        let nickname = ConnectionManager.shared.currentUser?.name ?? ""
+        
+        let myTeamTitles = [ LabelCellConfigurator(title: "\(nickname)님의 팀", isNew: false, subtitle: nil, hasAddButton: true) ]
+        
+        // TODO: Change data
+        // let myTeamInfos = TeamManager.shared.myTeamInfos
+        let myTeamInfos = [MockTeam.getMockResponse().teamInfo,
+                           MockTeam.getMockResponse().teamInfo,
+                           MockTeam.getMockResponse().teamInfo,
+                           MockTeam.getMockResponse().teamInfo,
+                           MockTeam.getMockResponse().teamInfo,
+        ]
+        
+        let matchingTeamTitles: [CellConfigurator] = [
+            LabelCellConfigurator(title: "응답 요청", isNew: false, subtitle: nil, hasAddButton: false),
+            SpaceCellConfigurator(5)
+        ]
+        
+        let matchingTeams = [
+                MatchingTeamStateCellConfigurator(),
+                MatchingTeamStateCellConfigurator()
+        ]
+        
+        
+        let configurators: [CellConfigurator] =
+            myTeamTitles
+            + myTeamInfos.map { MyTeamCellConfigurator(teamInfo: $0) }
+            + matchingTeamTitles
+            + matchingTeams
+        
+        items.accept(configurators)
+    }
 }
 
 extension MyProfileViewController {

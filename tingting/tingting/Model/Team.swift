@@ -15,6 +15,11 @@ struct Team: Codable {
     var teamMembers: [User] = []
     
     
+    var isHeartSent: Bool? = false
+    
+    var didSendHeart: Bool {
+        return isHeartSent ?? false
+    }
 }
 
 struct TeamInfo: Codable {

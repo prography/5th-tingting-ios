@@ -9,7 +9,11 @@
 import UIKit
 
 class MyTeamCell: BaseCell {
- 
+    
+    var teamInfo: TeamInfo!
+    
+    @IBOutlet weak var teamNameLabel: UILabel!
+    
     @IBOutlet weak var teamInfoButton: UIButton!
     
     override func awakeFromNib() {

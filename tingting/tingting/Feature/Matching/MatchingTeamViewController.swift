@@ -22,6 +22,24 @@ class MatchingTeamViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        startLoading()
+        guard let teamID = team.teamInfo.id else { return }
+        NetworkManager.getMatchingTeam(id: teamID)
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] team in
+                    self?.team = team
+                    self?.endLoading()
+            },
+                onError: { [weak self] error in
+                    self?.endLoading()
+                    AlertManager.showError(error)
+                    Logger.error(error)
+            }
+        ).disposed(by: disposeBag)
+        
+        
         teamIntroView.configure(with: team)
         memberListView.configure(with: team.teamMembers)
     }

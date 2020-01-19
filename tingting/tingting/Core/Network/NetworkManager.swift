@@ -143,8 +143,29 @@ extension NetworkManager {
 
 // Matching
 extension NetworkManager {
+    /// 전체 매칭 후보 목록 보기
     static func getAllMatchingList() -> Router<APIModel.MatcingTeamList> {
         return Router(url: "/matching/teams", method: .get)
+    }
+    
+    /// 개별 매칭 후보 정보 보기 (팀보기)
+    static func getMatchingTeam(id: Int) -> Router<Team> {
+        
+        let myTeamID = TeamManager.shared.selectedMyTeamInfo.value?.id
+        
+        let params = ["myTeamId": myTeamID]
+        
+        return Router(url: "/matching/teams/\(id)", method: .get, parameters: params)
+    }
+
+    /// 개별 매칭 후보 정보 보기 (신청팀 보기)
+    static func getAppliedMatchingTeam(id: Int) -> Router<Team> {
+        
+        let myTeamID = TeamManager.shared.selectedMyTeamInfo.value?.id
+        
+        let params = ["myTeamId": myTeamID]
+        
+        return Router(url: "/matching/applied-teams/\(id)", method: .get, parameters: params)
     }
 }
 

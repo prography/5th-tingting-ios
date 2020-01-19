@@ -12,7 +12,7 @@ extension APIModel {
     struct MatcingTeamList: Codable {
         let myTeamList: [TeamInfo] = []
         private let matchingList: [MatchingTeam]
-        
+ 
         func matchingTeamList() -> [Team] {
             return matchingList.map { $0.team() }
         }
