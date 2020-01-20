@@ -101,14 +101,15 @@ extension NetworkManager {
     /// 팀 생성하기
     static func createTeam(_ teamInfo: TeamInfo) -> Router<Team> {
 //        return Router(url: "/teams", method: .post, mockData: MockTeam.getMockResponse())
-         return Router(url: "/teams", method: .post)
+         return Router(url: "/teams", method: .post, parameters: teamInfo)
     }
     
     /// 팀명 중복 확인
     static func checkDuplicate(teamName: String) -> Router<CommonReponse> {
 //        return Router(url: "/teams/duplicate-name", method: .get, mockData: MockCommonReponse.getMockResponse())
         
-         return Router(url: "/teams/duplicate-name", method: .get)
+        let params = ["name": teamName]
+        return Router(url: "/teams/duplicate-name", method: .get, parameters: params)
     }
     
     /// 개별 팀 정보 보기

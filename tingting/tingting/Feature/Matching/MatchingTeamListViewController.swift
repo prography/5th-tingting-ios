@@ -13,8 +13,7 @@ import DropDown
 import NotificationBannerSwift
 
 class MatchingTeamListViewController: BaseViewController {
-
-    
+ 
     @IBOutlet weak var teamButton: BaseButton!
     @IBOutlet weak var tableView: UITableView! {
            didSet {
@@ -35,12 +34,12 @@ class MatchingTeamListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let configurators = (0...20).map { _ -> JoinTeamCellConfigurator<JoinTeamCell> in
-            let team = Team(teamInfo: .init())
-            return JoinTeamCellConfigurator(team: team)
-        }
-        items.accept(configurators)
+        // TODO: Remove
+//        let configurators = (0...20).map { _ -> JoinTeamCellConfigurator<JoinTeamCell> in
+//            let team = Team(teamInfo: .init())
+//            return JoinTeamCellConfigurator(team: team)
+//        }
+//        items.accept(configurators)
         setDropDown()
         
         
@@ -61,16 +60,22 @@ class MatchingTeamListViewController: BaseViewController {
             self?.teamManager.selectedMyTeamInfo.accept(teamInfo)
         }
          
-        TeamManager.shared.myTeamInfos
+        teamManager.selectedMyTeamInfo
+            .compactMap { $0 }
+            .bind { [weak self] teamInfo in
+                self?.teamButton.setTitle(teamInfo.name, for: .normal)
+                self?.loadTeamList()
+        }.disposed(by: disposeBag)
+        
+        teamManager.myTeamInfos
             .bind { [weak self] teamInfos in
                 self?.teamDropDown.dataSource = teamInfos.compactMap { $0.name }
                 self?.teamDropDown.reloadAllComponents()
         }.disposed(by: disposeBag)
         
-        TeamManager.shared.matchingTeamList
-            .bind { [weak self] teamList in
-                let configurator = teamList.map(JoinTeamCellConfigurator.init)
-                self?.items.accept(configurator)
+        teamManager.matchingTeamList
+            .bind { [weak self] _ in
+                self?.loadTeamList()
         }.disposed(by: disposeBag)
         
         items.bind(to: tableView.rx.items) { tableView, index, configurator in
@@ -108,10 +113,7 @@ extension MatchingTeamListViewController {
                     
                     self?.teamManager.myTeamInfos.accept(response.myTeamList)
                     self?.teamManager.matchingTeamList.accept(response.matchingTeamList())
-                    
-                    // TODO: Remove
-                    self?.teamManager.matchingTeamList.accept([MockTeam.getMockResponse(),
-                                                               MockTeam.getMockResponse(),])
+                      
                     self?.endLoading()
  
                 },
@@ -120,6 +122,18 @@ extension MatchingTeamListViewController {
                     self?.endLoading()
             }
         ).disposed(by: disposeBag)
+    }
+    
+    func loadTeamList() {
+        
+        let selectedTeam = teamManager.selectedMyTeamInfo.value
+        
+        let teamList = teamManager.matchingTeamList.value
+            .filter { $0.teamInfo.max_member_number! == selectedTeam?.max_member_number }
+        
+        let configurator = teamList.map(JoinTeamCellConfigurator.init)
+        
+        items.accept(configurator)
     }
     
     func setDropDown() {

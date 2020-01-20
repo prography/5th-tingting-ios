@@ -36,4 +36,9 @@ class ConnectionManager {
         UserDefaults().set(nil, forKey: tokenKey)
     }
  
+    func logout() {
+        currentUser = nil
+        removeToken()
+    }
+    
 }

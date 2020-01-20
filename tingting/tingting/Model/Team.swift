@@ -17,9 +17,7 @@ struct Team: Codable {
     
     var isHeartSent: Bool? = false
     
-    var didSendHeart: Bool {
-        return isHeartSent ?? false
-    }
+ 
 }
 
 struct TeamInfo: Codable {

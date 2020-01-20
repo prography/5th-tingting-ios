@@ -47,6 +47,7 @@
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
 		532D0E5A23D43F7C0057E189 /* APIModel+MatchingTeamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */; };
 		532D0E5C23D455B90057E189 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5B23D455B90057E189 /* TeamManager.swift */; };
+		532D0E5E23D5C5CB0057E189 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */; };
 		5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */; };
 		5343F47B23C1D25F0024E630 /* MyMatchingTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */; };
 		5343F47D23C1FEEB0024E630 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47C23C1FEEB0024E630 /* Error+Extension.swift */; };
@@ -190,6 +191,7 @@
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+MatchingTeamList.swift"; sourceTree = "<group>"; };
 		532D0E5B23D455B90057E189 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
+		532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMatchingTeamCell.xib; sourceTree = "<group>"; };
 		5343F47C23C1FEEB0024E630 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				538FE52323ABA91800F2AE22 /* Setting.storyboard */,
 				538FE52523ABA99100F2AE22 /* EditProfileViewController.swift */,
 				538FE52723ABAA2200F2AE22 /* MyProfileViewController.swift */,
+				532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1048,6 +1051,7 @@
 				53D098DC23BB642100854712 /* JoinTeamCell.swift in Sources */,
 				5356A3B523CB337B000B435A /* UIImageView+Extension.swift in Sources */,
 				5388BE4F239CEAA800FBFFD5 /* UICollectionView+Extension.swift in Sources */,
+				532D0E5E23D5C5CB0057E189 /* SettingViewController.swift in Sources */,
 				5356A3B323CB3248000B435A /* Collection+Extension.swift in Sources */,
 				5388BE48239CD92200FBFFD5 /* BaseView.swift in Sources */,
 				531A5012237D5E3D008E65A4 /* InputPhotoViewController.swift in Sources */,
@@ -1234,14 +1238,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MSW35G2APL;
 				INFOPLIST_FILE = tingting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "1.0ㅌ";
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1255,14 +1259,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MSW35G2APL;
 				INFOPLIST_FILE = tingting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "1.0ㅌ";
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

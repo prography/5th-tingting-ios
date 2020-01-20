@@ -131,7 +131,7 @@ extension CreateTeamViewController {
         // TODO: Add password
         // let password: String? = nil
 
-        let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 2
+        let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 1
         let team = TeamInfo(name: name,
                             chat_address: chat_address,
                             owner_id: nil,

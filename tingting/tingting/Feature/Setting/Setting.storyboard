@@ -148,6 +148,73 @@
             </objects>
             <point key="canvasLocation" x="779.71014492753625" y="121.875"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="Up2-YZ-eHc">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bkb-Z7-EdT" customClass="SettingViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YEq-mX-jpX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwq-yj-wwH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="40K-MN-kRt">
+                                    <rect key="frame" x="0.0" y="99.5" width="414" height="88"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odf-TC-15O" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                                            <rect key="frame" x="28" y="29" width="358" height="50"/>
+                                            <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="a6g-pV-dmo"/>
+                                            </constraints>
+                                            <state key="normal" title="로그아웃">
+                                                <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Odf-TC-15O" firstAttribute="top" secondItem="40K-MN-kRt" secondAttribute="top" constant="29" id="3z0-UE-hXd"/>
+                                        <constraint firstItem="Odf-TC-15O" firstAttribute="leading" secondItem="40K-MN-kRt" secondAttribute="leading" constant="28" id="ZNS-Dv-vaN"/>
+                                        <constraint firstItem="Odf-TC-15O" firstAttribute="centerX" secondItem="40K-MN-kRt" secondAttribute="centerX" id="vCZ-6U-BeY"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zMI-P3-T2g">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zMI-P3-T2g" id="fac-Ay-sLB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Smn-xO-UVS" firstAttribute="bottom" secondItem="gwq-yj-wwH" secondAttribute="bottom" id="JRi-9Y-QKM"/>
+                            <constraint firstItem="Smn-xO-UVS" firstAttribute="trailing" secondItem="gwq-yj-wwH" secondAttribute="trailing" id="Pc0-4D-gtH"/>
+                            <constraint firstItem="gwq-yj-wwH" firstAttribute="leading" secondItem="Smn-xO-UVS" secondAttribute="leading" id="Xbx-Aq-mdI"/>
+                            <constraint firstItem="gwq-yj-wwH" firstAttribute="top" secondItem="Smn-xO-UVS" secondAttribute="top" id="zGI-QH-GFw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Smn-xO-UVS"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="Odf-TC-15O" id="kz1-G9-1aS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U97-El-OYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628.985507246377" y="122.54464285714285"/>
+        </scene>
     </scenes>
     <resources>
         <image name="edit" width="12" height="12"/>

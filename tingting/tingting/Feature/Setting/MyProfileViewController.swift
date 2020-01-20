@@ -40,11 +40,17 @@ class MyProfileViewController: BaseViewController {
     }
     
     override func bind() {
-         
+        
         currentUser.bind { [weak self] user in
             ConnectionManager.shared.currentUser = user
             self?.profileImageView.setImage(url: user.thumbnail)
-            self?.nicknameLabel.text = "\(user.name ?? "") 님"
+            self?.nicknameLabel.text  = "\(user.name ?? "") 님"
+        }.disposed(by: disposeBag)
+        
+        
+        settingButton.rx.tap.bind { [weak self] in
+            let settingVC = SettingViewController.initiate()
+            self?.navigationController?.pushViewController(settingVC, animated: true)
         }.disposed(by: disposeBag)
         
         items.bind(to: tableView.rx.items) { tableView, index, configurator in
@@ -69,6 +75,7 @@ class MyProfileViewController: BaseViewController {
             if let labelCell = cell as? LabelCell {
                 labelCell.addButton.rx.tap.bind {
                     let createTeamVC = CreateTeamViewController.initiate()
+                    
                     self.present(createTeamVC, animated: true)
                 }.disposed(by: labelCell.disposeBag)
             }
@@ -86,6 +93,8 @@ class MyProfileViewController: BaseViewController {
             .subscribe(
                 onNext: { [weak self] myProfile in
                     self?.currentUser.accept(myProfile.myInfo)
+                    TeamManager.shared.myTeamInfos.accept(myProfile.myTeamList ?? [])
+                    self?.makeConfigurator()
                 },
                 
                 onError: { error in
@@ -109,14 +118,7 @@ extension MyProfileViewController {
         
         let myTeamTitles = [ LabelCellConfigurator(title: "\(nickname)님의 팀", isNew: false, subtitle: nil, hasAddButton: true) ]
         
-        // TODO: Change data
-        // let myTeamInfos = TeamManager.shared.myTeamInfos
-        let myTeamInfos = [MockTeam.getMockResponse().teamInfo,
-                           MockTeam.getMockResponse().teamInfo,
-                           MockTeam.getMockResponse().teamInfo,
-                           MockTeam.getMockResponse().teamInfo,
-                           MockTeam.getMockResponse().teamInfo,
-        ]
+        let myTeamInfos = TeamManager.shared.myTeamInfos.value
         
         let matchingTeamTitles: [CellConfigurator] = [
             LabelCellConfigurator(title: "응답 요청", isNew: false, subtitle: nil, hasAddButton: false),

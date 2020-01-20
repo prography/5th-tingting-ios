@@ -23,7 +23,7 @@ struct Router<T: Codable> {
         case v2 = "/v2"
     }
     
-    private let server: ServerType = .live
+    private let server: ServerType = .debug
     private let version: ServerVersion = .v1
     
     private var baseURL: String {

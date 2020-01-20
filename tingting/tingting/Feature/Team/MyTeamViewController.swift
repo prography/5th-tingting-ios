@@ -29,17 +29,9 @@ class MyTeamViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getMyTeamInfo()
         startLoading()
-        // TODO: Remove delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            guard let self = self else { return }
-            let team = MockTeam.getMockResponse()
-            self.teamIntroView.configure(with: team)
-            self.memberListView.configure(with: team.teamMembers)
-            self.team = team
-            self.endLoading()
-        }
+ 
         
         let configurators: [CellConfigurator] = [
             LabelCellConfigurator(title: "매칭 현황", isNew: true, subtitle: "매칭 진행 중", hasAddButton: false),
@@ -64,6 +56,29 @@ class MyTeamViewController: BaseViewController {
     }
      
 
+}
+
+extension MyTeamViewController {
+    
+    func getMyTeamInfo() {
+        startLoading(backgroundColor: .clear)
+        NetworkManager.getTeamInfo(id: teamID)
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] team in
+                    guard let self = self else { return }
+                    self.team = team
+                    self.teamIntroView.configure(with: team)
+                    self.memberListView.configure(with: team.teamMembers)
+                    self.endLoading()
+                },
+                onError: { [weak self] error in
+                    self?.endLoading()
+                    AlertManager.showError(error)
+                }
+        ).disposed(by: disposeBag)
+    }
+    
 }
 
 extension MyTeamViewController {
