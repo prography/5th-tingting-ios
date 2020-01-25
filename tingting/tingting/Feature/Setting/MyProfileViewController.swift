@@ -17,9 +17,6 @@ class MyProfileViewController: BaseViewController {
     @IBOutlet weak var profileImageView: BaseImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var editProfileButton: UIButton!
-    
-    
-    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.didSetDefault()
@@ -87,6 +84,19 @@ class MyProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        guard ConnectionManager.shared.currentUser != nil else {
+            startLoading()
+            let signInVC = SignInViewController.initiate()
+            signInVC.modalPresentationStyle = .fullScreen
+            present(signInVC, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.endLoading()
+                self.navigationController?.tabBarController?.selectedIndex = 0
+            }
+            return
+        }
         
         NetworkManager.getMyProfile()
             .asObservable()

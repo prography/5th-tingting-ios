@@ -22,9 +22,9 @@ class SettingViewController: BaseViewController {
         logoutButton.rx.tap
             .bind { [weak self] in
                 ConnectionManager.shared.logout()
-                let signInVC = SignInViewController.initiate()
-                self?.present(signInVC, animated: true)
+                
                 self?.navigationController?.popToRootViewController(animated: true)
+                
                 
         }.disposed(by: disposeBag)
     }
