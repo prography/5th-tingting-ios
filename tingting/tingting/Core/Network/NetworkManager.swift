@@ -168,6 +168,21 @@ extension NetworkManager {
         
         return Router(url: "/matching/applied-teams/\(id)", method: .get, parameters: params)
     }
+    
+    static func applyFirstMatching(request: APIModel.ApplyMatching.Request) -> Router<CommonReponse> {
+        return Router(url: "/matching/send-heart/first", method: .post, parameters: request)
+    }
+    
+    static func applyMatching(teamID: Int) -> Router<CommonReponse> {
+        let params = ["matchingId": teamID]
+        return Router(url: "/matching/send-heart", method: .post, parameters: params)
+    }
+    
+    static func acceptMatching(teamID: Int) -> Router<CommonReponse> {
+        let params = ["matchingId": teamID]
+        return Router(url: "/matching/receive-heart", method: .post, parameters: params)
+    }
+    
 }
 
 extension NetworkManager {

@@ -30,9 +30,9 @@ class AlertManager {
 
             let banner = NotificationBanner(title: title, subtitle: subtitle, style: .success)
             banner.show()
-             
- 
+              
         }
+     
     
     static func showError(_ error: Error) {
         let banner = NotificationBanner(title: "Error", subtitle: error.message, style: .warning)

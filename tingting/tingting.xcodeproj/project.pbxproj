@@ -48,6 +48,7 @@
 		532D0E5A23D43F7C0057E189 /* APIModel+MatchingTeamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */; };
 		532D0E5C23D455B90057E189 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5B23D455B90057E189 /* TeamManager.swift */; };
 		532D0E5E23D5C5CB0057E189 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */; };
+		5334B76F23DC60830085E5A1 /* APIModel+ApplyMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334B76E23DC60830085E5A1 /* APIModel+ApplyMatching.swift */; };
 		5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */; };
 		5343F47B23C1D25F0024E630 /* MyMatchingTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */; };
 		5343F47D23C1FEEB0024E630 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343F47C23C1FEEB0024E630 /* Error+Extension.swift */; };
@@ -192,6 +193,7 @@
 		532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+MatchingTeamList.swift"; sourceTree = "<group>"; };
 		532D0E5B23D455B90057E189 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5334B76E23DC60830085E5A1 /* APIModel+ApplyMatching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+ApplyMatching.swift"; sourceTree = "<group>"; };
 		5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		5343F47A23C1D25F0024E630 /* MyMatchingTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMatchingTeamCell.xib; sourceTree = "<group>"; };
 		5343F47C23C1FEEB0024E630 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */,
+				5334B76E23DC60830085E5A1 /* APIModel+ApplyMatching.swift */,
 			);
 			path = Matching;
 			sourceTree = "<group>";
@@ -1042,6 +1045,7 @@
 				531A500C237D5DD6008E65A4 /* EmailAuthenticationViewController.swift in Sources */,
 				534B5FC323C0E4AF007397B3 /* SpaceCell+Configurator.swift in Sources */,
 				5317C74823BF915A00D2FD10 /* APIModel+SignUp.swift in Sources */,
+				5334B76F23DC60830085E5A1 /* APIModel+ApplyMatching.swift in Sources */,
 				531A500E237D5E08008E65A4 /* InputProfileViewController.swift in Sources */,
 				532078D7237409EF00E3F94E /* Codable+Extension.swift in Sources */,
 				5343F47F23C1FF6E0024E630 /* StringError.swift in Sources */,
