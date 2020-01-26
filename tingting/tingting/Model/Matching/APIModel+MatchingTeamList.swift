@@ -10,7 +10,7 @@ import Foundation
 
 extension APIModel {
     struct MatcingTeamList: Codable {
-        let myTeamList: [TeamInfo] = []
+        var myTeamList: [TeamInfo] = []
         private let matchingList: [MatchingTeam]
  
         func matchingTeamList() -> [Team] {

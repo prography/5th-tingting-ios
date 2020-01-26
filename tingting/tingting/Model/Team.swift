@@ -13,8 +13,7 @@ struct Team: Codable {
     var teamInfo: TeamInfo
     
     var teamMembers: [User] = []
-    
-    
+     
     var isHeartSent: Bool? = false
     
  
@@ -32,6 +31,11 @@ struct TeamInfo: Codable {
     let password: String?
     let max_member_number: Int?
     let is_verified: Int?
+    
+    var create_at: Date?
+    var sendTeam: [TeamInfo]?
+    var receiveTeam: [TeamInfo]?
+    
     
     init() {
         self.id = nil

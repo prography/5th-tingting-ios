@@ -13,7 +13,9 @@ extension APIModel {
         
         let myInfo: User
         
-        let myTeamList: [TeamInfo]?
+        let myTeamList: [TeamInfo]
+        
+        let sentMatchings: [Team]
           
     }
 }

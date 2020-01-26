@@ -10,9 +10,13 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
+    
     func setImage(url: String?) {
-        let url = url != nil ? URL(string: url!) : nil
-        setImage(url)
+        if let url = url, !url.isEmpty {
+            setImage(URL(string: url))
+        } else {
+            setImage(nil)
+        }
     }
     
     func setImage(url: URL?) {
@@ -21,14 +25,19 @@ extension UIImageView {
     
     private func setImage(_ url: URL?) {
         self.contentMode = .scaleAspectFill
+        let placeholder = UIImage(named: "user_placeholder")
         
-        self.kf.setImage(with: url, placeholder: UIImage(named: "user_placeholder"), options: [.transition(.fade(1))], progressBlock: nil) { result in
+        
+        guard let url = url else {
+            image = placeholder
+            return }
+        self.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(1))], progressBlock: nil) { result in
             
             switch result {
             case .success:
                 break
-            case .failure(let error):
-                Logger.error(error)
+            case .failure:
+                break
             }
         }
     }
