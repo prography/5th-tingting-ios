@@ -29,7 +29,7 @@ class AlertManager {
     static func show(title: String? = nil, subtitle: String? = nil) {
 
             let banner = NotificationBanner(title: title, subtitle: subtitle, style: .success)
-            banner.show()
+            banner.show(queuePosition: .front, bannerPosition: .top, queue: .default)
               
         }
      

@@ -21,6 +21,8 @@ class CreateTeamViewController: BaseViewController {
     
     @IBOutlet weak var createTeamButton: BaseButton!
     
+    private var teamType: TeamType = .create
+    
     private let isValid: BehaviorRelay<Bool> = .init(value: false)
     
     fileprivate let tagsField = WSTagsField()
@@ -28,6 +30,37 @@ class CreateTeamViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTagsField()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        switch teamType {
+        case .create:
+            createTeamButton.setTitle("팀만들기", for: .normal)
+        case .edit(let team):
+            
+            navigationController?.navigationBar.isHidden = false
+            navigationController?.navigationBar.tintColor = .primary
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "팀 나가기", style: .done, target: self, action: #selector(exitTeam))
+            teamNameTextField.text = team.teamInfo.name
+            teamNameTextField.isEnabled = false
+            memberCountSegmentedControl.isEnabled = false
+            memberCountSegmentedControl.selectedSegmentIndex = (team.teamInfo.max_member_number ?? 0) + 1
+            introTextView.text = team.teamInfo.intro
+            urlTextField.text = team.teamInfo.chat_address
+            createTeamButton.setTitle("수정하기", for: .normal)
+            
+            let isOwnerMe = team.teamInfo.owner_id == ConnectionManager.shared.currentUser?.id
+            
+            if !isOwnerMe {
+                introTextView.isEditable = false
+                urlTextField.isEnabled = false
+                createTeamButton.setEnable(false)
+            }
+            
+        }
+        
+        
     }
     
     override func bind() {
@@ -91,7 +124,7 @@ class CreateTeamViewController: BaseViewController {
 }
  
 extension CreateTeamViewController {
-    
+      
     private func checkValidation() {
         guard let teamName = teamNameTextField.text, (1...8).contains(teamName.count) else {
             isValid.accept(false)
@@ -133,44 +166,83 @@ extension CreateTeamViewController {
         // let password: String? = nil
 
         let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 1
-        let team = TeamInfo(name: name,
-                            chat_address: chat_address,
-                            owner_id: nil,
-                            intro: intro,
-                            gender: gender,
-                            password: nil,
-                            max_member_number: max_member_number,
-                            place: nil)
+ 
         startLoading(backgroundColor: .clear)
         
-        NetworkManager.checkDuplicate(teamName: name).asObservable()
-            .subscribe(
-                onNext: { [weak self] response in
-                    guard let self = self else { return }
+        switch teamType {
+        case .create:
+            
+            let team = TeamInfo(name: name,
+                                chat_address: chat_address,
+                                owner_id: currentUser.id,
+                                intro: intro,
+                                gender: gender,
+                                password: nil,
+                                max_member_number: max_member_number,
+                                is_matched: nil,
+                                accepter_number: nil,
+                                place: nil)
+            
+            NetworkManager.checkDuplicate(teamName: name).asObservable()
+                .subscribe(
+                    onNext: { [weak self] response in
+                        guard let self = self else { return }
+                        
+                        
+                        NetworkManager.createTeam(team)
+                            .asObservable()
+                            .subscribe(
+                                onNext: { team in
+                                    self.dismiss(animated: true)
+                            },
+                                onError: { error in
+                                    Logger.error(error)
+                                    AlertManager.showError(error)
+                                    self.endLoading()
+                            }
+                        ).disposed(by: self.disposeBag)
+                        
                     
-                    
-                    NetworkManager.createTeam(team)
-                        .asObservable()
-                        .subscribe(
-                            onNext: { team in
-                                self.dismiss(animated: true)
-                        },
-                            onError: { error in
-                                Logger.error(error)
-                                AlertManager.showError(error)
-                                self.endLoading()
-                        }
-                    ).disposed(by: self.disposeBag)
-                    
-                
-                    
-                },
-                onError: { error in
-                    Logger.error(error)
-                    AlertManager.showError(error)
-                    self.endLoading()
-            }
-        ).disposed(by: disposeBag)
+                        
+                    },
+                    onError: { error in
+                        Logger.error(error)
+                        AlertManager.showError(error)
+                        self.endLoading()
+                }
+            ).disposed(by: disposeBag)
+            
+        case .edit(let oldTeam):
+            
+            let team = TeamInfo(name: name,
+                                chat_address: chat_address,
+                                owner_id: oldTeam.teamInfo.owner_id,
+                                intro: intro,
+                                gender: gender,
+                                password: nil,
+                                max_member_number: max_member_number,
+                                is_matched: nil,
+                                accepter_number: nil,
+                                place: nil)
+            
+            NetworkManager.editTeamInfo(id: oldTeam.teamInfo.id!,
+                                        teamInfo: team)
+                .asObservable()
+                .subscribe(
+                    onNext: { [weak self] team in
+                        AlertManager.show(title: "팀 정보가 수정되었습니다.")
+                        self?.endLoading()
+                        self?.back()
+                        
+                    },
+                    onError: { [weak self] error in
+                        AlertManager.showError(error)
+                        self?.endLoading()
+                    }
+            ).disposed(by: disposeBag)
+        }
+        
+
          
     }
 
@@ -203,6 +275,46 @@ extension CreateTeamViewController {
             return field.text != "OMG"
         }
     }
+    
+    @objc func exitTeam() {
+        
+        let alert = UIAlertController(title: "정말 팀을 나가시겠습니까?", message: "팀을 나가면 되돌릴 수 없습니다.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        let exitAction = UIAlertAction(title: "팀나기기", style: .default) { [weak self] action in
+            guard let self = self else { return }
+            switch self.teamType {
+            case .create:
+                assertionFailure()
+            case .edit(let team):
+                self.startLoading(backgroundColor: .clear)
+                guard let teamID = team.teamInfo.id else { assertionFailure(); return }
+                NetworkManager.leaveTeam(id: teamID)
+                    .asObservable()
+                    .subscribe(
+                        onNext: { [weak self] response in
+                            AlertManager.show(title: response.message)
+                            self?.endLoading()
+                            self?.navigationController?.navigationBar.isHidden = true
+                            self?.navigationController?.popToRootViewController(animated: true)
+                        },
+                        onError: { [weak self] error in
+                            AlertManager.showError(error)
+                            self?.endLoading()
+                        }
+                ).disposed(by: self.disposeBag)
+                
+            }
+        }
+        
+        
+        alert.addAction(exitAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
 
 }
 
@@ -218,9 +330,14 @@ extension CreateTeamViewController: UITextFieldDelegate {
 }
 
 extension CreateTeamViewController {
-    static func initiate() -> CreateTeamViewController {
+    enum TeamType {
+        case create
+        case edit(team: Team)
+    }
+    
+    static func initiate(teamType: TeamType = .create) -> CreateTeamViewController {
         let vc = CreateTeamViewController.withStoryboard(storyboard: .team)
-        
+        vc.teamType = teamType
         return vc
     }
 }

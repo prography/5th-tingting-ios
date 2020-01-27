@@ -22,9 +22,12 @@ struct Team: Codable {
 
 struct TeamMatching: Codable {
     let id: Int
+    let is_matched: Bool
     private let sendTeam: APIModel.TeamList.TeamDetail
     func team() -> Team {
-        return sendTeam.getTeam()
+        var team = sendTeam.getTeam()
+        team.teamInfo.id = team.teamInfo.id ?? id
+        return team
     }
 }
 
@@ -41,6 +44,8 @@ struct TeamInfo: Codable {
     let max_member_number: Int?
     let is_verified: Int?
     
+    let is_matched: Bool?
+    let accepter_number: Int?
     let place: String?
        
     init() {
@@ -53,6 +58,8 @@ struct TeamInfo: Codable {
         self.password = nil
         self.max_member_number = nil
         self.is_verified = nil
+        self.is_matched = nil
+        self.accepter_number = nil
         self.place = nil
         
     }
@@ -65,6 +72,8 @@ struct TeamInfo: Codable {
          password: String?,
          max_member_number: Int?,
          is_verified: Int? = 0,
+         is_matched: Bool?,
+         accepter_number: Int?,
          place: String?
     ) {
         self.id = id
@@ -76,6 +85,8 @@ struct TeamInfo: Codable {
         self.password = password
         self.max_member_number = max_member_number
         self.is_verified = is_verified
+        self.is_matched = is_matched
+        self.accepter_number = accepter_number
         self.place = place
     }
 }

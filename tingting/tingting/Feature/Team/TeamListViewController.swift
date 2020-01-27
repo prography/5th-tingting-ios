@@ -20,6 +20,7 @@ class TeamListViewController: BaseViewController {
         }
     }
     
+    var teamList: [Team] = []
     var items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
     
     override func viewDidLoad() {
@@ -29,6 +30,11 @@ class TeamListViewController: BaseViewController {
     }
     
     override func bind() {
+        
+        peopleSegmentedControl.rx.selectedSegmentIndex
+            .bind { [weak self] _ in
+                self?.makeConfigurator()
+        }.disposed(by: disposeBag)
         
         creatTeamButton.rx.tap.bind {
             let createTeamVC = CreateTeamViewController.initiate()
@@ -65,14 +71,35 @@ class TeamListViewController: BaseViewController {
         NetworkManager.getAllTeams()
             .asObservable()
             .subscribe(
-                onNext: { teamList in
-                    let configurators = teamList.map { JoinTeamCellConfigurator(team: $0) }
-                    self.items.accept(configurators)
+                onNext: { [weak self] teamList in
+                    self?.teamList = teamList
+                    self?.makeConfigurator()
             },
                 onError: { error in
                     Logger.error(error)
             }
         ).disposed(by: disposeBag)
+    }
+    
+    func makeConfigurator() {
+        
+        let teamList: [Team]
+        
+        switch peopleSegmentedControl.selectedSegmentIndex {
+        case 0:
+            teamList = self.teamList
+        case 1:
+            teamList = self.teamList.filter { $0.teamInfo.max_member_number == 2 }
+        case 2:
+            teamList = self.teamList.filter { $0.teamInfo.max_member_number == 3 }
+        case 3:
+            teamList = self.teamList.filter { $0.teamInfo.max_member_number == 4 }
+        default:
+            fatalError()
+        }
+        
+        let configurators = teamList.map { JoinTeamCellConfigurator(team: $0) }
+        self.items.accept(configurators)
     }
 }
 

@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="10" width="765" height="116"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P5Q-t0-XCx">
-                                <rect key="frame" x="0.0" y="0.0" width="765" height="116"/>
+                                <rect key="frame" x="20" y="0.0" width="725" height="116"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="0jX-xX-0Dt">
                                         <rect key="frame" x="0.0" y="29.5" width="198" height="57"/>
@@ -57,10 +57,30 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pVs-8X-2OX">
-                                        <rect key="frame" x="519" y="43" width="246" height="30"/>
+                                        <rect key="frame" x="373" y="43" width="352" height="30"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuC-mx-fqt" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="AcR-Oq-QKz"/>
+                                                </constraints>
+                                                <state key="normal" title="수락 대기 중">
+                                                    <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaM-lL-SsT" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
+                                                <rect key="frame" x="106" y="0.0" width="116" height="30"/>
                                                 <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="116" id="7vC-oI-Ezm"/>
@@ -81,7 +101,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi6-Hf-sq0" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                <rect key="frame" x="122" y="0.0" width="59" height="30"/>
+                                                <rect key="frame" x="228" y="0.0" width="59" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="59" id="r49-0u-DCd"/>
                                                 </constraints>
@@ -101,7 +121,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoc-l5-1Sf" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="59" height="30"/>
+                                                <rect key="frame" x="293" y="0.0" width="59" height="30"/>
                                                 <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="59" id="9YK-R8-p1S"/>
@@ -132,8 +152,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="P5Q-t0-XCx" firstAttribute="top" secondItem="kUb-Dp-JMJ" secondAttribute="top" priority="750" id="2j0-Zs-ypA"/>
-                            <constraint firstAttribute="trailing" secondItem="P5Q-t0-XCx" secondAttribute="trailing" priority="750" id="aJv-XR-aqu"/>
-                            <constraint firstItem="P5Q-t0-XCx" firstAttribute="leading" secondItem="kUb-Dp-JMJ" secondAttribute="leading" priority="750" id="bOv-XQ-Q9s"/>
+                            <constraint firstAttribute="trailing" secondItem="P5Q-t0-XCx" secondAttribute="trailing" priority="750" constant="20" id="aJv-XR-aqu"/>
+                            <constraint firstItem="P5Q-t0-XCx" firstAttribute="leading" secondItem="kUb-Dp-JMJ" secondAttribute="leading" priority="750" constant="20" id="bOv-XQ-Q9s"/>
                             <constraint firstAttribute="height" priority="750" constant="85" id="jwD-Fw-YKy"/>
                             <constraint firstAttribute="bottom" secondItem="P5Q-t0-XCx" secondAttribute="bottom" priority="750" id="xM4-m4-Nwg"/>
                         </constraints>
@@ -161,6 +181,7 @@
                 <outlet property="applyButton" destination="Yoc-l5-1Sf" id="vh5-GE-jf6"/>
                 <outlet property="chatAddressButton" destination="zaM-lL-SsT" id="Oky-iX-o2R"/>
                 <outlet property="rejectButton" destination="wi6-Hf-sq0" id="Cps-eY-8Zy"/>
+                <outlet property="waitingButton" destination="XuC-mx-fqt" id="XyS-gX-RHP"/>
                 <outletCollection property="imageViews" destination="WaE-Mq-pDb" collectionClass="NSMutableArray" id="fvE-zq-CW0"/>
                 <outletCollection property="imageViews" destination="BNd-Y5-C85" collectionClass="NSMutableArray" id="VaW-lj-fiS"/>
                 <outletCollection property="imageViews" destination="Dw7-0Z-fRb" collectionClass="NSMutableArray" id="8Pz-Vq-hA7"/>

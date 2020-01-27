@@ -126,12 +126,12 @@ extension NetworkManager {
     }
     
     /// 나의 팀 정보 수정하기
-    static func editTeamInfo(id: String, teamInfo: TeamInfo) -> Router<Team> {
-        return Router(url: "/me/teams/\(id)", method: .get)
+    static func editTeamInfo(id: Int, teamInfo: TeamInfo) -> Router<Team> {
+        return Router(url: "/me/teams/\(id)", method: .patch, parameters: teamInfo)
     }
     
     /// 팀 떠나기
-    static func leaveTeam(id: String) -> Router<CommonReponse> {
+    static func leaveTeam(id: Int) -> Router<CommonReponse> {
         return Router(url: "/me/teams/\(id)/leave", method: .post)
     }
     

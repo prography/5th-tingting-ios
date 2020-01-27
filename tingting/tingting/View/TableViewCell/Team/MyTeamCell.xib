@@ -43,7 +43,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1be-NN-XS4" customClass="BaseLabel" customModule="tingting" customModuleProvider="target">
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1be-NN-XS4" customClass="BaseLabel" customModule="tingting" customModuleProvider="target">
                                                                 <rect key="frame" x="46.5" y="11" width="11" height="11"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -56,6 +56,12 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
                                                                         <real key="value" value="5.5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                                        <real key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                                        <real key="value" value="0.0"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
@@ -134,6 +140,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="newLabel" destination="1be-NN-XS4" id="y2A-5Y-e8l"/>
                 <outlet property="teamInfoButton" destination="HI4-kC-BE1" id="QxL-DH-3Eu"/>
                 <outlet property="teamNameLabel" destination="CF1-T1-kWv" id="Fms-3I-kwQ"/>
             </connections>

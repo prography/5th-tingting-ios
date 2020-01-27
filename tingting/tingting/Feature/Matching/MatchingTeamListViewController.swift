@@ -87,7 +87,9 @@ class MatchingTeamListViewController: BaseViewController {
             .modelSelected(CellConfigurator.self)
             .bind { [weak self] configurator in
                 if let joinTeamConfigurator = configurator as? JoinTeamCellConfigurator {
-                    let vc = MatchingTeamViewController.initiate(to: joinTeamConfigurator.team)
+                    guard let myTeamID = self?.teamManager.selectedMyTeamInfo.value?.id else { assertionFailure(); return }
+                    
+                    let vc = MatchingTeamViewController.initiate(myTeamID: myTeamID, team: joinTeamConfigurator.team)
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
         }.disposed(by: disposeBag)

@@ -12,6 +12,11 @@ class JoinTeamCell: BaseCell {
 
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet var imageViews: [UIImageView]!
+    @IBOutlet weak var tagLabel: UILabel! {
+        didSet {
+            tagLabel.isHidden = true
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

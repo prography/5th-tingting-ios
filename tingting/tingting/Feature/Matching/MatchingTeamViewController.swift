@@ -16,7 +16,7 @@ class MatchingTeamViewController: BaseViewController {
     @IBOutlet weak var memberListView: MemberListView!
     @IBOutlet weak var applyButton: BaseButton!
     
-    private var myTeamID: Int! = TeamManager.shared.selectedMyTeamInfo.value!.id!
+    private var myTeamID: Int?
     
     private let team: BehaviorRelay<Team?> = .init(value: nil)
     
@@ -28,7 +28,7 @@ class MatchingTeamViewController: BaseViewController {
         super.viewWillAppear(animated)
 
         getMatchingTeam()
-        
+        applyButton.isHidden = myTeamID == nil 
     }
     
     override func bind() {
@@ -104,9 +104,9 @@ extension MatchingTeamViewController {
 
 
 extension MatchingTeamViewController {
-    static func initiate(to team: Team) -> MatchingTeamViewController {
+    static func initiate(myTeamID: Int?, team: Team) -> MatchingTeamViewController {
         let vc = MatchingTeamViewController.withStoryboard(storyboard: .matching)
-        
+        vc.myTeamID = myTeamID
         vc.team.accept(team)
         return vc
     }

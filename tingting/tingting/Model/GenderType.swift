@@ -11,4 +11,15 @@ import Foundation
 enum GenderType: Int, Codable {
     case male = 0
     case female = 1
+    
+    var korean: String {
+        switch self {
+        case .male:
+            return "남자"
+            
+        case .female:
+            return "여자"
+            
+        }
+    }
 }

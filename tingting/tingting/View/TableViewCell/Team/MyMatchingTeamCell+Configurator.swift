@@ -27,7 +27,18 @@ class MyMatchingTeamCellConfigurator<T: MyMatchingTeamCell>: CellConfigurator {
             imageView.isHidden = user == nil
             imageView.setImage(url: user?.thumbnail)
         }
-        
+         
+        cell.waitingButton.isHidden = true
+        cell.chatAddressButton.isHidden = true
+        cell.rejectButton.isHidden = true
+        cell.applyButton.isHidden = true
+         
+        if teamMatching.is_matched {
+            cell.chatAddressButton.isHidden = false
+        } else {
+            cell.rejectButton.isHidden = false
+            cell.applyButton.isHidden = false
+        }
         
     }
 }

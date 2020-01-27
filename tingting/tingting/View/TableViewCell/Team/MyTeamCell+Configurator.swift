@@ -23,6 +23,7 @@ class MyTeamCellConfigurator<T: MyTeamCell>: CellConfigurator {
         guard let cell = cell as? T else { return }
         cell.teamInfo = teamInfo
         cell.teamNameLabel.text = teamInfo.name
+        cell.newLabel.isHidden = true
     }
  
 }

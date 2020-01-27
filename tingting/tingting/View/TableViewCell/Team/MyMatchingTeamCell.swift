@@ -12,6 +12,7 @@ class MyMatchingTeamCell: BaseCell {
     
     @IBOutlet var imageViews: [UIImageView]!
     
+    @IBOutlet weak var waitingButton: BaseButton!
     @IBOutlet weak var chatAddressButton: BaseButton!
     @IBOutlet weak var rejectButton: BaseButton!
     @IBOutlet weak var applyButton: BaseButton!

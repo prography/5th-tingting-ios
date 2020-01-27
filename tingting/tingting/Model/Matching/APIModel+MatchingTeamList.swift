@@ -37,6 +37,8 @@ extension APIModel {
                                     password: nil,
                                     max_member_number: max_member_number,
                                     is_verified: nil,
+                                    is_matched: nil,
+                                    accepter_number: nil,
                                     place: nil)
             
             return Team(teamInfo: teamInfo, teamMembers: membersInfo)

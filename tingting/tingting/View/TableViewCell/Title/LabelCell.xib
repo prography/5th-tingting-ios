@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnZ-ww-Zc0" customClass="BaseLabel" customModule="tingting" customModuleProvider="target">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnZ-ww-Zc0" customClass="BaseLabel" customModule="tingting" customModuleProvider="target">
                                 <rect key="frame" x="68.5" y="18.5" width="13" height="13"/>
                                 <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -40,6 +40,12 @@
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHO-ko-4jE">

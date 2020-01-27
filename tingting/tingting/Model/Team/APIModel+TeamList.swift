@@ -33,19 +33,24 @@ extension APIModel.TeamList {
         let membersInfo: [User]?
         let name: String
         let max_member_number: Int
-        
+
+        let chat_address: String?
+        let is_matched: Bool?
+        let accepter_number: Int?
         let place: String?
         
         func getTeam() -> Team {
             Team(teamInfo: .init(id: id,
                                  name: name,
-                                 chat_address: nil,
+                                 chat_address: chat_address,
                                  owner_id: owner_id,
                                  intro: nil,
                                  gender: nil,
                                  password: nil,
                                  max_member_number: max_member_number,
                                  is_verified: nil,
+                                 is_matched: is_matched,
+                                 accepter_number: nil,
                                  place: place
                 ),
                  teamMembers: teamMembersInfo ?? membersInfo ?? [])
