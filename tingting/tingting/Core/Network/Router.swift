@@ -47,15 +47,23 @@ struct Router<T: Codable> {
         self.removeTokenCodes = removeTokenCodes
         self.mockData = mockData
         
+        
+        let header = "┌─────────[ Request ]─────────┐"
+        let footer = "└─────────────────────────────┘"
+        
+        var requestLogger: [String] = ["", header, ""]
         if let token = ConnectionManager.shared.loadToken() {
-            Logger.info(token)
             headers.add(name: "Authorization", value: token)
+            requestLogger.append(token)
         }
-         
-        Logger.info(["", baseURL + url, method.rawValue].joined(separator: "\n"))
+        
+        requestLogger += ["", baseURL + url, method.rawValue]
         if let prettyString = parameters?.prettyString {
-            Logger.info("\n\(prettyString)")
+            requestLogger += ["", prettyString]
         }
+
+        requestLogger += ["", footer]
+        Logger.info(requestLogger.joined(separator: "\n"))
         
         
     }
@@ -75,14 +83,26 @@ struct Router<T: Codable> {
 extension Router {
     func asObservable() -> Observable<T> {
         
+        
+        let header = "┌────────[ Response ]─────────┐"
+        let footer = "└─────────────────────────────┘"
+        
+        var responseLogger: [String] = ["", header, ""]
+        
         if let mockData = mockData {
-            Logger.debug("\n🔴 Mock Data 🔴")
+            responseLogger += ["", "🔴 Mock Data 🔴"]
             return Observable.just(mockData)
         }
         
         return Observable<T>.create { observer in
             
+            
             let session = self.dataRequest.responseData { result in
+                 
+                defer {
+                    responseLogger += ["", footer]
+                    Logger.info(responseLogger.joined(separator: "\n"))
+                }
                 
                 if let statusCode = result.response?.statusCode,
                     self.removeTokenCodes.firstIndex(of: statusCode) != nil {
@@ -90,24 +110,13 @@ extension Router {
                 }
                 
                 if let error = result.error {
-                    Logger.error(error)
+                    responseLogger += ["🔴 ERROR 🔴", "\(error)"]
                     observer.onError(error)
                     return
                 }
-                
-                //                guard
-                //                    let data = result.data,
-                //                    let prettyString = data.prettyPrintedJSONString else
-                //                {
-                //                    Logger.error(RxError.noElements)
-                //                    observer.onError(RxError.noElements)
-                //                    return
-                //                }
-                //
-                //                Logger.info("\n\(prettyString)")
-                
+
                 guard let data = result.data else {
-                    Logger.error(result)
+                    responseLogger += ["🔴🔴 ERROR 🔴🔴", "\(result)"]
                     return
                 }
                 
@@ -116,19 +125,22 @@ extension Router {
                     
                     guard let response = responseModel.data else {
                         let error = StringError(message: responseModel.errorMessage ?? "Undefine error")
-                        Logger.error("\n\(responseModel.prettyString ?? "")")
+
+                        responseLogger += ["🔴 ERROR 🔴", responseModel.prettyString ?? ""]
                         observer.onError(error)
                         return
                     }
                     
-                    Logger.info("\n\(response.prettyString ?? "")")
+                    responseLogger += ["", response.prettyString ?? ""]
                     observer.onNext(response)
                     observer.onCompleted()
                     
                     
                 } catch {
-                    Logger.error(result.data?.prettyPrintedJSONString ?? "")
-                    Logger.error(error)
+
+                    responseLogger += ["🔴 Catch ERROR 🔴"]
+                    responseLogger += [result.data?.prettyPrintedJSONString as String? ?? ""]
+                     responseLogger += ["\(error)"]
                     observer.onError(error)
                 }
             }

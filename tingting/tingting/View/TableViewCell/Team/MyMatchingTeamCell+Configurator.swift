@@ -10,9 +10,25 @@ import UIKit
  
 class MyMatchingTeamCellConfigurator<T: MyMatchingTeamCell>: CellConfigurator {
     var cellType: BaseCellProtocol.Type { T.self }
+    let teamMatching: TeamMatching
+    
+    init(_ teamMatching: TeamMatching) {
+        self.teamMatching = teamMatching
+    }
     
     func configure(_ cell: BaseCellProtocol) {
-        guard let _ = cell as? T else { return }
+        guard let cell = cell as? MyMatchingTeamCell else { return }
+        
+        let team = teamMatching.team()
+        let users = team.teamMembers
+        
+        cell.imageViews.enumerated().forEach { index, imageView in
+            let user = users[optional: index]
+            imageView.isHidden = user == nil
+            imageView.setImage(url: user?.thumbnail)
+        }
+        
+        
     }
 }
 

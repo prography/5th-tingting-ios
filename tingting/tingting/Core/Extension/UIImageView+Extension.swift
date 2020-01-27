@@ -31,15 +31,7 @@ extension UIImageView {
         guard let url = url else {
             image = placeholder
             return }
-        self.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(1))], progressBlock: nil) { result in
-            
-            switch result {
-            case .success:
-                break
-            case .failure:
-                break
-            }
-        }
+        self.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(1))], progressBlock: nil) 
     }
     
     

@@ -1,7 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '13.0'
 
-target 'tingting' do 
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+target 'tingting' do
   use_frameworks!
    
   pod 'RxSwift', '~> 5'

@@ -26,7 +26,35 @@ class MatchingTeamViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        getMatchingTeam()
         
+    }
+    
+    override func bind() {
+        
+        team.bind { [weak self] team in
+            guard let self = self else { return }
+            guard let team = team else { return }
+            self.teamIntroView.configure(with: team)
+            self.memberListView.configure(with: team.teamMembers)
+            
+            let isHeartSent = team.isHeartSent ?? false
+            self.applyButton.isUserInteractionEnabled = !isHeartSent
+            self.applyButton.setTitle(isHeartSent ? "수락 대기 중..." : "좋아요", for: .normal)
+            
+        }.disposed(by: disposeBag)
+        
+        applyButton.rx.tap.bind { [weak self] in
+            self?.showMessageAlert()
+        }.disposed(by: disposeBag)
+        
+    }
+     
+}
+
+extension MatchingTeamViewController {
+    func getMatchingTeam() {
         startLoading()
         guard let teamID = team.value?.teamInfo.id else { return }
         NetworkManager.getMatchingTeam(id: teamID)
@@ -42,33 +70,8 @@ class MatchingTeamViewController: BaseViewController {
                     Logger.error(error)
             }
         ).disposed(by: disposeBag)
-        
-        
     }
     
-    override func bind() {
-        
-        team.compactMap { $0 }
-            .bind { [weak self] team in
-                guard let self = self else { return }
-                self.teamIntroView.configure(with: team)
-                self.memberListView.configure(with: team.teamMembers)
-                
-                let isHeartSent = team.isHeartSent ?? false
-                self.applyButton.isUserInteractionEnabled = !isHeartSent
-                self.applyButton.setTitle(isHeartSent ? "수락 대기 중..." : "좋아요", for: .normal)
-                
-        }.disposed(by: disposeBag)
-        
-        applyButton.rx.tap.bind { [weak self] in
-            self?.showMessageAlert()
-        }.disposed(by: disposeBag)
-        
-    }
-     
-}
-
-extension MatchingTeamViewController {
     func showMessageAlert() {
         AlertManager.show(title: "이거 대신 메세지 입력하는 거 나와야 함.")
         applyMatching()
@@ -80,8 +83,8 @@ extension MatchingTeamViewController {
         startLoading(backgroundColor: .clear)
         var request = APIModel.ApplyMatching.Request()
         
-        request.receiveTeamId = myTeamID
-        request.sendTeamId = team.value?.teamInfo.id
+        request.receiveTeamId = team.value?.teamInfo.id
+        request.sendTeamId = myTeamID
         request.message = "안녕하세요. 이것은 테스트 메세지이지만 그래도 받아주실거죠?"
         
         NetworkManager.applyFirstMatching(request: request)
@@ -89,7 +92,7 @@ extension MatchingTeamViewController {
             .subscribe(
                 onNext: { [weak self] response in
                     AlertManager.show(title: response.message)
-                    self?.endLoading()
+                    self?.getMatchingTeam()
             },
                 onError: { [weak self] error in
                     AlertManager.showError(error)

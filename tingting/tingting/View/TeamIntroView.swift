@@ -20,7 +20,9 @@ class TeamIntroView: BaseView {
     
     func configure(with team: Team) {
         self.team = team
-        
+        DispatchQueue.main.async {
+            self.bindStyle()
+        }
     }
     
     override func bindStyle() {

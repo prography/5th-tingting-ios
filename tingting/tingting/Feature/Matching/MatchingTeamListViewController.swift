@@ -34,15 +34,8 @@ class MatchingTeamListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Remove
-//        let configurators = (0...20).map { _ -> JoinTeamCellConfigurator<JoinTeamCell> in
-//            let team = Team(teamInfo: .init())
-//            return JoinTeamCellConfigurator(team: team)
-//        }
-//        items.accept(configurators)
+
         setDropDown()
-        
-        
         getMatchingTeamList()
         
     }
@@ -69,8 +62,13 @@ class MatchingTeamListViewController: BaseViewController {
         
         teamManager.myTeamInfos
             .bind { [weak self] teamInfos in
-                self?.teamDropDown.dataSource = teamInfos.compactMap { $0.name }
+                let teamNames = teamInfos.compactMap { $0.name }
+                self?.teamDropDown.dataSource = teamNames
                 self?.teamDropDown.reloadAllComponents()
+                
+                guard !teamInfos.isEmpty else { return }
+                self?.teamManager.selectedMyTeamInfo.accept(teamInfos[0])
+                
         }.disposed(by: disposeBag)
         
         teamManager.matchingTeamList
@@ -85,15 +83,15 @@ class MatchingTeamListViewController: BaseViewController {
         }.disposed(by: disposeBag)
         
          
-        
-        tableView.rx.itemSelected.bind { [weak self] in
-            guard let self = self else { return }
-            let team = self.teamManager.matchingTeamList.value[$0.row]
-            let vc = MatchingTeamViewController.initiate(to: team)
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+        tableView.rx
+            .modelSelected(CellConfigurator.self)
+            .bind { [weak self] configurator in
+                if let joinTeamConfigurator = configurator as? JoinTeamCellConfigurator {
+                    let vc = MatchingTeamViewController.initiate(to: joinTeamConfigurator.team)
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
         }.disposed(by: disposeBag)
+ 
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,7 +110,8 @@ extension MatchingTeamListViewController {
                 onNext: { [weak self] response in
                     
                     self?.teamManager.myTeamInfos.accept(response.myTeamList)
-                    self?.teamManager.matchingTeamList.accept(response.matchingTeamList())
+                    self?.teamManager.matchingTeamList
+                        .accept(response.matchingTeamList())
                       
                     self?.endLoading()
  

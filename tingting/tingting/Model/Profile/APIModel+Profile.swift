@@ -15,7 +15,7 @@ extension APIModel {
         
         let myTeamList: [Int]?
         
-        let school: [SchoolInfo]
+        let school: [SchoolInfo]?
         
     }
 }

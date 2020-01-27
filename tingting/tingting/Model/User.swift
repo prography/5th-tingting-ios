@@ -10,11 +10,13 @@ import Foundation
 
 struct User: Codable {
     
+    var id: Int?
     var name: String?
     var birth: String?
     var height: Int?
     var thumbnail: String?
     var gender: GenderType?
+    var schoolName: String?
     var is_deleted: Int? = 0
     
     init() { }

@@ -14,9 +14,18 @@ struct Team: Codable {
     
     var teamMembers: [User] = []
      
+    var teamMatchings: [TeamMatching]?
+    
     var isHeartSent: Bool? = false
     
- 
+}
+
+struct TeamMatching: Codable {
+    let id: Int
+    private let sendTeam: APIModel.TeamList.TeamDetail
+    func team() -> Team {
+        return sendTeam.getTeam()
+    }
 }
 
 struct TeamInfo: Codable {
@@ -32,11 +41,8 @@ struct TeamInfo: Codable {
     let max_member_number: Int?
     let is_verified: Int?
     
-    var create_at: Date?
-    var sendTeam: [TeamInfo]?
-    var receiveTeam: [TeamInfo]?
-    
-    
+    let place: String?
+       
     init() {
         self.id = nil
         self.name = nil
@@ -47,6 +53,7 @@ struct TeamInfo: Codable {
         self.password = nil
         self.max_member_number = nil
         self.is_verified = nil
+        self.place = nil
         
     }
     init(id: Int? = nil,
@@ -57,7 +64,8 @@ struct TeamInfo: Codable {
          gender: GenderType?,
          password: String?,
          max_member_number: Int?,
-         is_verified: Int? = 0
+         is_verified: Int? = 0,
+         place: String?
     ) {
         self.id = id
         self.name = name
@@ -68,48 +76,49 @@ struct TeamInfo: Codable {
         self.password = password
         self.max_member_number = max_member_number
         self.is_verified = is_verified
+        self.place = place
     }
 }
-
-struct MockTeam: MockProtocol {
-    typealias ResponseType = Team
-    
-    static func getMockResponse() -> Team {
-        
-        let teamInfo = TeamInfo (id: 1,
-                                 name: "랄랄라",
-                                 chat_address: "www.kakaomockData.com",
-                                 owner_id: 1,
-                                 intro: "Mock 안녕하세요 반가워요",
-                                 gender: .male,
-                                 password: nil,
-                                 max_member_number: 3,
-                                 is_verified: 1 )
-        
-        let users: [User] = [
-            User(name: "랄랄라",
-                 birth: "1993-09-02",
-                 height: 178,
-                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjVTjup5Hl5AtrYqSxv1JUMR7bTrOPn4cX_ZQcCgKxJh6LHee&s",
-                 gender: .male,
-                 is_deleted: 0),
-            
-            User(name: "안녕안녕",
-                 birth: "1993-09-01",
-                 height: 170,
-                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWV2hAptWGKbUKg0vxUlkQXx8sDDm_YL0yWtgwlFndX-qf1Isu&s",
-                 gender: .male,
-                 is_deleted: 0),
-            
-            User(name: "랄랄라",
-                 birth: "1996-11-22",
-                 height: 172,
-                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT59wJf85eT6HmkyI8ODvlffumYtdVy39KdrHRRoHrYZYBoYGF2&s",
-                 gender: .male,
-                 is_deleted: 0)
-        ]
-        
-        
-        return Team(teamInfo: teamInfo, teamMembers: users)
-    }
-}
+//
+//struct MockTeam: MockProtocol {
+//    typealias ResponseType = Team
+//    
+//    static func getMockResponse() -> Team {
+//        
+//        let teamInfo = TeamInfo (id: 1,
+//                                 name: "랄랄라",
+//                                 chat_address: "www.kakaomockData.com",
+//                                 owner_id: 1,
+//                                 intro: "Mock 안녕하세요 반가워요",
+//                                 gender: .male,
+//                                 password: nil,
+//                                 max_member_number: 3,
+//                                 is_verified: 1 )
+//        
+//        let users: [User] = [
+//            User(name: "랄랄라",
+//                 birth: "1993-09-02",
+//                 height: 178,
+//                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbjVTjup5Hl5AtrYqSxv1JUMR7bTrOPn4cX_ZQcCgKxJh6LHee&s",
+//                 gender: .male,
+//                 is_deleted: 0),
+//            
+//            User(name: "안녕안녕",
+//                 birth: "1993-09-01",
+//                 height: 170,
+//                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWV2hAptWGKbUKg0vxUlkQXx8sDDm_YL0yWtgwlFndX-qf1Isu&s",
+//                 gender: .male,
+//                 is_deleted: 0),
+//            
+//            User(name: "랄랄라",
+//                 birth: "1996-11-22",
+//                 height: 172,
+//                 thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT59wJf85eT6HmkyI8ODvlffumYtdVy39KdrHRRoHrYZYBoYGF2&s",
+//                 gender: .male,
+//                 is_deleted: 0)
+//        ]
+//        
+//        
+//        return Team(teamInfo: teamInfo, teamMembers: users)
+//    }
+//}

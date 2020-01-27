@@ -31,16 +31,7 @@ class MyTeamViewController: BaseViewController {
         super.viewDidLoad()
         getMyTeamInfo()
         startLoading()
- 
-        
-        let configurators: [CellConfigurator] = [
-            LabelCellConfigurator(title: "매칭 현황", isNew: true, subtitle: "매칭 진행 중", hasAddButton: false),
-            MyMatchingTeamCellConfigurator(),
-            MyMatchingTeamCellConfigurator(),
-            MyMatchingTeamCellConfigurator()
-        ]
-        
-        items.accept(configurators)
+  
     }
     
     override func bind() {
@@ -62,7 +53,7 @@ extension MyTeamViewController {
     
     func getMyTeamInfo() {
         startLoading(backgroundColor: .clear)
-        NetworkManager.getTeamInfo(id: teamID)
+        NetworkManager.getMyTeamInfo(id: teamID)
             .asObservable()
             .subscribe(
                 onNext: { [weak self] team in
@@ -70,6 +61,7 @@ extension MyTeamViewController {
                     self.team = team
                     self.teamIntroView.configure(with: team)
                     self.memberListView.configure(with: team.teamMembers)
+                    self.makeConfigurator()
                     self.endLoading()
                 },
                 onError: { [weak self] error in
@@ -77,6 +69,24 @@ extension MyTeamViewController {
                     AlertManager.showError(error)
                 }
         ).disposed(by: disposeBag)
+    }
+    
+    func makeConfigurator() {
+        guard let team = team, let matchingInfos = team.teamMatchings else { return }
+        
+        
+        let title = [ LabelCellConfigurator(title: "매칭 현황",
+                                            isNew: true,
+                                            subtitle: "매칭 진행 중",
+                                            hasAddButton: false)
+        ]
+        
+        let matcingTeams = matchingInfos.map { MyMatchingTeamCellConfigurator($0) }
+
+        let configurators: [CellConfigurator] = title + matcingTeams
+        
+        items.accept(configurators)
+
     }
     
 }

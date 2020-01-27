@@ -9,7 +9,13 @@
 import UIKit
 
 class MyMatchingTeamCell: BaseCell {
-
+    
+    @IBOutlet var imageViews: [UIImageView]!
+    
+    @IBOutlet weak var chatAddressButton: BaseButton!
+    @IBOutlet weak var rejectButton: BaseButton!
+    @IBOutlet weak var applyButton: BaseButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

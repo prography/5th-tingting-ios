@@ -15,7 +15,16 @@ extension APIModel {
         
         let myTeamList: [TeamInfo]
         
-        let sentMatchings: [Team]
+        let sentMatchings: [MatchingInfo]
           
+    }
+    
+    struct MatchingInfo: Codable {
+        
+        var id: Int
+        var created_at: String
+        var sendTeam: TeamInfo
+        var receiveTeam: TeamInfo
+        
     }
 }

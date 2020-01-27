@@ -129,6 +129,7 @@ extension CreateTeamViewController {
         }
         
         // TODO: Add password
+        // TODO: Add place
         // let password: String? = nil
 
         let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 1
@@ -138,7 +139,8 @@ extension CreateTeamViewController {
                             intro: intro,
                             gender: gender,
                             password: nil,
-                            max_member_number: max_member_number)
+                            max_member_number: max_member_number,
+                            place: nil)
         startLoading(backgroundColor: .clear)
         
         NetworkManager.checkDuplicate(teamName: name).asObservable()

@@ -38,7 +38,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
   - BonMot (~> 5.4)
-  - DropDown
+  - DropDown (~> 2.3.13)
   - Hero (~> 1.4.0)
   - Kingfisher (~> 5.0)
   - lottie-ios (~> 3.1.0)
@@ -93,6 +93,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   WSTagsField: d57a287fd552934db1d93a85d38abbf74b067d6a
 
-PODFILE CHECKSUM: f78dcb329219e1b5d8e64b343a3ade7d867299c9
+PODFILE CHECKSUM: 1240f4cac6b617fa24413835fa442e56affce627
 
 COCOAPODS: 1.7.2

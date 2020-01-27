@@ -24,7 +24,9 @@ class MyProfileViewController: BaseViewController {
     }
     
     let currentUser: PublishRelay<User> = .init()
+    
     let items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
+    var myProfile: APIModel.MyProfile?
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +37,35 @@ class MyProfileViewController: BaseViewController {
         
         makeConfigurator()
     }
+     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        /// Check Logout
+        guard ConnectionManager.shared.currentUser != nil else {
+            startLoading()
+            let signInVC = SignInViewController.initiate()
+            signInVC.modalPresentationStyle = .fullScreen
+            present(signInVC, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.endLoading()
+                self.navigationController?.tabBarController?.selectedIndex = 0
+            }
+            return
+        }
+        
+        loadMyProfile()
+        
+    }
     
     override func bind() {
         
         currentUser.bind { [weak self] user in
             ConnectionManager.shared.currentUser = user
-            self?.profileImageView.setImage(url: user.thumbnail)
+            DispatchQueue.main.async {
+                self?.profileImageView.setImage(url: user.thumbnail)
+            }
             self?.nicknameLabel.text  = "\(user.name ?? "") 님"
         }.disposed(by: disposeBag)
         
@@ -77,73 +102,86 @@ class MyProfileViewController: BaseViewController {
                 }.disposed(by: labelCell.disposeBag)
             }
             
+            if let matchingTeamCell = cell as? MatchingTeamStateCell,
+                let configurator = configurator as? MatchingTeamStateCellConfigurator {
+                
+                let matchingInfo = configurator.matchingInfo
+                
+                matchingTeamCell.removeButton.rx.tap
+                    .bind {
+                        AlertManager.show(title: "해당 기능은 아직 미 지원입니다 ㅠㅠ", subtitle: "조금만 더 기다려주세요!!")
+                }.disposed(by: matchingTeamCell.disposeBag)
+                
+                matchingTeamCell.heartButton.rx.tap
+                    .bind { [weak self] in
+                        guard let self = self else { return }
+                        self.startLoading()
+                        
+                        NetworkManager.applyMatching(matchingID: matchingInfo.id)
+                            .asObservable()
+                            .subscribe(
+                                onNext: { [weak self] response in
+                                    AlertManager.show(title: response.message)
+                                    self?.loadMyProfile()
+                                },
+                                onError: { [weak self] error in
+                                    self?.endLoading()
+                                    AlertManager.showError(error)
+                                }
+                        ).disposed(by: self.disposeBag)
+                        
+                }.disposed(by: matchingTeamCell.disposeBag)
+                
+            }
+            
             return cell
         }.disposed(by: disposeBag)
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        guard ConnectionManager.shared.currentUser != nil else {
-            startLoading()
-            let signInVC = SignInViewController.initiate()
-            signInVC.modalPresentationStyle = .fullScreen
-            present(signInVC, animated: true)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.endLoading()
-                self.navigationController?.tabBarController?.selectedIndex = 0
-            }
-            return
-        }
-        
+    }
+}
+
+
+extension MyProfileViewController {
+    func loadMyProfile() {
         NetworkManager.getMyProfile()
             .asObservable()
             .subscribe(
                 onNext: { [weak self] myProfile in
                     self?.currentUser.accept(myProfile.myInfo)
-                    TeamManager.shared.myTeamInfos.accept(myProfile.myTeamList ?? [])
+                    self?.myProfile = myProfile
                     self?.makeConfigurator()
+                    self?.endLoading()
                 },
                 
-                onError: { error in
+                onError: { [weak self] error in
+                    self?.endLoading()
                     AlertManager.showError(error)
             }
         ).disposed(by: disposeBag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-}
-
-
-extension MyProfileViewController {
     func makeConfigurator() {
         
         let nickname = ConnectionManager.shared.currentUser?.name ?? ""
         
         let myTeamTitles = [ LabelCellConfigurator(title: "\(nickname)님의 팀", isNew: false, subtitle: nil, hasAddButton: true) ]
         
-        let myTeamInfos = TeamManager.shared.myTeamInfos.value
+        let myTeamInfos = myProfile?.myTeamList.map { MyTeamCellConfigurator(teamInfo: $0) } ?? []
         
         let matchingTeamTitles: [CellConfigurator] = [
             LabelCellConfigurator(title: "응답 요청", isNew: false, subtitle: nil, hasAddButton: false),
             SpaceCellConfigurator(5)
         ]
-        
-        let matchingTeams = [
-                MatchingTeamStateCellConfigurator(),
-                MatchingTeamStateCellConfigurator()
-        ]
-        
-        
+        let matchingTeams = myProfile?.sentMatchings
+            .map { MatchingTeamStateCellConfigurator($0) } ?? []
+         
         let configurators: [CellConfigurator] =
             myTeamTitles
-            + myTeamInfos.map { MyTeamCellConfigurator(teamInfo: $0) }
+            + myTeamInfos
             + matchingTeamTitles
             + matchingTeams
         

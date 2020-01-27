@@ -80,8 +80,8 @@ extension NetworkManager {
     }
     
     /// 다른 사용자 프로필 보기
-    static func getProfile(id: String) -> Router<APIModel.Profile> {
-        return Router(url: "/user/\(id)/profile", method: .get, removeTokenCodes: [401, 403])
+    static func getProfile(id: Int) -> Router<APIModel.Profile> {
+        return Router(url: "/users/\(id)/profile", method: .get, removeTokenCodes: [401, 403])
     }
 }
 
@@ -99,7 +99,7 @@ extension NetworkManager {
     }
     
     /// 팀 생성하기
-    static func createTeam(_ teamInfo: TeamInfo) -> Router<Team> {
+    static func createTeam(_ teamInfo: TeamInfo) -> Router<CommonReponse> {
 //        return Router(url: "/teams", method: .post, mockData: MockTeam.getMockResponse())
          return Router(url: "/teams", method: .post, parameters: teamInfo)
     }
@@ -114,13 +114,13 @@ extension NetworkManager {
     
     /// 개별 팀 정보 보기
     static func getTeamInfo(id: Int) -> Router<Team> {
-//        return Router(url: "/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
-
-                return Router(url: "/teams/\(id)", method: .get)
+        //        return Router(url: "/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
+        
+        return Router(url: "/teams/\(id)", method: .get)
     }
     
     /// 개별 팀 정보 보기
-    static func getMyTeamInfo(id: String) -> Router<Team> {
+    static func getMyTeamInfo(id: Int) -> Router<Team> {
 //        return Router(url: "/me/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
          return Router(url: "/me/teams/\(id)", method: .get)
     }
@@ -169,20 +169,22 @@ extension NetworkManager {
         return Router(url: "/matching/applied-teams/\(id)", method: .get, parameters: params)
     }
     
+    /// 우리팀 ---💕---> 매칭 후보 (최초)
     static func applyFirstMatching(request: APIModel.ApplyMatching.Request) -> Router<CommonReponse> {
         return Router(url: "/matching/send-heart/first", method: .post, parameters: request)
     }
     
-    static func applyMatching(teamID: Int) -> Router<CommonReponse> {
-        let params = ["matchingId": teamID]
+    /// 우리팀--💕--> 매칭 후보 (우리팀 멤버가 동의한 경우)
+    static func applyMatching(matchingID: Int) -> Router<CommonReponse> {
+        let params = ["matchingId": matchingID]
         return Router(url: "/matching/send-heart", method: .post, parameters: params)
     }
     
-    static func acceptMatching(teamID: Int) -> Router<CommonReponse> {
-        let params = ["matchingId": teamID]
+    /// 우리 팀이 받은 💕 수락하기
+    static func acceptMatching(matchingID: Int) -> Router<CommonReponse> {
+        let params = ["matchingId": matchingID]
         return Router(url: "/matching/receive-heart", method: .post, parameters: params)
     }
-    
 }
 
 extension NetworkManager {

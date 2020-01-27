@@ -21,10 +21,43 @@ class MemberViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUser()
+        guard let userID = user.id else { return }
+        NetworkManager.getProfile(id: userID)
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] profile in
+                    self?.user = profile.userInfo
+                    self?.loadUser()
+                    
+                },
+                onError: { _ in
+                    
+            }
+        ).disposed(by: disposeBag)
+    }
+    
+}
+
+extension MemberViewController {
+    
+    func loadUser() {
         imageView.setImage(url: user.thumbnail)
         nameAgeLabel.text = "\(user.name ?? ""), \(user.age)"
         
+        if let height = user.height {
+            heightLabel.text = "\(height)cm"
+        } else {
+            heightLabel.text = nil
+        }
+        
+        schoolLabel.text = user.schoolName
+        hobbyLabel.text = nil
     }
     
 }

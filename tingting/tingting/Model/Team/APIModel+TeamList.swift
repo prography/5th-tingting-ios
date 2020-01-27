@@ -29,9 +29,12 @@ extension APIModel.TeamList {
     struct TeamDetail: Codable {
         let id: Int
         let owner_id: Int
-        let teamMembersInfo: [User]
+        let teamMembersInfo: [User]?
+        let membersInfo: [User]?
         let name: String
         let max_member_number: Int
+        
+        let place: String?
         
         func getTeam() -> Team {
             Team(teamInfo: .init(id: id,
@@ -42,9 +45,10 @@ extension APIModel.TeamList {
                                  gender: nil,
                                  password: nil,
                                  max_member_number: max_member_number,
-                                 is_verified: nil
+                                 is_verified: nil,
+                                 place: place
                 ),
-                 teamMembers: teamMembersInfo)
+                 teamMembers: teamMembersInfo ?? membersInfo ?? [])
         }
     }
  
