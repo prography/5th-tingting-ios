@@ -214,7 +214,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-KL-9G6">
                                                         <rect key="frame" x="35" y="0.0" width="306" height="36"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaC-hG-5yI">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키(cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaC-hG-5yI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="100" id="m6P-Ge-aU9"/>
@@ -223,11 +223,11 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="170cm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VgE-E2-xa0">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="170" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VgE-E2-xa0">
                                                                 <rect key="frame" x="100" y="0.0" width="206" height="36"/>
                                                                 <color key="textColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -262,7 +262,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8N0-yz-vm0"/>
                                         </constraints>
-                                        <state key="normal" title="로그아웃">
+                                        <state key="normal" title="수정하기">
                                             <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -285,6 +285,7 @@
                     </view>
                     <connections>
                         <outlet property="birthTextField" destination="JgF-jR-H7X" id="G45-X3-X7R"/>
+                        <outlet property="editButton" destination="mcE-6t-m6q" id="bxQ-MK-ZQc"/>
                         <outlet property="genderTextField" destination="2rQ-Fd-RdY" id="rxf-ye-C9W"/>
                         <outlet property="heightTextField" destination="VgE-E2-xa0" id="PAV-gc-EzF"/>
                         <outlet property="imageView" destination="4Bo-HJ-cYY" id="jc2-K4-gy5"/>

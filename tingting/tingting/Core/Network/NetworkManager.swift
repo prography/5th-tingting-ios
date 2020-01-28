@@ -76,7 +76,7 @@ extension NetworkManager {
     
     /// 내 프로필 수정하기
     static func editMyProfile(to user: User) -> Router<APIModel.MyProfile> {
-        return Router(url: "/me/profile", method: .put, parameters: user, removeTokenCodes: [401, 403])
+        return Router(url: "/me/profile", method: .patch, parameters: user, removeTokenCodes: [401, 403])
     }
     
     /// 다른 사용자 프로필 보기
