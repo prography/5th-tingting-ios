@@ -39,9 +39,9 @@ class EditProfileViewController: BaseViewController {
                 self.startLoading(backgroundColor: .clear)
                 NetworkManager.editMyProfile(to: user).asObservable()
                     .subscribe(
-                        onNext: { [weak self] myProfile in
-                            ConnectionManager.shared.currentUser = myProfile.myInfo
-                            AlertManager.show(title: "정보를 수정했습니다.")
+                        onNext: { [weak self] response in
+                            ConnectionManager.shared.currentUser = user
+                            AlertManager.show(title: response.message)
                             self?.endLoading()
                             self?.navigationController?.popToRootViewController(animated: true)
                     },
