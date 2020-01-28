@@ -69,6 +69,11 @@ class MyProfileViewController: BaseViewController {
             self?.nicknameLabel.text  = "\(user.name ?? "") 님"
         }.disposed(by: disposeBag)
         
+        editProfileButton.rx.tap.bind { [weak self] in
+            let vc = EditProfileViewController.initiate()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }.disposed(by: disposeBag)
+        
         
         settingButton.rx.tap.bind { [weak self] in
             let settingVC = SettingViewController.initiate()
@@ -136,6 +141,7 @@ class MyProfileViewController: BaseViewController {
             
             return cell
         }.disposed(by: disposeBag)
+        
     }
      
     override func viewDidAppear(_ animated: Bool) {

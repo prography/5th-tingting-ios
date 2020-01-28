@@ -12,6 +12,14 @@ import RxCocoa
 
 class EditProfileViewController: BaseViewController {
 
+    @IBOutlet weak var imageView: BaseImageView!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    
+    @IBOutlet weak var genderTextField: UITextField!
+    
+    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet weak var schoolTextField: UITextField!
+    @IBOutlet weak var heightTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
