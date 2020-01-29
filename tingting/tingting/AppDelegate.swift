@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Logger.addDestination(ConsoleDestination())
         
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().backgroundColor = .white
+
         return true
     }
 

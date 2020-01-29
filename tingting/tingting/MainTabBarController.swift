@@ -22,11 +22,21 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
         let secondVC = MatchingTeamListViewController.initiate()
         let thirdVC = MyProfileViewController.initiate()
  
-        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-        secondVC.tabBarItem  = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
-        thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
+        
+        firstVC.tabBarItem = UITabBarItem(title: "팀 찾기",
+                                          image: UIImage(named: "support"),
+                                          selectedImage: UIImage(named: "support1"))
+        
+        secondVC.tabBarItem = UITabBarItem(title: "매칭",
+                                           image: UIImage(named: "cupid"),
+                                           selectedImage: UIImage(named: "cupid1"))
+        
+        thirdVC.tabBarItem = UITabBarItem(title: "프로필",
+                                          image: UIImage(named: "user1"),
+                                          selectedImage: UIImage(named: "user2"))
         
         let tabBarList = [firstVC, secondVC, thirdVC]
+        tabBarList.enumerated().forEach { $0.element.tabBarItem.tag = $0.offset }
         viewControllers = tabBarList
             .map {
                 let naviVC = BaseNavigationController(rootViewController: $0)
@@ -39,6 +49,14 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
 //        ConnectionManager.shared.currentUser = MockTeam.getMockResponse().members.first
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+ 
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = .white
+        tabBar.tintColor = .primary
     }
     
     override func viewDidAppear(_ animated: Bool) {
