@@ -23,7 +23,7 @@ struct Router<T: Codable> {
         case v2 = "/v2"
     }
     
-    private let server: ServerType = .debug
+    private let server: ServerType = .live
     private let version: ServerVersion = .v1
     
     private var baseURL: String {
@@ -117,6 +117,7 @@ extension Router {
 
                 guard let data = result.data else {
                     responseLogger += ["🔴🔴 ERROR 🔴🔴", "\(result)"]
+                    observer.onError(StringError(message: "알려지지 않은 에러"))
                     return
                 }
                 
