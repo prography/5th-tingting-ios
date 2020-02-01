@@ -9,9 +9,23 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import M13Checkbox
 
 class TermsViewController: UITableViewController {
 
+    @IBOutlet weak var collegeButton: UIButton!
+    
+    @IBOutlet weak var agreeAllCheckbox: M13Checkbox!
+    @IBOutlet weak var firstCheckbox: M13Checkbox!
+    @IBOutlet weak var secondCheckbox: M13Checkbox!
+    @IBOutlet weak var thirdCheckbox: M13Checkbox!
+    
+    @IBOutlet weak var firstTermButton: UIButton!
+    @IBOutlet weak var secondTermButton: UIButton!
+    @IBOutlet weak var thirdTermButton: UIButton!
+    
+    @IBOutlet weak var nextButton: BaseButton!
+    
 }
 
 extension TermsViewController {
