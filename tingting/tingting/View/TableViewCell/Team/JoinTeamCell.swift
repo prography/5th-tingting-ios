@@ -11,6 +11,7 @@ import UIKit
 class JoinTeamCell: BaseCell {
 
     @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet var imageViews: [UIImageView]!
     @IBOutlet weak var tagLabel: UILabel! {
         didSet {

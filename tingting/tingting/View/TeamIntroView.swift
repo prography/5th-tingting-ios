@@ -48,8 +48,10 @@ class TeamIntroView: BaseView {
         if let maxNumber = team.teamInfo.max_member_number {
             tagLabels[optional: 1]?.text = "\(maxNumber):\(maxNumber)"
         }
+        if let place = team.teamInfo.place {
+            tagLabels[optional: 2]?.text = place
+        }
         
-        tagLabels[optional: 2]?.isHidden = true
         tagLabels[optional: 3]?.isHidden = true
         
         // TODO: Add Tag

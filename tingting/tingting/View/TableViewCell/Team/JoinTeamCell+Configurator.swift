@@ -19,7 +19,7 @@ class JoinTeamCellConfigurator<T: JoinTeamCell>: CellConfigurator {
         guard let cell = cell as? JoinTeamCell else { return }
         
         cell.teamNameLabel.text = team.teamInfo.name ?? ""
-        
+        cell.placeLabel.text = team.teamInfo.place ?? ""
         cell.imageViews.enumerated()
             .forEach { index, imageView in
                 guard

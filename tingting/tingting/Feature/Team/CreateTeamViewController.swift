@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import DropDown
 import WSTagsField
 
 class CreateTeamViewController: BaseViewController {
@@ -19,6 +20,8 @@ class CreateTeamViewController: BaseViewController {
     @IBOutlet weak var urlTextField: BaseTextField!
     @IBOutlet weak var tagsView: UIView!
     
+    @IBOutlet weak var placeButton: UIButton!
+    
     @IBOutlet weak var createTeamButton: BaseButton!
     
     private var teamType: TeamType = .create
@@ -27,10 +30,19 @@ class CreateTeamViewController: BaseViewController {
     
     fileprivate let tagsField = WSTagsField()
     
+    lazy var placeDropDown: DropDown = {
+        let dropdown = DropDown()
+        dropdown.bottomOffset = CGPoint(x: -20, y: placeButton.bounds.height + 13)
+        dropdown.anchorView = placeButton
+        return dropdown
+    }()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTagsField()
+        setDropDown()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -64,6 +76,16 @@ class CreateTeamViewController: BaseViewController {
     }
     
     override func bind() {
+        
+        placeButton.rx.tap
+            .bind { [weak self] in
+                self?.placeDropDown.show()
+        }.disposed(by: disposeBag)
+        
+        placeDropDown.selectionAction = { [weak self] index, item in
+            self?.placeButton.setTitle(item, for: .normal)
+            self?.checkValidation()
+        }
         
         teamNameTextField.rx
             .controlEvent([.editingChanged])
@@ -141,6 +163,11 @@ extension CreateTeamViewController {
             return
         }
         
+        guard let place = placeButton.titleLabel?.text, Constants.placeList.contains(place) else {
+            isValid.accept(false)
+            return
+        }
+        
         // TODO: Add tag logic
         
         isValid.accept(true)
@@ -154,7 +181,8 @@ extension CreateTeamViewController {
             let name = teamNameTextField.text,
             let chat_address = urlTextField.text,
             let intro = introTextView.text,
-            let gender = currentUser.gender
+            let gender = currentUser.gender,
+            let place = placeButton.titleLabel?.text
             else
         {
                 assertionFailure()
@@ -181,7 +209,7 @@ extension CreateTeamViewController {
                                 max_member_number: max_member_number,
                                 is_matched: nil,
                                 accepter_number: nil,
-                                place: nil)
+                                place: place)
             
             NetworkManager.checkDuplicate(teamName: name).asObservable()
                 .subscribe(
@@ -246,6 +274,28 @@ extension CreateTeamViewController {
          
     }
 
+    
+    func setDropDown() {
+         
+        let appearance = DropDown.appearance()
+        
+        appearance.cellHeight = 60
+        appearance.backgroundColor = UIColor(white: 1, alpha: 1)
+        appearance.selectionBackgroundColor = UIColor(red: 0.6494, green: 0.8155, blue: 1.0, alpha: 0.2)
+        //        appearance.separatorColor = UIColor(white: 0.7, alpha: 0.8)
+        appearance.cornerRadius = 10
+        appearance.shadowColor = UIColor(white: 0.6, alpha: 1)
+        appearance.shadowOpacity = 0.9
+        appearance.shadowRadius = 25
+        appearance.animationduration = 0.25
+        appearance.textColor = .darkGray
+        //        appearance.textFont = UIFont(name: "Georgia", size: 14)
+        
+        placeDropDown.dataSource = Constants.placeList
+        placeDropDown.reloadAllComponents()
+    }
+    
+    
     fileprivate func textFieldEvents() {
         tagsField.onDidAddTag = { field, tag in
             print("onDidAddTag", tag.text)
