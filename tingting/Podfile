@@ -11,7 +11,7 @@ target 'tingting' do
   inhibit_all_warnings!
    
   pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'∫
+  pod 'RxCocoa', '~> 5'
   pod 'RxSwiftExt', '~> 5'
   pod 'RxDataSources', '~> 4.0'
   pod 'Alamofire', '~> 5.0.0-beta.5'
@@ -25,6 +25,7 @@ target 'tingting' do
   
   pod 'NotificationBannerSwift', '~> 3.0.0'
   pod 'WSTagsField', '~> 5.2'
+  pod 'M13Checkbox', '~> 3.4.0'
   pod 'TextFieldEffects', '~> 1.6.0'
   pod 'BonMot', '~> 5.4'
   
