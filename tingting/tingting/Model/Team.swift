@@ -18,6 +18,10 @@ struct Team: Codable {
     
     var isHeartSent: Bool? = false
     
+    var sortedUser: [User] {
+        teamMembers.sorted { user, _ in user.id == teamInfo.owner_id }
+    }
+    
 }
 
 struct TeamMatching: Codable {

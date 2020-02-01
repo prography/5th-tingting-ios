@@ -59,12 +59,14 @@ class CreateTeamViewController: BaseViewController {
             memberCountSegmentedControl.isEnabled = false
             memberCountSegmentedControl.selectedSegmentIndex = (team.teamInfo.max_member_number ?? 0) + 1
             introTextView.text = team.teamInfo.intro
+            placeButton.setTitle(team.teamInfo.place, for: .normal)
             urlTextField.text = team.teamInfo.chat_address
             createTeamButton.setTitle("수정하기", for: .normal)
             
             let isOwnerMe = team.teamInfo.owner_id == ConnectionManager.shared.currentUser?.id
             
             if !isOwnerMe {
+                createTeamButton.isEnabled = false
                 introTextView.isEditable = false
                 urlTextField.isEnabled = false
                 createTeamButton.setEnable(false)
@@ -251,7 +253,7 @@ extension CreateTeamViewController {
                                 max_member_number: max_member_number,
                                 is_matched: nil,
                                 accepter_number: nil,
-                                place: nil)
+                                place: place)
             
             NetworkManager.editTeamInfo(id: oldTeam.teamInfo.id!,
                                         teamInfo: team)

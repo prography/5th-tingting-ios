@@ -23,7 +23,7 @@ class JoinTeamViewController: BaseViewController {
         super.viewDidLoad()
         
         teamIntroView.configure(with: team)
-        memberListView.configure(with: team.teamMembers)
+        memberListView.configure(with: team.sortedUser)
         
     }
     override func bind() {
@@ -51,7 +51,7 @@ class JoinTeamViewController: BaseViewController {
                     self.team = team
                     self.team.teamInfo.id = teamID
                     self.teamIntroView.configure(with: team)
-                    self.memberListView.configure(with: team.teamMembers)
+                    self.memberListView.configure(with: team.sortedUser)
                     self.endLoading()
                     
                 },

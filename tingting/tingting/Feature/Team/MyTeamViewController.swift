@@ -149,7 +149,7 @@ extension MyTeamViewController {
                     guard let self = self else { return }
                     self.team = team
                     self.teamIntroView.configure(with: team, isMyTeam: true)
-                    self.memberListView.configure(with: team.teamMembers)
+                    self.memberListView.configure(with: team.sortedUser)
                     self.makeConfigurator()
                     self.endLoading()
                 },

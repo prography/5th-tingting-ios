@@ -37,7 +37,7 @@ class MatchingTeamViewController: BaseViewController {
             guard let self = self else { return }
             guard let team = team else { return }
             self.teamIntroView.configure(with: team)
-            self.memberListView.configure(with: team.teamMembers)
+            self.memberListView.configure(with: team.sortedUser)
             
             let isHeartSent = team.isHeartSent ?? false
             self.applyButton.isUserInteractionEnabled = !isHeartSent
