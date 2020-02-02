@@ -45,6 +45,8 @@
 		5326719323C4B20F00118B6B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326719223C4B20F00118B6B /* Validator.swift */; };
 		5326D8A223A4CA7700632CC0 /* MatchingTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */; };
 		5326D8A623A4D33300632CC0 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D8A523A4D33300632CC0 /* BaseButton.swift */; };
+		532AC2DC23E6A6BB009FEAF9 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532AC2DB23E6A6BB009FEAF9 /* BaseTableViewController.swift */; };
+		532AC2DE23E6B52D009FEAF9 /* M13Checkbox+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */; };
 		532D0E5A23D43F7C0057E189 /* APIModel+MatchingTeamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */; };
 		532D0E5C23D455B90057E189 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5B23D455B90057E189 /* TeamManager.swift */; };
 		532D0E5E23D5C5CB0057E189 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */; };
@@ -191,6 +193,8 @@
 		5326719223C4B20F00118B6B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		532AC2DB23E6A6BB009FEAF9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "M13Checkbox+Extension.swift"; sourceTree = "<group>"; };
 		532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+MatchingTeamList.swift"; sourceTree = "<group>"; };
 		532D0E5B23D455B90057E189 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		532D0E5D23D5C5CB0057E189 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +452,7 @@
 				5326719023C3941800118B6B /* UIButton+Extension.swift */,
 				5356A3B223CB3248000B435A /* Collection+Extension.swift */,
 				5356A3B423CB337B000B435A /* UIImageView+Extension.swift */,
+				532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				53BF9C5123AB9B140013451C /* BaseTabBarController.swift */,
 				53BF9C5923AB9E530013451C /* BaseNavigationController.swift */,
 				532078CF237409EF00E3F94E /* BaseViewController.swift */,
+				532AC2DB23E6A6BB009FEAF9 /* BaseTableViewController.swift */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -983,6 +989,7 @@
 				5356A3B123CB2481000B435A /* MockProtocol.swift in Sources */,
 				53DD4A2223BE4CC100938405 /* APIModel+School.swift in Sources */,
 				53D098D723B8C75C00854712 /* BaseCellProtocol.swift in Sources */,
+				532AC2DC23E6A6BB009FEAF9 /* BaseTableViewController.swift in Sources */,
 				532078D1237409EF00E3F94E /* Int+Extension.swift in Sources */,
 				53D5354B237306EC00FEB3E9 /* MainTabBarController.swift in Sources */,
 				53D9A43E23B891EA0021A435 /* TeamInfoCell+Configurator.swift in Sources */,
@@ -1015,6 +1022,7 @@
 				53D9A44123B894170021A435 /* MatchingTeamStateCell.swift in Sources */,
 				538FE52823ABAA2200F2AE22 /* MyProfileViewController.swift in Sources */,
 				5385F99A23AF5AD6002EFE9B /* TeamUserInfoViewController.swift in Sources */,
+				532AC2DE23E6B52D009FEAF9 /* M13Checkbox+Extension.swift in Sources */,
 				53D9A43623B88E330021A435 /* LabelCell+Configurator.swift in Sources */,
 				538FE52623ABA99100F2AE22 /* EditProfileViewController.swift in Sources */,
 				53D53551237306EC00FEB3E9 /* tingting.xcdatamodeld in Sources */,
