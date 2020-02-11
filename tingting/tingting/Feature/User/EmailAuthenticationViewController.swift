@@ -13,9 +13,7 @@ import RxCocoa
 class EmailAuthenticationViewController: BaseViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var sendButton: UIButton!
-
     @IBOutlet weak var nextButton: UIButton!
     
     private let isValid: BehaviorRelay<Bool> = .init(value: false)
@@ -98,7 +96,6 @@ extension EmailAuthenticationViewController {
     static func initiate() -> EmailAuthenticationViewController {
         
         let vc = EmailAuthenticationViewController.withStoryboard(storyboard: .user)
-        
         return vc
     }
 }

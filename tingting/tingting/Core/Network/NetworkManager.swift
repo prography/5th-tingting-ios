@@ -48,6 +48,10 @@ extension NetworkManager {
         return Router(url: "/auth/local/signup", method: .post, parameters: request)
     }
     
+    static func uploadProfileImage(image: UIImage) -> Router<CommonReponse> {
+        return Router(url: "/auth/thumbnail-img", method: .post, images: [image], removeTokenCodes: [401])
+    }
+    
     /// 아이디(로컬아이디) 중복확인
     static func checkDuplicate(loginID: String) -> Router<CommonReponse> {
         let params = ["local_id": loginID]

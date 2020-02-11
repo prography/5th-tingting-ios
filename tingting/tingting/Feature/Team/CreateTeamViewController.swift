@@ -57,7 +57,7 @@ class CreateTeamViewController: BaseViewController {
             teamNameTextField.text = team.teamInfo.name
             teamNameTextField.isEnabled = false
             memberCountSegmentedControl.isEnabled = false
-            memberCountSegmentedControl.selectedSegmentIndex = (team.teamInfo.max_member_number ?? 0) + 1
+            memberCountSegmentedControl.selectedSegmentIndex = (team.teamInfo.max_member_number ?? 0) + 2
             introTextView.text = team.teamInfo.intro
             placeButton.setTitle(team.teamInfo.place, for: .normal)
             urlTextField.text = team.teamInfo.chat_address
@@ -66,10 +66,9 @@ class CreateTeamViewController: BaseViewController {
             let isOwnerMe = team.teamInfo.owner_id == ConnectionManager.shared.currentUser?.id
             
             if !isOwnerMe {
-                createTeamButton.isEnabled = false
                 introTextView.isEditable = false
                 urlTextField.isEnabled = false
-                createTeamButton.setEnable(false)
+                createTeamButton.isHidden = true
             }
             
         }
@@ -150,10 +149,20 @@ class CreateTeamViewController: BaseViewController {
 extension CreateTeamViewController {
       
     private func checkValidation() {
-        guard let teamName = teamNameTextField.text, (1...8).contains(teamName.count) else {
+        guard let teamName = teamNameTextField.text, !teamName.isEmpty else {
             isValid.accept(false)
             return
         }
+        
+        
+        
+        guard teamName.count <= 8 else {
+            isValid.accept(false)
+            teamNameTextField.text = teamName[0..<8]
+            checkValidation()
+            return
+        }
+         
         
         guard let intro = introTextView.text, (1...100).contains(intro.count) else {
             isValid.accept(false)
@@ -195,7 +204,7 @@ extension CreateTeamViewController {
         // TODO: Add place
         // let password: String? = nil
 
-        let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 1
+        let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 2
  
         startLoading(backgroundColor: .clear)
         

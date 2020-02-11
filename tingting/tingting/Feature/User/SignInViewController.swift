@@ -24,13 +24,13 @@ class SignInViewController: BaseViewController {
     }
  
     override func bind() {
-        
         signUpButton.rx.tap
             .bind {
                 ConnectionManager.shared.signUpRequest = .init()
                 ConnectionManager.shared.signUpRequest.local_id = self.emailTextField.text
-                let emailVC = SignUpViewController.initiate()
-                let naviVC = BaseNavigationController(rootViewController: emailVC)
+                let termsVC = TermsViewController.initiate()
+                let naviVC = BaseNavigationController(rootViewController: termsVC)
+                // naviVC.modalPresentationStyle = .fullScreen
                 self.present(naviVC, animated: true)
         }.disposed(by: disposeBag)
         

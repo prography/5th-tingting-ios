@@ -39,28 +39,31 @@ class TermsViewController: BaseTableViewController {
             $0?.stateChangeAnimation = .bounce(.fill)
             $0?.animationDuration = 0.1
         }
+        
+        // TODO: 네비바 말고 직접 버튼 구현 또는 투명도 조절
+        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barTintColor = .primary
+        navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     override func bind() {
-
-        
+ 
         agreeAllCheckbox.stateDriver
             .driveNext { [weak self] state in
-                
                 self?.firstCheckbox.setCheckState(state, animated: true)
                 self?.secondCheckbox.setCheckState(state, animated: true)
                 self?.thirdCheckbox.setCheckState(state, animated: true)
-
                 self?.nextButton.setEnable(state == .checked)
-                
         }.disposed(by: disposeBag)
         
         let checkboxObservers = [firstCheckbox, secondCheckbox, thirdCheckbox]
             .compactMap { $0?.stateDriver.asObservable().share() }
 
         Observable.merge(checkboxObservers).bind { [weak self] _ in
-            let stateList = [self?.firstCheckbox, self?.secondCheckbox,
-                             self?.thirdCheckbox].compactMap { $0?.checkState }
+            let stateList = [self?.firstCheckbox, self?.secondCheckbox, self?.thirdCheckbox]
+                .compactMap { $0?.checkState }
             
             let isCheckAll = stateList.allSatisfy { $0 == .checked }
             self?.agreeAllCheckbox.setCheckState(isCheckAll ? .checked : .unchecked, animated: true)
@@ -68,9 +71,12 @@ class TermsViewController: BaseTableViewController {
             
         }.disposed(by: disposeBag)
         
-        
+        nextButton.rx.tap.bind { [weak self] in
+            guard let self = self else { return }
+            let signUpVC = SignUpViewController.initiate()
+            self.navigationController?.pushViewController(signUpVC, animated: true)
+        }.disposed(by: disposeBag)
     }
-    
         
 }
  
@@ -80,3 +86,12 @@ extension TermsViewController {
     }
 }
  
+
+extension TermsViewController {
+    static func initiate() -> TermsViewController {
+        
+        let vc = TermsViewController.withStoryboard(storyboard: .user)
+        
+        return vc
+    }
+}
