@@ -153,9 +153,7 @@ extension CreateTeamViewController {
             isValid.accept(false)
             return
         }
-        
-        
-        
+          
         guard teamName.count <= 8 else {
             isValid.accept(false)
             teamNameTextField.text = teamName[0..<8]
@@ -221,7 +219,7 @@ extension CreateTeamViewController {
                                 is_matched: nil,
                                 accepter_number: nil,
                                 place: place)
-            
+
             NetworkManager.checkDuplicate(teamName: name).asObservable()
                 .subscribe(
                     onNext: { [weak self] response in

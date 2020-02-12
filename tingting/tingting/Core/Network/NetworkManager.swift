@@ -12,7 +12,7 @@ import RxCocoa
 
 class NetworkManager {}
 
-// Auth
+// MARK: - Auth
 extension NetworkManager {
 
     /// 학교인증 API (1)
@@ -48,8 +48,9 @@ extension NetworkManager {
         return Router(url: "/auth/local/signup", method: .post, parameters: request)
     }
     
-    static func uploadProfileImage(image: UIImage) -> Router<CommonReponse> {
-        return Router(url: "/auth/thumbnail-img", method: .post, images: [image], removeTokenCodes: [401])
+    /// 썸네일 이미지 등록
+    static func uploadThumbnailImage(image: UIImage) -> Router<CommonReponse> {
+        return Router(url: "/auth/thumbnail-img", method: .post, imageDict: ["thumbnail" :image], removeTokenCodes: [401])
     }
     
     /// 아이디(로컬아이디) 중복확인
@@ -70,7 +71,7 @@ extension NetworkManager {
     }
 }
 
-// Profile
+// MARK: - Profile
 extension NetworkManager {
     
     /// 내 프로필 보기
@@ -83,13 +84,33 @@ extension NetworkManager {
         return Router(url: "/me/profile", method: .patch, parameters: user, removeTokenCodes: [401, 403])
     }
     
+    /// 내 썸네일 사진 수정
+    static func editMyThumbnailImage(image: UIImage) -> Router<CommonReponse> {
+        return Router(url: "/me/profile", method: .post, imageDict: ["thumbnail": image])
+    }
+       
+    /// 내 프로필 이미지 저장
+    static func uploadProfileImage(image: UIImage) -> Router<CommonReponse> {
+        return Router(url: "/me/profile-img", method: .post, imageDict: ["thumbnail": image])
+    }
+    
+    /// 내 프로필 이미지 수정
+    static func editProfileImage(id: Int, image: UIImage) -> Router<CommonReponse> {
+        return Router(url: "/me/profile-img/\(id)", method: .post, imageDict: ["thumbnail": image])
+    }
+    
+    /// 내 프로필 이미지 삭제
+    static func deleteProfileImage(imageID: Int) -> Router<CommonReponse> {
+        return Router(url: "/me/profile-img/\(imageID)", method: .delete)
+    }
+    
     /// 다른 사용자 프로필 보기
     static func getProfile(id: Int) -> Router<APIModel.Profile> {
         return Router(url: "/users/\(id)/profile", method: .get, removeTokenCodes: [401, 403])
     }
 }
 
-// Team
+// MARK: - Team
 extension NetworkManager {
     
     /// 전체 팀 리스트 보기
@@ -125,8 +146,8 @@ extension NetworkManager {
     
     /// 개별 팀 정보 보기
     static func getMyTeamInfo(id: Int) -> Router<Team> {
-//        return Router(url: "/me/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
-         return Router(url: "/me/teams/\(id)", method: .get)
+        // return Router(url: "/me/teams/\(id)", method: .get, mockData: MockTeam.getMockResponse())
+        return Router(url: "/me/teams/\(id)", method: .get)
     }
     
     /// 나의 팀 정보 수정하기
@@ -141,12 +162,12 @@ extension NetworkManager {
     
     /// 팀 합류하기
     static func joinTeam(id: Int) -> Router<CommonReponse> {
-//        return Router(url: "/teams/\(id)/join", method: .post, mockData: MockCommonReponse.getMockResponse())
-         return Router(url: "/teams/\(id)/join", method: .post)
+        // return Router(url: "/teams/\(id)/join", method: .post, mockData: MockCommonReponse.getMockResponse())
+        return Router(url: "/teams/\(id)/join", method: .post)
     }
 }
 
-// Matching
+// MARK: - Matching
 extension NetworkManager {
     /// 전체 매칭 후보 목록 보기
     static func getAllMatchingList() -> Router<APIModel.MatcingTeamList> {

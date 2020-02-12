@@ -33,7 +33,7 @@ struct Router<T: Codable> {
     
     private let url: String
     private let parameters: [String : Any]?
-    private let images: [UIImage]
+    private let imageDict: [String: UIImage]
     private let method: HTTPMethod
     private let removeTokenCodes: [Int]
     private let mockData: T?
@@ -41,13 +41,13 @@ struct Router<T: Codable> {
     init(url: String,
          method: HTTPMethod = .get,
          parameters: Encodable? = nil,
-         images: [UIImage] = [],
+         imageDict: [String: UIImage] = [:],
          removeTokenCodes: [Int] = [],
          mockData: T? = nil) {
         self.url = url
         self.method = method
         self.parameters = parameters?.dictionary
-        self.images = images
+        self.imageDict = imageDict
         self.removeTokenCodes = removeTokenCodes
         self.mockData = mockData
         
@@ -85,8 +85,8 @@ struct Router<T: Codable> {
     
     var uploadRequest: UploadRequest {
         return AF.upload(multipartFormData: { multipartFormData in
-            self.images.forEach{ image in
-                multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: "thumbnail" , fileName: "file.jpeg", mimeType: "image/jpeg")
+            self.imageDict.forEach { name, image in
+                multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: name , fileName: "file.jpeg", mimeType: "image/jpeg")
             }
         }, to: baseURL + url)
     }
@@ -108,7 +108,7 @@ extension Router {
         
         return Observable<T>.create { observer in
             
-            let request = self.images.isEmpty ? self.dataRequest : self.uploadRequest
+            let request = self.imageDict.isEmpty ? self.dataRequest : self.uploadRequest
             
             let session = request.responseData { result in
                  
