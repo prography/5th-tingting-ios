@@ -38,12 +38,19 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLX-nc-SAY">
+                                                <rect key="frame" x="135.5" y="0.0" width="105" height="105"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="4Bo-HJ-cYY" firstAttribute="centerY" secondItem="wBp-Rd-PAq" secondAttribute="centerY" id="2us-eX-1wr"/>
+                                            <constraint firstItem="dLX-nc-SAY" firstAttribute="height" secondItem="4Bo-HJ-cYY" secondAttribute="height" multiplier="1:1" id="JyV-Ut-V0X"/>
+                                            <constraint firstItem="dLX-nc-SAY" firstAttribute="centerY" secondItem="4Bo-HJ-cYY" secondAttribute="centerY" id="Mm5-rO-eeR"/>
                                             <constraint firstItem="4Bo-HJ-cYY" firstAttribute="height" secondItem="wBp-Rd-PAq" secondAttribute="height" id="clx-zp-CbW"/>
+                                            <constraint firstItem="dLX-nc-SAY" firstAttribute="width" secondItem="4Bo-HJ-cYY" secondAttribute="width" multiplier="1:1" id="d0g-ct-syh"/>
                                             <constraint firstItem="4Bo-HJ-cYY" firstAttribute="centerX" secondItem="wBp-Rd-PAq" secondAttribute="centerX" id="soh-fN-eCE"/>
+                                            <constraint firstItem="dLX-nc-SAY" firstAttribute="centerX" secondItem="4Bo-HJ-cYY" secondAttribute="centerX" id="wpP-XX-Bae"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-gP-szh">
@@ -288,6 +295,7 @@
                         <outlet property="editButton" destination="mcE-6t-m6q" id="bxQ-MK-ZQc"/>
                         <outlet property="genderTextField" destination="2rQ-Fd-RdY" id="rxf-ye-C9W"/>
                         <outlet property="heightTextField" destination="VgE-E2-xa0" id="PAV-gc-EzF"/>
+                        <outlet property="imageButton" destination="dLX-nc-SAY" id="dII-F4-1Ha"/>
                         <outlet property="imageView" destination="4Bo-HJ-cYY" id="jc2-K4-gy5"/>
                         <outlet property="nicknameTextField" destination="ckt-eL-oxW" id="QGV-xl-irY"/>
                         <outlet property="schoolTextField" destination="Yf5-B9-skg" id="eag-k7-Kxa"/>

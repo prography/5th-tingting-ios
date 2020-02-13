@@ -50,7 +50,7 @@ extension NetworkManager {
     
     /// 썸네일 이미지 등록
     static func uploadThumbnailImage(image: UIImage) -> Router<CommonReponse> {
-        return Router(url: "/auth/thumbnail-img", method: .post, imageDict: ["thumbnail" :image], removeTokenCodes: [401])
+        return Router(url: "/me/thumbnail-img", method: .post, imageDict: ["thumbnail" :image], removeTokenCodes: [401])
     }
     
     /// 아이디(로컬아이디) 중복확인

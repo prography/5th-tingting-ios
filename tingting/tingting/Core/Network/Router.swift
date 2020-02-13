@@ -23,7 +23,7 @@ struct Router<T: Codable> {
         case v2 = "/v2"
     }
     
-    private let server: ServerType = .live
+    private let server: ServerType = .debug
     private let version: ServerVersion = .v1
     
     private var baseURL: String {
@@ -88,7 +88,7 @@ struct Router<T: Codable> {
             self.imageDict.forEach { name, image in
                 multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: name , fileName: "file.jpeg", mimeType: "image/jpeg")
             }
-        }, to: baseURL + url)
+        }, to: baseURL + url, headers: headers)
     }
 }
 

@@ -11,10 +11,11 @@ import RxSwift
 import RxCocoa
 
 class MyProfileViewController: BaseViewController {
-
+ 
     @IBOutlet weak var settingButton: UIButton!
     
-    @IBOutlet weak var profileImageView: BaseImageView!
+    @IBOutlet weak var profileImageView: BaseImageView! 
+    
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView! {
@@ -22,6 +23,7 @@ class MyProfileViewController: BaseViewController {
             tableView.didSetDefault()
         }
     }
+    
     
     let currentUser: PublishRelay<User> = .init()
     

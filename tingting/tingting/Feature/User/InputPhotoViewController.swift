@@ -21,6 +21,7 @@ class InputPhotoViewController: BaseViewController {
     
     let isValid: BehaviorRelay<Bool> = .init(value: true)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
