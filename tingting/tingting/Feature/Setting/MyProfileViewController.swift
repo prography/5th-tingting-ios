@@ -42,7 +42,7 @@ class MyProfileViewController: BaseViewController {
      
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.navigationBar.isHidden = true
         /// Check Logout
         guard ConnectionManager.shared.currentUser != nil else {
             startLoading()

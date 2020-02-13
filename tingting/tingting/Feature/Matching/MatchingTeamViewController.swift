@@ -28,7 +28,12 @@ class MatchingTeamViewController: BaseViewController {
         super.viewWillAppear(animated)
 
         getMatchingTeam()
-        applyButton.isHidden = myTeamID == nil 
+        applyButton.isHidden = myTeamID == nil
+    
+        navigationController?.navigationBar.isHidden = false    
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .primary
     }
     
     override func bind() {

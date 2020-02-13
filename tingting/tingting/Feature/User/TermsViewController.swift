@@ -41,10 +41,7 @@ class TermsViewController: BaseTableViewController {
         }
         
         // TODO: 네비바 말고 직접 버튼 구현 또는 투명도 조절
-        navigationController?.navigationBar.backgroundColor = .clear
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.barTintColor = .primary
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isHidden = true
         
     }
     

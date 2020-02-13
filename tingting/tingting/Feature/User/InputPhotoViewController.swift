@@ -78,10 +78,11 @@ class InputPhotoViewController: BaseViewController {
         let requset = ConnectionManager.shared.signUpRequest
         
         NetworkManager.signUp(request: requset).asObservable().subscribe(
-            onNext: { response in
+            onNext: { [weak self] response in
                 ConnectionManager.shared.saveToken(response.token)
-                AlertManager.show(title: response.message)
-                self.close()
+//                AlertManager.show(title: response.message)
+                self?.uploadThumbnailImage()
+//                self?.close()
         },
             onError: { error in
                 AlertManager.showError(error)
@@ -90,6 +91,33 @@ class InputPhotoViewController: BaseViewController {
     
 }
 
+extension InputPhotoViewController {
+    func uploadThumbnailImage() {
+        guard let image = photoImageView.image else {
+            endLoading()
+            close()
+            return
+            
+        }
+        
+        NetworkManager.uploadThumbnailImage(image: image)
+            .asObservable()
+            .subscribe(
+                onNext: { [weak self] response in
+                    
+                    AlertManager.show(title: response.message)
+                    self?.endLoading()
+                    self?.close()
+                },
+                onError: { [weak self] error in
+                    AlertManager.showError(error)
+                    self?.endLoading()
+                    self?.close()
+            }
+        ).disposed(by: disposeBag)
+    }
+    
+}
 extension InputPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var newImage: UIImage? = nil

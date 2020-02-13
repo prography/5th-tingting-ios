@@ -37,7 +37,10 @@ class JoinTeamViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         startLoading(backgroundColor: .clear)
-        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .primary 
         guard let teamID = team.teamInfo.id else {
             assertionFailure()
             return

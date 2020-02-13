@@ -18,6 +18,15 @@ class SettingViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .primary
+    }
+    
     override func bind() {
         logoutButton.rx.tap
             .bind { [weak self] in

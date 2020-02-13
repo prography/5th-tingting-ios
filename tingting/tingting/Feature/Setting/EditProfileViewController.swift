@@ -89,6 +89,12 @@ class EditProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .primary
+        
         guard let user = ConnectionManager.shared.currentUser else { assertionFailure(); return }
         imageView.setImage(url: user.thumbnail)
         nicknameTextField.text = user.name ?? ""
