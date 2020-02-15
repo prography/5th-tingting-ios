@@ -41,4 +41,20 @@ class ConnectionManager {
         removeToken()
     }
     
+    private let blockTeamKey = "BLOCK_TEAM"
+    private lazy var blockTeamList: [Int] = UserDefaults().array(forKey: blockTeamKey) as? [Int] ?? []
+    func blockTeam(teamID: Int) {
+        blockTeamList.append(teamID)
+        UserDefaults().set(blockTeamList, forKey: blockTeamKey)
+    }
+    
+    func getBlockTeamIdList() -> [Int] {
+        return blockTeamList
+    }
+    
+    func clearBlockTeam() {
+        blockTeamList = []
+        UserDefaults().set([], forKey: blockTeamKey)
+    }
+    
 }

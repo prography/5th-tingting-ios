@@ -96,6 +96,103 @@
             </objects>
             <point key="canvasLocation" x="942" y="102"/>
         </scene>
+        <!--Applying Matching Team View Controller-->
+        <scene sceneID="paU-c1-GGC">
+            <objects>
+                <viewController storyboardIdentifier="ApplyingMatchingTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DT1-bv-dwW" customClass="ApplyingMatchingTeamViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kmf-ry-9qY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6s-49-j9a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-vI-mmS" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                                <rect key="frame" x="16" y="283" width="382" height="340"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀에게 보낼 메시지 입력..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9R-JB-vyx" userLabel="placeholderLabel">
+                                        <rect key="frame" x="51" y="107" width="164.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-1y-XbR">
+                                        <rect key="frame" x="42" y="38" width="298" height="264"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메세지 작성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7w-AB-Zlc">
+                                                <rect key="frame" x="0.0" y="0.0" width="298" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hsl-KH-MKU">
+                                                <rect key="frame" x="0.0" y="60" width="298" height="144"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVB-JH-DBP">
+                                                <rect key="frame" x="0.0" y="240" width="298" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="57f-qw-2FY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title="보내기">
+                                                    <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="V9R-JB-vyx" firstAttribute="leading" secondItem="Hsl-KH-MKU" secondAttribute="leading" constant="9" id="2xR-ga-pea"/>
+                                    <constraint firstItem="V9R-JB-vyx" firstAttribute="top" secondItem="Hsl-KH-MKU" secondAttribute="top" constant="9" id="Eoi-9D-fef"/>
+                                    <constraint firstItem="s6d-1y-XbR" firstAttribute="centerX" secondItem="dnV-vI-mmS" secondAttribute="centerX" id="JN6-fa-qAw"/>
+                                    <constraint firstItem="s6d-1y-XbR" firstAttribute="top" secondItem="dnV-vI-mmS" secondAttribute="top" constant="38" id="Zgb-uY-UJp"/>
+                                    <constraint firstItem="s6d-1y-XbR" firstAttribute="leading" secondItem="dnV-vI-mmS" secondAttribute="leading" constant="42" id="cJ4-x2-7j6"/>
+                                    <constraint firstAttribute="height" constant="340" id="qlR-ao-RqR"/>
+                                    <constraint firstAttribute="bottom" secondItem="s6d-1y-XbR" secondAttribute="bottom" constant="38" id="wqB-YH-T5e"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.20226883561643835" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XkR-ZD-TX9" firstAttribute="trailing" secondItem="p6s-49-j9a" secondAttribute="trailing" id="7di-FH-bZe"/>
+                            <constraint firstItem="p6s-49-j9a" firstAttribute="top" secondItem="XkR-ZD-TX9" secondAttribute="top" id="9T5-4z-dL5"/>
+                            <constraint firstItem="dnV-vI-mmS" firstAttribute="leading" secondItem="XkR-ZD-TX9" secondAttribute="leading" constant="16" id="EeD-uI-zhb"/>
+                            <constraint firstItem="dnV-vI-mmS" firstAttribute="centerY" secondItem="XkR-ZD-TX9" secondAttribute="centerY" id="Erf-WG-hsS"/>
+                            <constraint firstItem="dnV-vI-mmS" firstAttribute="centerX" secondItem="XkR-ZD-TX9" secondAttribute="centerX" id="jkP-sK-qYX"/>
+                            <constraint firstItem="p6s-49-j9a" firstAttribute="leading" secondItem="XkR-ZD-TX9" secondAttribute="leading" id="oBt-5I-Sab"/>
+                            <constraint firstItem="XkR-ZD-TX9" firstAttribute="bottom" secondItem="p6s-49-j9a" secondAttribute="bottom" id="q0m-jq-y6Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XkR-ZD-TX9"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundButton" destination="p6s-49-j9a" id="gyk-mV-A74"/>
+                        <outlet property="messageTextView" destination="Hsl-KH-MKU" id="FQL-DD-CKg"/>
+                        <outlet property="placeholderLabel" destination="V9R-JB-vyx" id="8cq-53-gqZ"/>
+                        <outlet property="sendButton" destination="eVB-JH-DBP" id="ltX-hc-jen"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5VI-6W-Npt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="102"/>
+        </scene>
         <!--Matching Team List View Controller-->
         <scene sceneID="Dj2-mw-8EX">
             <objects>

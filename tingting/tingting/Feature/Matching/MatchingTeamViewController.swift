@@ -22,6 +22,7 @@ class MatchingTeamViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(title: "차단", style: .plain, target: self, action: #selector(blockTeam))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +52,15 @@ class MatchingTeamViewController: BaseViewController {
         }.disposed(by: disposeBag)
         
         applyButton.rx.tap.bind { [weak self] in
-            self?.showMessageAlert()
+            guard let self = self else { return }
+            let vc = ApplyingMatchingTeamViewController.initiate(team: self.team.value!, myTeamID: self.myTeamID!)
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            vc.rx.deallocated.bind { [weak self] in
+                self?.getMatchingTeam()
+            }.disposed(by: vc.disposeBag)
+            
+            self.present(vc, animated: true)
         }.disposed(by: disposeBag)
         
     }
@@ -76,34 +85,21 @@ extension MatchingTeamViewController {
             }
         ).disposed(by: disposeBag)
     }
-    
-    func showMessageAlert() {
-        AlertManager.show(title: "이거 대신 메세지 입력하는 거 나와야 함.")
-        applyMatching()
+ 
+    @objc func blockTeam() {
+        let alert = UIAlertController(title: "해당 팀을 차단하시겠습니까?", message: "차단된 팀은 팀 목록에 표시되지 않습니다.", preferredStyle: .alert)
         
-    }
-    
-    func applyMatching() {
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let reportAction = UIAlertAction(title: "차단", style: .destructive) { _ in
+            guard let teamID = self.team.value?.teamInfo.id else { return }
+            ConnectionManager.shared.blockTeam(teamID: teamID)
+            self.back()
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(reportAction)
         
-        startLoading(backgroundColor: .clear)
-        var request = APIModel.ApplyMatching.Request()
-        
-        request.receiveTeamId = team.value?.teamInfo.id
-        request.sendTeamId = myTeamID
-        request.message = "안녕하세요. 이것은 테스트 메세지이지만 그래도 받아주실거죠?"
-        
-        NetworkManager.applyFirstMatching(request: request)
-            .asObservable()
-            .subscribe(
-                onNext: { [weak self] response in
-                    AlertManager.show(title: response.message)
-                    self?.getMatchingTeam()
-            },
-                onError: { [weak self] error in
-                    AlertManager.showError(error)
-                    self?.endLoading()
-            }
-        ).disposed(by: disposeBag)
+        present(alert, animated: true, completion: nil)
     }
 }
 

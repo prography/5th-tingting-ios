@@ -22,6 +22,7 @@ class JoinTeamViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(title: "차단", style: .plain, target: self, action: #selector(blockTeam))
         teamIntroView.configure(with: team)
         memberListView.configure(with: team.sortedUser)
         
@@ -93,6 +94,23 @@ extension JoinTeamViewController {
                 
         ).disposed(by: disposeBag)
     }
+    
+    @objc func blockTeam() {
+        let alert = UIAlertController(title: "해당 팀을 차단하시겠습니까?", message: "차단된 팀은 팀 목록에 표시되지 않습니다.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let reportAction = UIAlertAction(title: "차단", style: .destructive) { _ in
+            guard let teamID = self.team.teamInfo.id else { return }
+            ConnectionManager.shared.blockTeam(teamID: teamID)
+            self.back()
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(reportAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 

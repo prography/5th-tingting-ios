@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class SettingViewController: BaseViewController {
+    @IBOutlet weak var clearBlockTeamButton: BaseButton!
     
     @IBOutlet weak var logoutButton: BaseButton!
     
@@ -28,6 +29,26 @@ class SettingViewController: BaseViewController {
     }
     
     override func bind() {
+        
+        clearBlockTeamButton.rx.tap.bind { [weak self] in
+            
+            let alert = UIAlertController(title: "차단된 팀을 초기화 하시겠습니까?", message: "", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            let reportAction = UIAlertAction(title: "초기화", style: .destructive) { _ in
+                ConnectionManager.shared.clearBlockTeam()
+                AlertManager.show(title: "초기화 되었습니다.")
+            }
+
+            alert.addAction(cancelAction)
+            alert.addAction(reportAction)
+            
+            self?.present(alert, animated: true, completion: nil)
+
+            
+            
+        }.disposed(by: disposeBag)
+        
         logoutButton.rx.tap
             .bind { [weak self] in
                 ConnectionManager.shared.logout()

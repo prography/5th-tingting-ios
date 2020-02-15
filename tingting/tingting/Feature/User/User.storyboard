@@ -299,7 +299,7 @@
                                                                     <fragment content="4년제 대학 목록 보기">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" metaFont="menu" size="11"/>
+                                                                            <font key="NSFont" metaFont="message" size="11"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>

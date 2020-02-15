@@ -36,7 +36,6 @@ class MatchingTeamListViewController: BaseViewController {
         super.viewDidLoad()
 
         setDropDown()
-        getMatchingTeamList()
         
     }
     
@@ -67,7 +66,11 @@ class MatchingTeamListViewController: BaseViewController {
                 self?.teamDropDown.reloadAllComponents()
                 
                 guard !teamInfos.isEmpty else { return }
-                self?.teamManager.selectedMyTeamInfo.accept(teamInfos[0])
+                if let selectedTeamInfo = self?.teamManager.selectedMyTeamInfo.value, teamInfos.contains(where: { $0.id == selectedTeamInfo.id }) {
+                    self?.teamManager.selectedMyTeamInfo.accept(selectedTeamInfo)
+                } else {
+                    self?.teamManager.selectedMyTeamInfo.accept(teamInfos[0])
+                }
                 
         }.disposed(by: disposeBag)
         
@@ -99,6 +102,7 @@ class MatchingTeamListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        getMatchingTeamList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -116,9 +120,12 @@ extension MatchingTeamListViewController {
             .subscribe(
                 onNext: { [weak self] response in
                     
+                    let blockTeamList = ConnectionManager.shared.getBlockTeamIdList()
                     self?.teamManager.myTeamInfos.accept(response.myTeamList)
+                    
+                    let teamList = response.matchingTeamList().filter { !blockTeamList.contains($0.teamInfo.id ?? -1) }
                     self?.teamManager.matchingTeamList
-                        .accept(response.matchingTeamList())
+                        .accept(teamList)
                       
                     self?.endLoading()
  

@@ -75,7 +75,8 @@ class TeamListViewController: BaseViewController {
             .asObservable()
             .subscribe(
                 onNext: { [weak self] teamList in
-                    self?.teamList = teamList
+                    let blockTeamList = ConnectionManager.shared.getBlockTeamIdList()
+                    self?.teamList = teamList.filter { !blockTeamList.contains($0.teamInfo.id ?? -1) }
                     self?.makeConfigurator()
             },
                 onError: { error in
