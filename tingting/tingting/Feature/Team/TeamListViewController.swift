@@ -31,6 +31,7 @@ class TeamListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        loadTeamList()
     }
     override func bind() {
         
@@ -67,7 +68,6 @@ class TeamListViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadTeamList()
     }
     
     func loadTeamList() {
@@ -76,7 +76,19 @@ class TeamListViewController: BaseViewController {
             .subscribe(
                 onNext: { [weak self] teamList in
                     let blockTeamList = ConnectionManager.shared.getBlockTeamIdList()
-                    self?.teamList = teamList.filter { !blockTeamList.contains($0.teamInfo.id ?? -1) }
+                    let blockUserList = ConnectionManager.shared.getBlockUserIdList()
+                    self?.teamList = teamList.filter {
+                        
+                        if blockTeamList.contains($0.teamInfo.id ?? -1) {
+                            return false
+                        }
+                        
+                        if $0.sortedUser.filter({ user in blockUserList.contains(user.id ?? -1) }).count > 0 {
+                            return false
+                        }
+                        
+                        return true
+                    }
                     self?.makeConfigurator()
             },
                 onError: { error in

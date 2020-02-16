@@ -19,12 +19,12 @@ class MemberViewController: BaseViewController {
     @IBOutlet weak var schoolLabel: UILabel!
     @IBOutlet weak var hobbyLabel: UILabel!
     @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var blockButton: UIButton!
     
     var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +62,11 @@ class MemberViewController: BaseViewController {
             self?.present(alert, animated: true, completion: nil)
  
         }.disposed(by: disposeBag)
+        
+        blockButton.rx.tap.bind { [weak self] in
+            self?.blockUser()
+        }.disposed(by: disposeBag)
+        
     }
     
 }
@@ -80,6 +85,23 @@ extension MemberViewController {
         
         schoolLabel.text = user.schoolName
         hobbyLabel.text = nil
+    }
+    
+    @objc func blockUser() {
+        let alert = UIAlertController(title: "해당 유저를 차단하시겠습니까?", message: "차단된 유저가 속한 팀은 목록에 표시되지 않습니다.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let reportAction = UIAlertAction(title: "차단", style: .destructive) { _ in
+            guard let userID = self.user.id else { return }
+            ConnectionManager.shared.blockUser(userID: userID)
+            AlertManager.show(title: "차단되었습니다.", subtitle: "다음 팀 확인시, 해당 유저가 속한 팀은 보이지 않습니다.")
+            self.dismiss(animated: true)
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(reportAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
 }

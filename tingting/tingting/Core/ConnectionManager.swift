@@ -57,4 +57,22 @@ class ConnectionManager {
         UserDefaults().set([], forKey: blockTeamKey)
     }
     
+    
+    private let blockUserKey = "BLOCK_USER"
+    private lazy var blockUserList: [Int] = UserDefaults().array(forKey: blockUserKey) as? [Int] ?? []
+    func blockUser(userID: Int) {
+        blockUserList.append(userID)
+        UserDefaults().set(blockUserList, forKey: blockUserKey)
+    }
+    
+    func getBlockUserIdList() -> [Int] {
+        return blockUserList
+    }
+    
+    func clearBlockUser() {
+        blockUserList = []
+        UserDefaults().set([], forKey: blockUserKey)
+    }
+    
+    
 }

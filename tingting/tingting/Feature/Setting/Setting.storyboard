@@ -455,7 +455,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="3n1-h1-oyl"/>
                                                     </constraints>
-                                                    <state key="normal" title="차단 팀 초기화">
+                                                    <state key="normal" title="차단 팀 &amp; 유저 초기화">
                                                         <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -517,7 +517,7 @@
                         <viewLayoutGuide key="safeArea" id="Smn-xO-UVS"/>
                     </view>
                     <connections>
-                        <outlet property="clearBlockTeamButton" destination="Nx7-2j-dZE" id="k4h-Kv-1uR"/>
+                        <outlet property="clearBlockButton" destination="Nx7-2j-dZE" id="k4h-Kv-1uR"/>
                         <outlet property="logoutButton" destination="Odf-TC-15O" id="kz1-G9-1aS"/>
                     </connections>
                 </viewController>

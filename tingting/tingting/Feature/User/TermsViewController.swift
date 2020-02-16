@@ -73,6 +73,28 @@ class TermsViewController: BaseTableViewController {
             let signUpVC = SignUpViewController.initiate()
             self.navigationController?.pushViewController(signUpVC, animated: true)
         }.disposed(by: disposeBag)
+        
+        // 이용약관
+        firstTermButton.rx.tap.bind {
+            if let url = URL(string: "https://github.com/prography/tingting-terms/blob/master/%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80.md") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }.disposed(by: disposeBag)
+        
+        // 개인정보보호정책
+        secondTermButton.rx.tap.bind {
+            if let url = URL(string: "https://github.com/prography/tingting-terms/blob/master/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EC%A0%95%EC%B1%85.md") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }.disposed(by: disposeBag)
+
+        // 자동 휴면 정책
+        thirdTermButton.rx.tap.bind {
+            if let url = URL(string: "https://github.com/prography/tingting-terms/blob/master/%EC%9E%90%EB%8F%99%20%ED%9C%B4%EB%A9%B4%EC%A0%95%EC%B1%85.md") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }.disposed(by: disposeBag)
+        
     }
         
 }

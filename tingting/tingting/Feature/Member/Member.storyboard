@@ -31,16 +31,16 @@
                                                 <rect key="frame" x="28" y="0.0" width="358" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xhI-6A-VFD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="정해, 26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyP-M6-D0Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="318" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="278" height="32"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="180cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="828-qS-lfX">
-                                                                <rect key="frame" x="0.0" y="32" width="318" height="18"/>
+                                                                <rect key="frame" x="0.0" y="32" width="278" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -48,11 +48,20 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgY-mS-AWM">
-                                                        <rect key="frame" x="318" y="0.0" width="40" height="50"/>
+                                                        <rect key="frame" x="278" y="0.0" width="40" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="ic5-li-OuD"/>
                                                         </constraints>
                                                         <state key="normal" title="신고">
+                                                            <color key="titleColor" red="1" green="0.5" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U8-Ha-kfj">
+                                                        <rect key="frame" x="318" y="0.0" width="40" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="Lhh-72-BIr"/>
+                                                        </constraints>
+                                                        <state key="normal" title="차단">
                                                             <color key="titleColor" red="1" green="0.5" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
@@ -157,6 +166,7 @@
                         <viewLayoutGuide key="safeArea" id="sUY-LO-HsI"/>
                     </view>
                     <connections>
+                        <outlet property="blockButton" destination="2U8-Ha-kfj" id="eSd-DY-ORW"/>
                         <outlet property="heightLabel" destination="828-qS-lfX" id="w9T-qB-ah1"/>
                         <outlet property="hobbyLabel" destination="kiy-IM-yNb" id="8jm-Xg-l66"/>
                         <outlet property="imageView" destination="oXg-3q-34n" id="aMI-OO-Ncw"/>

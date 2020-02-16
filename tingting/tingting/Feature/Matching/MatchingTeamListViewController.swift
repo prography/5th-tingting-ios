@@ -121,9 +121,22 @@ extension MatchingTeamListViewController {
                 onNext: { [weak self] response in
                     
                     let blockTeamList = ConnectionManager.shared.getBlockTeamIdList()
+                    let blockUserList = ConnectionManager.shared.getBlockUserIdList()
                     self?.teamManager.myTeamInfos.accept(response.myTeamList)
                     
-                    let teamList = response.matchingTeamList().filter { !blockTeamList.contains($0.teamInfo.id ?? -1) }
+                    let teamList = response.matchingTeamList().filter {
+                        
+                        if blockTeamList.contains($0.teamInfo.id ?? -1) {
+                            return false
+                        }
+                        
+                        if $0.sortedUser.filter({ user in blockUserList.contains(user.id ?? -1) }).count > 0 {
+                            return false
+                        }
+                        
+                        return true
+                    }
+  
                     self?.teamManager.matchingTeamList
                         .accept(teamList)
                       
