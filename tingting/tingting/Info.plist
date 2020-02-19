@@ -26,9 +26,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라를 사용하기 위해 권한이 필요합니다.</string>
+	<string>프로필 사진을 등록 및 수정하기 위해 카메라 권한이 필요합니다.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>앨범을 사용하기 위해 권한이 필요합니다.</string>
+	<string>프로필 사진을 등록 및 수정하기 위해 앨범 권한이 필요합니다.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
