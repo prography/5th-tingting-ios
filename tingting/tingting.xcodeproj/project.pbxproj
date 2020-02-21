@@ -63,6 +63,7 @@
 		5356A3B123CB2481000B435A /* MockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B023CB2481000B435A /* MockProtocol.swift */; };
 		5356A3B323CB3248000B435A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B223CB3248000B435A /* Collection+Extension.swift */; };
 		5356A3B523CB337B000B435A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B423CB337B000B435A /* UIImageView+Extension.swift */; };
+		53582FC524003CE400907983 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53582FC424003CE400907983 /* WebViewController.swift */; };
 		536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536567AD239D383A0063CAD9 /* TeamListView.swift */; };
 		536567B0239D38450063CAD9 /* TeamListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536567AF239D38450063CAD9 /* TeamListView.xib */; };
 		53785F1C23C0AC9D00645B7E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */; };
@@ -212,6 +213,7 @@
 		5356A3B023CB2481000B435A /* MockProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProtocol.swift; sourceTree = "<group>"; };
 		5356A3B223CB3248000B435A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		5356A3B423CB337B000B435A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		53582FC424003CE400907983 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		536567AD239D383A0063CAD9 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		536567AF239D38450063CAD9 /* TeamListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListView.xib; sourceTree = "<group>"; };
 		53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				531A5011237D5E3D008E65A4 /* InputPhotoViewController.swift */,
 				53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */,
 				53AAFAFB23E5EAA80027549F /* TermsViewController.swift */,
+				53582FC424003CE400907983 /* WebViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1080,6 +1083,7 @@
 				534B5FB923C0C0DB007397B3 /* AnimatedTextField.swift in Sources */,
 				532D0E5C23D455B90057E189 /* TeamManager.swift in Sources */,
 				53D098E123BB77E300854712 /* JoinTeamViewController.swift in Sources */,
+				53582FC524003CE400907983 /* WebViewController.swift in Sources */,
 				534B5FBB23C0D413007397B3 /* BaseTextView.swift in Sources */,
 				53AAD8B023B7886300B405CE /* UIUserInterfaceStyle+Extension.swift in Sources */,
 				53785F1E23C0AECC00645B7E /* BaseTextField.swift in Sources */,

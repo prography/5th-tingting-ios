@@ -46,6 +46,11 @@ class TermsViewController: BaseTableViewController {
     }
     
     override func bind() {
+        
+        collegeButton.rx.tap.bind { [weak self] in
+            // 4년제 대학 목록
+            self?.showWebView("https://www.notion.so/4-a7738c0c790b4aaf8463331164856568")
+        }.disposed(by: disposeBag)
  
         agreeAllCheckbox.stateDriver
             .driveNext { [weak self] state in
@@ -75,24 +80,18 @@ class TermsViewController: BaseTableViewController {
         }.disposed(by: disposeBag)
         
         // 이용약관
-        firstTermButton.rx.tap.bind {
-            if let url = URL(string: "https://github.com/prography/tingting-terms/blob/master/%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80.md") {
-                UIApplication.shared.open(url, options: [:])
-            }
+        firstTermButton.rx.tap.bind { [weak self] in
+            self?.showWebView("https://www.notion.so/e7b7d60edd404fbc997acb3de1fc2a1b")
         }.disposed(by: disposeBag)
         
         // 개인정보보호정책
-        secondTermButton.rx.tap.bind {
-            if let url = URL(string: "https://github.com/prography/tingting-terms/blob/master/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EC%A0%95%EC%B1%85.md") {
-                UIApplication.shared.open(url, options: [:])
-            }
+        secondTermButton.rx.tap.bind { [weak self] in
+            self?.showWebView("https://www.notion.so/0b9ca8b500f04faeaddf68dc2b0575e7")
         }.disposed(by: disposeBag)
 
         // 자동 휴면 정책
-        thirdTermButton.rx.tap.bind {
-            if let url = URL(string: "https://github.com/prography/tingting-terms/blob/master/%EC%9E%90%EB%8F%99%20%ED%9C%B4%EB%A9%B4%EC%A0%95%EC%B1%85.md") {
-                UIApplication.shared.open(url, options: [:])
-            }
+        thirdTermButton.rx.tap.bind { [weak self] in
+            self?.showWebView("https://www.notion.so/4e03b1273c9d42c28c8a773eebd3b6f5")
         }.disposed(by: disposeBag)
         
     }
@@ -100,6 +99,12 @@ class TermsViewController: BaseTableViewController {
 }
  
 extension TermsViewController {
+    func showWebView(_ url: String) {
+
+        let webVC = WebViewController.initiate(url: url)
+        self.present(webVC, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
