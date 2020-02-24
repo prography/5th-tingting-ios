@@ -10,14 +10,23 @@ import UIKit
 import CoreData
 import SwiftyBeaver
 import Kingfisher
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Logger
         Logger.addDestination(ConsoleDestination())
+        
+        // Kingfisher 메모리 초기화
         KingfisherManager.shared.cache.clearMemoryCache()
         KingfisherManager.shared.cache.clearDiskCache()
+        
+        // Firebase
+        FirebaseApp.configure()
+        
         return true
     }
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>292324296321-0m8p4abme1bb1kf4fk8nlgiailtd633q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.292324296321-0m8p4abme1bb1kf4fk8nlgiailtd633q</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>292324296321-1ifrdrmq1hm8ehpj1trlrb46si759tbp.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPAY6KF-elVHfD7LUuzS9Qr014ZTAHwao</string>
+	<key>GCM_SENDER_ID</key>
+	<string>292324296321</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.prography.tingting</string>
+	<key>PROJECT_ID</key>
+	<string>tingting-3b596</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tingting-3b596.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:292324296321:ios:add331316fb74a38e86f80</string>
+	<key>DATABASE_URL</key>
+	<string>https://tingting-3b596.firebaseio.com</string>
+</dict>
+</plist>

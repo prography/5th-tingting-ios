@@ -24,6 +24,7 @@
 		531A501C237D7010008E65A4 /* TeamInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531A501A237D7010008E65A4 /* TeamInfoCell.xib */; };
 		531A501F237D72E2008E65A4 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A501D237D72E2008E65A4 /* MemberCell.swift */; };
 		531A5020237D72E2008E65A4 /* MemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531A501E237D72E2008E65A4 /* MemberCell.xib */; };
+		531A87142404153B000FC2DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 531A87132404153B000FC2DB /* GoogleService-Info.plist */; };
 		532078B92374093500E3F94E /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532078B82374093500E3F94E /* User.storyboard */; };
 		532078D1237409EF00E3F94E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078BC237409EF00E3F94E /* Int+Extension.swift */; };
 		532078D2237409EF00E3F94E /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532078BD237409EF00E3F94E /* NSObject+Extension.swift */; };
@@ -174,6 +175,7 @@
 		531A501A237D7010008E65A4 /* TeamInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamInfoCell.xib; sourceTree = "<group>"; };
 		531A501D237D72E2008E65A4 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		531A501E237D72E2008E65A4 /* MemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCell.xib; sourceTree = "<group>"; };
+		531A87132404153B000FC2DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		532078B82374093500E3F94E /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		532078BC237409EF00E3F94E /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		532078BD237409EF00E3F94E /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
@@ -625,19 +627,20 @@
 		53D53545237306EC00FEB3E9 /* tingting */ = {
 			isa = PBXGroup;
 			children = (
-				53D80D5F238C021E005AC04B /* Resource */,
+				53D53546237306EC00FEB3E9 /* AppDelegate.swift */,
+				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
 				532078BA237409EF00E3F94E /* Core */,
 				532078B3237408EB00E3F94E /* Feature */,
-				532078B0237408AA00E3F94E /* View */,
-				532078B2237408CA00E3F94E /* Model */,
-				53D53546237306EC00FEB3E9 /* AppDelegate.swift */,
-				53D53548237306EC00FEB3E9 /* SceneDelegate.swift */,
-				53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */,
-				53D5354C237306EC00FEB3E9 /* Main.storyboard */,
-				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
-				53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */,
+				531A87132404153B000FC2DB /* GoogleService-Info.plist */,
 				53D53557237306EE00FEB3E9 /* Info.plist */,
+				53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */,
+				53D5354C237306EC00FEB3E9 /* Main.storyboard */,
+				53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */,
+				532078B2237408CA00E3F94E /* Model */,
+				53D80D5F238C021E005AC04B /* Resource */,
+				53D53548237306EC00FEB3E9 /* SceneDelegate.swift */,
 				53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */,
+				532078B0237408AA00E3F94E /* View */,
 			);
 			path = tingting;
 			sourceTree = "<group>";
@@ -759,7 +762,7 @@
 				53D5353F237306EC00FEB3E9 /* Sources */,
 				53D53540237306EC00FEB3E9 /* Frameworks */,
 				53D53541237306EC00FEB3E9 /* Resources */,
-				5FAF7001D314DCB5839DB709 /* [CP] Embed Pods Frameworks */,
+				E160F5B8AC4A674EC7953FDC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -876,6 +879,7 @@
 				531A5020237D72E2008E65A4 /* MemberCell.xib in Resources */,
 				5388BE4D239CE82600FBFFD5 /* MemberListView.xib in Resources */,
 				538FE52423ABA91800F2AE22 /* Setting.storyboard in Resources */,
+				531A87142404153B000FC2DB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,23 +920,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5FAF7001D314DCB5839DB709 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A8261A8E583A56F15ADFC9F0 /* [CP] Check Pods Manifest.lock */ = {
@@ -977,6 +964,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E160F5B8AC4A674EC7953FDC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tingting/Pods-tingting-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1269,7 +1273,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1290,7 +1294,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
