@@ -90,8 +90,10 @@ class CreateTeamViewController: BaseViewController {
         
         teamNameTextField.rx
             .controlEvent([.editingChanged])
-            .bind(onNext: checkValidation)
-            .disposed(by: disposeBag)
+            .bind { [weak self] in
+                self?.teamNameTextField.text = self?.teamNameTextField.text?.filter { $0 != " " }
+                self?.checkValidation()
+        }.disposed(by: disposeBag)
         
         introTextView.rx.text.bind { _ in
             self.checkValidation()

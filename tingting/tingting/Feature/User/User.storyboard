@@ -41,7 +41,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
                                                 <rect key="frame" x="40" y="60" width="334" height="423.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디 또는 이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
                                                         <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                                         <constraints>
@@ -59,6 +59,9 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                                <real key="value" value="17"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -83,7 +86,7 @@
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-WD-Fnk">
                                                         <rect key="frame" x="0.0" y="156" width="334" height="30"/>
-                                                        <state key="normal" title="비밀번호를 잊으셨나요?">
+                                                        <state key="normal" title="로그인이 안 되시나요?">
                                                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                         </state>
                                                         <connections>
@@ -299,7 +302,7 @@
                                                                     <fragment content="4년제 대학 목록 보기">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" metaFont="message" size="11"/>
+                                                                            <font key="NSFont" metaFont="label" size="11"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -806,10 +809,10 @@
                         <outlet property="checkMarkImageView" destination="FdX-dy-7zK" id="mQC-Mr-C2u"/>
                         <outlet property="checkPasswordTextField" destination="tfA-On-JBl" id="mcf-HK-9W8"/>
                         <outlet property="duplicationCheckButton" destination="gCT-0r-L0f" id="CNu-PB-RwG"/>
-                        <outlet property="emailTextField" destination="uwn-3g-4Gu" id="EVj-9h-LjY"/>
                         <outlet property="loginButton" destination="ID9-NR-LkU" id="Aw3-HW-b63"/>
                         <outlet property="nextButton" destination="FmR-tG-es2" id="VFk-cX-pS6"/>
                         <outlet property="passwordTextField" destination="jkf-S5-kHM" id="Ld1-Ww-ghv"/>
+                        <outlet property="userIDTextField" destination="uwn-3g-4Gu" id="EVj-9h-LjY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co8-1z-on1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -903,7 +906,7 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojn-bW-xDl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>

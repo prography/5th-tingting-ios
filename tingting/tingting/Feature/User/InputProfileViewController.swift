@@ -43,9 +43,10 @@ class InputProfileViewController: BaseViewController {
         
         nicknameTextField.rx
             .controlEvent([.editingChanged])
-            .compactMap { _ in false }
-            .bind(to: isNewNickname)
-            .disposed(by: disposeBag)
+            .bind { [weak self] in
+                self?.nicknameTextField.text = self?.nicknameTextField.text?.filter { $0 != " " }
+                self?.isNewNickname.accept(false)
+        }.disposed(by: disposeBag)
         
         duplicationCheckButton.rx.tap
             .bind { self.checkDuplicate() }

@@ -26,13 +26,15 @@ class EmailAuthenticationViewController: BaseViewController {
         
         emailTextField.rx
             .controlEvent([.editingChanged])
-            .bind {
-                let email = self.emailTextField.text
-                let isValid = Validator.check(email: email)
-                self.sendButton.setEnable(isValid)
-                self.isValid.accept(false)
+            .bind { [weak self] in
+                let email = self?.emailTextField.text
+                self?.emailTextField.text = email?.filter { $0 != " " } ?? ""
+                let isValid = Validator.check(email: self?.emailTextField.text)
+                self?.sendButton.setEnable(isValid)
+                self?.isValid.accept(false)
+                
         }.disposed(by: disposeBag)
-          
+        
         sendButton.rx.tap
             .bind(onNext: authenticateSchool)
             .disposed(by: disposeBag)
@@ -47,6 +49,7 @@ class EmailAuthenticationViewController: BaseViewController {
     }
     
     func authenticateSchool() {
+         
         guard let nickname = ConnectionManager.shared.signUpRequest.name else {
             assertionFailure("Nickname must exist!!")
             return }

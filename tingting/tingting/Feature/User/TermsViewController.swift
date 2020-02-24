@@ -49,7 +49,7 @@ class TermsViewController: BaseTableViewController {
         
         collegeButton.rx.tap.bind { [weak self] in
             // 4년제 대학 목록
-            self?.showWebView("https://www.notion.so/4-a7738c0c790b4aaf8463331164856568")
+            self?.showWebView("https://www.notion.so/ce7161a7928d4a04a5e3cee0f1690438")
         }.disposed(by: disposeBag)
  
         agreeAllCheckbox.stateDriver
@@ -81,17 +81,17 @@ class TermsViewController: BaseTableViewController {
         
         // 이용약관
         firstTermButton.rx.tap.bind { [weak self] in
-            self?.showWebView("https://www.notion.so/e7b7d60edd404fbc997acb3de1fc2a1b")
+            self?.showWebView("https://www.notion.so/bba04eeafbd144a7bd382b775c7c77f6")
         }.disposed(by: disposeBag)
         
         // 개인정보보호정책
         secondTermButton.rx.tap.bind { [weak self] in
-            self?.showWebView("https://www.notion.so/0b9ca8b500f04faeaddf68dc2b0575e7")
+            self?.showWebView("https://www.notion.so/4771f798cb0d43c4aa614bf3d5d1905d")
         }.disposed(by: disposeBag)
 
         // 자동 휴면 정책
         thirdTermButton.rx.tap.bind { [weak self] in
-            self?.showWebView("https://www.notion.so/4e03b1273c9d42c28c8a773eebd3b6f5")
+            self?.showWebView("https://www.notion.so/ecef8fb4c35747da818977d7126f35c8")
         }.disposed(by: disposeBag)
         
     }

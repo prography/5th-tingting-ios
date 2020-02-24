@@ -26,3 +26,19 @@ extension String {
          return String(self[start...])
     }
 }
+
+// 정규식
+extension String{
+    func filterString(regex: String) -> String {
+        
+        let regex = try? NSRegularExpression(pattern: regex)
+        
+        let results = regex?.matches(
+            in: self,
+            range: NSRange(self.startIndex..., in: self)) ?? []
+        
+        return results
+            .map { String(self[Range($0.range, in: self)!]) }
+            .joined()
+    }
+}

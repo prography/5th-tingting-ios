@@ -12,7 +12,7 @@ import RxCocoa
 
 class SignUpViewController: BaseViewController {
 
-    @IBOutlet weak var emailTextField: AnimatedTextField!
+    @IBOutlet weak var userIDTextField: AnimatedTextField!
     @IBOutlet weak var passwordTextField: AnimatedTextField!
     @IBOutlet weak var checkPasswordTextField: AnimatedTextField!
     @IBOutlet weak var duplicationCheckButton: BaseButton!
@@ -25,7 +25,7 @@ class SignUpViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.text = ConnectionManager.shared.signUpRequest.local_id
+        userIDTextField.text = ConnectionManager.shared.signUpRequest.local_id
     }
     
     override func bind() {
@@ -39,10 +39,13 @@ class SignUpViewController: BaseViewController {
             self.duplicationCheckButton.isHidden = isNewID
         }.disposed(by: disposeBag)
         
-        emailTextField.rx.controlEvent([.editingChanged])
-            .compactMap { _ in false }
-            .bind(to: isNewID)
-            .disposed(by: disposeBag)
+        userIDTextField.rx.controlEvent([.editingChanged])
+            .bind { [weak self] in
+                let text = self?.userIDTextField.text?.filterString(regex: "[0-9a-zA-Z]+") ?? ""
+                self?.userIDTextField.text = text.count > 20 ? text[0..<20] : text
+                self?.isNewID.accept(false)
+                
+        }.disposed(by: disposeBag)
         
         duplicationCheckButton
             .rx.tap
@@ -51,20 +54,26 @@ class SignUpViewController: BaseViewController {
          
          passwordTextField.rx
              .controlEvent([.editingChanged])
-            .bind { self.checkValidation() }
+            .bind { [weak self] in
+                self?.changeTextFieldColor()
+                self?.checkValidation()
+                
+         }
             .disposed(by: disposeBag)
         
         checkPasswordTextField.rx
             .controlEvent([.editingChanged])
-            .bind { self.checkValidation() }
-            .disposed(by: disposeBag)
+            .bind { [weak self] in
+                self?.changeTextFieldColor()
+                self?.checkValidation()
+        }.disposed(by: disposeBag)
         
         isValid
             .bind(onNext: nextButton.setEnable)
             .disposed(by: disposeBag)
         
         nextButton.rx.tap.bind {
-            ConnectionManager.shared.signUpRequest.local_id = self.emailTextField.text
+            ConnectionManager.shared.signUpRequest.local_id = self.userIDTextField.text
             ConnectionManager.shared.signUpRequest.password = self.passwordTextField.text
             
             let inputVC = InputProfileViewController.initiate()
@@ -74,14 +83,14 @@ class SignUpViewController: BaseViewController {
     
     func checkDuplicate() {
         
-        guard let email = emailTextField.text, !email.isEmpty else {
-            AlertManager.showError("이메일을 입력해주세요")
+        guard let userID = userIDTextField.text, !userID.isEmpty else {
+            AlertManager.showError("아이디을 입력해주세요")
             return
         }
          
         startLoading(backgroundColor: .clear)
         
-        NetworkManager.checkDuplicate(loginID: email)
+        NetworkManager.checkDuplicate(loginID: userID)
             .asObservable()
             .subscribe(
                 onNext: { response in
@@ -120,6 +129,16 @@ class SignUpViewController: BaseViewController {
         }
 
         isValid.accept(true)
+    }
+    
+    func changeTextFieldColor() {
+
+        let text = passwordTextField.text ?? ""
+        passwordTextField.borderColor = (1...8).contains(text.count) ? .red : .primary
+ 
+        let checkText = checkPasswordTextField.text ?? ""
+        let isSameOrEmpty = text == checkText || checkText.isEmpty
+        checkPasswordTextField.borderColor = isSameOrEmpty ? .primary : .red
     }
     
 }
