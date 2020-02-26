@@ -134,7 +134,7 @@ class SignUpViewController: BaseViewController {
     func changeTextFieldColor() {
 
         let text = passwordTextField.text ?? ""
-        passwordTextField.borderColor = (1...8).contains(text.count) ? .red : .primary
+        passwordTextField.borderColor = (1...7).contains(text.count) ? .red : .primary
  
         let checkText = checkPasswordTextField.text ?? ""
         let isSameOrEmpty = text == checkText || checkText.isEmpty

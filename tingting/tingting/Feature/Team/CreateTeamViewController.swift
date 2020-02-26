@@ -24,6 +24,8 @@ class CreateTeamViewController: BaseViewController {
     
     @IBOutlet weak var createTeamButton: BaseButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     private var teamType: TeamType = .create
     
     private let isValid: BehaviorRelay<Bool> = .init(value: false)
@@ -95,8 +97,8 @@ class CreateTeamViewController: BaseViewController {
                 self?.checkValidation()
         }.disposed(by: disposeBag)
         
-        introTextView.rx.text.bind { _ in
-            self.checkValidation()
+        introTextView.rx.text.bind { [weak self] _ in
+            self?.checkValidation()
         }.disposed(by: disposeBag)
          
         urlTextField.rx
@@ -109,8 +111,12 @@ class CreateTeamViewController: BaseViewController {
         isValid.bind(onNext: createTeamButton.setEnable)
             .disposed(by: disposeBag)
         
-        createTeamButton.rx.tap.bind {
-            self.createTeam()
+        createTeamButton.rx.tap.bind { [weak self] in
+            self?.createTeam()
+        }.disposed(by: disposeBag)
+        
+        scrollView.rx.didScroll.bind { [weak self] in
+            self?.view.endEditing(true)
         }.disposed(by: disposeBag)
     }
     

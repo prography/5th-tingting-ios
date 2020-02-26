@@ -14,9 +14,9 @@ class InputProfileViewController: BaseViewController {
 
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var nicknameTextField: UITextField!
-    @IBOutlet weak var birthTextField: UITextField!
-    @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var nicknameTextField: AnimatedTextField!
+    @IBOutlet weak var birthTextField: AnimatedTextField!
+    @IBOutlet weak var heightTextField: AnimatedTextField!
     
     @IBOutlet weak var checkNicknameMarkImageView: UIImageView!
     @IBOutlet weak var duplicationCheckButton: BaseButton!
@@ -109,6 +109,10 @@ class InputProfileViewController: BaseViewController {
         let datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
         sender.inputView = datePickerView
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        datePickerView.date = dateFormatter.date(from: "2000-01-01")!
         datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
 
@@ -125,6 +129,15 @@ class InputProfileViewController: BaseViewController {
             isValid.accept(false)
             return
         }
+         
+        guard let year = Int(birth[0..<4]), (1990...2002).contains(year) else {
+            birthTextField.borderColor = .red
+            isValid.accept(false)
+            return
+        }
+        
+        birthTextField.borderColor = .primary
+        
         
         guard let height = heightTextField.text, height.count >= 3 else {
             isValid.accept(false)

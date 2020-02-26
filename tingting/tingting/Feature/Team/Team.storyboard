@@ -594,6 +594,7 @@
                         <outlet property="introTextView" destination="mnq-Ad-EqA" id="2od-FV-i1d"/>
                         <outlet property="memberCountSegmentedControl" destination="38W-0o-zml" id="fxw-6Q-Vzw"/>
                         <outlet property="placeButton" destination="Nf9-rY-MY3" id="12f-nJ-FqX"/>
+                        <outlet property="scrollView" destination="wnT-dI-FZ2" id="1hn-EK-u6L"/>
                         <outlet property="tagsView" destination="YGK-cy-aTa" id="sSn-VV-c9t"/>
                         <outlet property="teamNameTextField" destination="NSY-re-BLc" id="iqU-Ou-Qxn"/>
                         <outlet property="urlTextField" destination="DgI-ck-TgM" id="cEE-Mj-UP8"/>
