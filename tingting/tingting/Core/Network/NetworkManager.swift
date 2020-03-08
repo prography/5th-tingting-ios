@@ -14,7 +14,7 @@ class NetworkManager {}
 
 // MARK: - Auth
 extension NetworkManager {
-
+ 
     /// 학교인증 API (1)
     static func authenticateSchool(request: APIModel.School.Request) -> Router<CommonReponse> {
         return Router(url: "/auth/school", method: .post, parameters: request)
@@ -35,7 +35,6 @@ extension NetworkManager {
     static func kakaoLogin(email: String) -> Router<CommonReponse> {
         let params = ["email": email]
         return Router(url: "/auth/school/confirm", method: .get, parameters: params, removeTokenCodes: [401])
-        
     }
     
     /// 로컬 로그인

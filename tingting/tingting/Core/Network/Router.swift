@@ -11,20 +11,24 @@ import RxCocoa
 import RxSwift
 import Alamofire
 
+enum ServerType: String {
+    case debug = "http://13.125.28.123/api"
+    case live = "https://api.tingting.kr/api"
+}
+
+enum ServerVersion: String {
+    case v1 = "/v1"
+    case v2 = "/v2"
+}
+
+let CURRENT_SERVER: ServerType = .debug
+let CURRENT_SERVER_VERSION: ServerVersion = .v1
+
+
 struct Router<T: Codable> {
-    
-    enum ServerType: String {
-        case debug = "http://13.125.28.123/api"
-        case live = "https://api.tingting.kr/api"
-    }
-    
-    enum ServerVersion: String {
-        case v1 = "/v1"
-        case v2 = "/v2"
-    }
-    
-    private let server: ServerType = .live
-    private let version: ServerVersion = .v1
+      
+    private let server: ServerType = CURRENT_SERVER
+    private let version: ServerVersion = CURRENT_SERVER_VERSION
     
     private var baseURL: String {
         server.rawValue + version.rawValue

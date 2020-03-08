@@ -12,6 +12,8 @@ import RxCocoa
 
 class SignInViewController: BaseViewController {
 
+    @IBOutlet weak var headerView: UIView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -20,6 +22,13 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        switch CURRENT_SERVER {
+        case .debug:
+            headerView.backgroundColor = .gray
+        case .live:
+            headerView.backgroundColor = .primary
+        }
+        
         Logger.info("viewDidLoad")
     }
  

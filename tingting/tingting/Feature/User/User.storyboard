@@ -166,6 +166,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="zAa-Kx-4r4" id="eLS-NI-GQr"/>
+                        <outlet property="headerView" destination="Xb8-2v-mNh" id="kg5-2q-IHv"/>
                         <outlet property="passwordTextField" destination="JNx-ju-uVt" id="0gY-IE-aoo"/>
                         <outlet property="signInButton" destination="4kZ-pO-2Mx" id="Vhv-lL-7wG"/>
                         <outlet property="signUpButton" destination="TT4-RZ-SRw" id="F2L-UP-XVy"/>
