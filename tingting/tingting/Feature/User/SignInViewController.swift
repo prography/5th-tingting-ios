@@ -22,6 +22,14 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("1234567890".hashValue)
+        let fileURL = try! FileManager.default
+        .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)   // nowadays, you might even prefer `.applicationSupportDirectory
+        .appendingPathComponent("////////test.png")
+        
+        print(Data(base64Encoded: "1234567890").hashValue)
+        
+        print(fileURL.absoluteString)
         switch CURRENT_SERVER {
         case .debug:
             headerView.backgroundColor = .gray

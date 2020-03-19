@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import DropDown
+import M13Checkbox
 import WSTagsField
 
 class CreateTeamViewController: BaseViewController {
@@ -23,6 +24,13 @@ class CreateTeamViewController: BaseViewController {
     @IBOutlet weak var placeButton: UIButton!
     
     @IBOutlet weak var createTeamButton: BaseButton!
+    
+    @IBOutlet weak var passwordCheckbox: M13Checkbox!
+    
+    @IBOutlet weak var passwordTextField: BaseTextField! {
+        didSet { passwordTextField.isHidden = true }
+    }
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -93,7 +101,10 @@ class CreateTeamViewController: BaseViewController {
         teamNameTextField.rx
             .controlEvent([.editingChanged])
             .bind { [weak self] in
-                self?.teamNameTextField.text = self?.teamNameTextField.text?.filter { $0 != " " }
+                let filteredText = self?.teamNameTextField.text?.filter { $0 != " " }
+                if self?.teamNameTextField.text != filteredText {
+                    self?.teamNameTextField.text = filteredText
+                }
                 self?.checkValidation()
         }.disposed(by: disposeBag)
         
@@ -115,8 +126,39 @@ class CreateTeamViewController: BaseViewController {
             self?.createTeam()
         }.disposed(by: disposeBag)
         
+        passwordCheckbox.stateDriver.driveNext { [weak self] state in
+            self?.checkValidation()
+            UIView.animate(withDuration: 0.3) {
+                switch state {
+                case .checked:
+                    self?.passwordTextField.isHidden = false
+                    
+                case .mixed, .unchecked:
+                    self?.passwordTextField.text = ""
+                    self?.passwordTextField.isHidden = true
+                    
+                }
+            }
+        }.disposed(by: disposeBag)
+        
+        passwordTextField.rx.controlEvent([.editingChanged])
+            .compactMap { [weak self] in self?.passwordTextField.text }
+            .filter { $0.count > 4 }
+            .map { $0[0..<4] }
+            .bind { [weak self] text in
+                self?.passwordTextField.text = text
+                self?.checkValidation() }
+            .disposed(by: disposeBag)
+        
         scrollView.rx.didScroll.bind { [weak self] in
             self?.view.endEditing(true)
+        }.disposed(by: disposeBag)
+        
+        let tapGesture = UITapGestureRecognizer()
+        scrollView.addGestureRecognizer(tapGesture)
+        
+        tapGesture.rx.event.bind { _ in
+            self.view.endEditing(true)
         }.disposed(by: disposeBag)
     }
     
@@ -185,6 +227,14 @@ extension CreateTeamViewController {
             return
         }
         
+        if passwordCheckbox.checkState == .checked {
+            guard passwordTextField.text?.count == 4 else {
+                isValid.accept(false)
+                return
+            }
+        }
+        
+        
         // TODO: Add tag logic
         
         isValid.accept(true)
@@ -206,9 +256,7 @@ extension CreateTeamViewController {
                 return
         }
         
-        // TODO: Add password
-        // TODO: Add place
-        // let password: String? = nil
+        let password = passwordTextField.text?.count == 4 ? passwordTextField.text : nil
 
         let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 2
  
@@ -222,7 +270,7 @@ extension CreateTeamViewController {
                                 owner_id: currentUser.id,
                                 intro: intro,
                                 gender: gender,
-                                password: nil,
+                                password: password,
                                 max_member_number: max_member_number,
                                 is_matched: nil,
                                 accepter_number: nil,
@@ -264,7 +312,7 @@ extension CreateTeamViewController {
                                 owner_id: oldTeam.teamInfo.owner_id,
                                 intro: intro,
                                 gender: gender,
-                                password: nil,
+                                password: password,
                                 max_member_number: max_member_number,
                                 is_matched: nil,
                                 accepter_number: nil,
@@ -408,3 +456,4 @@ extension CreateTeamViewController {
         return vc
     }
 }
+ 

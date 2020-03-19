@@ -298,7 +298,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="698"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="1gf-tC-qYM">
-                                                <rect key="frame" x="0.0" y="0.0" width="358" height="1063"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="1169"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TTM-Ng-vv4">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
@@ -498,19 +498,19 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈 카톡 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSJ-wW-MwX">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="50"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(매칭 성공 시 상태팀에게 전달됩니다.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-iY-dFe">
-                                                                        <rect key="frame" x="82.5" y="0.0" width="211.5" height="50"/>
+                                                                        <rect key="frame" x="91.5" y="0.0" width="211.5" height="50"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HY-zK-wPY">
-                                                                        <rect key="frame" x="299" y="0.0" width="59" height="50"/>
+                                                                        <rect key="frame" x="308" y="0.0" width="50" height="50"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     </view>
                                                                 </subviews>
@@ -534,8 +534,77 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BM5-vM-1E0">
+                                                        <rect key="frame" x="0.0" y="763" width="358" height="71"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dDD-j3-DX8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="38"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="MUV-jA-OWK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="20"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qu-aJ-xvC" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                                <color key="tintColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="0.79995184080000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="20" id="5YC-3l-tfa"/>
+                                                                                    <constraint firstAttribute="width" constant="20" id="pCJ-kR-bcB"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="boxLineWidth">
+                                                                                        <real key="value" value="2"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
+                                                                                        <real key="value" value="1"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="25"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
+                                                                                        <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideBox" value="NO"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </view>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀방" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAc-z9-AB2">
+                                                                                <rect key="frame" x="27" y="1" width="39" height="18"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(비밀방을 원할 시, 체크 후 비밀번호를 입력해주세요.)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-o1-ECm">
+                                                                        <rect key="frame" x="0.0" y="21" width="296" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BcS-ad-wnp">
+                                                                <rect key="frame" x="0.0" y="43" width="358" height="28"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUf-gw-U1B" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="28"/>
+                                                                        <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="28" id="0oi-Em-NBs"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                                                <real key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pz2-ak-cIE">
-                                                        <rect key="frame" x="0.0" y="763" width="358" height="300"/>
+                                                        <rect key="frame" x="0.0" y="869" width="358" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="kIP-jB-w3p"/>
@@ -593,6 +662,8 @@
                         <outlet property="createTeamButton" destination="fFk-2f-H7Z" id="h96-PZ-Wg3"/>
                         <outlet property="introTextView" destination="mnq-Ad-EqA" id="2od-FV-i1d"/>
                         <outlet property="memberCountSegmentedControl" destination="38W-0o-zml" id="fxw-6Q-Vzw"/>
+                        <outlet property="passwordCheckbox" destination="3qu-aJ-xvC" id="KHM-sa-B0n"/>
+                        <outlet property="passwordTextField" destination="fUf-gw-U1B" id="sQj-7v-Aud"/>
                         <outlet property="placeButton" destination="Nf9-rY-MY3" id="12f-nJ-FqX"/>
                         <outlet property="scrollView" destination="wnT-dI-FZ2" id="1hn-EK-u6L"/>
                         <outlet property="tagsView" destination="YGK-cy-aTa" id="sSn-VV-c9t"/>
