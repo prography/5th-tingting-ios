@@ -303,7 +303,7 @@
                                                                     <fragment content="4년제 대학 목록 보기">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" metaFont="label" size="11"/>
+                                                                            <font key="NSFont" metaFont="message" size="11"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -818,7 +818,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co8-1z-on1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="88"/>
+            <point key="canvasLocation" x="917" y="88"/>
         </scene>
         <!--학교 인증-->
         <scene sceneID="yWZ-al-QgM">

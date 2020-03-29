@@ -256,7 +256,7 @@
 		53D098DE23BB644D00854712 /* JoinTeamCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinTeamCell+Configurator.swift"; sourceTree = "<group>"; };
 		53D098E023BB77E300854712 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		53D098E223BC792900854712 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		53D53543237306EC00FEB3E9 /* tingting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tingting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D53543237306EC00FEB3E9 /* 팅팅.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "팅팅.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D53546237306EC00FEB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D53548237306EC00FEB3E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -371,8 +371,8 @@
 		532078B4237408FA00E3F94E /* User */ = {
 			isa = PBXGroup;
 			children = (
-				531A500D237D5E08008E65A4 /* InputProfileViewController.swift */,
 				532078B82374093500E3F94E /* User.storyboard */,
+				531A500D237D5E08008E65A4 /* InputProfileViewController.swift */,
 				531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */,
 				531A500F237D5E1E008E65A4 /* SignInViewController.swift */,
 				531A5011237D5E3D008E65A4 /* InputPhotoViewController.swift */,
@@ -617,7 +617,7 @@
 		53D53544237306EC00FEB3E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53D53543237306EC00FEB3E9 /* tingting.app */,
+				53D53543237306EC00FEB3E9 /* 팅팅.app */,
 				53D5355C237306EE00FEB3E9 /* tingtingTests.xctest */,
 				53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */,
 			);
@@ -770,7 +770,7 @@
 			);
 			name = tingting;
 			productName = tingting;
-			productReference = 53D53543237306EC00FEB3E9 /* tingting.app */;
+			productReference = 53D53543237306EC00FEB3E9 /* 팅팅.app */;
 			productType = "com.apple.product-type.application";
 		};
 		53D5355B237306EE00FEB3E9 /* tingtingTests */ = {
@@ -1273,9 +1273,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "팅팅";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1294,9 +1294,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "팅팅";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

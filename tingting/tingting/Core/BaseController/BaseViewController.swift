@@ -16,6 +16,8 @@ class BaseViewController: UIViewController {
  
     private var cellHeightsDictionary: NSMutableDictionary = [:]
     
+    let debugView = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .default
@@ -23,6 +25,22 @@ class BaseViewController: UIViewController {
         DispatchQueue.main.async {
             self.bind()
         }
+        
+        view.addSubview(debugView)
+        
+        debugView.textAlignment = .center
+        debugView.text = "dev server"
+        debugView.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        debugView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 0.1161440497)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.bringSubviewToFront(debugView)
+        
+        debugView.isHidden = CURRENT_SERVER == .live
+        debugView.frame = CGRect(x: 0, y: self.view.frame.size.height - 30, width: self.view.frame.size.width, height: 30)
     }
     
     deinit {

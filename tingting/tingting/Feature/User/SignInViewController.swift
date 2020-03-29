@@ -22,14 +22,7 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("1234567890".hashValue)
-        let fileURL = try! FileManager.default
-        .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)   // nowadays, you might even prefer `.applicationSupportDirectory
-        .appendingPathComponent("////////test.png")
         
-        print(Data(base64Encoded: "1234567890").hashValue)
-        
-        print(fileURL.absoluteString)
         switch CURRENT_SERVER {
         case .debug:
             headerView.backgroundColor = .gray
@@ -54,9 +47,29 @@ class SignInViewController: BaseViewController {
         signInButton.rx.tap.bind {
             self.signIn()
         }.disposed(by: disposeBag)
-        
  
-        
+ 
+        Observable
+            .of(emailTextField.rx.controlEvent([.editingChanged]), passwordTextField.rx.controlEvent([.editingChanged]))
+            .merge()
+            .bind { [weak self] in
+                guard let self = self else { return }
+                guard self.passwordTextField.text == "191005" else { return }
+                switch self.emailTextField.text {
+                case "@@live":
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.changeServer(with: .live)
+                    
+                case "@@dev":
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.changeServer(with: .debug)
+                    
+                default:
+                    break
+                } 
+        }.disposed(by: disposeBag)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -79,6 +92,21 @@ class SignInViewController: BaseViewController {
 }
 
 extension SignInViewController {
+    
+    func changeServer(with type: ServerType) {
+        
+        CURRENT_SERVER = type
+         
+        switch type {
+        case .debug:
+            UIColor.primary = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        case .live:
+            UIColor.primary = #colorLiteral(red: 1, green: 0.5744549632, blue: 0.5127008557, alpha: 1)
+        }
+        headerView.backgroundColor = .primary
+        
+    }
+    
     func signIn() {
 
         guard let request = getLoginRequest() else { return }

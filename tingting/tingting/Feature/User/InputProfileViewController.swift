@@ -44,7 +44,11 @@ class InputProfileViewController: BaseViewController {
         nicknameTextField.rx
             .controlEvent([.editingChanged])
             .bind { [weak self] in
-                self?.nicknameTextField.text = self?.nicknameTextField.text?.filter { $0 != " " }
+                let filterText = self?.nicknameTextField.text?.filter { $0 != " " }
+                if filterText != self?.nicknameTextField.text {
+                    self?.nicknameTextField.text = filterText
+                }
+                
                 self?.isNewNickname.accept(false)
         }.disposed(by: disposeBag)
         

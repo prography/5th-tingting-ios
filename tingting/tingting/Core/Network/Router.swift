@@ -21,7 +21,15 @@ enum ServerVersion: String {
     case v2 = "/v2"
 }
 
-let CURRENT_SERVER: ServerType = .debug
+var CURRENT_SERVER: ServerType = {
+    return UserDefaults.standard.bool(forKey: "isDebug") ?  .debug : .live
+    }()
+    {
+    didSet {
+        UserDefaults.standard.set(CURRENT_SERVER == .debug, forKey: "isDebug")
+    }
+}
+
 let CURRENT_SERVER_VERSION: ServerVersion = .v1
 
 
