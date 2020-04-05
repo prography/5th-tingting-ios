@@ -12,7 +12,7 @@ import RxSwift
 import Alamofire
 
 enum ServerType: String {
-    case debug = "http://13.125.28.123/api"
+    case debug = "http://13.209.81.52/api"
     case live = "https://api.tingting.kr/api"
 }
 
