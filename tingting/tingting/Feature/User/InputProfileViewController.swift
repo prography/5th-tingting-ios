@@ -78,7 +78,7 @@ class InputProfileViewController: BaseViewController {
             ConnectionManager.shared.signUpRequest.gender = gender
             ConnectionManager.shared.signUpRequest.height = Int(self.heightTextField.text ?? "0")
             
-            let emailVC = EmailAuthenticationViewController.initiate()
+            let emailVC = InputPhotoViewController.initiate()
             self.navigationController?.pushViewController(emailVC, animated: true)
         }.disposed(by: disposeBag)
     }

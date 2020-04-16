@@ -75,8 +75,8 @@ class TermsViewController: BaseTableViewController {
         
         nextButton.rx.tap.bind { [weak self] in
             guard let self = self else { return }
-            let signUpVC = SignUpViewController.initiate()
-            self.navigationController?.pushViewController(signUpVC, animated: true)
+            let vc = EmailAuthenticationViewController.initiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag)
         
         // 이용약관
@@ -113,7 +113,6 @@ extension TermsViewController {
 
 extension TermsViewController {
     static func initiate() -> TermsViewController {
-        
         let vc = TermsViewController.withStoryboard(storyboard: .user)
         
         return vc

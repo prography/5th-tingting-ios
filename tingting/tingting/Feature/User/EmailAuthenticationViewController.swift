@@ -49,13 +49,8 @@ class EmailAuthenticationViewController: BaseViewController {
     }
     
     func authenticateSchool() {
-         
-        guard let nickname = ConnectionManager.shared.signUpRequest.name else {
-            assertionFailure("Nickname must exist!!")
-            return }
-        
+          
         let request = APIModel.School.Request(
-            name: nickname,
             email: self.emailTextField.text!)
         
         NetworkManager.authenticateSchool(request: request)
@@ -84,7 +79,7 @@ class EmailAuthenticationViewController: BaseViewController {
                 onNext: { response in
                     ConnectionManager.shared.signUpRequest.authenticated_address = email
                     AlertManager.show(title: response.message)
-                    let vc = InputPhotoViewController.initiate()
+                    let vc = SignUpViewController.initiate()
                     self.navigationController?.pushViewController(vc, animated: true)
             },
                 onError: { error in

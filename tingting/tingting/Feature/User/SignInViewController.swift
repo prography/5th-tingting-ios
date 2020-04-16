@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxKakaoSDKCommon
+import RxKakaoSDKAuth
 
 class SignInViewController: BaseViewController {
 
@@ -19,6 +21,7 @@ class SignInViewController: BaseViewController {
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var kakaoButton: BaseButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,9 @@ class SignInViewController: BaseViewController {
             self.signIn()
         }.disposed(by: disposeBag)
  
+        kakaoButton.rx.tap.bind {
+            self.loginForKakao()
+        }.disposed(by: disposeBag)
  
         Observable
             .of(emailTextField.rx.controlEvent([.editingChanged]), passwordTextField.rx.controlEvent([.editingChanged]))
@@ -150,6 +156,22 @@ extension SignInViewController {
         }
         
         return APIModel.Login.Request(id: email, password: password)
+    }
+    
+    func loginForKakao() {
+        if AuthController.isTalkAuthAvailable() {
+            AuthController.shared.authorizeWithTalk()
+                .subscribe(onNext:{ (oauthToken) in
+                    print(oauthToken)
+                })
+                .disposed(by: self.disposeBag)
+        } else {
+            AuthController.shared.authorizeWithAuthenticationSession()
+                .subscribe(onNext:{ (oauthToken) in
+                    print(oauthToken)
+                })
+                .disposed(by: self.disposeBag)
+        }
     }
 }
 
