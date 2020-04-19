@@ -159,19 +159,26 @@ extension SignInViewController {
     }
     
     func loginForKakao() {
-        if AuthController.isTalkAuthAvailable() {
-            AuthController.shared.authorizeWithTalk()
-                .subscribe(onNext:{ (oauthToken) in
-                    print(oauthToken)
-                })
-                .disposed(by: self.disposeBag)
-        } else {
+        
+//        if AuthController.isTalkAuthAvailable() {
+//            AuthController.shared.authorizeWithTalk()
+//                .subscribe(onNext:{ oauthToken in
+//                    Logger.info(oauthToken)
+//                }, onError: { (error) in
+//                    print(error)
+//                }, onCompleted: {
+//                    print("onCompleted")
+//                }, onDisposed: {
+//                    print("Disposed")
+//                })
+//                .disposed(by: self.disposeBag)
+//        } else {
             AuthController.shared.authorizeWithAuthenticationSession()
-                .subscribe(onNext:{ (oauthToken) in
-                    print(oauthToken)
+                .subscribe(onNext:{ oauthToken in
+                    Logger.info(oauthToken)
                 })
                 .disposed(by: self.disposeBag)
-        }
+//        }
     }
 }
 
