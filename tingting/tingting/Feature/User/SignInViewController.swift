@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxKakaoSDKCommon
 import RxKakaoSDKAuth
+import AuthenticationServices
 
 class SignInViewController: BaseViewController {
 
@@ -21,6 +22,8 @@ class SignInViewController: BaseViewController {
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var appleButton: BaseButton!
     @IBOutlet weak var kakaoButton: BaseButton!
     
     override func viewDidLoad() {
@@ -51,6 +54,10 @@ class SignInViewController: BaseViewController {
             self.signIn()
         }.disposed(by: disposeBag)
  
+        appleButton.rx.tap.bind {
+            self.loginForApple()
+        }.disposed(by: disposeBag)
+        
         kakaoButton.rx.tap.bind {
             self.loginForKakao()
         }.disposed(by: disposeBag)
@@ -158,6 +165,16 @@ extension SignInViewController {
         return APIModel.Login.Request(id: email, password: password)
     }
     
+    func loginForApple() {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.email, .fullName]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+        controller.performRequests()
+    }
+    
     func loginForKakao() {
         
 //        if AuthController.isTalkAuthAvailable() {
@@ -179,6 +196,16 @@ extension SignInViewController {
                 })
                 .disposed(by: self.disposeBag)
 //        }
+    }
+}
+
+extension SignInViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
     }
 }
 

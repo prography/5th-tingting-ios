@@ -197,6 +197,7 @@
 		5326719223C4B20F00118B6B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		5327D06C244DFD1C00079552 /* 팅팅.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "팅팅.entitlements"; sourceTree = "<group>"; };
 		532AC2DB23E6A6BB009FEAF9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "M13Checkbox+Extension.swift"; sourceTree = "<group>"; };
 		532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+MatchingTeamList.swift"; sourceTree = "<group>"; };
@@ -627,6 +628,7 @@
 		53D53545237306EC00FEB3E9 /* tingting */ = {
 			isa = PBXGroup;
 			children = (
+				5327D06C244DFD1C00079552 /* 팅팅.entitlements */,
 				53D53546237306EC00FEB3E9 /* AppDelegate.swift */,
 				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
 				532078BA237409EF00E3F94E /* Core */,
@@ -1265,6 +1267,7 @@
 			baseConfigurationReference = 3FFE2A945E9BC9613A393A25 /* Pods-tingting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "tingting/팅팅.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MSW35G2APL;
@@ -1286,6 +1289,7 @@
 			baseConfigurationReference = A420245776FEB79904333E44 /* Pods-tingting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "tingting/팅팅.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MSW35G2APL;
