@@ -167,7 +167,7 @@ extension SignInViewController {
     
     func loginForApple() {
         let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.email, .fullName]
+        request.requestedScopes = [.email, .fullName
         
         let controller = ASAuthorizationController(authorizationRequests: [request])
         controller.delegate = self
@@ -201,11 +201,28 @@ extension SignInViewController {
 
 extension SignInViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        
+        print(error)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        
+
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let user = credential.user
+            print("User: \(user)")
+            
+            if let email = credential.email {
+                print("Email: \(email)")
+            }
+            
+            if let fullName = credential.fullName {
+                print("fullName: \(fullName)")
+                print("familyName: \(fullName.familyName ?? "")")
+                print("givenName: \(fullName.givenName ?? "")")
+            }
+             
+            guard let identityToken = credential.identityToken, let tokenString = String(data: identityToken, encoding: .utf8) else { return }
+            print("Token: \(tokenString)")
+        }
     }
 }
 
