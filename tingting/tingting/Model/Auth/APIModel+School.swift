@@ -14,7 +14,6 @@ extension APIModel {
 
 extension APIModel.School {
     struct Request: Codable {
-        var name: String
         var email: String
     }
 }
