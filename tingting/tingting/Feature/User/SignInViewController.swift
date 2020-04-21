@@ -167,7 +167,7 @@ extension SignInViewController {
     
     func loginForApple() {
         let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.email, .fullName
+        request.requestedScopes = [.email, .fullName]
         
         let controller = ASAuthorizationController(authorizationRequests: [request])
         controller.delegate = self
@@ -228,9 +228,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
 
 extension SignInViewController {
     static func initiate() -> SignInViewController {
-        
         let vc = SignInViewController.withStoryboard(storyboard: .user)
-        
         return vc
     }
 }
