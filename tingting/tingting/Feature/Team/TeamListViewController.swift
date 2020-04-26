@@ -42,6 +42,7 @@ class TeamListViewController: BaseViewController {
         
         creatTeamButton.rx.tap.bind {
             let createTeamVC = CreateTeamViewController.initiate()
+            createTeamVC.modalPresentationStyle = .fullScreen
             self.present(createTeamVC, animated: true)
         }.disposed(by: disposeBag)
         
