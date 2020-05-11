@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,8 +39,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9h-Vq-vmJ">
                                         <rect key="frame" x="0.0" y="298.5" width="414" height="563.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
-                                                <rect key="frame" x="40" y="60" width="334" height="423.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
+                                                <rect key="frame" x="40" y="60" width="334" height="330"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디 또는 이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="팅팅" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
@@ -65,8 +66,15 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rd-Ai-foi">
+                                                        <rect key="frame" x="0.0" y="56" width="334" height="16"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="ycg-50-jkg"/>
+                                                        </constraints>
+                                                    </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNx-ju-uVt" customClass="BaseTextField" customModule="팅팅" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="78" width="334" height="48"/>
+                                                        <rect key="frame" x="0.0" y="80" width="334" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
@@ -84,27 +92,21 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-WD-Fnk">
-                                                        <rect key="frame" x="0.0" y="156" width="334" height="62.5"/>
-                                                        <state key="normal" title="로그인이 안 되시나요?">
-                                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="Epg-6l-qAR" kind="show" id="BaL-RV-vHL"/>
-                                                        </connections>
-                                                    </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-b7-efq">
-                                                        <rect key="frame" x="0.0" y="248.5" width="334" height="50"/>
+                                                        <rect key="frame" x="0.0" y="136" width="334" height="32"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="1ok-Lk-pYH"/>
+                                                        </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="UZp-50-7vC">
-                                                        <rect key="frame" x="0.0" y="328.5" width="334" height="95"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="UZp-50-7vC">
+                                                        <rect key="frame" x="0.0" y="176" width="334" height="154"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-pO-2Mx" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="334" height="43"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="334" height="42"/>
                                                                 <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="43" id="M4R-Jf-sge"/>
+                                                                    <constraint firstAttribute="height" constant="42" id="M4R-Jf-sge"/>
                                                                 </constraints>
                                                                 <state key="normal" title="로그인">
                                                                     <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,10 +121,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVU-Tc-Mda">
-                                                                <rect key="frame" x="0.0" y="47.5" width="334" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="49" width="334" height="42"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xS-ew-TwI" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="42"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                         <state key="normal" title="        애플로 로그인하기">
@@ -138,7 +140,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-kh-x0i">
-                                                                        <rect key="frame" x="81" y="-14.5" width="22.5" height="29"/>
+                                                                        <rect key="frame" x="81" y="6.5" width="22.5" height="29"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -147,6 +149,7 @@
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="Pbl-kh-x0i" firstAttribute="centerX" secondItem="jVU-Tc-Mda" secondAttribute="centerX" constant="-75" id="6c6-DK-xKM"/>
+                                                                    <constraint firstAttribute="height" constant="42" id="9pO-4a-MQk"/>
                                                                     <constraint firstItem="5xS-ew-TwI" firstAttribute="leading" secondItem="jVU-Tc-Mda" secondAttribute="leading" id="Aov-YN-kGU"/>
                                                                     <constraint firstAttribute="trailing" secondItem="5xS-ew-TwI" secondAttribute="trailing" id="MPZ-Pt-oeO"/>
                                                                     <constraint firstAttribute="bottom" secondItem="5xS-ew-TwI" secondAttribute="bottom" id="WCx-UB-Cdp"/>
@@ -155,8 +158,11 @@
                                                                 </constraints>
                                                             </view>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfW-b4-bjh" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="47.5" width="334" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="49" width="334" height="42"/>
                                                                 <color key="backgroundColor" red="1" green="0.87450980392156863" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="xAq-C1-KcW"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="    카카오톡으로 로그인하기" image="commentBlackOvalBubbleShape">
                                                                     <color key="titleColor" red="0.23137254901960785" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,8 +176,18 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-9E-dqB">
+                                                                <rect key="frame" x="0.0" y="56" width="334" height="0.5"/>
+                                                                <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="0.5" id="xdI-kk-ILc"/>
+                                                                </constraints>
+                                                            </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT4-RZ-SRw" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="52" width="334" height="43"/>
+                                                                <rect key="frame" x="0.0" y="70.5" width="334" height="42"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="z4N-JM-riZ"/>
+                                                                </constraints>
                                                                 <state key="normal" title="회원가입">
                                                                     <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
@@ -187,6 +203,51 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-WD-Fnk">
+                                                                <rect key="frame" x="0.0" y="126.5" width="334" height="27.5"/>
+                                                                <state key="normal">
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="아이디">
+                                                                            <attributes>
+                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                                <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                        <fragment content="/">
+                                                                            <attributes>
+                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                        <fragment content="비밀번호">
+                                                                            <attributes>
+                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                                <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                        <fragment content=" ">
+                                                                            <attributes>
+                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                        <fragment content="찾기">
+                                                                            <attributes>
+                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                                <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </state>
+                                                                <connections>
+                                                                    <segue destination="Epg-6l-qAR" kind="show" id="BaL-RV-vHL"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -197,7 +258,6 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="bfW-WG-gry" secondAttribute="bottom" priority="750" constant="80" id="6uA-se-sJF"/>
                                             <constraint firstItem="bfW-WG-gry" firstAttribute="centerX" secondItem="U9h-Vq-vmJ" secondAttribute="centerX" id="7hn-Yb-m6y"/>
                                             <constraint firstItem="bfW-WG-gry" firstAttribute="leading" secondItem="U9h-Vq-vmJ" secondAttribute="leading" constant="40" id="B1a-BY-u4S"/>
                                             <constraint firstItem="bfW-WG-gry" firstAttribute="top" secondItem="U9h-Vq-vmJ" secondAttribute="top" constant="60" id="uJp-o8-oCH"/>
@@ -357,7 +417,7 @@
                                                                     <fragment content="4년제 대학 목록 보기">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" metaFont="message" size="11"/>
+                                                                            <font key="NSFont" metaFont="label" size="11"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -598,10 +658,10 @@
             </objects>
             <point key="canvasLocation" x="177" y="88"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--계정 생성-->
         <scene sceneID="9a9-VT-T5B">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CTU-px-tWN" customClass="SignUpViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" title="계정 생성" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CTU-px-tWN" customClass="SignUpViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ez3-Oj-Fns">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1205,27 +1265,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqj-5m-7Ch">
-                                <rect key="frame" x="132" y="230" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqj-5m-7Ch" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
+                                <rect key="frame" x="87" y="230" width="240" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-U2-rd5" customClass="BaseLabel" customModule="팅팅" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="81"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-wD-a4D" customClass="BaseImageView" customModule="팅팅" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4v-BS-y1s">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4v-BS-y1s">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <state key="normal" image="addUser"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1236,15 +1287,22 @@
                                     <constraint firstAttribute="trailing" secondItem="o4v-BS-y1s" secondAttribute="trailing" id="FhK-bJ-RLw"/>
                                     <constraint firstItem="o4v-BS-y1s" firstAttribute="leading" secondItem="Tqj-5m-7Ch" secondAttribute="leading" id="OdD-eb-M5s"/>
                                     <constraint firstAttribute="bottom" secondItem="o4v-BS-y1s" secondAttribute="bottom" id="PKt-0k-UVe"/>
-                                    <constraint firstAttribute="width" constant="150" id="bhS-zC-jWm"/>
+                                    <constraint firstAttribute="width" constant="240" id="bhS-zC-jWm"/>
                                     <constraint firstItem="0g1-wD-a4D" firstAttribute="top" secondItem="Tqj-5m-7Ch" secondAttribute="top" id="cZr-Za-U9J"/>
-                                    <constraint firstItem="Dx9-U2-rd5" firstAttribute="leading" secondItem="Tqj-5m-7Ch" secondAttribute="leading" id="ie3-qu-1K0"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dx9-U2-rd5" secondAttribute="trailing" id="lQL-TZ-Z45"/>
                                     <constraint firstItem="o4v-BS-y1s" firstAttribute="top" secondItem="Tqj-5m-7Ch" secondAttribute="top" id="o0A-C5-7dE"/>
                                     <constraint firstAttribute="bottom" secondItem="0g1-wD-a4D" secondAttribute="bottom" id="r5T-3g-xF6"/>
-                                    <constraint firstItem="Dx9-U2-rd5" firstAttribute="top" secondItem="Tqj-5m-7Ch" secondAttribute="top" id="vba-cB-9N2"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dx9-U2-rd5" secondAttribute="bottom" id="xAf-iJ-59P"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1.3999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                        <real key="value" value="37"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYn-2f-zGN" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                 <rect key="frame" x="38" y="786" width="338" height="48"/>
@@ -1289,6 +1347,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addUser" width="60.5" height="60.5"/>
         <image name="commentBlackOvalBubbleShape" width="20" height="20"/>
         <image name="logo_white" width="124" height="39"/>
         <image name="tick" width="17" height="17"/>
