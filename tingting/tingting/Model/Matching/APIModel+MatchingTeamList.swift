@@ -39,7 +39,8 @@ extension APIModel {
                                     is_verified: nil,
                                     is_matched: nil,
                                     accepter_number: nil,
-                                    place: nil)
+                                    place: nil,
+                                    tagIds:  nil)
             
             return Team(teamInfo: teamInfo, teamMembers: membersInfo)
         }

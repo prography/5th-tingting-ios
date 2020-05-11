@@ -16,7 +16,7 @@ target 'tingting' do
   pod 'RxCocoa', '~> 5'
   pod 'RxSwiftExt', '~> 5'
   pod 'RxDataSources', '~> 4.0'
-  #pod 'Alamofire', '~> 5.0.0'
+  pod 'RxViewController'
 
   pod 'DropDown', '~>2.3.13'
   pod 'Hero', '~> 1.4.0'

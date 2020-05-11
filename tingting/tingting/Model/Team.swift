@@ -51,6 +51,8 @@ struct TeamInfo: Codable {
     let is_matched: Bool?
     let accepter_number: Int?
     let place: String?
+    
+    let tagIds: [Int]?
        
     init() {
         self.id = nil
@@ -65,6 +67,7 @@ struct TeamInfo: Codable {
         self.is_matched = nil
         self.accepter_number = nil
         self.place = nil
+        self.tagIds = nil
         
     }
     init(id: Int? = nil,
@@ -78,7 +81,8 @@ struct TeamInfo: Codable {
          is_verified: Int? = 0,
          is_matched: Bool?,
          accepter_number: Int?,
-         place: String?
+         place: String?,
+         tagIds: [Int]?
     ) {
         self.id = id
         self.name = name
@@ -92,6 +96,7 @@ struct TeamInfo: Codable {
         self.is_matched = is_matched
         self.accepter_number = accepter_number
         self.place = place
+        self.tagIds = tagIds
     }
 }
 //

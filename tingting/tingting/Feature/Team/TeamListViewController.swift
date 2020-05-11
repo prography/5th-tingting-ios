@@ -40,10 +40,9 @@ class TeamListViewController: BaseViewController {
                 self?.makeConfigurator()
         }.disposed(by: disposeBag)
         
-        creatTeamButton.rx.tap.bind {
+        creatTeamButton.rx.tap.bind { [weak self] in
             let createTeamVC = CreateTeamViewController.initiate()
-            createTeamVC.modalPresentationStyle = .fullScreen
-            self.present(createTeamVC, animated: true)
+            self?.navigationController?.pushViewController(createTeamVC, animated: true)
         }.disposed(by: disposeBag)
         
         items.bind(to: tableView.rx.items) { tableView, index, configurator in

@@ -136,6 +136,9 @@ PODS:
   - RxSwiftExt/RxCocoa (5.2.0):
     - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - SnapKit (5.0.1)
   - SwiftyBeaver (1.7.1)
   - TextFieldEffects (1.6.0)
@@ -154,6 +157,7 @@ DEPENDENCIES:
   - RxDataSources (~> 4.0)
   - RxKakaoSDK (~> 2.0.0-beta.3)
   - RxSwiftExt (~> 5)
+  - RxViewController
   - SnapKit (~> 5.0.0)
   - SwiftyBeaver (~> 1.7.0)
   - TextFieldEffects (~> 1.6.0)
@@ -199,6 +203,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxSwiftExt
+    - RxViewController
     - SnapKit
     - SwiftyBeaver
     - TextFieldEffects
@@ -243,11 +248,12 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyBeaver: da5e573ad583586c18236324c36900990afe1733
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   WSTagsField: d57a287fd552934db1d93a85d38abbf74b067d6a
 
-PODFILE CHECKSUM: 0c91b5ac0812e50268f5fa3f3a971fb3748b6669
+PODFILE CHECKSUM: 188604887e674f0907c67a2be63343c5e649d7ff
 
 COCOAPODS: 1.7.2
