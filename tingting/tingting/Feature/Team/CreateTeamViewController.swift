@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import DropDown
 import M13Checkbox
-import WSTagsField
+import RxViewController
 
 class CreateTeamViewController: BaseViewController {
 
@@ -19,7 +19,9 @@ class CreateTeamViewController: BaseViewController {
     @IBOutlet weak var memberCountSegmentedControl: UISegmentedControl!
     @IBOutlet weak var introTextView: BaseTextView!
     @IBOutlet weak var urlTextField: BaseTextField!
-    @IBOutlet weak var tagsView: UIView!
+    
+    @IBOutlet weak var tagButton: BaseButton!
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     
     @IBOutlet weak var placeButton: UIButton!
     
@@ -37,8 +39,7 @@ class CreateTeamViewController: BaseViewController {
     private var teamType: TeamType = .create
     
     private let isValid: BehaviorRelay<Bool> = .init(value: false)
-    
-    fileprivate let tagsField = WSTagsField()
+    private let tags: BehaviorRelay<[TeamTag]> = .init(value: [])
     
     lazy var placeDropDown: DropDown = {
         let dropdown = DropDown()
@@ -49,7 +50,6 @@ class CreateTeamViewController: BaseViewController {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTagsField()
         setDropDown()
     }
     
@@ -58,12 +58,15 @@ class CreateTeamViewController: BaseViewController {
         
         switch teamType {
         case .create:
+            navigationController?.navigationBar.isHidden = false
+            navigationController?.navigationBar.tintColor = .primary
             createTeamButton.setTitle("팀만들기", for: .normal)
         case .edit(let team):
             
             navigationController?.navigationBar.isHidden = false
             navigationController?.navigationBar.tintColor = .primary
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "팀 나가기", style: .done, target: self, action: #selector(exitTeam))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "팀 나가기", style: .done, target: self, action: #selector(exitTeam))
+            
             teamNameTextField.text = team.teamInfo.name
             teamNameTextField.isEnabled = false
             memberCountSegmentedControl.isEnabled = false
@@ -112,13 +115,34 @@ class CreateTeamViewController: BaseViewController {
             self?.checkValidation()
         }.disposed(by: disposeBag)
          
+        // Tag
+        tagButton.rx.tap.bind { [weak self] in
+            let teamTagVC = TeamTagViewController.initiate()
+            teamTagVC.selectedTag = self?.tags.value ?? []
+            teamTagVC.modalTransitionStyle = .crossDissolve
+            teamTagVC.modalPresentationStyle = .overFullScreen
+            self?.present(teamTagVC, animated: true)
+            
+            teamTagVC.rx.viewDidDisappear.bind { [weak self, weak teamTagVC] _ in
+                guard let tags = teamTagVC?.selectedTag, teamTagVC?.didButtonPressed == true else { return }
+                self?.tags.accept(tags)
+            }.disposed(by: teamTagVC.disposeBag)
+            
+        }.disposed(by: disposeBag)
+        
+        tagCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        tagCollectionView.allowsSelection = false
+        tags.bind(to: tagCollectionView.rx.items(cellIdentifier: "cell")) { row, teamTag, cell in
+            guard let tagCell = cell as? TagCell else { return }
+            tagCell.tagLabel.text = "#" + teamTag.name
+        }.disposed(by: disposeBag)
+        
         urlTextField.rx
             .controlEvent([.editingChanged])
             .bind(onNext: checkValidation)
             .disposed(by: disposeBag)
         
         // TODO: Add Tag logic
-        
         isValid.bind(onNext: createTeamButton.setEnable)
             .disposed(by: disposeBag)
         
@@ -161,39 +185,7 @@ class CreateTeamViewController: BaseViewController {
             self.view.endEditing(true)
         }.disposed(by: disposeBag)
     }
-    
-    func setTagsField() {
-        tagsField.frame = tagsView.bounds
-        tagsView.addSubview(tagsField)
-
-        //tagsField.translatesAutoresizingMaskIntoConstraints = false
-        //tagsField.heightAnchor.constraint(equalToConstant: 150).isActive = true
-
-        tagsField.cornerRadius = 3.0
-        tagsField.spaceBetweenLines = 10
-        tagsField.spaceBetweenTags = 10
-
-        
-        //tagsField.numberOfLines = 3
-        //tagsField.maxHeight = 100.0
-
-        tagsField.layoutMargins = UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6)
-        tagsField.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) //old padding
-
-        tagsField.placeholder = "태그를 입력하세요.."
-        tagsField.placeholderColor = .lightGray
-        tagsField.placeholderAlwaysVisible = true
-        tagsField.backgroundColor = #colorLiteral(red: 0.9719446301, green: 0.9719673991, blue: 0.9719551206, alpha: 1)
-        tagsField.tintColor = .primary
-        tagsField.returnKeyType = .continue
-        tagsField.delimiter = ""
-        
-        
-
-        tagsField.textDelegate = self
-
-        textFieldEvents()
-    }
+ 
 }
  
 extension CreateTeamViewController {
@@ -212,10 +204,10 @@ extension CreateTeamViewController {
         }
          
         
-        guard let intro = introTextView.text, (1...100).contains(intro.count) else {
-            isValid.accept(false)
-            return
-        }
+//        guard let intro = introTextView.text, (1...100).contains(intro.count) else {
+//            isValid.accept(false)
+//            return
+//        }
         
         guard let url = urlTextField.text, !url.isEmpty else {
             isValid.accept(false)
@@ -257,13 +249,14 @@ extension CreateTeamViewController {
         }
         
         let password = passwordTextField.text?.count == 4 ? passwordTextField.text : nil
-
+        let tagIds = tags.value.map { $0.id }
         let max_member_number = memberCountSegmentedControl.selectedSegmentIndex + 2
  
         startLoading(backgroundColor: .clear)
         
         switch teamType {
         case .create:
+            
             
             let team = TeamInfo(name: name,
                                 chat_address: chat_address,
@@ -274,7 +267,8 @@ extension CreateTeamViewController {
                                 max_member_number: max_member_number,
                                 is_matched: nil,
                                 accepter_number: nil,
-                                place: place)
+                                place: place,
+                                tagIds: tagIds)
 
             NetworkManager.checkDuplicate(teamName: name).asObservable()
                 .subscribe(
@@ -286,7 +280,7 @@ extension CreateTeamViewController {
                             .asObservable()
                             .subscribe(
                                 onNext: { team in
-                                    self.dismiss(animated: true)
+                                    self.navigationController?.popViewController(animated: true)
                             },
                                 onError: { error in
                                     Logger.error(error)
@@ -316,7 +310,8 @@ extension CreateTeamViewController {
                                 max_member_number: max_member_number,
                                 is_matched: nil,
                                 accepter_number: nil,
-                                place: place)
+                                place: place,
+                                tagIds: nil)
             
             NetworkManager.editTeamInfo(id: oldTeam.teamInfo.id!,
                                         teamInfo: team)
@@ -359,38 +354,7 @@ extension CreateTeamViewController {
         placeDropDown.dataSource = Constants.placeList
         placeDropDown.reloadAllComponents()
     }
-    
-    
-    fileprivate func textFieldEvents() {
-        tagsField.onDidAddTag = { field, tag in
-            print("onDidAddTag", tag.text)
-        }
-
-        tagsField.onDidRemoveTag = { field, tag in
-            print("onDidRemoveTag", tag.text)
-        }
-
-        tagsField.onDidChangeText = { _, text in
-            print("onDidChangeText")
-        }
-
-        tagsField.onDidChangeHeightTo = { _, height in
-            print("HeightTo \(height)")
-        }
-
-        tagsField.onDidSelectTagView = { _, tagView in
-            print("Select \(tagView)")
-        }
-
-        tagsField.onDidUnselectTagView = { _, tagView in
-            print("Unselect \(tagView)")
-        }
-
-        tagsField.onShouldAcceptTag = { field in
-            return field.text != "OMG"
-        }
-    }
-    
+  
     @objc func exitTeam() {
         
         let alert = UIAlertController(title: "정말 팀을 나가시겠습니까?", message: "팀을 나가면 되돌릴 수 없습니다.", preferredStyle: .alert)
@@ -432,18 +396,7 @@ extension CreateTeamViewController {
     }
 
 }
-
-extension CreateTeamViewController: UITextFieldDelegate {
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == tagsField {
-//            anotherField.becomeFirstResponder()
-        }
-        return true
-    }
-
-}
-
+  
 extension CreateTeamViewController {
     enum TeamType {
         case create

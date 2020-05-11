@@ -65,6 +65,8 @@
 		5356A3B323CB3248000B435A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B223CB3248000B435A /* Collection+Extension.swift */; };
 		5356A3B523CB337B000B435A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B423CB337B000B435A /* UIImageView+Extension.swift */; };
 		53582FC524003CE400907983 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53582FC424003CE400907983 /* WebViewController.swift */; };
+		536528732465B73C00422554 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536528722465B73C00422554 /* Tags.swift */; };
+		536528752465BE0400422554 /* TeamTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536528742465BE0400422554 /* TeamTagViewController.swift */; };
 		536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536567AD239D383A0063CAD9 /* TeamListView.swift */; };
 		536567B0239D38450063CAD9 /* TeamListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536567AF239D38450063CAD9 /* TeamListView.xib */; };
 		53785F1C23C0AC9D00645B7E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */; };
@@ -114,7 +116,6 @@
 		53D53556237306EE00FEB3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */; };
 		53D53561237306EE00FEB3E9 /* tingtingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53560237306EE00FEB3E9 /* tingtingTests.swift */; };
 		53D5356C237306EE00FEB3E9 /* tingtingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */; };
-		53D80D61238C029D005AC04B /* suji.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D80D60238C029D005AC04B /* suji.png */; };
 		53D9A43423B88CD10021A435 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A43323B88CD10021A435 /* CellConfigurator.swift */; };
 		53D9A43623B88E330021A435 /* LabelCell+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A43523B88E330021A435 /* LabelCell+Configurator.swift */; };
 		53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A43923B890490021A435 /* MyMatchingTeamCell+Configurator.swift */; };
@@ -217,6 +218,8 @@
 		5356A3B223CB3248000B435A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		5356A3B423CB337B000B435A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		53582FC424003CE400907983 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		536528722465B73C00422554 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		536528742465BE0400422554 /* TeamTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTagViewController.swift; sourceTree = "<group>"; };
 		536567AD239D383A0063CAD9 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		536567AF239D38450063CAD9 /* TeamListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListView.xib; sourceTree = "<group>"; };
 		53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -272,7 +275,6 @@
 		53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tingtingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tingtingUITests.swift; sourceTree = "<group>"; };
 		53D5356D237306EE00FEB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53D80D60238C029D005AC04B /* suji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suji.png; sourceTree = "<group>"; };
 		53D9A43323B88CD10021A435 /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		53D9A43523B88E330021A435 /* LabelCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelCell+Configurator.swift"; sourceTree = "<group>"; };
 		53D9A43923B890490021A435 /* MyMatchingTeamCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyMatchingTeamCell+Configurator.swift"; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				5385F99B23AF5DFA002EFE9B /* Team.swift */,
 				5317C74923C06C7500D2FD10 /* User.swift */,
 				53FD7A8E23CF1FC7004A1D69 /* GenderType.swift */,
+				536528722465B73C00422554 /* Tags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				5385F99923AF5AD6002EFE9B /* TeamUserInfoViewController.swift */,
 				53D098E023BB77E300854712 /* JoinTeamViewController.swift */,
 				5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */,
+				536528742465BE0400422554 /* TeamTagViewController.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -633,16 +637,16 @@
 				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
 				532078BA237409EF00E3F94E /* Core */,
 				532078B3237408EB00E3F94E /* Feature */,
+				532078B2237408CA00E3F94E /* Model */,
+				53D80D5F238C021E005AC04B /* Resource */,
+				532078B0237408AA00E3F94E /* View */,
 				531A87132404153B000FC2DB /* GoogleService-Info.plist */,
 				53D53557237306EE00FEB3E9 /* Info.plist */,
 				53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */,
 				53D5354C237306EC00FEB3E9 /* Main.storyboard */,
 				53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */,
-				532078B2237408CA00E3F94E /* Model */,
-				53D80D5F238C021E005AC04B /* Resource */,
 				53D53548237306EC00FEB3E9 /* SceneDelegate.swift */,
 				53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */,
-				532078B0237408AA00E3F94E /* View */,
 			);
 			path = tingting;
 			sourceTree = "<group>";
@@ -668,7 +672,6 @@
 		53D80D5F238C021E005AC04B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				53D80D60238C029D005AC04B /* suji.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -877,7 +880,6 @@
 				53D9A44223B894170021A435 /* MatchingTeamStateCell.xib in Resources */,
 				531A5014237D5ECB008E65A4 /* Team.storyboard in Resources */,
 				534B5FC123C0E41A007397B3 /* SpaceCell.xib in Resources */,
-				53D80D61238C029D005AC04B /* suji.png in Resources */,
 				531A5020237D72E2008E65A4 /* MemberCell.xib in Resources */,
 				5388BE4D239CE82600FBFFD5 /* MemberListView.xib in Resources */,
 				538FE52423ABA91800F2AE22 /* Setting.storyboard in Resources */,
@@ -1014,6 +1016,7 @@
 				53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */,
 				53D098E323BC792900854712 /* AlertManager.swift in Sources */,
 				53D9A44423B894270021A435 /* MatchingTeamStateCell+Configurator.swift in Sources */,
+				536528732465B73C00422554 /* Tags.swift in Sources */,
 				53AAD8B723B7A4ED00B405CE /* MyMatchingTeamCell.swift in Sources */,
 				534B5FBF23C0E404007397B3 /* SpaceCell.swift in Sources */,
 				532078D3237409EF00E3F94E /* Double+Extension.swift in Sources */,
@@ -1079,6 +1082,7 @@
 				53BF9C4F23AB93A10013451C /* ConnectionManager.swift in Sources */,
 				53D098DC23BB642100854712 /* JoinTeamCell.swift in Sources */,
 				5356A3B523CB337B000B435A /* UIImageView+Extension.swift in Sources */,
+				536528752465BE0400422554 /* TeamTagViewController.swift in Sources */,
 				5388BE4F239CEAA800FBFFD5 /* UICollectionView+Extension.swift in Sources */,
 				532D0E5E23D5C5CB0057E189 /* SettingViewController.swift in Sources */,
 				5356A3B323CB3248000B435A /* Collection+Extension.swift in Sources */,
