@@ -52,6 +52,7 @@ struct TeamInfo: Codable {
     let accepter_number: Int?
     let place: String?
     
+    var tags: [String]?
     let tagIds: [Int]?
        
     init() {

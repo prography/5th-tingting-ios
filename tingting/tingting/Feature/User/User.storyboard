@@ -40,7 +40,7 @@
                                         <rect key="frame" x="0.0" y="298.5" width="414" height="563.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
-                                                <rect key="frame" x="40" y="60" width="334" height="330"/>
+                                                <rect key="frame" x="40" y="60" width="334" height="331"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디 또는 이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="팅팅" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
@@ -100,7 +100,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="UZp-50-7vC">
-                                                        <rect key="frame" x="0.0" y="176" width="334" height="154"/>
+                                                        <rect key="frame" x="0.0" y="176" width="334" height="155"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-pO-2Mx" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="42"/>
@@ -204,41 +204,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-WD-Fnk">
-                                                                <rect key="frame" x="0.0" y="126.5" width="334" height="27.5"/>
+                                                                <rect key="frame" x="0.0" y="126.5" width="334" height="28.5"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
-                                                                        <fragment content="아이디">
+                                                                        <fragment content="아이디/비밀번호 찾기">
                                                                             <attributes>
                                                                                 <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                                                <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                                                <integer key="NSUnderline" value="1"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="/">
-                                                                            <attributes>
-                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
-                                                                                <integer key="NSUnderline" value="1"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="비밀번호">
-                                                                            <attributes>
-                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                                                <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                                                <integer key="NSUnderline" value="1"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content=" ">
-                                                                            <attributes>
-                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
-                                                                                <integer key="NSUnderline" value="1"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="찾기">
-                                                                            <attributes>
-                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                                                <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                 <integer key="NSUnderline" value="1"/>
                                                                             </attributes>
                                                                         </fragment>
@@ -417,7 +389,7 @@
                                                                     <fragment content="4년제 대학 목록 보기">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" metaFont="label" size="11"/>
+                                                                            <font key="NSFont" metaFont="message" size="11"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>

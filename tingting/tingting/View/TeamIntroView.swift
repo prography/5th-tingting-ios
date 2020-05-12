@@ -13,10 +13,12 @@ class TeamIntroView: BaseView {
 
     @IBOutlet weak var baseView: BaseView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lockImageView: UIImageView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var memberCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet var tagLabels: [UILabel]!
+      
+    @IBOutlet var tagLabels: [BaseLabel]!
     
     var team: Team!
     var isMyTeam: Bool = false
@@ -24,49 +26,44 @@ class TeamIntroView: BaseView {
     func configure(with team: Team, isMyTeam: Bool = false) {
         self.team = team
         self.isMyTeam = isMyTeam
-        DispatchQueue.main.async {
-            self.bindStyle()
-        }
-    }
-    
+        self.bindStyle()
+         
+        let gradient = CAGradientLayer()
+
+        gradient.startPoint = CGPoint(x: 0.5, y: 0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        gradient.colors = [ #colorLiteral(red: 1, green: 0.5725490196, blue: 0.4392156863, alpha: 1), #colorLiteral(red: 1, green: 0.4901960784, blue: 0.4392156863, alpha: 1) ].map { $0.cgColor }
+        baseView.layer.insertSublayer(gradient, at: 0)
+    } 
     override func bindStyle() {
-        
         // TODO: Add assertionFailure()
         guard let team = self.team else { return }
-        layer.borderWidth = 1
-        layer.cornerRadius = 10
-        layer.borderColor = .primary
 
-        titleLabel.text = team.teamInfo.name ?? ""
-        titleLabel.textColor = isMyTeam ? .white : .primary
-        baseView.backgroundColor = isMyTeam ? .primary : .clear
+        titleLabel.text = "\(team.teamInfo.place ?? "") |  \(team.teamInfo.name ?? "")"
+        lockImageView.isHidden = team.teamInfo.password == nil
         editButton.isHidden = !isMyTeam
         descriptionLabel.text = team.teamInfo.intro
+ 
+        let currentNumberString = "\(team.teamMembers.count)명"
+        let maxNumberString = "/\(team.teamInfo.max_member_number ?? 0)명"
+   
+        let firstString = NSMutableAttributedString(string: currentNumberString, attributes: [.font: UIFont.boldSystemFont(ofSize: 14)])
+        let secondString = NSAttributedString(string: maxNumberString, attributes: [.font: UIFont.systemFont(ofSize: 12, weight: .medium)])
+
+        firstString.append(secondString)
+        memberCountLabel.attributedText = firstString
         
-        tagLabels[optional: 0]?.text = team.teamInfo.gender?.korean ?? "성별"
-        
-        if let maxNumber = team.teamInfo.max_member_number {
-            tagLabels[optional: 1]?.text = "\(maxNumber):\(maxNumber)"
+        let tags: [String] =  team.teamInfo.tags ?? []
+        tagLabels.enumerated().forEach { index, label in
+            
+            guard index < tags.count else {
+                label.isHidden = true
+                return
+            }
+            
+            label.isHidden = false
+            label.text = "#" + tags[index]
         }
-        if let place = team.teamInfo.place {
-            tagLabels[optional: 2]?.text = place
-        }
-        
-        tagLabels[optional: 3]?.isHidden = true
-        
-        // TODO: Add Tag
-        //        tagLabels.enumerated().forEach { index, label in
-        //
-        //            guard index < tags.count else {
-        //                label.isHidden = true
-        //                return
-        //            }
-        //
-        //            label.isHidden = false
-        //            label.text = tags[index]
-        //            label.layer.cornerRadius = 5
-        //            label.clipsToBounds = true
-        //        }
     }
     
 }

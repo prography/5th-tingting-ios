@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,13 +10,13 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="1Ti-bW-Fmw">
             <objects>
-                <viewController storyboardIdentifier="EditProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0bg-C1-MpS" customClass="EditProfileViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0bg-C1-MpS" customClass="EditProfileViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLn-6r-tGE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SOv-rJ-f9p">
-                                <rect key="frame" x="19" y="44" width="376" height="818"/>
+                                <rect key="frame" x="19" y="44" width="376" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-Ep-ZPa">
                                         <rect key="frame" x="0.0" y="0.0" width="376" height="45"/>
@@ -28,7 +28,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBp-Rd-PAq">
                                         <rect key="frame" x="0.0" y="45" width="376" height="105"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_man3" translatesAutoresizingMaskIntoConstraints="NO" id="4Bo-HJ-cYY" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_man3" translatesAutoresizingMaskIntoConstraints="NO" id="4Bo-HJ-cYY" customClass="BaseImageView" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="135.5" y="0.0" width="105" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="105" id="Eec-nF-Ocj"/>
@@ -63,7 +63,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9A8-HZ-D5r">
                                         <rect key="frame" x="0.0" y="195" width="376" height="316"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sS1-Hf-Uzi" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sS1-Hf-Uzi" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c55-Ei-1Bj">
@@ -101,7 +101,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vt-S9-Orr" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vt-S9-Orr" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="56" width="376" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLe-eJ-keX">
@@ -139,7 +139,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-ui-lw4" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-ui-lw4" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="112" width="376" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZK-5h-Yjg">
@@ -177,7 +177,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8v-79-hUo" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8v-79-hUo" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="168" width="376" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-ax-miK">
@@ -215,7 +215,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4Y-z6-2wI" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4Y-z6-2wI" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="224" width="376" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-KL-9G6">
@@ -260,21 +260,21 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wz-tS-XaK">
-                                        <rect key="frame" x="0.0" y="511" width="376" height="257"/>
+                                        <rect key="frame" x="0.0" y="511" width="376" height="249"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcE-6t-m6q" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="768" width="376" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcE-6t-m6q" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="760" width="376" height="48"/>
                                         <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="8N0-yz-vm0"/>
+                                            <constraint firstAttribute="height" constant="48" id="8N0-yz-vm0"/>
                                         </constraints>
                                         <state key="normal" title="수정하기">
                                             <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
@@ -285,7 +285,7 @@
                         <constraints>
                             <constraint firstItem="SOv-rJ-f9p" firstAttribute="leading" secondItem="P5Q-wU-x1e" secondAttribute="leading" constant="19" id="OGb-nh-pcz"/>
                             <constraint firstItem="P5Q-wU-x1e" firstAttribute="top" secondItem="SOv-rJ-f9p" secondAttribute="top" id="dSC-Ne-8sn"/>
-                            <constraint firstItem="P5Q-wU-x1e" firstAttribute="bottom" secondItem="SOv-rJ-f9p" secondAttribute="bottom" id="eT6-T0-R6g"/>
+                            <constraint firstItem="P5Q-wU-x1e" firstAttribute="bottom" secondItem="SOv-rJ-f9p" secondAttribute="bottom" constant="10" id="eT6-T0-R6g"/>
                             <constraint firstItem="P5Q-wU-x1e" firstAttribute="trailing" secondItem="SOv-rJ-f9p" secondAttribute="trailing" constant="19" id="fd9-OC-sRi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P5Q-wU-x1e"/>
@@ -308,7 +308,7 @@
         <!--My Profile View Controller-->
         <scene sceneID="vqY-hN-Vbi">
             <objects>
-                <viewController storyboardIdentifier="MyProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vLC-do-1gx" customClass="MyProfileViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vLC-do-1gx" customClass="MyProfileViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YYD-DX-iU7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,7 +323,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Di6-6r-ZWs">
                                             <rect key="frame" x="37" y="0.0" width="337" height="158"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-v5-Jfp" customClass="BaseImageView" customModule="팅팅" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="29" width="101" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="G2M-v5-Jfp" secondAttribute="height" multiplier="1:1" constant="1" id="duu-I2-Ifq"/>
@@ -434,7 +434,7 @@
         <!--Setting View Controller-->
         <scene sceneID="Up2-YZ-eHc">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bkb-Z7-EdT" customClass="SettingViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bkb-Z7-EdT" customClass="SettingViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YEq-mX-jpX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,20 +447,20 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ejT-zp-RfL">
-                                            <rect key="frame" x="28" y="50" width="358" height="130"/>
+                                            <rect key="frame" x="28" y="50" width="358" height="126"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nx7-2j-dZE" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nx7-2j-dZE" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="48"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="3n1-h1-oyl"/>
+                                                        <constraint firstAttribute="height" constant="48" id="3n1-h1-oyl"/>
                                                     </constraints>
                                                     <state key="normal" title="차단 팀 &amp; 유저 초기화">
                                                         <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                            <real key="value" value="10"/>
+                                                            <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                             <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -470,18 +470,18 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odf-TC-15O" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="80" width="358" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odf-TC-15O" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="78" width="358" height="48"/>
                                                     <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="a6g-pV-dmo"/>
+                                                        <constraint firstAttribute="height" constant="48" id="a6g-pV-dmo"/>
                                                     </constraints>
                                                     <state key="normal" title="로그아웃">
                                                         <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                            <real key="value" value="10"/>
+                                                            <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>

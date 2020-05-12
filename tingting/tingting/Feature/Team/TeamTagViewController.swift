@@ -22,6 +22,7 @@ class TeamTagViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTagButton.setEnable(true)
     }
     
     override func bind() {

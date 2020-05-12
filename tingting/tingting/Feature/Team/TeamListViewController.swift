@@ -26,6 +26,7 @@ class TeamListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTeamList()
+        creatTeamButton.setEnable(true)
          
     }
     override func viewWillAppear(_ animated: Bool) {

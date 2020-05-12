@@ -33,6 +33,7 @@ class EditProfileViewController: BaseViewController {
         setDatePicker(birthTextField)
         picker.delegate = self
         oldImage = imageView.image
+        editButton.setEnable(true)
     }
     
     override func bind() {
