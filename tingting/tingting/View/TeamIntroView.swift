@@ -27,13 +27,18 @@ class TeamIntroView: BaseView {
         self.team = team
         self.isMyTeam = isMyTeam
         self.bindStyle()
-         
-        let gradient = CAGradientLayer()
+        
+        self.baseView.backgroundColor = .clear
 
+        let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
         gradient.colors = [ #colorLiteral(red: 1, green: 0.5725490196, blue: 0.4392156863, alpha: 1), #colorLiteral(red: 1, green: 0.4901960784, blue: 0.4392156863, alpha: 1) ].map { $0.cgColor }
-        baseView.layer.insertSublayer(gradient, at: 0)
+        gradient.frame = baseView.bounds
+        
+        layer.sublayers?.filter { $0 is CAGradientLayer }
+                   .forEach { $0.removeFromSuperlayer() }
+        layer.insertSublayer(gradient, at: 0)
     } 
     override func bindStyle() {
         // TODO: Add assertionFailure()

@@ -27,6 +27,10 @@ class TeamListViewController: BaseViewController {
         super.viewDidLoad()
         loadTeamList()
         creatTeamButton.setEnable(true)
+        
+        peopleSegmentedControl.setSegmentStyle()
+        
+        
          
     }
     override func viewWillAppear(_ animated: Bool) {

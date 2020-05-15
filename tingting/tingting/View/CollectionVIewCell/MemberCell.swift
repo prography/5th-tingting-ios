@@ -19,10 +19,18 @@ class MemberCell: BaseCollectionCell {
     }
     
     func configure(with user: User, isMaster: Bool = false) {
+         
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 10
+        contentView.layer.borderColor = .init(srgbRed: 189.0 / 255.0, green:  189.0 / 255.0, blue:  189.0 / 255.0, alpha: 1)
+        contentView.layer.borderWidth = 0.4
         
-        layer.cornerRadius = 10
-        layer.borderColor = .init(srgbRed: 189.0 / 255.0, green:  189.0 / 255.0, blue:  189.0 / 255.0, alpha: 1)
-        layer.borderWidth = 1
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = .init(width: 0, height: 2)
+        layer.shadowRadius = 1
+        layer.shadowOpacity = 0.08
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
         
         imageView.setImage(url: user.thumbnail)
         teamButton.setTitle( isMaster ? "팀장" : "팀원" , for: .normal)

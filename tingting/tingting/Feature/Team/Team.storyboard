@@ -107,74 +107,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="3iR-Y6-gek">
-                                <rect key="frame" x="14" y="61" width="386" height="791"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="3iR-Y6-gek">
+                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-1j-anb" customClass="TeamIntroView" customModule="팅팅" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="386" height="157"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
+                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="157" id="hOb-bR-ZgO"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-uI-PP4">
-                                        <rect key="frame" x="0.0" y="190" width="386" height="161.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="RhS-aG-sub">
+                                        <rect key="frame" x="14" y="190" width="386" height="618"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-Z2-6iw">
-                                                <rect key="frame" x="0.0" y="0.0" width="386" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B62-tm-90K" customClass="MemberListView" customModule="팅팅" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="21.5" width="386" height="140"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-uI-PP4">
+                                                <rect key="frame" x="0.0" y="0.0" width="386" height="161.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-Z2-6iw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="386" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B62-tm-90K" customClass="MemberListView" customModule="팅팅" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="21.5" width="386" height="140"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="140" id="QgS-8v-nAW"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-gn-OxB">
+                                                <rect key="frame" x="0.0" y="194.5" width="386" height="342.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="QgS-8v-nAW"/>
-                                                </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-r5-sbl" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="570" width="386" height="48"/>
+                                                <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="z2r-U3-fEX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="합류하기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-gn-OxB">
-                                        <rect key="frame" x="0.0" y="384.5" width="386" height="325.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-r5-sbl" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="743" width="386" height="48"/>
-                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="z2r-U3-fEX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="합류하기">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3iR-Y6-gek" firstAttribute="leading" secondItem="Lxx-58-wYv" secondAttribute="leading" constant="14" id="Kun-Pl-dDg"/>
+                            <constraint firstItem="3iR-Y6-gek" firstAttribute="leading" secondItem="Lxx-58-wYv" secondAttribute="leading" id="Kun-Pl-dDg"/>
                             <constraint firstItem="Lxx-58-wYv" firstAttribute="bottom" secondItem="3iR-Y6-gek" secondAttribute="bottom" constant="10" id="VRm-0D-D7r"/>
-                            <constraint firstItem="Lxx-58-wYv" firstAttribute="trailing" secondItem="3iR-Y6-gek" secondAttribute="trailing" constant="14" id="Yvt-K5-q1Z"/>
-                            <constraint firstItem="3iR-Y6-gek" firstAttribute="top" secondItem="Lxx-58-wYv" secondAttribute="top" constant="17" id="p1s-iX-68w"/>
+                            <constraint firstItem="TU0-1j-anb" firstAttribute="leading" secondItem="Lxx-58-wYv" secondAttribute="leading" id="XLi-q4-mHC"/>
+                            <constraint firstItem="Lxx-58-wYv" firstAttribute="trailing" secondItem="3iR-Y6-gek" secondAttribute="trailing" id="Yvt-K5-q1Z"/>
+                            <constraint firstItem="RhS-aG-sub" firstAttribute="leading" secondItem="Lxx-58-wYv" secondAttribute="leading" constant="14" id="h9A-Pw-5ey"/>
+                            <constraint firstItem="3iR-Y6-gek" firstAttribute="top" secondItem="Lxx-58-wYv" secondAttribute="top" id="p1s-iX-68w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lxx-58-wYv"/>
                     </view>
@@ -197,44 +193,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-no-Idv">
-                                <rect key="frame" x="14" y="44" width="386" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="znl-Sp-57r">
-                                    <rect key="frame" x="0.0" y="0.0" width="386" height="369"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="369"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-9l-bJ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="386" height="348.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="348.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDx-NM-NxR" customClass="TeamIntroView" customModule="팅팅" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="386" height="157"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
+                                                    <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="157" id="U7U-hm-4OH"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-EK-l4n">
-                                                    <rect key="frame" x="0.0" y="187" width="386" height="161.5"/>
+                                                    <rect key="frame" x="0.0" y="187" width="414" height="161.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvS-GM-7k7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="386" height="21.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcx-Ya-HYG" customClass="MemberListView" customModule="팅팅" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="21.5" width="386" height="140"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="414" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="140" id="HMx-fu-sN9"/>
@@ -254,10 +239,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="paH-jG-8bH">
-                                        <rect key="frame" x="0.0" y="397" width="386" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="397" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="paH-jG-8bH" id="aH5-Rb-0Hl">
-                                            <rect key="frame" x="0.0" y="0.0" width="386" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -269,8 +254,8 @@
                         <constraints>
                             <constraint firstItem="vZz-U7-ckA" firstAttribute="bottom" secondItem="h5t-no-Idv" secondAttribute="bottom" id="Afm-lk-mFn"/>
                             <constraint firstItem="h5t-no-Idv" firstAttribute="top" secondItem="vZz-U7-ckA" secondAttribute="top" id="W9k-F3-IXS"/>
-                            <constraint firstItem="h5t-no-Idv" firstAttribute="leading" secondItem="vZz-U7-ckA" secondAttribute="leading" constant="14" id="bIT-Cm-rMw"/>
-                            <constraint firstItem="vZz-U7-ckA" firstAttribute="trailing" secondItem="h5t-no-Idv" secondAttribute="trailing" constant="14" id="hH3-hH-fHY"/>
+                            <constraint firstItem="h5t-no-Idv" firstAttribute="leading" secondItem="vZz-U7-ckA" secondAttribute="leading" id="bIT-Cm-rMw"/>
+                            <constraint firstItem="vZz-U7-ckA" firstAttribute="trailing" secondItem="h5t-no-Idv" secondAttribute="trailing" id="hH3-hH-fHY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vZz-U7-ckA"/>
                     </view>

@@ -51,6 +51,7 @@ class CreateTeamViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDropDown()
+        memberCountSegmentedControl.setSegmentStyle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
