@@ -42,6 +42,5 @@ extension UIImageView {
         guard let url = url else { image = placeholder; return }
         self.kf.setImage(with: url, placeholder: placeholder, options: options, progressBlock: nil)
     }
-    
-    
+ 
 }

@@ -28,14 +28,7 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        switch CURRENT_SERVER {
-        case .debug:
-            headerView.backgroundColor = .gray
-        case .live:
-            headerView.backgroundColor = .primary
-        }
-        
+         
         Logger.info("viewDidLoad")
     }
  
@@ -112,9 +105,10 @@ extension SignInViewController {
          
         switch type {
         case .debug:
-            UIColor.primary = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            debugView.isHidden = false
+            showDebugView()
         case .live:
-            UIColor.primary = #colorLiteral(red: 1, green: 0.5744549632, blue: 0.5127008557, alpha: 1)
+            debugView.isHidden = true
         }
         headerView.backgroundColor = .primary
         

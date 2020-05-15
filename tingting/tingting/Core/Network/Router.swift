@@ -23,7 +23,7 @@ enum ServerVersion: String {
 }
 
 var CURRENT_SERVER: ServerType = {
-    return UserDefaults.standard.bool(forKey: "isDebug") ?  .debug : .live
+    return UserDefaults.standard.bool(forKey: "isDebug") ? .debug : .live
     }()
     {
     didSet {
