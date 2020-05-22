@@ -51,7 +51,8 @@ extension APIModel.TeamList {
                                  is_verified: nil,
                                  is_matched: is_matched,
                                  accepter_number: nil,
-                                 place: place
+                                 place: place,
+                                 tagIds: nil
                 ),
                  teamMembers: teamMembersInfo ?? membersInfo ?? [])
         }

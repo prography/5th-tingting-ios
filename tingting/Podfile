@@ -12,11 +12,11 @@ target 'tingting' do
     
   pod 'Firebase/Analytics'
    
-  pod 'RxSwift', '~> 5'
+  #pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'RxSwiftExt', '~> 5'
   pod 'RxDataSources', '~> 4.0'
-  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'RxViewController'
 
   pod 'DropDown', '~>2.3.13'
   pod 'Hero', '~> 1.4.0'
@@ -30,6 +30,8 @@ target 'tingting' do
   pod 'M13Checkbox', '~> 3.4.0'
   pod 'TextFieldEffects', '~> 1.6.0'
   pod 'BonMot', '~> 5.4'
+  
+  pod 'RxKakaoSDK', '~> 2.0.0-beta.3'
   
   
   target 'tingtingTests' do

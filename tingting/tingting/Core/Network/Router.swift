@@ -10,21 +10,34 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Alamofire
+import RxAlamofire
+
+enum ServerType: String {
+    case debug = "http://13.209.81.52/api"
+    case live = "https://api.tingting.kr/api"
+}
+
+enum ServerVersion: String {
+    case v1 = "/v1"
+    case v2 = "/v2"
+}
+
+var CURRENT_SERVER: ServerType = {
+    return UserDefaults.standard.bool(forKey: "isDebug") ? .debug : .live
+    }()
+    {
+    didSet {
+        UserDefaults.standard.set(CURRENT_SERVER == .debug, forKey: "isDebug")
+    }
+}
+
+let CURRENT_SERVER_VERSION: ServerVersion = .v1
+
 
 struct Router<T: Codable> {
-    
-    enum ServerType: String {
-        case debug = "http://13.125.28.123/api"
-        case live = "https://api.tingting.kr/api"
-    }
-    
-    enum ServerVersion: String {
-        case v1 = "/v1"
-        case v2 = "/v2"
-    }
-    
-    private let server: ServerType = .live
-    private let version: ServerVersion = .v1
+      
+    private let server: ServerType = CURRENT_SERVER
+    private let version: ServerVersion = CURRENT_SERVER_VERSION
     
     private var baseURL: String {
         server.rawValue + version.rawValue
@@ -57,7 +70,7 @@ struct Router<T: Codable> {
         
         var requestLogger: [String] = ["", header, ""]
         if let token = ConnectionManager.shared.loadToken() {
-            headers.add(name: "Authorization", value: token)
+            headers["Authorization"] = token
             requestLogger.append(token)
         }
         
@@ -79,22 +92,23 @@ struct Router<T: Codable> {
         default:
             encoding = .httpBody
         }
-        return AF.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+        return Alamofire.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: headers)
 
     }
     
     var uploadRequest: UploadRequest {
-        return AF.upload(multipartFormData: { multipartFormData in
-            self.imageDict.forEach { name, image in
-                multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: name , fileName: "file.jpeg", mimeType: "image/jpeg")
-            }
-        }, to: baseURL + url, headers: headers)
+        let multipartFormData = MultipartFormData()
+        
+        self.imageDict.forEach { name, image in
+            multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: name , fileName: "file.jpeg", mimeType: "image/jpeg")
+        }
+        
+        return Alamofire.upload(try! multipartFormData.encode(), to: baseURL + url, method: .post, headers: headers)
     }
 }
 
 extension Router {
     func asObservable() -> Observable<T> {
-        
         
         let header = "┌────────[ Response ]─────────┐"
         let footer = "└─────────────────────────────┘"
@@ -105,6 +119,17 @@ extension Router {
             responseLogger += ["", "🔴 Mock Data 🔴"]
             return Observable.just(mockData)
         }
+        
+       
+//        Alamofire.upload(multipartFormData: { multipartFormData in
+//            self.imageDict.forEach { name, image in
+//                multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: name , fileName: "file.jpeg", mimeType: "image/jpeg")
+//            }
+//        }, to: baseURL + url, headers: headers,
+//           encodingCompletion: { encodingResult in
+//
+//        })
+//
         
         return Observable<T>.create { observer in
             
@@ -127,7 +152,7 @@ extension Router {
                     observer.onError(error)
                     return
                 }
-
+                
                 guard let data = result.data else {
                     responseLogger += ["🔴🔴 ERROR 🔴🔴", "\(result)"]
                     observer.onError(StringError(message: "알려지지 않은 에러"))
@@ -154,7 +179,7 @@ extension Router {
 
                     responseLogger += ["🔴 Catch ERROR 🔴"]
                     responseLogger += [result.data?.prettyPrintedJSONString as String? ?? ""]
-                     responseLogger += ["\(error)"]
+                    responseLogger += ["\(error)"]
                     observer.onError(error)
                 }
             }

@@ -25,6 +25,7 @@ class JoinTeamViewController: BaseViewController {
         navigationItem.rightBarButtonItem =  UIBarButtonItem(title: "차단", style: .plain, target: self, action: #selector(blockTeam))
         teamIntroView.configure(with: team)
         memberListView.configure(with: team.sortedUser)
+        joinButton.setEnable(true)
         
     }
     override func bind() {

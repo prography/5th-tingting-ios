@@ -65,8 +65,11 @@
 		5356A3B323CB3248000B435A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B223CB3248000B435A /* Collection+Extension.swift */; };
 		5356A3B523CB337B000B435A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356A3B423CB337B000B435A /* UIImageView+Extension.swift */; };
 		53582FC524003CE400907983 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53582FC424003CE400907983 /* WebViewController.swift */; };
+		536528732465B73C00422554 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536528722465B73C00422554 /* Tags.swift */; };
+		536528752465BE0400422554 /* TeamTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536528742465BE0400422554 /* TeamTagViewController.swift */; };
 		536567AE239D383A0063CAD9 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536567AD239D383A0063CAD9 /* TeamListView.swift */; };
 		536567B0239D38450063CAD9 /* TeamListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536567AF239D38450063CAD9 /* TeamListView.xib */; };
+		5370A8CC246F156900F64571 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370A8CB246F156900F64571 /* UISegmentedControl+Extension.swift */; };
 		53785F1C23C0AC9D00645B7E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */; };
 		53785F1E23C0AECC00645B7E /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53785F1D23C0AECC00645B7E /* BaseTextField.swift */; };
 		5382B6B82389145500F0114D /* TeamInfoSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5382B6B72389145500F0114D /* TeamInfoSwiftUIView.swift */; };
@@ -114,7 +117,6 @@
 		53D53556237306EE00FEB3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */; };
 		53D53561237306EE00FEB3E9 /* tingtingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D53560237306EE00FEB3E9 /* tingtingTests.swift */; };
 		53D5356C237306EE00FEB3E9 /* tingtingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */; };
-		53D80D61238C029D005AC04B /* suji.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D80D60238C029D005AC04B /* suji.png */; };
 		53D9A43423B88CD10021A435 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A43323B88CD10021A435 /* CellConfigurator.swift */; };
 		53D9A43623B88E330021A435 /* LabelCell+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A43523B88E330021A435 /* LabelCell+Configurator.swift */; };
 		53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9A43923B890490021A435 /* MyMatchingTeamCell+Configurator.swift */; };
@@ -197,6 +199,7 @@
 		5326719223C4B20F00118B6B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5326D8A123A4CA7700632CC0 /* MatchingTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTeamViewController.swift; sourceTree = "<group>"; };
 		5326D8A523A4D33300632CC0 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		5327D06C244DFD1C00079552 /* 팅팅.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "팅팅.entitlements"; sourceTree = "<group>"; };
 		532AC2DB23E6A6BB009FEAF9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "M13Checkbox+Extension.swift"; sourceTree = "<group>"; };
 		532D0E5923D43F7C0057E189 /* APIModel+MatchingTeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIModel+MatchingTeamList.swift"; sourceTree = "<group>"; };
@@ -216,8 +219,11 @@
 		5356A3B223CB3248000B435A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		5356A3B423CB337B000B435A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		53582FC424003CE400907983 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		536528722465B73C00422554 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		536528742465BE0400422554 /* TeamTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTagViewController.swift; sourceTree = "<group>"; };
 		536567AD239D383A0063CAD9 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		536567AF239D38450063CAD9 /* TeamListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListView.xib; sourceTree = "<group>"; };
+		5370A8CB246F156900F64571 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		53785F1B23C0AC9D00645B7E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		53785F1D23C0AECC00645B7E /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		5382B6B72389145500F0114D /* TeamInfoSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoSwiftUIView.swift; sourceTree = "<group>"; };
@@ -256,7 +262,7 @@
 		53D098DE23BB644D00854712 /* JoinTeamCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinTeamCell+Configurator.swift"; sourceTree = "<group>"; };
 		53D098E023BB77E300854712 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
 		53D098E223BC792900854712 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		53D53543237306EC00FEB3E9 /* tingting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tingting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D53543237306EC00FEB3E9 /* 팅팅.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "팅팅.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D53546237306EC00FEB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D53548237306EC00FEB3E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -271,7 +277,6 @@
 		53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tingtingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D5356B237306EE00FEB3E9 /* tingtingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tingtingUITests.swift; sourceTree = "<group>"; };
 		53D5356D237306EE00FEB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53D80D60238C029D005AC04B /* suji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suji.png; sourceTree = "<group>"; };
 		53D9A43323B88CD10021A435 /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		53D9A43523B88E330021A435 /* LabelCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelCell+Configurator.swift"; sourceTree = "<group>"; };
 		53D9A43923B890490021A435 /* MyMatchingTeamCell+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyMatchingTeamCell+Configurator.swift"; sourceTree = "<group>"; };
@@ -352,6 +357,7 @@
 				5385F99B23AF5DFA002EFE9B /* Team.swift */,
 				5317C74923C06C7500D2FD10 /* User.swift */,
 				53FD7A8E23CF1FC7004A1D69 /* GenderType.swift */,
+				536528722465B73C00422554 /* Tags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,8 +377,8 @@
 		532078B4237408FA00E3F94E /* User */ = {
 			isa = PBXGroup;
 			children = (
-				531A500D237D5E08008E65A4 /* InputProfileViewController.swift */,
 				532078B82374093500E3F94E /* User.storyboard */,
+				531A500D237D5E08008E65A4 /* InputProfileViewController.swift */,
 				531A500B237D5DD6008E65A4 /* EmailAuthenticationViewController.swift */,
 				531A500F237D5E1E008E65A4 /* SignInViewController.swift */,
 				531A5011237D5E3D008E65A4 /* InputPhotoViewController.swift */,
@@ -393,6 +399,7 @@
 				5385F99923AF5AD6002EFE9B /* TeamUserInfoViewController.swift */,
 				53D098E023BB77E300854712 /* JoinTeamViewController.swift */,
 				5343F47823C1C6FF0024E630 /* MyTeamViewController.swift */,
+				536528742465BE0400422554 /* TeamTagViewController.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -461,6 +468,7 @@
 				5356A3B223CB3248000B435A /* Collection+Extension.swift */,
 				5356A3B423CB337B000B435A /* UIImageView+Extension.swift */,
 				532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */,
+				5370A8CB246F156900F64571 /* UISegmentedControl+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -617,7 +625,7 @@
 		53D53544237306EC00FEB3E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53D53543237306EC00FEB3E9 /* tingting.app */,
+				53D53543237306EC00FEB3E9 /* 팅팅.app */,
 				53D5355C237306EE00FEB3E9 /* tingtingTests.xctest */,
 				53D53567237306EE00FEB3E9 /* tingtingUITests.xctest */,
 			);
@@ -627,20 +635,21 @@
 		53D53545237306EC00FEB3E9 /* tingting */ = {
 			isa = PBXGroup;
 			children = (
+				5327D06C244DFD1C00079552 /* 팅팅.entitlements */,
 				53D53546237306EC00FEB3E9 /* AppDelegate.swift */,
 				53D53552237306EE00FEB3E9 /* Assets.xcassets */,
 				532078BA237409EF00E3F94E /* Core */,
 				532078B3237408EB00E3F94E /* Feature */,
+				532078B2237408CA00E3F94E /* Model */,
+				53D80D5F238C021E005AC04B /* Resource */,
+				532078B0237408AA00E3F94E /* View */,
 				531A87132404153B000FC2DB /* GoogleService-Info.plist */,
 				53D53557237306EE00FEB3E9 /* Info.plist */,
 				53D53554237306EE00FEB3E9 /* LaunchScreen.storyboard */,
 				53D5354C237306EC00FEB3E9 /* Main.storyboard */,
 				53D5354A237306EC00FEB3E9 /* MainTabBarController.swift */,
-				532078B2237408CA00E3F94E /* Model */,
-				53D80D5F238C021E005AC04B /* Resource */,
 				53D53548237306EC00FEB3E9 /* SceneDelegate.swift */,
 				53D5354F237306EC00FEB3E9 /* tingting.xcdatamodeld */,
-				532078B0237408AA00E3F94E /* View */,
 			);
 			path = tingting;
 			sourceTree = "<group>";
@@ -666,7 +675,6 @@
 		53D80D5F238C021E005AC04B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				53D80D60238C029D005AC04B /* suji.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -770,7 +778,7 @@
 			);
 			name = tingting;
 			productName = tingting;
-			productReference = 53D53543237306EC00FEB3E9 /* tingting.app */;
+			productReference = 53D53543237306EC00FEB3E9 /* 팅팅.app */;
 			productType = "com.apple.product-type.application";
 		};
 		53D5355B237306EE00FEB3E9 /* tingtingTests */ = {
@@ -875,7 +883,6 @@
 				53D9A44223B894170021A435 /* MatchingTeamStateCell.xib in Resources */,
 				531A5014237D5ECB008E65A4 /* Team.storyboard in Resources */,
 				534B5FC123C0E41A007397B3 /* SpaceCell.xib in Resources */,
-				53D80D61238C029D005AC04B /* suji.png in Resources */,
 				531A5020237D72E2008E65A4 /* MemberCell.xib in Resources */,
 				5388BE4D239CE82600FBFFD5 /* MemberListView.xib in Resources */,
 				538FE52423ABA91800F2AE22 /* Setting.storyboard in Resources */,
@@ -996,6 +1003,7 @@
 				53E8ED4A239CB4600027AC46 /* TeamIntroView.swift in Sources */,
 				5326719123C3941800118B6B /* UIButton+Extension.swift in Sources */,
 				532078D5237409EF00E3F94E /* UIViewController+Extension.swift in Sources */,
+				5370A8CC246F156900F64571 /* UISegmentedControl+Extension.swift in Sources */,
 				5356A3B123CB2481000B435A /* MockProtocol.swift in Sources */,
 				53DD4A2223BE4CC100938405 /* APIModel+School.swift in Sources */,
 				53D098D723B8C75C00854712 /* BaseCellProtocol.swift in Sources */,
@@ -1012,6 +1020,7 @@
 				53D9A43A23B890490021A435 /* MyMatchingTeamCell+Configurator.swift in Sources */,
 				53D098E323BC792900854712 /* AlertManager.swift in Sources */,
 				53D9A44423B894270021A435 /* MatchingTeamStateCell+Configurator.swift in Sources */,
+				536528732465B73C00422554 /* Tags.swift in Sources */,
 				53AAD8B723B7A4ED00B405CE /* MyMatchingTeamCell.swift in Sources */,
 				534B5FBF23C0E404007397B3 /* SpaceCell.swift in Sources */,
 				532078D3237409EF00E3F94E /* Double+Extension.swift in Sources */,
@@ -1077,6 +1086,7 @@
 				53BF9C4F23AB93A10013451C /* ConnectionManager.swift in Sources */,
 				53D098DC23BB642100854712 /* JoinTeamCell.swift in Sources */,
 				5356A3B523CB337B000B435A /* UIImageView+Extension.swift in Sources */,
+				536528752465BE0400422554 /* TeamTagViewController.swift in Sources */,
 				5388BE4F239CEAA800FBFFD5 /* UICollectionView+Extension.swift in Sources */,
 				532D0E5E23D5C5CB0057E189 /* SettingViewController.swift in Sources */,
 				5356A3B323CB3248000B435A /* Collection+Extension.swift in Sources */,
@@ -1265,17 +1275,18 @@
 			baseConfigurationReference = 3FFE2A945E9BC9613A393A25 /* Pods-tingting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "tingting/팅팅.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MSW35G2APL;
 				INFOPLIST_FILE = tingting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "팅팅";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1286,17 +1297,18 @@
 			baseConfigurationReference = A420245776FEB79904333E44 /* Pods-tingting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "tingting/팅팅.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MSW35G2APL;
 				INFOPLIST_FILE = tingting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prography.tingting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "팅팅";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

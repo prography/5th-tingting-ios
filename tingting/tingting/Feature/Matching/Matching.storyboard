@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,79 +10,77 @@
         <!--Matching Team View Controller-->
         <scene sceneID="J0z-2f-tkr">
             <objects>
-                <viewController storyboardIdentifier="MatchingTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6K8-MU-aHL" customClass="MatchingTeamViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MatchingTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6K8-MU-aHL" customClass="MatchingTeamViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6AS-fy-Hdd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-JA-Ei9">
-                                <rect key="frame" x="14" y="61" width="386" height="791"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bZ-sg-9ab">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3H-ZL-I6N" customClass="TeamIntroView" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="386" height="157"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3H-ZL-I6N" customClass="TeamIntroView" customModule="팅팅" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
+                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="157" id="o7d-dy-8yd"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="35n-FX-Y8C">
-                                        <rect key="frame" x="0.0" y="190" width="386" height="161.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-JA-Ei9">
+                                        <rect key="frame" x="24" y="174" width="366" height="644"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQi-dQ-fxs">
-                                                <rect key="frame" x="0.0" y="0.0" width="386" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-kB-66Q" customClass="MemberListView" customModule="tingting" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="21.5" width="386" height="140"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="35n-FX-Y8C">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="161.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQi-dQ-fxs">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-kB-66Q" customClass="MemberListView" customModule="팅팅" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="21.5" width="366" height="140"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="140" id="4Yj-Bu-exf"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hv-b2-Nmc">
+                                                <rect key="frame" x="0.0" y="194.5" width="366" height="368.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="4Yj-Bu-exf"/>
-                                                </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz8-6H-7Pj" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="596" width="366" height="48"/>
+                                                <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="Ygk-Ky-RRj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="좋아요">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hv-b2-Nmc">
-                                        <rect key="frame" x="0.0" y="384.5" width="386" height="325.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz8-6H-7Pj" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="743" width="386" height="48"/>
-                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Ygk-Ky-RRj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="좋아요">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="EYa-JA-Ei9" firstAttribute="leading" secondItem="6bZ-sg-9ab" secondAttribute="leading" constant="24" id="2Wn-WZ-8kv"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="EYa-JA-Ei9" firstAttribute="top" secondItem="vBw-oY-omu" secondAttribute="top" constant="17" id="ISB-vg-LF1"/>
-                            <constraint firstItem="EYa-JA-Ei9" firstAttribute="leading" secondItem="vBw-oY-omu" secondAttribute="leading" constant="14" id="Te2-8V-Lju"/>
-                            <constraint firstItem="vBw-oY-omu" firstAttribute="bottom" secondItem="EYa-JA-Ei9" secondAttribute="bottom" constant="10" id="anz-9L-PPU"/>
-                            <constraint firstItem="vBw-oY-omu" firstAttribute="trailing" secondItem="EYa-JA-Ei9" secondAttribute="trailing" constant="14" id="tRL-ex-UI6"/>
+                            <constraint firstItem="6bZ-sg-9ab" firstAttribute="top" secondItem="vBw-oY-omu" secondAttribute="top" id="7l1-d3-g9n"/>
+                            <constraint firstItem="6bZ-sg-9ab" firstAttribute="leading" secondItem="vBw-oY-omu" secondAttribute="leading" id="Sbd-1L-XCN"/>
+                            <constraint firstItem="vBw-oY-omu" firstAttribute="bottom" secondItem="6bZ-sg-9ab" secondAttribute="bottom" id="YKb-jT-nJ3"/>
+                            <constraint firstItem="vBw-oY-omu" firstAttribute="trailing" secondItem="6bZ-sg-9ab" secondAttribute="trailing" id="ceA-iB-ZcG"/>
+                            <constraint firstItem="A3H-ZL-I6N" firstAttribute="leading" secondItem="vBw-oY-omu" secondAttribute="leading" id="v8o-UB-86E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vBw-oY-omu"/>
                     </view>
@@ -99,7 +97,7 @@
         <!--Applying Matching Team View Controller-->
         <scene sceneID="paU-c1-GGC">
             <objects>
-                <viewController storyboardIdentifier="ApplyingMatchingTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DT1-bv-dwW" customClass="ApplyingMatchingTeamViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ApplyingMatchingTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DT1-bv-dwW" customClass="ApplyingMatchingTeamViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kmf-ry-9qY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +105,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6s-49-j9a">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-vI-mmS" customClass="BaseView" customModule="tingting" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-vI-mmS" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
                                 <rect key="frame" x="16" y="283" width="382" height="340"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀에게 보낼 메시지 입력..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9R-JB-vyx" userLabel="placeholderLabel">
@@ -196,7 +194,7 @@
         <!--Matching Team List View Controller-->
         <scene sceneID="Dj2-mw-8EX">
             <objects>
-                <viewController storyboardIdentifier="MatchingTeamListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6AE-ao-Mk2" customClass="MatchingTeamListViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MatchingTeamListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6AE-ao-Mk2" customClass="MatchingTeamListViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2FP-FV-HC8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,17 +206,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="790"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="dEq-yZ-nI2">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhS-y3-hYr" customClass="BaseView" customModule="tingting" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="20" width="374" height="49"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhS-y3-hYr" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="20" width="374" height="100"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortDown" translatesAutoresizingMaskIntoConstraints="NO" id="Xgm-Ng-0ao">
-                                                            <rect key="frame" x="340" y="16" width="17" height="17"/>
+                                                            <rect key="frame" x="340" y="41.5" width="17" height="17"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHz-da-bID" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                            <rect key="frame" x="24" y="0.0" width="350" height="49"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHz-da-bID" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                            <rect key="frame" x="24" y="0.0" width="350" height="100"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <state key="normal" title="아직 팀이 없어요 ㅠㅠ">
@@ -233,7 +231,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="49" id="1uw-hm-jR3"/>
+                                                        <constraint firstAttribute="height" constant="100" id="1uw-hm-jR3"/>
                                                         <constraint firstItem="nHz-da-bID" firstAttribute="top" secondItem="mhS-y3-hYr" secondAttribute="top" id="3aT-PB-4Ha"/>
                                                         <constraint firstAttribute="bottom" secondItem="nHz-da-bID" secondAttribute="bottom" id="3bD-jN-mZy"/>
                                                         <constraint firstAttribute="trailing" secondItem="Xgm-Ng-0ao" secondAttribute="trailing" constant="17" id="6Ws-8d-Dbs"/>
@@ -258,7 +256,7 @@
                                         </view>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vSU-DU-kez">
-                                                <rect key="frame" x="0.0" y="108" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="168" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vSU-DU-kez" id="R34-QY-LIe">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>

@@ -29,6 +29,8 @@ class MatchingTeamViewController: BaseViewController {
         super.viewWillAppear(animated)
 
         getMatchingTeam()
+        
+        applyButton.setEnable(true)
         applyButton.isHidden = myTeamID == nil
     
         navigationController?.navigationBar.isHidden = false    

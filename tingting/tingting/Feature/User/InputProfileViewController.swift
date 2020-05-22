@@ -44,7 +44,11 @@ class InputProfileViewController: BaseViewController {
         nicknameTextField.rx
             .controlEvent([.editingChanged])
             .bind { [weak self] in
-                self?.nicknameTextField.text = self?.nicknameTextField.text?.filter { $0 != " " }
+                let filterText = self?.nicknameTextField.text?.filter { $0 != " " }
+                if filterText != self?.nicknameTextField.text {
+                    self?.nicknameTextField.text = filterText
+                }
+                
                 self?.isNewNickname.accept(false)
         }.disposed(by: disposeBag)
         
@@ -74,7 +78,7 @@ class InputProfileViewController: BaseViewController {
             ConnectionManager.shared.signUpRequest.gender = gender
             ConnectionManager.shared.signUpRequest.height = Int(self.heightTextField.text ?? "0")
             
-            let emailVC = EmailAuthenticationViewController.initiate()
+            let emailVC = InputPhotoViewController.initiate()
             self.navigationController?.pushViewController(emailVC, animated: true)
         }.disposed(by: disposeBag)
     }

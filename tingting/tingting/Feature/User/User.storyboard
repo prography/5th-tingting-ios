@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eBH-jc-Weh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eBH-jc-Weh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sign In View Controller-->
         <scene sceneID="uFV-AC-Q0e">
             <objects>
-                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eBH-jc-Weh" customClass="SignInViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eBH-jc-Weh" customClass="SignInViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Ow-r0-bt0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,10 +39,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9h-Vq-vmJ">
                                         <rect key="frame" x="0.0" y="298.5" width="414" height="563.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
-                                                <rect key="frame" x="40" y="60" width="334" height="423.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-WG-gry">
+                                                <rect key="frame" x="40" y="60" width="334" height="331"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디 또는 이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디 또는 이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-Kx-4r4" customClass="BaseTextField" customModule="팅팅" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
                                                         <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                                         <constraints>
@@ -65,8 +66,15 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNx-ju-uVt" customClass="BaseTextField" customModule="tingting" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="78" width="334" height="48"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rd-Ai-foi">
+                                                        <rect key="frame" x="0.0" y="56" width="334" height="16"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="ycg-50-jkg"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNx-ju-uVt" customClass="BaseTextField" customModule="팅팅" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="80" width="334" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
@@ -84,68 +92,144 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-WD-Fnk">
-                                                        <rect key="frame" x="0.0" y="156" width="334" height="30"/>
-                                                        <state key="normal" title="로그인이 안 되시나요?">
-                                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="Epg-6l-qAR" kind="show" id="BaL-RV-vHL"/>
-                                                        </connections>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-b7-efq">
-                                                        <rect key="frame" x="0.0" y="216" width="334" height="31.5"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-b7-efq">
+                                                        <rect key="frame" x="0.0" y="136" width="334" height="32"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-XN-DBg">
-                                                        <rect key="frame" x="0.0" y="277.5" width="334" height="0.0"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-pO-2Mx" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="307.5" width="334" height="43"/>
-                                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="43" id="M4R-Jf-sge"/>
+                                                            <constraint firstAttribute="height" constant="32" id="1ok-Lk-pYH"/>
                                                         </constraints>
-                                                        <state key="normal" title="로그인">
-                                                            <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                                <real key="value" value="24"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT4-RZ-SRw" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="380.5" width="334" height="43"/>
-                                                        <state key="normal" title="회원가입">
-                                                            <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                                <real key="value" value="24"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="UZp-50-7vC">
+                                                        <rect key="frame" x="0.0" y="176" width="334" height="155"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-pO-2Mx" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="334" height="42"/>
+                                                                <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="M4R-Jf-sge"/>
+                                                                </constraints>
+                                                                <state key="normal" title="로그인">
+                                                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                                        <real key="value" value="24"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVU-Tc-Mda">
+                                                                <rect key="frame" x="0.0" y="49" width="334" height="42"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xS-ew-TwI" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="42"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                        <state key="normal" title="        애플로 로그인하기">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                                                <real key="value" value="24"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-kh-x0i">
+                                                                        <rect key="frame" x="81" y="6.5" width="22.5" height="29"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="Pbl-kh-x0i" firstAttribute="centerX" secondItem="jVU-Tc-Mda" secondAttribute="centerX" constant="-75" id="6c6-DK-xKM"/>
+                                                                    <constraint firstAttribute="height" constant="42" id="9pO-4a-MQk"/>
+                                                                    <constraint firstItem="5xS-ew-TwI" firstAttribute="leading" secondItem="jVU-Tc-Mda" secondAttribute="leading" id="Aov-YN-kGU"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="5xS-ew-TwI" secondAttribute="trailing" id="MPZ-Pt-oeO"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="5xS-ew-TwI" secondAttribute="bottom" id="WCx-UB-Cdp"/>
+                                                                    <constraint firstItem="Pbl-kh-x0i" firstAttribute="centerY" secondItem="jVU-Tc-Mda" secondAttribute="centerY" id="a6Y-S6-54u"/>
+                                                                    <constraint firstItem="5xS-ew-TwI" firstAttribute="top" secondItem="jVU-Tc-Mda" secondAttribute="top" id="vyB-dT-s56"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfW-b4-bjh" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="49" width="334" height="42"/>
+                                                                <color key="backgroundColor" red="1" green="0.87450980392156863" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="xAq-C1-KcW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <state key="normal" title="    카카오톡으로 로그인하기" image="commentBlackOvalBubbleShape">
+                                                                    <color key="titleColor" red="0.23137254901960785" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                                        <real key="value" value="24"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-9E-dqB">
+                                                                <rect key="frame" x="0.0" y="56" width="334" height="0.5"/>
+                                                                <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="0.5" id="xdI-kk-ILc"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT4-RZ-SRw" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="70.5" width="334" height="42"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="z4N-JM-riZ"/>
+                                                                </constraints>
+                                                                <state key="normal" title="회원가입">
+                                                                    <color key="titleColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                                                        <real key="value" value="24"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-WD-Fnk">
+                                                                <rect key="frame" x="0.0" y="126.5" width="334" height="28.5"/>
+                                                                <state key="normal">
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="아이디/비밀번호 찾기">
+                                                                            <attributes>
+                                                                                <color key="NSColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                                                <integer key="NSUnderline" value="1"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </state>
+                                                                <connections>
+                                                                    <segue destination="Epg-6l-qAR" kind="show" id="BaL-RV-vHL"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="JNx-ju-uVt" firstAttribute="height" secondItem="zAa-Kx-4r4" secondAttribute="height" id="nUT-Ne-GVI"/>
-                                                    <constraint firstItem="TT4-RZ-SRw" firstAttribute="height" secondItem="4kZ-pO-2Mx" secondAttribute="height" id="odR-ms-H86"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="bfW-WG-gry" secondAttribute="bottom" priority="750" constant="80" id="6uA-se-sJF"/>
                                             <constraint firstItem="bfW-WG-gry" firstAttribute="centerX" secondItem="U9h-Vq-vmJ" secondAttribute="centerX" id="7hn-Yb-m6y"/>
                                             <constraint firstItem="bfW-WG-gry" firstAttribute="leading" secondItem="U9h-Vq-vmJ" secondAttribute="leading" constant="40" id="B1a-BY-u4S"/>
                                             <constraint firstItem="bfW-WG-gry" firstAttribute="top" secondItem="U9h-Vq-vmJ" secondAttribute="top" constant="60" id="uJp-o8-oCH"/>
@@ -165,7 +249,10 @@
                         <viewLayoutGuide key="safeArea" id="40k-5O-DbV"/>
                     </view>
                     <connections>
+                        <outlet property="appleButton" destination="5xS-ew-TwI" id="S7M-gf-ZCA"/>
                         <outlet property="emailTextField" destination="zAa-Kx-4r4" id="eLS-NI-GQr"/>
+                        <outlet property="headerView" destination="Xb8-2v-mNh" id="kg5-2q-IHv"/>
+                        <outlet property="kakaoButton" destination="xfW-b4-bjh" id="cjc-ZU-3nq"/>
                         <outlet property="passwordTextField" destination="JNx-ju-uVt" id="0gY-IE-aoo"/>
                         <outlet property="signInButton" destination="4kZ-pO-2Mx" id="Vhv-lL-7wG"/>
                         <outlet property="signUpButton" destination="TT4-RZ-SRw" id="F2L-UP-XVy"/>
@@ -178,7 +265,7 @@
         <!--Terms View Controller-->
         <scene sceneID="IMi-hU-MPz">
             <objects>
-                <tableViewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Epg-6l-qAR" customClass="TermsViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Epg-6l-qAR" customClass="TermsViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uqr-ou-HCb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +291,7 @@
                             <rect key="frame" x="0.0" y="786" width="414" height="115"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f19-Li-VQD" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f19-Li-VQD" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                     <rect key="frame" x="38" y="35" width="338" height="50"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -302,7 +389,7 @@
                                                                     <fragment content="4년제 대학 목록 보기">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <font key="NSFont" metaFont="label" size="11"/>
+                                                                            <font key="NSFont" metaFont="message" size="11"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -543,47 +630,24 @@
             </objects>
             <point key="canvasLocation" x="177" y="88"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--계정 생성-->
         <scene sceneID="9a9-VT-T5B">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CTU-px-tWN" customClass="SignUpViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" title="계정 생성" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CTU-px-tWN" customClass="SignUpViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ez3-Oj-Fns">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dDK-je-HCF">
-                                <rect key="frame" x="32" y="67" width="350" height="775"/>
+                                <rect key="frame" x="32" y="80" width="350" height="754"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-lO-231">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="rDb-mD-xBf"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJf-Lc-1hq">
-                                        <rect key="frame" x="0.0" y="150" width="350" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="wnL-Gh-hfS"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2s-wc-ftb">
-                                        <rect key="frame" x="0.0" y="170" width="350" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKx-uV-8fP">
-                                        <rect key="frame" x="0.0" y="200" width="350" height="95"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Efo-3s-StR">
-                                        <rect key="frame" x="0.0" y="295" width="350" height="215"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="215"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ph-t2-omc">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-3g-4Gu" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-3g-4Gu" customClass="AnimatedTextField" customModule="팅팅" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="65" id="fzQ-CH-BA8"/>
@@ -624,7 +688,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dpZ-Cr-wWl">
                                                         <rect key="frame" x="226" y="15" width="124" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCT-0r-L0f" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCT-0r-L0f" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="kJz-hT-gHF"/>
@@ -660,7 +724,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="dpZ-Cr-wWl" secondAttribute="bottom" id="rJG-S6-TO6"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkf-S5-kHM" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkf-S5-kHM" customClass="AnimatedTextField" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="75" width="350" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="ybb-kB-ZGa"/>
@@ -698,7 +762,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-On-JBl" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-On-JBl" customClass="AnimatedTextField" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="150" width="350" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="p91-bF-kcH"/>
@@ -739,11 +803,11 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8i-5s-PQD">
-                                        <rect key="frame" x="0.0" y="510" width="350" height="95"/>
+                                        <rect key="frame" x="0.0" y="215" width="350" height="369"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2h-0c-RB8">
-                                        <rect key="frame" x="0.0" y="605" width="350" height="120"/>
+                                        <rect key="frame" x="0.0" y="584" width="350" height="120"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jrk-UH-QP6">
                                                 <rect key="frame" x="55.5" y="35" width="239.5" height="50"/>
@@ -773,8 +837,8 @@
                                             <constraint firstAttribute="height" constant="120" id="YOW-b5-lPf"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmR-tG-es2" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="725" width="350" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmR-tG-es2" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="704" width="350" height="50"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UcS-Fp-hOI"/>
@@ -790,18 +854,15 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="L8i-5s-PQD" firstAttribute="height" secondItem="nKx-uV-8fP" secondAttribute="height" id="Yvi-XW-ANI"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="av2-BW-a48" firstAttribute="bottom" secondItem="dDK-je-HCF" secondAttribute="bottom" constant="20" id="0fG-QZ-tOA"/>
+                            <constraint firstItem="av2-BW-a48" firstAttribute="bottom" secondItem="dDK-je-HCF" secondAttribute="bottom" constant="28" id="0fG-QZ-tOA"/>
                             <constraint firstItem="av2-BW-a48" firstAttribute="trailing" secondItem="dDK-je-HCF" secondAttribute="trailing" constant="32" id="ZXO-yT-wCe"/>
                             <constraint firstItem="dDK-je-HCF" firstAttribute="centerX" secondItem="av2-BW-a48" secondAttribute="centerX" id="geR-75-Vtn"/>
                             <constraint firstItem="dDK-je-HCF" firstAttribute="leading" secondItem="av2-BW-a48" secondAttribute="leading" constant="32" id="kAf-RQ-YX1"/>
-                            <constraint firstItem="dDK-je-HCF" firstAttribute="top" secondItem="av2-BW-a48" secondAttribute="top" constant="23" id="yxs-98-Xkj"/>
+                            <constraint firstItem="dDK-je-HCF" firstAttribute="top" secondItem="av2-BW-a48" secondAttribute="top" constant="36" id="yxs-98-Xkj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="av2-BW-a48"/>
                     </view>
@@ -817,12 +878,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co8-1z-on1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="88"/>
+            <point key="canvasLocation" x="1630" y="88"/>
         </scene>
         <!--학교 인증-->
         <scene sceneID="yWZ-al-QgM">
             <objects>
-                <viewController storyboardIdentifier="EmailAuthenticationViewController" title="학교 인증" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RRH-DB-E4D" customClass="EmailAuthenticationViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailAuthenticationViewController" title="학교 인증" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RRH-DB-E4D" customClass="EmailAuthenticationViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zio-jw-dds">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -838,7 +899,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-Im-k4U" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-Im-k4U" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="268" y="0.0" width="60" height="34"/>
                                                 <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -857,7 +918,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHB-FU-ow1" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHB-FU-ow1" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                 <rect key="frame" x="38" y="786" width="338" height="48"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -894,12 +955,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4t4-S5-Uy2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1717" y="775"/>
+            <point key="canvasLocation" x="900" y="88"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="IZb-vR-uNj">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ct3-5A-S1e" customClass="WebViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ct3-5A-S1e" customClass="WebViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ued-sa-fDg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -928,18 +989,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vth-tA-DSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="775"/>
+            <point key="canvasLocation" x="2430" y="758"/>
         </scene>
         <!--프로필 입력-->
         <scene sceneID="b1W-sO-6LN">
             <objects>
-                <viewController storyboardIdentifier="InputProfileViewController" title="프로필 입력" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eQu-sG-AEM" customClass="InputProfileViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputProfileViewController" title="프로필 입력" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eQu-sG-AEM" customClass="InputProfileViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLq-Ct-3bX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-nq-F28">
-                                <rect key="frame" x="43" y="87" width="328" height="278"/>
+                                <rect key="frame" x="43" y="80" width="328" height="278"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FOf-5D-ARH">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="44"/>
@@ -962,7 +1023,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWU-6Y-sw2">
                                         <rect key="frame" x="0.0" y="63" width="328" height="65"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-86-zEb" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-86-zEb" customClass="AnimatedTextField" customModule="팅팅" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="a8W-lP-bat"/>
@@ -1003,7 +1064,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bLE-4X-f7m">
                                                 <rect key="frame" x="204" y="15" width="124" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGT-ZC-Uzd" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGT-ZC-Uzd" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="bx7-2g-gcC"/>
@@ -1039,7 +1100,7 @@
                                             <constraint firstAttribute="trailing" secondItem="bLE-4X-f7m" secondAttribute="trailing" id="zDF-8f-dW4"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-lb-5y5" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-lb-5y5" customClass="AnimatedTextField" customModule="팅팅" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="138" width="328" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="bNv-tN-l6h"/>
@@ -1077,7 +1138,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiN-Rq-QTK" customClass="AnimatedTextField" customModule="tingting" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiN-Rq-QTK" customClass="AnimatedTextField" customModule="팅팅" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="213" width="328" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="Tov-Up-EWI"/>
@@ -1117,7 +1178,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-bP-bk0" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3S-bP-bk0" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                 <rect key="frame" x="38" y="786" width="338" height="48"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1140,7 +1201,7 @@
                             <constraint firstItem="LAb-nq-F28" firstAttribute="leading" secondItem="QzB-9n-EKm" secondAttribute="leading" constant="43" id="RTj-tD-IYe"/>
                             <constraint firstItem="QzB-9n-EKm" firstAttribute="trailing" secondItem="LAb-nq-F28" secondAttribute="trailing" constant="43" id="mbS-eU-QWl"/>
                             <constraint firstItem="a3S-bP-bk0" firstAttribute="centerX" secondItem="QzB-9n-EKm" secondAttribute="centerX" id="pFB-FJ-fth"/>
-                            <constraint firstItem="LAb-nq-F28" firstAttribute="top" secondItem="QzB-9n-EKm" secondAttribute="top" constant="43" id="pRF-IM-LMf"/>
+                            <constraint firstItem="LAb-nq-F28" firstAttribute="top" secondItem="QzB-9n-EKm" secondAttribute="top" constant="36" id="pRF-IM-LMf"/>
                             <constraint firstItem="QzB-9n-EKm" firstAttribute="bottom" secondItem="a3S-bP-bk0" secondAttribute="bottom" constant="28" id="xZs-BT-TfL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QzB-9n-EKm"/>
@@ -1158,12 +1219,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-9F-Mru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1717" y="88"/>
+            <point key="canvasLocation" x="2430" y="88"/>
         </scene>
         <!--사진 등록-->
         <scene sceneID="x07-U0-O8j">
             <objects>
-                <viewController storyboardIdentifier="InputPhotoViewController" title="사진 등록" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBL-eR-QZj" customClass="InputPhotoViewController" customModule="tingting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputPhotoViewController" title="사진 등록" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBL-eR-QZj" customClass="InputPhotoViewController" customModule="팅팅" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mty-am-MeR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1176,27 +1237,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqj-5m-7Ch">
-                                <rect key="frame" x="132" y="230" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqj-5m-7Ch" customClass="BaseView" customModule="팅팅" customModuleProvider="target">
+                                <rect key="frame" x="87" y="230" width="240" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-U2-rd5" customClass="BaseLabel" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="81"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-wD-a4D" customClass="BaseImageView" customModule="tingting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-wD-a4D" customClass="BaseImageView" customModule="팅팅" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="makeCircle" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4v-BS-y1s">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4v-BS-y1s">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <state key="normal" image="addUser"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1207,17 +1259,24 @@
                                     <constraint firstAttribute="trailing" secondItem="o4v-BS-y1s" secondAttribute="trailing" id="FhK-bJ-RLw"/>
                                     <constraint firstItem="o4v-BS-y1s" firstAttribute="leading" secondItem="Tqj-5m-7Ch" secondAttribute="leading" id="OdD-eb-M5s"/>
                                     <constraint firstAttribute="bottom" secondItem="o4v-BS-y1s" secondAttribute="bottom" id="PKt-0k-UVe"/>
-                                    <constraint firstAttribute="width" constant="150" id="bhS-zC-jWm"/>
+                                    <constraint firstAttribute="width" constant="240" id="bhS-zC-jWm"/>
                                     <constraint firstItem="0g1-wD-a4D" firstAttribute="top" secondItem="Tqj-5m-7Ch" secondAttribute="top" id="cZr-Za-U9J"/>
-                                    <constraint firstItem="Dx9-U2-rd5" firstAttribute="leading" secondItem="Tqj-5m-7Ch" secondAttribute="leading" id="ie3-qu-1K0"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dx9-U2-rd5" secondAttribute="trailing" id="lQL-TZ-Z45"/>
                                     <constraint firstItem="o4v-BS-y1s" firstAttribute="top" secondItem="Tqj-5m-7Ch" secondAttribute="top" id="o0A-C5-7dE"/>
                                     <constraint firstAttribute="bottom" secondItem="0g1-wD-a4D" secondAttribute="bottom" id="r5T-3g-xF6"/>
-                                    <constraint firstItem="Dx9-U2-rd5" firstAttribute="top" secondItem="Tqj-5m-7Ch" secondAttribute="top" id="vba-cB-9N2"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dx9-U2-rd5" secondAttribute="bottom" id="xAf-iJ-59P"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1.3999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.49019607840000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                                        <real key="value" value="37"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYn-2f-zGN" customClass="BaseButton" customModule="tingting" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYn-2f-zGN" customClass="BaseButton" customModule="팅팅" customModuleProvider="target">
                                 <rect key="frame" x="38" y="786" width="338" height="48"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1256,12 +1315,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Whp-DC-Ldn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="88"/>
+            <point key="canvasLocation" x="3181" y="88"/>
         </scene>
     </scenes>
     <resources>
+        <image name="addUser" width="60.5" height="60.5"/>
+        <image name="commentBlackOvalBubbleShape" width="20" height="20"/>
         <image name="logo_white" width="124" height="39"/>
         <image name="tick" width="17" height="17"/>
-        <image name="user" width="78" height="78"/>
     </resources>
 </document>

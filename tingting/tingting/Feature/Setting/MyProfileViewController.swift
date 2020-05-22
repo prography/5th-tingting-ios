@@ -75,8 +75,7 @@ class MyProfileViewController: BaseViewController {
             let vc = EditProfileViewController.initiate()
             self?.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag)
-        
-        
+         
         settingButton.rx.tap.bind { [weak self] in
             let settingVC = SettingViewController.initiate()
             self?.navigationController?.pushViewController(settingVC, animated: true)
