@@ -17,7 +17,8 @@ class TeamIntroView: BaseView {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var memberCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-      
+
+    
     @IBOutlet var tagLabels: [BaseLabel]!
     
     var team: Team!
