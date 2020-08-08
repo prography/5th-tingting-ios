@@ -164,7 +164,7 @@ DEPENDENCIES:
   - WSTagsField (~> 5.2)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - BonMot
     - Differentiator
@@ -256,4 +256,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 188604887e674f0907c67a2be63343c5e649d7ff
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.7.2

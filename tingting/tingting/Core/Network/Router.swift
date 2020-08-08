@@ -50,7 +50,10 @@ struct Router<T: Codable> {
     private let method: HTTPMethod
     private let removeTokenCodes: [Int]
     private let mockData: T?
-    
+
+
+    var requestString: String = ""
+
     init(url: String,
          method: HTTPMethod = .get,
          parameters: Encodable? = nil,
@@ -63,12 +66,8 @@ struct Router<T: Codable> {
         self.imageDict = imageDict
         self.removeTokenCodes = removeTokenCodes
         self.mockData = mockData
-        
-        
-        let header = "┌─────────[ Request ]─────────┐"
-        let footer = "└─────────────────────────────┘"
-        
-        var requestLogger: [String] = ["", header, ""]
+
+        var requestLogger: [String] = [""]
         if let token = ConnectionManager.shared.loadToken() {
             headers["Authorization"] = token
             requestLogger.append(token)
@@ -79,9 +78,8 @@ struct Router<T: Codable> {
             requestLogger += ["", prettyString]
         }
 
-        requestLogger += ["", footer]
-        Logger.info(requestLogger.joined(separator: "\n"))
-        
+        requestLogger += [""]
+        self.requestString = requestLogger.joined(separator: "\n")
     }
   
     var dataRequest: DataRequest {
@@ -109,11 +107,8 @@ struct Router<T: Codable> {
 
 extension Router {
     func asObservable() -> Observable<T> {
-        
-        let header = "┌────────[ Response ]─────────┐"
-        let footer = "└─────────────────────────────┘"
-        
-        var responseLogger: [String] = ["", header, ""]
+
+        var responseLogger: [String] = [""]
         
         if let mockData = mockData {
             responseLogger += ["", "🔴 Mock Data 🔴"]
@@ -138,8 +133,23 @@ extension Router {
             let session = request.responseData { result in
                  
                 defer {
-                    responseLogger += ["", footer]
-                    Logger.info(responseLogger.joined(separator: "\n"))
+                    let responseString = responseLogger.joined(separator: "\n")
+
+                    let header = "┌─────────────────────────────┐"
+                    let footer = "└─────────────────────────────┘"
+
+                    let log: [String] = [
+                        "",
+                        header,
+                        "",
+                        "⭐️ Request ⭐️",
+                        self.requestString,
+                        "⭐️ Response ⭐️",
+                        responseString,
+                        footer,
+                        "\n"
+                    ]
+                    Logger.info(log.joined(separator: "\n"))
                 }
                 
                 if let statusCode = result.response?.statusCode,
