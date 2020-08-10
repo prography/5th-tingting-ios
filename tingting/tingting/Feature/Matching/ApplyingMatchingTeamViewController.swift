@@ -14,6 +14,7 @@ import RxCocoa
 class ApplyingMatchingTeamViewController: BaseViewController {
     
     @IBOutlet weak var backgroundButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var placeholderLabel: UILabel!
@@ -24,9 +25,13 @@ class ApplyingMatchingTeamViewController: BaseViewController {
         super.viewDidLoad()
         messageTextView.text = ""
         messageTextView.tintColor = .primary
-        setNextButtonState(isEnable: false)
- 
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNextButtonState(isEnable: false)
+    }
+
     override func bind() {
         backgroundButton.rx.tap
             .bind { [weak self] in
@@ -37,6 +42,7 @@ class ApplyingMatchingTeamViewController: BaseViewController {
             .bind { [weak self] message in
                 guard let message = message else { self?.setNextButtonState(isEnable: false); return }
                 self?.placeholderLabel.isHidden = !message.isEmpty
+                self?.descriptionLabel.text = "(\(message.count)/100)"
                 switch message.count {
                 case ...19:
                     self?.setNextButtonState(isEnable: false)
@@ -44,7 +50,7 @@ class ApplyingMatchingTeamViewController: BaseViewController {
                     self?.setNextButtonState(isEnable: true)
                 default:
                     self?.messageTextView.text = self?.messageTextView.text?[0..<100]
-                    self?.setNextButtonState(isEnable: true)
+                    self?.setNextButtonState(isEnable: false)
                 }
         }.disposed(by: disposeBag)
         
