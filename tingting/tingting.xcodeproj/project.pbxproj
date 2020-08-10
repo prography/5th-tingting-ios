@@ -99,6 +99,7 @@
 		53AAD8BC23B7A86600B405CE /* MyTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53AAD8BA23B7A86600B405CE /* MyTeamCell.xib */; };
 		53AAFAFC23E5EAA80027549F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AAFAFB23E5EAA80027549F /* TermsViewController.swift */; };
 		53AEE018238136120045706C /* StoryboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AEE017238136120045706C /* StoryboardType.swift */; };
+		53B41BB924E1616800A40749 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B41BB824E1616800A40749 /* UIImage+Extension.swift */; };
 		53BF9C4F23AB93A10013451C /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BF9C4E23AB93A10013451C /* ConnectionManager.swift */; };
 		53BF9C5223AB9B140013451C /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BF9C5123AB9B140013451C /* BaseTabBarController.swift */; };
 		53BF9C5A23AB9E530013451C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BF9C5923AB9E530013451C /* BaseNavigationController.swift */; };
@@ -253,6 +254,7 @@
 		53AAD8BA23B7A86600B405CE /* MyTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTeamCell.xib; sourceTree = "<group>"; };
 		53AAFAFB23E5EAA80027549F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		53AEE017238136120045706C /* StoryboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardType.swift; sourceTree = "<group>"; };
+		53B41BB824E1616800A40749 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		53BF9C4E23AB93A10013451C /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		53BF9C5123AB9B140013451C /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		53BF9C5923AB9E530013451C /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				5356A3B423CB337B000B435A /* UIImageView+Extension.swift */,
 				532AC2DD23E6B52D009FEAF9 /* M13Checkbox+Extension.swift */,
 				5370A8CB246F156900F64571 /* UISegmentedControl+Extension.swift */,
+				53B41BB824E1616800A40749 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1030,6 +1033,7 @@
 				5343F47923C1C6FF0024E630 /* MyTeamViewController.swift in Sources */,
 				5317C74C23C06DC000D2FD10 /* APIModel+Profile.swift in Sources */,
 				532078DF237409EF00E3F94E /* BaseViewController.swift in Sources */,
+				53B41BB924E1616800A40749 /* UIImage+Extension.swift in Sources */,
 				5385F99C23AF5DFA002EFE9B /* Team.swift in Sources */,
 				53DD4A2023BE4C5500938405 /* APIModel.swift in Sources */,
 				53FD7A8F23CF1FC7004A1D69 /* GenderType.swift in Sources */,

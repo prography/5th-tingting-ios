@@ -155,13 +155,14 @@ extension EditProfileViewController {
             .asObservable()
             .subscribe(
                 onNext: { [weak self] response in
-                    
-                    AlertManager.show(title: response.message)
 
                     KingfisherManager.shared.cache.clearMemoryCache()
                     KingfisherManager.shared.cache.clearDiskCache()
-                    self?.endLoading()
+
                     self?.navigationController?.popToRootViewController(animated: true)
+                    self?.endLoading()
+
+                    AlertManager.show(title: response.message)
                 },
                 onError: { [weak self] error in
                     AlertManager.showError(error)

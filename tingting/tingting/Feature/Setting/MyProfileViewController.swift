@@ -23,8 +23,7 @@ class MyProfileViewController: BaseViewController {
             tableView.didSetDefault()
         }
     }
-    
-    
+
     let currentUser: PublishRelay<User> = .init()
     
     let items: BehaviorRelay<[CellConfigurator]> = .init(value: [])
@@ -142,11 +141,6 @@ class MyProfileViewController: BaseViewController {
             
             return cell
         }.disposed(by: disposeBag)
-        
-    }
-     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
     }
 }

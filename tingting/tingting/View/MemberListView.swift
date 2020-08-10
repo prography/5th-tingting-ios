@@ -48,7 +48,7 @@ class MemberListView: BaseView {
             .filter { _ in self.showMemberAuto }
             .observeOn(MainScheduler.asyncInstance)
             .bind { user in
-                let viewController = UIApplication.shared.windows.last?.rootViewController
+                let viewController = UIApplication.shared.windows.first?.rootViewController
                 let memberVC = MemberViewController.initiate(user: user)
                 viewController?.present(memberVC, animated: true)
         }.disposed(by: disposeBag)
