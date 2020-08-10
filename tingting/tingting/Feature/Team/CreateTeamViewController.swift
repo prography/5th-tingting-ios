@@ -210,10 +210,10 @@ extension CreateTeamViewController {
 //            return
 //        }
         
-        guard let url = urlTextField.text, !url.isEmpty else {
-            isValid.accept(false)
-            return
-        }
+//        guard let url = urlTextField.text, !url.isEmpty else {
+//            isValid.accept(false)
+//            return
+//        }
         
         guard let place = placeButton.titleLabel?.text, Constants.placeList.contains(place) else {
             isValid.accept(false)
