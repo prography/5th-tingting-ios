@@ -14,7 +14,7 @@ import RxAlamofire
 
 enum ServerType: String {
     case debug = "http://13.209.81.52/api"
-    case live = "https://api.tingting.kr/api"
+    case live = "http://api.tingting.kr/api"
 }
 
 enum ServerVersion: String {
