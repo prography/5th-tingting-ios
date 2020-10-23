@@ -644,7 +644,6 @@
 				532078BA237409EF00E3F94E /* Core */,
 				532078B3237408EB00E3F94E /* Feature */,
 				532078B2237408CA00E3F94E /* Model */,
-				53D80D5F238C021E005AC04B /* Resource */,
 				532078B0237408AA00E3F94E /* View */,
 				531A87132404153B000FC2DB /* GoogleService-Info.plist */,
 				53D53557237306EE00FEB3E9 /* Info.plist */,
@@ -673,13 +672,6 @@
 				53D5356D237306EE00FEB3E9 /* Info.plist */,
 			);
 			path = tingtingUITests;
-			sourceTree = "<group>";
-		};
-		53D80D5F238C021E005AC04B /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		53D9A43723B8900F0021A435 /* Title */ = {

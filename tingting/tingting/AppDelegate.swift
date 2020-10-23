@@ -11,9 +11,13 @@ import CoreData
 import SwiftyBeaver
 import Kingfisher
 import Firebase
+
 import RxKakaoSDKCommon
 import RxKakaoSDKTalk
 import RxKakaoSDKAuth
+import KakaoSDKAuth
+import KakaoSDKUser
+import RxKakaoSDKUser
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Kakao
-        KakaoSDKCommon.shared.initSDK(appKey: "5fd375a184a5929ffb6ee99280a33288")
+        RxKakaoSDKCommon.initSDK(appKey: "5fd375a184a5929ffb6ee99280a33288")
         
         return true
     }

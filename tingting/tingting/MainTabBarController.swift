@@ -18,18 +18,18 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         delegate = self
 
-        let firstVC = TeamListViewController.initiate()
-        let secondVC = MatchingTeamListViewController.initiate()
+        let firstVC = MatchingTeamListViewController.initiate()
+        let secondVC = TeamListViewController.initiate()
         let thirdVC = MyProfileViewController.initiate()
- 
+
         
-        firstVC.tabBarItem = UITabBarItem(title: "팀 찾기",
-                                          image: UIImage(named: "support"),
-                                          selectedImage: UIImage(named: "support1"))
+        firstVC.tabBarItem = UITabBarItem(title: "매칭",
+                                          image: UIImage(named: "cupid"),
+                                          selectedImage: UIImage(named: "cupid1"))
         
-        secondVC.tabBarItem = UITabBarItem(title: "매칭",
-                                           image: UIImage(named: "cupid"),
-                                           selectedImage: UIImage(named: "cupid1"))
+        secondVC.tabBarItem = UITabBarItem(title: "팀 찾기",
+                                           image: UIImage(named: "support"),
+                                           selectedImage: UIImage(named: "support1"))
         
         thirdVC.tabBarItem = UITabBarItem(title: "프로필",
                                           image: UIImage(named: "user1"),
@@ -42,13 +42,11 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
                 let naviVC = BaseNavigationController(rootViewController: $0)
                 naviVC.navigationBar.isHidden = true
                 return naviVC
-        }
+            }
         
-         setLogin()
+        setLogin()
         // TODO: Remove
-//        ConnectionManager.shared.currentUser = MockTeam.getMockResponse().members.first
-        
-        
+        // ConnectionManager.shared.currentUser = MockTeam.getMockResponse().members.first
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,8 +58,7 @@ class MainTabBarController: BaseTabBarController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-//        AlertManager.show(title: "목데이터에유~")
+        // AlertManager.show(title: "목데이터에유~")
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

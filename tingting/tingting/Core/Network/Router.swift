@@ -90,13 +90,12 @@ struct Router<T: Codable> {
         default:
             encoding = .httpBody
         }
-        return Alamofire.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+        return AF.request(baseURL + url, method: method, parameters: parameters, encoding: encoding, headers: headers)
 
     }
     
     var uploadRequest: UploadRequest {
 
-        var uploadRequest: UploadRequest!
 //
 //        let multipartFormData = MultipartFormData()
 //
@@ -106,27 +105,26 @@ struct Router<T: Codable> {
 //
 //        return Alamofire.upload(try! multipartFormData.encode(), to: baseURL + url, method: .post, headers: headers)
 
-        Alamofire.upload(multipartFormData: { multipartFormData in
+        return AF.upload(multipartFormData: { multipartFormData in
             self.imageDict.forEach { name, image in
                 let data = image.resize(targetSize: .init(width: 300, height: 300))
                     .pngData()!
                 multipartFormData.append(data, withName: name , fileName: "file.png", mimeType: "image/png")
             }
-        }, to: baseURL + url, headers: headers,
-           encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .failure(let error):
-                Logger.error(error)
-            case .success(let request, _, _):
-                uploadRequest = request
-            }
-        })
-        return uploadRequest
+        }, to: baseURL + url, headers: headers)
     }
 }
 
 extension Router {
     func asObservable() -> Observable<T> {
+
+        var responseLogger: [String] = [""]
+
+        if let mockData = mockData {
+            responseLogger += ["", "🔴 Mock Data 🔴"]
+            return Observable.just(mockData)
+        }
+
 
 //        Alamofire.upload(multipartFormData: { multipartFormData in
 //            self.imageDict.forEach { name, image in
@@ -136,103 +134,79 @@ extension Router {
 //           encodingCompletion: { encodingResult in
 //
 //        })
-        //
-        
+//
+
         return Observable<T>.create { observer in
 
-            var session: DataRequest?
+            let request = self.imageDict.isEmpty ? self.dataRequest : self.uploadRequest
 
-            if self.imageDict.isEmpty {
+            let session = request.responseData { result in
 
-                session = self.dataRequest.responseData { result in
-                    self.logic(observer: observer, result: result)
+                defer {
+                    let responseString = responseLogger.joined(separator: "\n")
+
+                    let header = "┌─────────────────────────────┐"
+                    let footer = "└─────────────────────────────┘"
+
+                    let log: [String] = [
+                        "",
+                        header,
+                        "",
+                        "⭐️ Request ⭐️",
+                        self.requestString,
+                        "⭐️ Response ⭐️",
+                        responseString,
+                        footer,
+                        "\n"
+                    ]
+                    Logger.info(log.joined(separator: "\n"))
                 }
 
-            } else {
-                Alamofire.upload(
-                    multipartFormData: { multipartFormData in
-                        self.imageDict.forEach { name, image in
-                            multipartFormData.append(image.jpegData(compressionQuality: 0.5)!, withName: name , fileName: "file.jpeg", mimeType: "image/jpeg")
-                        } },
-                    to: self.baseURL + self.url,
-                    headers: self.headers) { encodingResult in
-                        switch encodingResult {
-                        case .failure(let error):
-                            Logger.error(error)
-                        case .success(let uploadRequest, _, _):
-                            session = uploadRequest.responseData { result in
-                                self.logic(observer: observer, result: result)
-                            }
+                if let statusCode = result.response?.statusCode,
+                    self.removeTokenCodes.firstIndex(of: statusCode) != nil {
+                    ConnectionManager.shared.removeToken()
+                }
+
+                if let error = result.error {
+                    responseLogger += ["🔴 ERROR 🔴", "\(error)"]
+                    observer.onError(error)
+                    return
+                }
+
+                guard let data = result.data else {
+                    responseLogger += ["🔴🔴 ERROR 🔴🔴", "\(result)"]
+                    observer.onError(StringError(message: "알려지지 않은 에러"))
+                    return
+                }
+
+                do {
+                    let responseModel = try JSONDecoder().decode(ResponseModel<T>.self, from: data)
+
+                    guard let response = responseModel.data else {
+                        let error = StringError(message: responseModel.errorMessage ?? "Undefine error")
+
+                        responseLogger += ["🔴 ERROR 🔴", responseModel.prettyString ?? ""]
+                        observer.onError(error)
+                        return
                     }
+
+                    responseLogger += ["", response.prettyString ?? ""]
+                    observer.onNext(response)
+                    observer.onCompleted()
+
+
+                } catch {
+
+                    responseLogger += ["🔴 Catch ERROR 🔴"]
+                    responseLogger += [result.data?.prettyPrintedJSONString as String? ?? ""]
+                    responseLogger += ["\(error)"]
+                    observer.onError(error)
                 }
             }
-            return Disposables.create { session?.cancel() }
+
+            return Disposables.create { session.cancel() }
         }.single()
-    }
 
-    func logic(observer: AnyObserver<T>, result: DataResponse<Data>) {
-        var responseLogger: [String] = [""]
-
-        defer {
-            let responseString = responseLogger.joined(separator: "\n")
-
-            let header = "┌─────────────────────────────┐"
-            let footer = "└─────────────────────────────┘"
-
-            let log: [String] = [
-                "",
-                header,
-                "",
-                "⭐️ Request ⭐️",
-                self.requestString,
-                "⭐️ Response ⭐️",
-                responseString,
-                footer,
-                "\n"
-            ]
-            Logger.info(log.joined(separator: "\n"))
-        }
-
-        if let statusCode = result.response?.statusCode,
-            self.removeTokenCodes.firstIndex(of: statusCode) != nil {
-            ConnectionManager.shared.removeToken()
-        }
-
-        if let error = result.error {
-            responseLogger += ["🔴 ERROR 🔴", "\(error)"]
-            observer.onError(error)
-            return
-        }
-
-        guard let data = result.data else {
-            responseLogger += ["🔴🔴 ERROR 🔴🔴", "\(result)"]
-            observer.onError(StringError(message: "알려지지 않은 에러"))
-            return
-        }
-
-        do {
-            let responseModel = try JSONDecoder().decode(ResponseModel<T>.self, from: data)
-
-            guard let response = responseModel.data else {
-                let error = StringError(message: responseModel.errorMessage ?? "Undefine error")
-
-                responseLogger += ["🔴 ERROR 🔴", responseModel.prettyString ?? ""]
-                observer.onError(error)
-                return
-            }
-
-            responseLogger += ["", response.prettyString ?? ""]
-            observer.onNext(response)
-            observer.onCompleted()
-
-
-        } catch {
-
-            responseLogger += ["🔴 Catch ERROR 🔴"]
-            responseLogger += [result.data?.prettyPrintedJSONString as String? ?? ""]
-            responseLogger += ["\(error)"]
-            observer.onError(error)
-        }
     }
 }
 

@@ -28,10 +28,10 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+
         Logger.info("viewDidLoad")
     }
- 
+
     override func bind() {
         signUpButton.rx.tap
             .bind {
@@ -41,12 +41,12 @@ class SignInViewController: BaseViewController {
                 let naviVC = BaseNavigationController(rootViewController: termsVC)
                 // naviVC.modalPresentationStyle = .fullScreen
                 self.present(naviVC, animated: true)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         signInButton.rx.tap.bind {
             self.signIn()
         }.disposed(by: disposeBag)
- 
+
         appleButton.rx.tap.bind {
             self.loginForApple()
         }.disposed(by: disposeBag)
@@ -54,7 +54,7 @@ class SignInViewController: BaseViewController {
         kakaoButton.rx.tap.bind {
             self.loginForKakao()
         }.disposed(by: disposeBag)
- 
+
         Observable
             .of(emailTextField.rx.controlEvent([.editingChanged]), passwordTextField.rx.controlEvent([.editingChanged]))
             .merge()
@@ -75,7 +75,7 @@ class SignInViewController: BaseViewController {
                 default:
                     break
                 } 
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -88,11 +88,11 @@ class SignInViewController: BaseViewController {
                         ConnectionManager.shared.currentUser = profile.myInfo
                         AlertManager.show(title: profile.myInfo.name! + " 님, 오늘은 매칭이 될까요? > <")
                         self.close()
-                },
+                    },
                     onError: { error in
                         AlertManager.showError(error)
-                }
-            ).disposed(by: disposeBag)
+                    }
+                ).disposed(by: disposeBag)
         }
     }
 }
@@ -102,7 +102,7 @@ extension SignInViewController {
     func changeServer(with type: ServerType) {
         
         CURRENT_SERVER = type
-         
+
         switch type {
         case .debug:
             debugView.isHidden = false
@@ -184,11 +184,11 @@ extension SignInViewController {
 //                })
 //                .disposed(by: self.disposeBag)
 //        } else {
-            AuthController.shared.authorizeWithAuthenticationSession()
-                .subscribe(onNext:{ oauthToken in
-                    Logger.info(oauthToken)
-                })
-                .disposed(by: self.disposeBag)
+//            AuthController.shared.authorizeWithAuthenticationSession()
+//                .subscribe(onNext:{ oauthToken in
+//                    Logger.info(oauthToken)
+//                })
+//                .disposed(by: self.disposeBag)
 //        }
     }
 }
@@ -213,7 +213,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
                 print("familyName: \(fullName.familyName ?? "")")
                 print("givenName: \(fullName.givenName ?? "")")
             }
-             
+
             guard let identityToken = credential.identityToken, let tokenString = String(data: identityToken, encoding: .utf8) else { return }
             print("Token: \(tokenString)")
         }
