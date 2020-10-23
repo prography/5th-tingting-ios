@@ -1,0 +1,283 @@
+PODS:
+  - Alamofire (5.3.0)
+  - BonMot (5.6.0)
+  - Differentiator (4.0.1)
+  - DropDown (2.3.13)
+  - Firebase/Analytics (6.34.0):
+    - Firebase/Core
+  - Firebase/Core (6.34.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.9.0)
+  - Firebase/CoreOnly (6.34.0):
+    - FirebaseCore (= 6.10.4)
+  - FirebaseAnalytics (6.9.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.7)
+    - GoogleAppMeasurement (= 6.9.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/MethodSwizzler (~> 6.7)
+    - GoogleUtilities/Network (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
+    - nanopb (~> 1.30906.0)
+  - FirebaseCore (6.10.4):
+    - FirebaseCoreDiagnostics (~> 1.6)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+  - FirebaseCoreDiagnostics (1.7.0):
+    - GoogleDataTransport (~> 7.4)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+    - nanopb (~> 1.30906.0)
+  - FirebaseInstallations (1.7.0):
+    - FirebaseCore (~> 6.10)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+    - PromisesObjC (~> 1.2)
+  - GoogleAppMeasurement (6.9.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/MethodSwizzler (~> 6.7)
+    - GoogleUtilities/Network (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
+    - nanopb (~> 1.30906.0)
+  - GoogleDataTransport (7.5.1):
+    - nanopb (~> 1.30906.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.7.2):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.7.2):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.7.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.7.2):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.7.2)"
+  - GoogleUtilities/Reachability (6.7.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.7.2):
+    - GoogleUtilities/Logger
+  - Hero (1.4.0)
+  - KakaoSDKAuth (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKCommon (2.0.4):
+    - Alamofire (~> 5.1)
+  - KakaoSDKLink (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+  - KakaoSDKNavi (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKStory (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKTalk (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+  - KakaoSDKTemplate (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKUser (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+  - Kingfisher (5.15.6):
+    - Kingfisher/Core (= 5.15.6)
+  - Kingfisher/Core (5.15.6)
+  - lottie-ios (3.1.8)
+  - M13Checkbox (3.4.0)
+  - MarqueeLabel (4.0.5)
+  - nanopb (1.30906.0):
+    - nanopb/decode (= 1.30906.0)
+    - nanopb/encode (= 1.30906.0)
+  - nanopb/decode (1.30906.0)
+  - nanopb/encode (1.30906.0)
+  - NotificationBannerSwift (3.0.2):
+    - MarqueeLabel (~> 4.0.0)
+    - SnapKit (~> 5.0.0)
+  - PromisesObjC (1.2.11)
+  - RxAlamofire (5.6.2):
+    - RxAlamofire/Core (= 5.6.2)
+  - RxAlamofire/Core (5.6.2):
+    - Alamofire (~> 5.2)
+    - RxSwift (~> 5.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxKakaoSDK (2.0.4):
+    - KakaoSDKNavi (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+    - RxKakaoSDKAuth (= 2.0.4)
+    - RxKakaoSDKCommon (= 2.0.4)
+    - RxKakaoSDKLink (= 2.0.4)
+    - RxKakaoSDKStory (= 2.0.4)
+    - RxKakaoSDKTalk (= 2.0.4)
+    - RxKakaoSDKUser (= 2.0.4)
+  - RxKakaoSDKAuth (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - RxKakaoSDKCommon (= 2.0.4)
+  - RxKakaoSDKCommon (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+    - RxAlamofire (~> 5.2)
+    - RxCocoa
+    - RxSwift
+  - RxKakaoSDKLink (2.0.4):
+    - KakaoSDKLink (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+    - RxKakaoSDKCommon (= 2.0.4)
+  - RxKakaoSDKStory (2.0.4):
+    - KakaoSDKStory (= 2.0.4)
+    - RxKakaoSDKAuth (= 2.0.4)
+    - RxKakaoSDKCommon (= 2.0.4)
+  - RxKakaoSDKTalk (2.0.4):
+    - KakaoSDKTalk (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+    - RxKakaoSDKAuth (= 2.0.4)
+    - RxKakaoSDKCommon (= 2.0.4)
+  - RxKakaoSDKUser (2.0.4):
+    - KakaoSDKUser (= 2.0.4)
+    - RxKakaoSDKAuth (= 2.0.4)
+    - RxKakaoSDKCommon (= 2.0.4)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxSwiftExt (5.2.0):
+    - RxSwiftExt/Core (= 5.2.0)
+    - RxSwiftExt/RxCocoa (= 5.2.0)
+  - RxSwiftExt/Core (5.2.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.2.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SnapKit (5.0.1)
+  - SwiftyBeaver (1.7.1)
+  - TextFieldEffects (1.6.0)
+  - WSTagsField (5.4.0)
+
+DEPENDENCIES:
+  - BonMot (~> 5.4)
+  - DropDown (~> 2.3.13)
+  - Firebase/Analytics
+  - Hero (~> 1.4.0)
+  - Kingfisher (~> 5.0)
+  - lottie-ios (~> 3.1.0)
+  - M13Checkbox (~> 3.4.0)
+  - NotificationBannerSwift (~> 3.0.0)
+  - RxCocoa (~> 5)
+  - RxDataSources (~> 4.0)
+  - RxKakaoSDK (~> 2.0.0-beta.3)
+  - RxSwiftExt (~> 5)
+  - RxViewController
+  - SnapKit (~> 5.0.0)
+  - SwiftyBeaver (~> 1.7.0)
+  - TextFieldEffects (~> 1.6.0)
+  - WSTagsField (~> 5.2)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BonMot
+    - Differentiator
+    - DropDown
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleUtilities
+    - Hero
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
+    - Kingfisher
+    - lottie-ios
+    - M13Checkbox
+    - MarqueeLabel
+    - nanopb
+    - NotificationBannerSwift
+    - PromisesObjC
+    - RxAlamofire
+    - RxCocoa
+    - RxDataSources
+    - RxKakaoSDK
+    - RxKakaoSDKAuth
+    - RxKakaoSDKCommon
+    - RxKakaoSDKLink
+    - RxKakaoSDKStory
+    - RxKakaoSDKTalk
+    - RxKakaoSDKUser
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+    - RxViewController
+    - SnapKit
+    - SwiftyBeaver
+    - TextFieldEffects
+    - WSTagsField
+
+SPEC CHECKSUMS:
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
+  BonMot: 2217a66e5ddc6a8d2ffb759fe8c85a8528e0d3e7
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
+  FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
+  FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
+  FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
+  FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
+  GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
+  GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
+  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  KakaoSDKAuth: 3a88e4a110243f8c6b9948c5ec85670c7acaebf6
+  KakaoSDKCommon: 070472d0638ea6b28684a23c195e47015349e51b
+  KakaoSDKLink: a90a919c4b00dc85bbf21d91842961c105317317
+  KakaoSDKNavi: 698659afffcd6d069febe0d1eab7a2dc524697f5
+  KakaoSDKStory: da6ee55062acc3bd667315773671e55c85b5ca56
+  KakaoSDKTalk: 8cf6299b0eea7cf3139ab0f62b415fd054f83a29
+  KakaoSDKTemplate: 330007aea0b46de1ed93e4cbddc7b4c3b59bdc25
+  KakaoSDKUser: 7951e09f9e6de3908ae2d7f8486290c8607c217a
+  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
+  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  RxAlamofire: aa949d345b1689eae02b7c7a217518878144f6df
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxKakaoSDK: 30775af30e21f1a5ed1975e0451133e1021b9209
+  RxKakaoSDKAuth: ea014a608fb7ba41a9c0d7c685bf587599f582e7
+  RxKakaoSDKCommon: 141b04fb5d08538cf5a91ffd5d7821f7f40ee38c
+  RxKakaoSDKLink: f200d66d0f7b6b414bf995ce26c02f278478dc09
+  RxKakaoSDKStory: 3b6b6870dad5d0fd2365e6f55a41e33a91cd6a9a
+  RxKakaoSDKTalk: 463bb63c751c65fecc6dc8fb7d7a654e8cb23398
+  RxKakaoSDKUser: d935fbf6aa6691a2741943b1740dffe8a13f100d
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyBeaver: da5e573ad583586c18236324c36900990afe1733
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+  WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
+
+PODFILE CHECKSUM: 766a92b9b7fa8a9aeef378a2b90dddd1b8c39217
+
+COCOAPODS: 1.10.0.rc.1
